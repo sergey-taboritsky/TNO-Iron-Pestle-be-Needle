@@ -1,0 +1,32 @@
+ideas = {
+	country = {
+		TNOIPN_easteregg_invincible_party = {
+			picture = GFX_idea_0
+			modifier = {
+				army_attack_factor = 100
+				army_defence_factor = 100
+				army_org_factor = 10
+				army_morale_factor = 10
+				army_speed_factor = 10
+				production_speed_buildings_factor = 20
+				research_speed_factor = 20
+				political_power_factor = 10
+			}
+		}
+		TNOIPN_easteregg_invincible_army = {
+			picture = GFX_idea_0
+			modifier = {
+				army_attack_factor = 100
+				army_defence_factor = 100
+				army_org_factor = 10
+				army_morale_factor = 10
+				army_speed_factor = 10
+				recruitable_population_factor = 20
+				mobilization_speed = 20
+				experience_gain_army = 10
+				experience_gain_navy = 10
+				experience_gain_air = 10
+			}
+		}
+	}
+}

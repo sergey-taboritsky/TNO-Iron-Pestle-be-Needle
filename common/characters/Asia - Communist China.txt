@@ -1,0 +1,175 @@
+characters = {
+	######################
+	### Central Soviet ###
+	######################
+#Leaders
+	CPC_Gao_Gang = {
+		name = CPC_Gao_Gang
+		portraits = {
+			civilian = { large = "gfx/leaders/CPC/Portrait_CPC_Gao_Gang.png" }
+			army = { large = "gfx/leaders/CPC/Portrait_CPC_Gao_Gang_army.png" }
+		}
+		field_marshal = {
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 4
+			traits = {
+				guerilla_fighter
+				organisational_leader
+				organizer
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_GAO_GANG_DESC"
+			ideology = communist_mao_zedong_thought_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	################
+	### Xinjiang ###
+	################
+#Leaders
+	XIN_Chen_Tanqiu = {
+		name = XIN_Chen_Tanqiu
+		portraits = {
+			civilian = { large = "gfx/leaders/CPC/Portrait_XIN_Chen_Tanqiu.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_CHEN_TANQIU_DESC"
+			ideology = communist_mao_zedong_thought_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	XIN_Ehmetjan_Qasimi = {
+		name = XIN_Ehmetjan_Qasimi
+		portraits = {
+			civilian = { large = "gfx/leaders/CPC/Portrait_XIN_Ehmetjan_Qasimi.png" }
+			army = { large = "gfx/leaders/CPC/Portrait_XIN_Ehmetjan_Qasimi.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_EHMETJAN_QASIMI_DESC"
+			ideology = socialist_left_wing_nationalism_subtype
+			expire = "1989.1.1.1"
+			id = -1
+		}
+	}
+#Ministers
+	XIN_Mao_Zemin = {
+		name = XIN_Mao_Zemin
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/CPC/Portrait_XIN_Mao_Zemin.png"
+				small = "GFX_idea_XIN_Mao_Zemin"
+			}
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = XIN_Mao_Zemin_hog
+			allowed = { original_tag = XIN }
+			traits = {
+				head_of_government
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	XIN_Lin_Jilu = {
+		name = XIN_Lin_Jilu
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/CPC/Portrait_XIN_Lin_Jilu.png"
+				small = "GFX_idea_XIN_Lin_Jilu"
+			}
+		}
+		advisor = {
+			slot = economy_minister
+			idea_token = XIN_Lin_Jilu_eco
+			allowed = { original_tag = MLY }
+			ledger = civilian
+			traits = {
+				economy_minister
+			}
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	XIN_Lai_Zulie = {
+		name = XIN_Lai_Zulie
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/CPC/Portrait_XIN_Lai_Zulie.png"
+				small = "GFX_idea_XIN_Lai_Zulie"
+			}
+		}
+		advisor = {
+			slot = foreign_minister
+			idea_token = XIN_Lai_Zulie_for
+			allowed = { original_tag = XIN }
+			traits = {
+				foreign_minister
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	XIN_Hu_Jian = {
+		name = XIN_Hu_Jian
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/CPC/Portrait_XIN_Hu_Jian.png"
+				small = "GFX_idea_XIN_Hu_Jian"
+			}
+		}
+		advisor = {
+			slot = security_minister
+			idea_token = XIN_Hu_Jian_sec
+			allowed = { original_tag = XIN }
+			traits = {
+				security_minister
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	XIN_Tian_Dexiu = {
+		name = XIN_Tian_Dexiu
+		portraits = {
+			army = {
+				large = "gfx/leaders/CPC/Portrait_XIN_Tian_Dexiu.png"
+				small = "GFX_idea_XIN_Tian_Dexiu"
+			}
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+			legacy_id = 29983
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = XIN_Tian_Dexiu_army_chief
+			allowed = { original_tag = MLY }
+			ledger = army
+			traits = {
+				army_chief
+				army_chief_drill_2
+			}
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+}

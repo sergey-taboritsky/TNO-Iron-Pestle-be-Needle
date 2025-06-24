@@ -1,0 +1,680 @@
+﻿add_namespace = TNOIPN_MLY
+add_namespace = TNOIPN_MLY_postwar
+add_namespace = TNOIPN_MLY_easteregg
+add_namespace = TNOIPN_MLY_worldnews
+country_event = { #突围之路
+	id = TNOIPN_MLY.1
+	title = TNOIPN_MLY.1.t
+	desc = TNOIPN_MLY.1.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {
+		name = TNOIPN_MLY.1.a
+	}
+}
+country_event = { #怡保会师
+	id = TNOIPN_MLY.2
+	title = TNOIPN_MLY.2.t
+	desc = TNOIPN_MLY.2.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {
+		name = TNOIPN_MLY.2.a
+	}
+}
+country_event = { #怡保改编
+	id = TNOIPN_MLY.3
+	title = TNOIPN_MLY.3.t
+	desc = TNOIPN_MLY.3.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {
+		name = TNOIPN_MLY.3.a
+	}
+}
+country_event = { #党大会
+	id = TNOIPN_MLY.4
+	title = TNOIPN_MLY.4.t
+	desc = TNOIPN_MLY.4.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {
+		name = TNOIPN_MLY.4.a
+	}
+}
+country_event = { #遣使泰国
+	id = TNOIPN_MLY.5
+	title = TNOIPN_MLY.5.t
+	desc = TNOIPN_MLY.5.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {
+		name = TNOIPN_MLY.5.a
+		activate_mission = TNOIPN_Thai_Negotiations_Complete_mission
+	}
+}
+country_event = { #移交领土
+	id = TNOIPN_MLY.6
+	title = TNOIPN_MLY.6.t
+	desc = TNOIPN_MLY.6.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {
+		name = TNOIPN_MLY.6.a
+		set_temp_variable = {
+			TNOIPN_PKM_unity_temp_var = 10
+		}
+		TNOIPN_PKM_unity_change = yes
+		set_temp_variable = {
+			TNOIPN_PKM_legitimacy_temp_var = 10
+		}
+		TNOIPN_PKM_legitimacy_change = yes
+		TNO_improve_admin_efficiency_low = yes
+		PKM = {
+			transfer_state = 2259
+			transfer_state = 800
+			transfer_state = 802
+			transfer_state = 2237
+		}
+		set_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+country_event = { #抢夺争议区
+	id = TNOIPN_MLY.7
+	title = TNOIPN_MLY.7.t
+	desc = TNOIPN_MLY.7.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {
+		name = TNOIPN_MLY.7.a
+		set_temp_variable = {
+			TNOIPN_PKM_unity_temp_var = -5
+		}
+		TNOIPN_PKM_unity_change = yes
+		set_temp_variable = {
+			TNOIPN_PKM_legitimacy_temp_var = -5
+		}
+		TNOIPN_PKM_legitimacy_change = yes
+		add_stability = -0.10
+		add_war_support = -0.10
+		add_manpower = -576
+		PKM = {
+			transfer_state = 2259
+			transfer_state = 800
+			transfer_state = 802
+			transfer_state = 2237
+		}
+		set_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+country_event = { #党首会谈
+	id = TNOIPN_MLY.8
+	title = TNOIPN_MLY.8.t
+	desc = TNOIPN_MLY.8.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {
+		name = TNOIPN_MLY.8.a
+		SIA = {
+			add_popularity = {
+				ideology = progressivism
+				popularity = 0.02
+			}
+		}
+		PKM = {
+			add_popularity = {
+				ideology = socialist
+				popularity = 0.03
+			}
+		}
+	}
+}
+
+country_event = { #
+	id = TNOIPN_MLY_postwar.1
+	title = TNOIPN_MLY_postwar.1.t
+	desc = TNOIPN_MLY_postwar.1.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = TNOIPN_MLY_postwar.1.a
+	}
+	option = {
+		name = TNOIPN_MLY_postwar.1.b
+	}
+	option = {
+		name = TNOIPN_MLY_postwar.1.c
+	}
+}
+country_event = { #
+	id = TNOIPN_MLY_postwar.2
+	title = TNOIPN_MLY_postwar.2.t
+	desc = TNOIPN_MLY_postwar.2.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = TNOIPN_MLY_postwar.2.a
+	}
+	option = {
+		name = TNOIPN_MLY_postwar.2.b
+	}
+	option = {
+		name = TNOIPN_MLY_postwar.2.c
+	}
+}
+country_event = { #
+	id = TNOIPN_MLY_postwar.3
+	title = TNOIPN_MLY_postwar.3.t
+	desc = TNOIPN_MLY_postwar.3.desc
+	picture = GFX_paratroopers_bg
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				IPNMLY_final_check_PKM_var = TNOIPN_PKM_legitimacy_var
+			}
+			multiply_variable = {
+				var = IPNMLY_final_check_PKM_var
+				value = TNOIPN_PKM_unity_var
+			}
+		}
+	}
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		trigger = {
+			has_political_power > 0
+			check_variable = {
+				var = IPNMLY_final_check_PKM_var
+				value = 50
+				compare = greater_than_or_equals
+			}
+		}
+		name = TNOIPN_MLY_postwar.3.a
+		set_country_flag = TNOIPN_MLY_PKM_win_flag
+		clr_country_flag = TNOIPN_MLY_PKM_lose_flag
+		mark_focus_tree_layout_dirty = yes
+	}
+	option = {
+		name = TNOIPN_MLY_postwar.3.b
+		trigger = {
+			OR = {
+				has_political_power < 0
+				check_variable = {
+					var = IPNMLY_final_check_PKM_var
+					value = 50
+					compare = less_than
+				}
+			}
+		}
+		set_country_flag = TNOIPN_MLY_PKM_lose_flag
+		clr_country_flag = TNOIPN_MLY_PKM_win_flag
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+country_event = { #社阵领导人
+	id = TNOIPN_MLY_postwar.4
+	title = TNOIPN_MLY_postwar.4.t
+	desc = TNOIPN_MLY_postwar.4.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = TNOIPN_MLY_postwar.4.a
+		set_party_name = {
+			ideology = socialist
+			long_name = MLY_Barisan_Sosialis_PRM_party_long
+			name = MLY_Barisan_Sosialis_PRM_party
+		}
+		set_party_name = {
+			ideology = socialist_1
+			long_name = MLY_Barisan_Sosialis_PBM_party_long
+			name = MLY_Barisan_Sosialis_PBM_party
+		}
+	}
+	option = {
+		name = TNOIPN_MLY_postwar.4.b
+		set_party_name = {
+			ideology = socialist_1
+			long_name = MLY_Barisan_Sosialis_PRM_party_long
+			name = MLY_Barisan_Sosialis_PRM_party
+		}
+		set_party_name = {
+			ideology = socialist
+			long_name = MLY_Barisan_Sosialis_PBM_party_long
+			name = MLY_Barisan_Sosialis_PBM_party
+		}
+		hidden_effect = {
+			MLY_Ahmad_Boestamam = {
+				remove_country_leader_role = {
+					ideology = socialist_social_democracy_subtype
+				}
+				add_country_leader_role = {
+					country_leader = {
+						#desc = ""
+						ideology = socialist_1_subtype
+						expire = "1985.1.1"
+						id = -1
+					}
+				}
+				promote_character = yes
+			}
+			MLY_Ishak_Haji_Muhammad = {
+				add_country_leader_role = {
+					country_leader = {
+						#desc = ""
+						ideology = socialist_revolutionary_frontism_subtype
+						expire = "1985.1.1"
+						id = -1
+					}
+				}
+				promote_character = yes
+			}
+		}
+	}
+	option = {
+		name = TNOIPN_MLY_postwar.4.c
+		set_party_name = {
+			ideology = socialist_1
+			long_name = MLY_Barisan_Sosialis_PRM_party_long
+			name = MLY_Barisan_Sosialis_PRM_party
+		}
+		set_party_name = {
+			ideology = socialist
+			long_name = MLY_Barisan_Sosialis_PBM_party_long
+			name = MLY_Barisan_Sosialis_PBM_party
+		}
+		hidden_effect = {
+			set_country_flag = TNOIPN_MLY_barisan_sosialis_PRM_flag
+			MLY_Ahmad_Boestamam = {
+				remove_country_leader_role = {
+					ideology = socialist_social_democracy_subtype
+				}
+				add_country_leader_role = {
+					country_leader = {
+						#desc = ""
+						ideology = socialist_1_subtype
+						expire = "1985.1.1"
+						id = -1
+					}
+				}
+				promote_character = yes
+			}
+			MLY_Tan_Khai_Hee = {
+				remove_country_leader_role = {
+					ideology = socialist_1_subtype
+				}
+				add_country_leader_role = {
+					country_leader = {
+						#desc = ""
+						ideology = socialist_social_democracy_subtype
+						expire = "1985.1.1"
+						id = -1
+					}
+				}
+				promote_character = yes
+			}
+		}
+	}
+}
+country_event = { #国民党大会
+	id = TNOIPN_MLY_postwar.5
+	title = TNOIPN_MLY_postwar.5.t
+	desc = TNOIPN_MLY_postwar.5.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = TNOIPN_MLY_postwar.5.a
+		set_party_name = {
+			ideology = socialist_2
+			long_name = MLY_unified_PKMM_party_long
+			name = MLY_unified_PKMM_party
+		}
+		set_party_name = {
+			ideology = conservatism
+			long_name = MLY_unified_PKMM_party_long
+			name = MLY_unified_PKMM_party
+		}
+		set_party_name = {
+			ideology = paternalism
+			long_name = MLY_unified_PKMM_party_long
+			name = MLY_unified_PKMM_party
+		}
+		set_country_flag = TNOIPN_MLY_PKMM_buhanuddin_flag
+	}
+	option = {
+		name = TNOIPN_MLY_postwar.5.b
+		set_party_name = {
+			ideology = socialist_2
+			long_name = MLY_unified_PKMM_party_long
+			name = MLY_unified_PKMM_party
+		}
+		set_party_name = {
+			ideology = conservatism
+			long_name = MLY_unified_PKMM_party_long
+			name = MLY_unified_PKMM_party
+		}
+		set_party_name = {
+			ideology = paternalism
+			long_name = MLY_unified_PKMM_party_long
+			name = MLY_unified_PKMM_party
+		}
+		set_country_flag = TNOIPN_MLY_PKMM_yaacob_flag
+	}
+	option = {
+		name = TNOIPN_MLY_postwar.5.c
+		set_party_name = {
+			ideology = socialist_2
+			long_name = MLY_unified_PKMM_party_long
+			name = MLY_unified_PKMM_party
+		}
+		set_party_name = {
+			ideology = conservatism
+			long_name = MLY_unified_PKMM_party_long
+			name = MLY_unified_PKMM_party
+		}
+		set_party_name = {
+			ideology = paternalism
+			long_name = MLY_unified_PKMM_party_long
+			name = MLY_unified_PKMM_party
+		}
+		set_country_flag = TNOIPN_MLY_PKMM_hussain_flag
+	}
+}
+country_event = { #马共的抉择
+	id = TNOIPN_MLY_postwar.6
+	title = TNOIPN_MLY_postwar.6.t
+	desc = TNOIPN_MLY_postwar.6.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = TNOIPN_MLY_postwar.6.a
+		set_party_name = {
+			ideology = communist
+			long_name = MLY_Barisan_Sosialis_PKM_party_long
+			name = MLY_Barisan_Sosialis_PKM_party
+		}
+	}
+	option = {
+		name = TNOIPN_MLY_postwar.6.b
+		add_stability = -0.10
+		if = {
+			limit = {
+				has_country_flag = TNOIPN_MLY_barisan_sosialis_PRM_flag
+			}
+			set_party_name = {
+				ideology = socialist
+				long_name = MLY_Barisan_Rakyat_PRM_party_long
+				name = MLY_Barisan_Rakyat_PRM_party
+			}
+			set_party_name = {
+				ideology = socialist_1
+				long_name = MLY_Barisan_Rakyat_PBM_party_long
+				name = MLY_Barisan_Rakyat_PBM_party
+			}
+		}
+		else = {
+			set_party_name = {
+				ideology = socialist_1
+				long_name = MLY_Barisan_Rakyat_PRM_party_long
+				name = MLY_Barisan_Rakyat_PRM_party
+			}
+			set_party_name = {
+				ideology = socialist
+				long_name = MLY_Barisan_Rakyat_PBM_party_long
+				name = MLY_Barisan_Rakyat_PBM_party
+			}
+		}
+		set_party_name = {
+			ideology = socialist_2
+			long_name = MLY_Barisan_Rakyat_PKMM_party_long
+			name = MLY_Barisan_Rakyat_PKMM_party
+		}
+		set_party_name = {
+			ideology = conservatism
+			long_name = MLY_Barisan_Rakyat_PKMM_party_long
+			name = MLY_Barisan_Rakyat_PKMM_party
+		}
+		set_party_name = {
+			ideology = paternalism
+			long_name = MLY_Barisan_Rakyat_PKMM_party_long
+			name = MLY_Barisan_Rakyat_PKMM_party
+		}
+		set_country_flag = TNOIPN_MLY_Barisan_Rakyat_flag
+	}
+}
+country_event = { #紧急选举
+	id = TNOIPN_MLY_postwar.7
+	title = TNOIPN_MLY_postwar.7.t
+	desc = TNOIPN_MLY_postwar.7.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = TNOIPN_MLY_postwar.7.a
+		trigger = {
+			has_country_flag = TNOIPN_MLY_Barisan_Rakyat_flag
+		}
+		set_politics = {
+			meta_effect = { #sets up next election date in country ui
+				text = {
+					set_politics = {
+						ruling_party = communist
+						last_election = "[current_election_date]"
+						elections_allowed = yes
+						election_frequency = 12
+					}
+				}
+				current_election_date = "[?global.date.GetDateStringNoHour]"
+			}
+		}
+		TNO_Country_Closing_Screen_Show = yes
+	}
+	option = {
+		name = TNOIPN_MLY_postwar.7.b
+		trigger = {
+			has_country_flag = TNOIPN_MLY_Barisan_Rakyat_flag
+		}
+		set_politics = {
+			meta_effect = { #sets up next election date in country ui
+				text = {
+					set_politics = {
+						ruling_party = socialist
+						last_election = "[current_election_date]"
+						elections_allowed = yes
+						election_frequency = 12
+					}
+				}
+				current_election_date = "[?global.date.GetDateStringNoHour]"
+			}
+		}
+		TNO_Country_Closing_Screen_Show = yes
+	}
+	option = {
+		name = TNOIPN_MLY_postwar.7.c
+		trigger = {
+			NOT = { has_country_flag = TNOIPN_MLY_Barisan_Rakyat_flag }
+		}
+		set_politics = {
+			meta_effect = { #sets up next election date in country ui
+				text = {
+					set_politics = {
+						ruling_party = socialist
+						last_election = "[current_election_date]"
+						elections_allowed = yes
+						election_frequency = 12
+					}
+				}
+				current_election_date = "[?global.date.GetDateStringNoHour]"
+			}
+		}
+		TNO_Country_Closing_Screen_Show = yes
+	}
+	option = {
+		name = TNOIPN_MLY_postwar.7.e
+		trigger = {
+			NOT = { has_country_flag = TNOIPN_MLY_Barisan_Rakyat_flag }
+		}
+		if = {
+			limit = {
+				has_country_flag = TNOIPN_MLY_PKMM_buhanuddin_flag
+			}
+			if = {
+				limit = {
+					has_country_flag = TNOIPN_MLY_barisan_sosialis_PRM_flag
+				}
+				set_party_name = {
+					ideology = socialist_2
+					long_name = MLY_Barisan_Sosialis_PRM_party_long
+					name = MLY_Barisan_Sosialis_PRM_party
+				}
+				set_party_name = {
+					ideology = socialist
+					long_name = MLY_unified_PKMM_party_long
+					name = MLY_unified_PKMM_party
+				}
+				MLY_Ahmad_Boestamam = {
+					remove_country_leader_role = {
+						ideology = socialist_social_democracy_subtype
+					}
+					add_country_leader_role = {
+						country_leader = {
+							#desc = ""
+							ideology = socialist_2_subtype
+							expire = "1985.1.1"
+							id = -1
+						}
+					}
+					promote_character = yes
+				}
+				MLY_Burnahuddin_Al_Helmy = {
+					remove_country_leader_role = {
+						ideology = socialist_2_subtype
+					}
+					add_country_leader_role = {
+						country_leader = {
+							#desc = ""
+							ideology = socialist_left_wing_nationalism_subtype
+							expire = "1985.1.1"
+							id = -1
+						}
+					}
+					promote_character = yes
+				}
+			}
+			else = {
+				set_party_name = {
+					ideology = socialist_2
+					long_name = MLY_Barisan_Sosialis_PBM_party_long
+					name = MLY_Barisan_Sosialis_PBM_party
+				}
+				set_party_name = {
+					ideology = socialist
+					long_name = MLY_unified_PKMM_party_long
+					name = MLY_unified_PKMM_party
+				}
+				MLY_Ishak_Haji_Muhammad = {
+					add_country_leader_role = {
+						country_leader = {
+							#desc = ""
+							ideology = socialist_2_subtype
+							expire = "1985.1.1"
+							id = -1
+						}
+					}
+					promote_character = yes
+				}
+				MLY_Burnahuddin_Al_Helmy = {
+					remove_country_leader_role = {
+						ideology = socialist_2_subtype
+					}
+					add_country_leader_role = {
+						country_leader = {
+							#desc = ""
+							ideology = socialist_left_wing_nationalism_subtype
+							expire = "1985.1.1"
+							id = -1
+						}
+					}
+					promote_character = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = TNOIPN_MLY_PKMM_yaacob_flag
+			}
+			set_politics = {
+				ruling_party = conservatism
+			}
+		}
+		else = {
+			set_politics = {
+				ruling_party = paternalism
+			}
+		}
+		set_politics = {
+			meta_effect = { #sets up next election date in country ui
+				text = {
+					set_politics = {
+						last_election = "[current_election_date]"
+						elections_allowed = yes
+						election_frequency = 12
+					}
+				}
+				current_election_date = "[?global.date.GetDateStringNoHour]"
+			}
+		}
+		TNO_Country_Closing_Screen_Show = yes
+	}
+}
+
+news_event = { #马来亚紧急状态结束
+	id = TNOIPN_MLY_worldnews.1
+	title = TNOIPN_MLY_worldnews.1.t
+	desc = TNOIPN_MLY_worldnews.1.d
+	picture = GFX_news_event_MLY_collab_victory
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	option = {
+		name = TNOIPN_MLY_worldnews.1.a
+		trigger = {
+			NOT = {
+				tag = PKM
+			}
+		}
+	}
+	option = {
+		name = TNOIPN_MLY_worldnews.1.b
+		trigger = {
+			tag = PKM
+		}
+	}
+}
+
+country_event = { #抉择
+	id = TNOIPN_MLY_easteregg.1
+	title = TNOIPN_MLY_easteregg.1.t
+	desc = TNOIPN_MLY_easteregg.1.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {#party
+		name = TNOIPN_MLY_easteregg.1.a
+		set_country_flag = TNOIPN_MLY_easteregg_China_flag
+		add_ideas = TNOIPN_easteregg_invincible_party
+		set_country_leader_portrait = {
+			portrait = "gfx/leaders/MLY/Portrait_IPN_easteregg_Chin_Peng.png"
+		}
+	}
+	option = {#military
+		name = TNOIPN_MLY_easteregg.1.b
+		set_country_flag = TNOIPN_MLY_easteregg_Malay_flag
+		add_ideas = TNOIPN_easteregg_invincible_army
+	}
+}

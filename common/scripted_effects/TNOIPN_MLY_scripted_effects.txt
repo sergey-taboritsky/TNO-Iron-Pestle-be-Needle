@@ -1,0 +1,491 @@
+# Change PKM Unity
+TNOIPN_PKM_unity_change = {
+	log = "[GetDateText]: [Root.GetName]: TNOIPN_PKM_unity_change"
+	add_to_variable = {
+		TNOIPN_PKM_unity_var = TNOIPN_PKM_unity_temp_var
+	}
+	if = {
+		limit = {
+			check_variable = {
+				TNOIPN_PKM_unity_temp_var < 0
+			}
+		}
+		set_temp_variable = {
+			TNOIPN_PKM_unity_decrease_amount_temp_var = 0
+		}
+		subtract_from_temp_variable = {
+			TNOIPN_PKM_unity_decrease_amount_temp_var = TNOIPN_PKM_unity_temp_var
+		}
+		custom_effect_tooltip = TNOIPN_PKM_Unity_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = TNOIPN_PKM_Unity_increase_tt
+	}
+	clamp_variable = {
+		var = TNOIPN_PKM_unity_var
+		min = 0
+		max = 100
+	}
+}
+
+# Change PKM Legitimacy
+TNOIPN_PKM_legitimacy_change = {
+	log = "[GetDateText]: [Root.GetName]: TNOIPN_PKM_legitimacy_change"
+	add_to_variable = {
+		TNOIPN_PKM_legitimacy_var = TNOIPN_PKM_legitimacy_temp_var
+	}
+	if = {
+		limit = {
+			check_variable = {
+				TNOIPN_PKM_legitimacy_temp_var < 0
+			}
+		}
+		set_temp_variable = {
+			TNOIPN_PKM_legitimacy_decrease_amount_temp_var = 0
+		}
+		subtract_from_temp_variable = {
+			TNOIPN_PKM_legitimacy_decrease_amount_temp_var = TNOIPN_PKM_legitimacy_temp_var
+		}
+		custom_effect_tooltip = TNOIPN_PKM_legitimacy_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = TNOIPN_PKM_legitimacy_increase_tt
+	}
+	clamp_variable = {
+		var = TNOIPN_PKM_legitimacy_var
+		min = 0
+		max = 100
+	}
+}
+
+# Change PKM Strength
+TNOIPN_PKM_Ipoh_local_strength_change = {
+	log = "[GetDateText]: [Root.GetName]: TNOIPN_PKM_local_strength_change"
+	add_to_variable = {
+		TNOIPN_MLY_GUI_state_control_Ipoh_var = TNOIPN_MLY_GUI_state_control_temp_var
+	}
+	clamp_variable = {
+		var = TNOIPN_MLY_GUI_state_control_Ipoh_var
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = {
+			check_variable = {
+				TNOIPN_MLY_GUI_state_control_temp_var < 0
+			}
+		}
+		set_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = 0
+		}
+		subtract_from_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = TNOIPN_MLY_GUI_state_control_temp_var
+		}
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_increase_tt
+	}
+}
+
+TNOIPN_PKM_WestThai_local_strength_change = {
+	log = "[GetDateText]: [Root.GetName]: TNOIPN_PKM_local_strength_change"
+	add_to_variable = {
+		TNOIPN_MLY_GUI_state_control_WestThai_var = TNOIPN_MLY_GUI_state_control_temp_var
+	}
+	clamp_variable = {
+		var = TNOIPN_MLY_GUI_state_control_WestThai_var
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = {
+			check_variable = {
+				TNOIPN_MLY_GUI_state_control_temp_var < 0
+			}
+		}
+		set_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = 0
+		}
+		subtract_from_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = TNOIPN_MLY_GUI_state_control_temp_var
+		}
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_increase_tt
+	}
+}
+
+TNOIPN_PKM_EastThai_local_strength_change = {
+	log = "[GetDateText]: [Root.GetName]: TNOIPN_PKM_local_strength_change"
+	add_to_variable = {
+		TNOIPN_MLY_GUI_state_control_EastThai_var = TNOIPN_MLY_GUI_state_control_temp_var
+	}
+	clamp_variable = {
+		var = TNOIPN_MLY_GUI_state_control_EastThai_var
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = {
+			check_variable = {
+				TNOIPN_MLY_GUI_state_control_temp_var < 0
+			}
+		}
+		set_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = 0
+		}
+		subtract_from_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = TNOIPN_MLY_GUI_state_control_temp_var
+		}
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_increase_tt
+	}
+}
+
+TNOIPN_PKM_Penang_local_strength_change = {
+	log = "[GetDateText]: [Root.GetName]: TNOIPN_PKM_local_strength_change"
+	add_to_variable = {
+		TNOIPN_MLY_GUI_state_control_Penang_var = TNOIPN_MLY_GUI_state_control_temp_var
+	}
+	clamp_variable = {
+		var = TNOIPN_MLY_GUI_state_control_Penang_var
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = {
+			check_variable = {
+				TNOIPN_MLY_GUI_state_control_temp_var < 0
+			}
+		}
+		set_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = 0
+		}
+		subtract_from_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = TNOIPN_MLY_GUI_state_control_temp_var
+		}
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_increase_tt
+	}
+}
+
+TNOIPN_PKM_Perak_local_strength_change = {
+	log = "[GetDateText]: [Root.GetName]: TNOIPN_PKM_local_strength_change"
+	add_to_variable = {
+		TNOIPN_MLY_GUI_state_control_Perak_var = TNOIPN_MLY_GUI_state_control_temp_var
+	}
+	clamp_variable = {
+		var = TNOIPN_MLY_GUI_state_control_Perak_var
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = {
+			check_variable = {
+				TNOIPN_MLY_GUI_state_control_temp_var < 0
+			}
+		}
+		set_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = 0
+		}
+		subtract_from_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = TNOIPN_MLY_GUI_state_control_temp_var
+		}
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_increase_tt
+	}
+}
+
+TNOIPN_PKM_KL_local_strength_change = {
+	log = "[GetDateText]: [Root.GetName]: TNOIPN_PKM_local_strength_change"
+	add_to_variable = {
+		TNOIPN_MLY_GUI_state_control_KL_var = TNOIPN_MLY_GUI_state_control_temp_var
+	}
+	clamp_variable = {
+		var = TNOIPN_MLY_GUI_state_control_KL_var
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = {
+			check_variable = {
+				TNOIPN_MLY_GUI_state_control_temp_var < 0
+			}
+		}
+		set_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = 0
+		}
+		subtract_from_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = TNOIPN_MLY_GUI_state_control_temp_var
+		}
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_increase_tt
+	}
+}
+
+TNOIPN_PKM_Ponhong_local_strength_change = {
+	log = "[GetDateText]: [Root.GetName]: TNOIPN_PKM_local_strength_change"
+	add_to_variable = {
+		TNOIPN_MLY_GUI_state_control_Ponhong_var = TNOIPN_MLY_GUI_state_control_temp_var
+	}
+	clamp_variable = {
+		var = TNOIPN_MLY_GUI_state_control_Ponhong_var
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = {
+			check_variable = {
+				TNOIPN_MLY_GUI_state_control_temp_var < 0
+			}
+		}
+		set_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = 0
+		}
+		subtract_from_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = TNOIPN_MLY_GUI_state_control_temp_var
+		}
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_increase_tt
+	}
+}
+
+TNOIPN_PKM_Zemerand_local_strength_change = {
+	log = "[GetDateText]: [Root.GetName]: TNOIPN_PKM_local_strength_change"
+	add_to_variable = {
+		TNOIPN_MLY_GUI_state_control_Zemerand_var = TNOIPN_MLY_GUI_state_control_temp_var
+	}
+	clamp_variable = {
+		var = TNOIPN_MLY_GUI_state_control_Zemerand_var
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = {
+			check_variable = {
+				TNOIPN_MLY_GUI_state_control_temp_var < 0
+			}
+		}
+		set_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = 0
+		}
+		subtract_from_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = TNOIPN_MLY_GUI_state_control_temp_var
+		}
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_increase_tt
+	}
+}
+
+TNOIPN_PKM_Johor_local_strength_change = {
+	log = "[GetDateText]: [Root.GetName]: TNOIPN_PKM_local_strength_change"
+	add_to_variable = {
+		TNOIPN_MLY_GUI_state_control_Johor_var = TNOIPN_MLY_GUI_state_control_temp_var
+	}
+	clamp_variable = {
+		var = TNOIPN_MLY_GUI_state_control_Johor_var
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = {
+			check_variable = {
+				TNOIPN_MLY_GUI_state_control_temp_var < 0
+			}
+		}
+		set_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = 0
+		}
+		subtract_from_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = TNOIPN_MLY_GUI_state_control_temp_var
+		}
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_increase_tt
+	}
+}
+
+TNOIPN_PKM_Malacca_local_strength_change = {
+	log = "[GetDateText]: [Root.GetName]: TNOIPN_PKM_local_strength_change"
+	add_to_variable = {
+		TNOIPN_MLY_GUI_state_control_Malacca_var = TNOIPN_MLY_GUI_state_control_temp_var
+	}
+	clamp_variable = {
+		var = TNOIPN_MLY_GUI_state_control_Malacca_var
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = {
+			check_variable = {
+				TNOIPN_MLY_GUI_state_control_temp_var < 0
+			}
+		}
+		set_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = 0
+		}
+		subtract_from_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = TNOIPN_MLY_GUI_state_control_temp_var
+		}
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_increase_tt
+	}
+}
+
+TNOIPN_PKM_Singapore_local_strength_change = {
+	log = "[GetDateText]: [Root.GetName]: TNOIPN_PKM_local_strength_change"
+	add_to_variable = {
+		TNOIPN_MLY_GUI_state_control_Singapore_var = TNOIPN_MLY_GUI_state_control_temp_var
+	}
+	clamp_variable = {
+		var = TNOIPN_MLY_GUI_state_control_Singapore_var
+		min = 0
+		max = 100
+	}
+	if = {
+		limit = {
+			check_variable = {
+				TNOIPN_MLY_GUI_state_control_temp_var < 0
+			}
+		}
+		set_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = 0
+		}
+		subtract_from_temp_variable = {
+			TNOIPN_MLY_GUI_state_control_temp_var_tt_ver = TNOIPN_MLY_GUI_state_control_temp_var
+		}
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_decrease_tt
+	}
+	else = {
+		custom_effect_tooltip = TNOIPN_PKM_local_strength_increase_tt
+	}
+}
+
+#Clear GUI state selection flags
+TNOIPN_PKM_GUI_clear_state_selected = {
+	log = "[GetDateText]: [Root.GetName]: TNOIPN_PKM_GUI_clear_state_selected"
+	clr_country_flag = TNOIPN_revolution_GUI_chosen_Ipoh_flag
+	clr_country_flag = TNOIPN_revolution_GUI_chosen_EastThai_flag
+	clr_country_flag = TNOIPN_revolution_GUI_chosen_WestThai_flag
+	clr_country_flag = TNOIPN_revolution_GUI_chosen_Penang_flag
+	clr_country_flag = TNOIPN_revolution_GUI_chosen_Ponhong_flag
+	clr_country_flag = TNOIPN_revolution_GUI_chosen_Perak_flag
+	clr_country_flag = TNOIPN_revolution_GUI_chosen_Johor_flag
+	clr_country_flag = TNOIPN_revolution_GUI_chosen_Malacca_flag
+	clr_country_flag = TNOIPN_revolution_GUI_chosen_Zemerand_flag
+	clr_country_flag = TNOIPN_revolution_GUI_chosen_KL_flag
+	clr_country_flag = TNOIPN_revolution_GUI_chosen_Singapore_flag
+}
+
+#On liberation war, give buff and debuff according to average
+TNOIPN_MLY_on_liberation_war_declared_effect = {
+	log = "[GetDateText]: [Root.GetName]: TNOIPN_MLY_on_liberation_war_declared_effect"
+	set_variable = {
+		TNOIPN_average_control_MLY_var = 0
+	}
+	add_to_variable = {
+		TNOIPN_average_control_MLY_var = TNOIPN_MLY_GUI_state_control_Ipoh_var
+	}
+	add_to_variable = {
+		TNOIPN_average_control_MLY_var = TNOIPN_MLY_GUI_state_control_EastThai_var
+	}
+	add_to_variable = {
+		TNOIPN_average_control_MLY_var = TNOIPN_MLY_GUI_state_control_WestThai_var
+	}
+	divide_variable = {
+		TNOIPN_average_control_MLY_var = 3
+	}
+	set_temp_variable = {
+		TNOIPN_average_control_MLY_temp_var = TNOIPN_average_control_MLY_var
+	}
+	divide_temp_variable = {
+		TNOIPN_average_control_MLY_temp_var = 100
+	}
+	set_variable = {
+		IPN_MLY_lib_pp_var = TNOIPN_average_control_MLY_temp_var
+	}
+	set_variable = {
+		IPN_MLY_lib_atk_var = TNOIPN_average_control_MLY_temp_var
+	}
+	set_variable = {
+		IPN_MLY_lib_dfs_var = TNOIPN_average_control_MLY_temp_var
+	}
+	set_variable = {
+		IPN_MLY_lib_bkt_var = TNOIPN_average_control_MLY_temp_var
+	}
+	set_variable = {
+		TNOIPN_average_control_SHO_var = 0
+	}
+	add_to_variable = {
+		TNOIPN_average_control_SHO_var = TNOIPN_MLY_GUI_state_control_Penang_var
+	}
+	add_to_variable = {
+		TNOIPN_average_control_SHO_var = TNOIPN_MLY_GUI_state_control_Ponhong_var
+	}
+	add_to_variable = {
+		TNOIPN_average_control_SHO_var = TNOIPN_MLY_GUI_state_control_Perak_var
+	}
+	add_to_variable = {
+		TNOIPN_average_control_SHO_var = TNOIPN_MLY_GUI_state_control_Johor_var
+	}
+	add_to_variable = {
+		TNOIPN_average_control_SHO_var = TNOIPN_MLY_GUI_state_control_Malacca_var
+	}
+	add_to_variable = {
+		TNOIPN_average_control_SHO_var = TNOIPN_MLY_GUI_state_control_Zemerand_var
+	}
+	add_to_variable = {
+		TNOIPN_average_control_SHO_var = TNOIPN_MLY_GUI_state_control_KL_var
+	}
+	add_to_variable = {
+		TNOIPN_average_control_SHO_var = TNOIPN_MLY_GUI_state_control_Singapore_var
+	}
+	divide_variable = {
+		TNOIPN_average_control_SHO_var = 8
+	}
+	set_temp_variable = {
+		TNOIPN_average_control_SHO_temp_var = TNOIPN_average_control_SHO_var
+	}
+	divide_temp_variable = {
+		TNOIPN_average_control_SHO_temp_var = 100
+	}
+	set_variable = {
+		IPN_SHO_lib_pp_var = TNOIPN_average_control_SHO_temp_var
+	}
+	set_variable = {
+		IPN_SHO_lib_atk_var = TNOIPN_average_control_SHO_temp_var
+	}
+	set_variable = {
+		IPN_SHO_lib_dfs_var = TNOIPN_average_control_SHO_temp_var
+	}
+	set_variable = {
+		IPN_SHO_lib_bkt_var = TNOIPN_average_control_SHO_temp_var
+	}
+	PKM = {
+		add_dynamic_modifier = {
+			modifier = TNOIPN_liberation_MLY_dynamic_modifier
+		}
+	}
+	SHO = {
+		add_dynamic_modifier = {
+			modifier = TNOIPN_liberation_SHO_dynamic_modifier
+		}
+	}
+}

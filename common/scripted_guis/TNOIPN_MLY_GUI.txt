@@ -1,0 +1,154 @@
+scripted_gui = {
+
+	TNOIPN_MLY_revolution_GUI = {
+		context_type = decision_category
+		window_name = "TNOIPN_MLY_revolution_GUI"
+		visible = {
+			tag = PKM
+		}
+		effects = {
+			GFX_MLY_revolution_GUI_Map_Ipoh_click = {
+				TNOIPN_PKM_GUI_clear_state_selected = yes
+				set_country_flag = TNOIPN_revolution_GUI_chosen_Ipoh_flag
+				set_variable = {
+					TNOIPN_MLY_blue_prog_var = TNOIPN_MLY_GUI_state_control_Ipoh_var
+				}
+			}
+			GFX_MLY_revolution_GUI_Map_W_Blue_click = {
+				TNOIPN_PKM_GUI_clear_state_selected = yes
+				set_country_flag = TNOIPN_revolution_GUI_chosen_WestThai_flag
+				set_variable = {
+					TNOIPN_MLY_blue_prog_var = 0
+				}
+			}
+			GFX_MLY_revolution_GUI_Map_W_Red_click = {
+				TNOIPN_PKM_GUI_clear_state_selected = yes
+				set_country_flag = TNOIPN_revolution_GUI_chosen_WestThai_flag
+				set_variable = {
+					TNOIPN_MLY_blue_prog_var = TNOIPN_MLY_GUI_state_control_WestThai_var
+				}
+			}
+			GFX_MLY_revolution_GUI_Map_E_Blue_click = {
+				TNOIPN_PKM_GUI_clear_state_selected = yes
+				set_country_flag = TNOIPN_revolution_GUI_chosen_EastThai_flag
+				set_variable = {
+					TNOIPN_MLY_blue_prog_var = 0
+				}
+			}
+			GFX_MLY_revolution_GUI_Map_E_Red_click = {
+				TNOIPN_PKM_GUI_clear_state_selected = yes
+				set_country_flag = TNOIPN_revolution_GUI_chosen_EastThai_flag
+				set_variable = {
+					TNOIPN_MLY_blue_prog_var = TNOIPN_MLY_GUI_state_control_EastThai_var
+				}
+			}
+			GFX_MLY_revolution_GUI_Map_Penang_click = {
+				TNOIPN_PKM_GUI_clear_state_selected = yes
+				set_country_flag = TNOIPN_revolution_GUI_chosen_Penang_flag
+				set_variable = {
+					TNOIPN_MLY_blue_prog_var = TNOIPN_MLY_GUI_state_control_Penang_var
+				}
+			}
+			GFX_MLY_revolution_GUI_Map_Perak_click = {
+				TNOIPN_PKM_GUI_clear_state_selected = yes
+				set_country_flag = TNOIPN_revolution_GUI_chosen_Perak_flag
+				set_variable = {
+					TNOIPN_MLY_blue_prog_var = TNOIPN_MLY_GUI_state_control_Perak_var
+				}
+			}
+			GFX_MLY_revolution_GUI_Map_KL_click = {
+				TNOIPN_PKM_GUI_clear_state_selected = yes
+				set_country_flag = TNOIPN_revolution_GUI_chosen_KL_flag
+				set_variable = {
+					TNOIPN_MLY_blue_prog_var = TNOIPN_MLY_GUI_state_control_KL_var
+				}
+			}
+			GFX_MLY_revolution_GUI_Map_Ponhong_click = {
+				TNOIPN_PKM_GUI_clear_state_selected = yes
+				set_country_flag = TNOIPN_revolution_GUI_chosen_Ponhong_flag
+				set_variable = {
+					TNOIPN_MLY_blue_prog_var = TNOIPN_MLY_GUI_state_control_Ponhong_var
+				}
+			}
+			GFX_MLY_revolution_GUI_Map_Zemerand_click = {
+				TNOIPN_PKM_GUI_clear_state_selected = yes
+				set_country_flag = TNOIPN_revolution_GUI_chosen_Zemerand_flag
+				set_variable = {
+					TNOIPN_MLY_blue_prog_var = TNOIPN_MLY_GUI_state_control_Zemerand_var
+				}
+			}
+			GFX_MLY_revolution_GUI_Map_Johor_click = {
+				TNOIPN_PKM_GUI_clear_state_selected = yes
+				set_country_flag = TNOIPN_revolution_GUI_chosen_Johor_flag
+				set_variable = {
+					TNOIPN_MLY_blue_prog_var = TNOIPN_MLY_GUI_state_control_Johor_var
+				}
+			}
+			GFX_MLY_revolution_GUI_Map_Malacca_click = {
+				TNOIPN_PKM_GUI_clear_state_selected = yes
+				set_country_flag = TNOIPN_revolution_GUI_chosen_Malacca_flag
+				set_variable = {
+					TNOIPN_MLY_blue_prog_var = TNOIPN_MLY_GUI_state_control_Malacca_var
+				}
+			}
+			GFX_MLY_revolution_GUI_Map_Singapore_click = {
+				TNOIPN_PKM_GUI_clear_state_selected = yes
+				set_country_flag = TNOIPN_revolution_GUI_chosen_Singapore_flag
+				set_variable = {
+					TNOIPN_MLY_blue_prog_var = TNOIPN_MLY_GUI_state_control_Singapore_var
+				}
+			}
+		}
+		triggers = {
+			GFX_MLY_revolution_GUI_Map_W_Blue_visible = {
+				NOT = {
+					has_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
+				}
+			}
+			GFX_MLY_revolution_GUI_Map_E_Blue_visible = {
+				NOT = {
+					has_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
+				}
+			}
+			GFX_MLY_revolution_GUI_Map_W_Red_visible = {
+				has_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
+			}
+			GFX_MLY_revolution_GUI_Map_E_Red_visible = {
+				has_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
+			}
+		}
+		properties = {
+			GFX_MLY_revolution_GUI_Progressbar_Blue = {
+				frame = TNOIPN_MLY_blue_prog_var
+			}
+			GFX_MLY_revolution_GUI_Progressbar_Red = {
+				frame = TNOIPN_MLY_red_prog_var
+			}
+		}
+	}
+	TNOIPN_MLY_PKM_party_GUI = {
+		context_type = decision_category
+		window_name = "TNOIPN_MLY_PKM_party_GUI"
+		visible = {
+			tag = PKM
+		}
+		effects = {
+		}
+		triggers = {
+		}
+		properties = {
+			GFX_MLY_PKM_party_GUI_gensec_portrait = {
+				frame = PKM_gensec_portrait_frame_var
+			}
+			GFX_MLY_PKM_party_GUI_PRM_party_leader = {
+				frame = PRM_leader_portrait_frame_var
+			}
+			GFX_MLY_PKM_party_GUI_PBM_party_leader = {
+				frame = PBM_leader_portrait_frame_var
+			}
+			GFX_MLY_PKM_party_GUI_PKMM_party_leader = {
+				frame = PKMM_leader_portrait_frame_var
+			}
+		}
+	}
+}

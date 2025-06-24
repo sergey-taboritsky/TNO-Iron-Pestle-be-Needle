@@ -1,0 +1,158 @@
+spriteTypes = {
+#MLY revolution
+	spriteType = {
+		name = "GFX_TNO_OpeningScreen_Poster_PKM"
+		texturefile = "gfx/GFX_TNO_OpeningScreen_Poster_PKM.dds"
+	}
+	spriteType = {
+		name = "GFX_PKM_texticon"
+		texturefile = "gfx/interface/MLY_gui/texticon_PKM.png"
+	}
+	spriteType = {
+		name = "GFX_MLY_revolution_GUI_Map_W_Blue"
+		texturefile = "gfx/interface/MLY_gui/GUI_Map_W_Blue.png"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MLY_revolution_GUI_Map_W_Red"
+		texturefile = "gfx/interface/MLY_gui/GUI_Map_W_Red.png"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MLY_revolution_GUI_Map_E_Blue"
+		texturefile = "gfx/interface/MLY_gui/GUI_Map_E_Blue.png"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MLY_revolution_GUI_Map_E_Red"
+		texturefile = "gfx/interface/MLY_gui/GUI_Map_E_Red.png"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MLY_revolution_GUI_Map_KL"
+		texturefile = "gfx/interface/MLY_gui/GUI_Map_KL.png"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MLY_revolution_GUI_Map_Singapore"
+		texturefile = "gfx/interface/MLY_gui/GUI_Map_Singapore.png"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MLY_revolution_GUI_Map_Zemerand"
+		texturefile = "gfx/interface/MLY_gui/GUI_Map_Zemerand.png"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MLY_revolution_GUI_Map_Johor"
+		texturefile = "gfx/interface/MLY_gui/GUI_Map_Johor.png"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MLY_revolution_GUI_Map_Perak"
+		texturefile = "gfx/interface/MLY_gui/GUI_Map_Perak.png"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MLY_revolution_GUI_Map_Ponhong"
+		texturefile = "gfx/interface/MLY_gui/GUI_Map_Ponhong.png"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MLY_revolution_GUI_Map_Malacca"
+		texturefile = "gfx/interface/MLY_gui/GUI_Map_Malacca.png"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MLY_revolution_GUI_Map_Ipoh"
+		texturefile = "gfx/interface/MLY_gui/GUI_Map_Ipoh.png"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MLY_revolution_GUI_Map_Penang"
+		texturefile = "gfx/interface/MLY_gui/GUI_Map_Penang.png"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MLY_revolution_GUI_Progressbar_Container"
+		texturefile = "gfx/interface/MLY_gui/GUI_Progressbar_Empty.png"
+	}
+	progressbartype = {
+		name = "GFX_MLY_revolution_GUI_Progressbar_Red"
+		textureFile1 = "gfx/interface/MLY_gui/GUI_Progressbar_Red.png"
+		textureFile2 = "gfx/interface/arabia/GUI_Progressbar_Blank.png"
+		size = { x = 13 y = 260 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = no
+	}
+	progressbartype = {
+		name = "GFX_MLY_revolution_GUI_Progressbar_Blue"
+		textureFile1 = "gfx/interface/MLY_gui/GUI_Progressbar_Blue.png"
+		textureFile2 = "gfx/interface/arabia/GUI_Progressbar_Blank.png"
+		size = { x = 13 y = 260 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = no
+	}
+#PKM party
+	spriteType = {
+		name = "GFX_MLY_PKM_party_GUI_gensec_portrait_frame"
+		texturefile = "gfx/interface/MLY_gui/PKMparty/GFX_MLY_PKM_party_GUI_gensec_portrait_frame.png"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MLY_PKM_party_GUI_gensec_parties_frame"
+		texturefile = "gfx/interface/MLY_gui/PKMparty/GFX_MLY_PKM_party_GUI_gensec_parties_frame.png"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MLY_PKM_party_GUI_gensec_portrait"
+		texturefile = "gfx/interface/MLY_gui/PKMparty/GFX_MLY_PKM_party_GUI_gensec_portrait.png"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_MLY_PKM_party_GUI_PKM_party_logo"
+		texturefile = "gfx/interface/MLY_gui/PKMparty/GFX_MLY_PKM_party_GUI_PKM_party_logo.png"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_MLY_PKM_party_GUI_politburo_Yeung_Kwo"
+		texturefile = "gfx/interface/MLY_gui/PKMparty/GFX_MLY_PKM_party_GUI_politburo_Yeung_Kwo.png"
+	}
+	spriteType = {
+		name = "GFX_MLY_PKM_party_GUI_politburo_Liu_Yew"
+		texturefile = "gfx/interface/MLY_gui/PKMparty/GFX_MLY_PKM_party_GUI_politburo_Liu_Yew.png"
+	}
+	spriteType = {
+		name = "GFX_MLY_PKM_party_GUI_politburo_Lee_An_Tung"
+		texturefile = "gfx/interface/MLY_gui/PKMparty/GFX_MLY_PKM_party_GUI_politburo_Lee_An_Tung.png"
+	}
+	spriteType = {
+		name = "GFX_MLY_PKM_party_GUI_politburo_Abdullah_CD"
+		texturefile = "gfx/interface/MLY_gui/PKMparty/GFX_MLY_PKM_party_GUI_politburo_Abdullah_CD.png"
+	}
+	spriteType = {
+		name = "GFX_MLY_PKM_party_GUI_PRM_party_logo"
+		texturefile = "gfx/interface/MLY_gui/PKMparty/GFX_MLY_PKM_party_GUI_PRM_party_logo.png"
+	}
+	spriteType = {
+		name = "GFX_MLY_PKM_party_GUI_PRM_party_leader"
+		texturefile = "gfx/interface/MLY_gui/PKMparty/GFX_MLY_PKM_party_GUI_PRM_party_leader.png"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_MLY_PKM_party_GUI_PBM_party_logo"
+		texturefile = "gfx/interface/MLY_gui/PKMparty/GFX_MLY_PKM_party_GUI_PBM_party_logo.png"
+	}
+	spriteType = {
+		name = "GFX_MLY_PKM_party_GUI_PBM_party_leader"
+		texturefile = "gfx/interface/MLY_gui/PKMparty/GFX_MLY_PKM_party_GUI_PBM_party_leader.png"
+	}
+	spriteType = {
+		name = "GFX_MLY_PKM_party_GUI_PKMM_party_logo"
+		texturefile = "gfx/interface/MLY_gui/PKMparty/GFX_MLY_PKM_party_GUI_PKMM_party_logo.png"
+	}
+	spriteType = {
+		name = "GFX_MLY_PKM_party_GUI_PKMM_party_leader"
+		texturefile = "gfx/interface/MLY_gui/PKMparty/GFX_MLY_PKM_party_GUI_PKMM_party_leader.png"
+	}
+}

@@ -1,0 +1,529 @@
+TNOIPN_Malaysian_Revolution_category = {
+	TNOIPN_Thai_Negotiations_Complete_mission = {
+		fire_only_once = yes
+		priority = 100
+		days_mission_timeout = 100
+		allowed = {
+			tag = ATW
+		}
+		activation = {
+			always = no
+		}
+		available = {
+			hidden_trigger = {
+				always = no
+			}
+		}
+		timeout_effect = {
+			complete_national_focus = MLY_guerilla_negotiation_result
+		}
+	}
+	TNOIPN_MLY_revolution_land_reform_Ipoh_decision = {
+		icon = GFX_decision_category_ODF_antarctica_ns
+
+		cost = 15
+		
+		days_remove = 28
+
+		fire_only_once = yes
+		
+		visible = {
+			tag = PKM
+			has_country_flag = TNOIPN_revolution_GUI_chosen_Ipoh_flag
+			NOT = {
+				has_country_flag = TNOIPN_MLY_Ipoh_land_reform_flag
+			}
+		}
+		
+		available = {
+			always = yes
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: TNOIPN_MLY_revolution_land_reform_decision"
+			set_temp_variable = {
+				temp_econ_spending_amount = 0.1
+			}
+			econ_spend_money_once_effect_raw_money = yes
+			custom_effect_tooltip = TNOIPN_MLY_revolution_land_reform_decision_tt
+		}
+		
+		remove_effect = {
+			TNO_improve_agriculture_med = yes
+			TNO_improve_admin_efficiency_low = yes
+			set_temp_variable = {
+				TNOIPN_PKM_legitimacy_temp_var = 2.5
+			}
+			TNOIPN_PKM_legitimacy_change = yes
+			set_temp_variable = {
+				TNOIPN_MLY_GUI_state_control_temp_var = 10
+			}
+			TNOIPN_PKM_Ipoh_local_strength_change = yes
+			set_country_flag = TNOIPN_MLY_Ipoh_land_reform_flag
+		}
+	}
+	TNOIPN_MLY_revolution_land_reform_WestThai_decision = {
+		icon = GFX_decision_category_ODF_antarctica_ns
+
+		cost = 15
+		
+		days_remove = 28
+
+		fire_only_once = yes
+		
+		visible = {
+			tag = PKM
+			has_country_flag = TNOIPN_revolution_GUI_chosen_WestThai_flag
+			NOT = {
+				has_country_flag = TNOIPN_MLY_WestThai_land_reform_flag
+			}
+		}
+		
+		available = {
+			has_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: TNOIPN_MLY_revolution_land_reform_decision"
+			set_temp_variable = {
+				temp_econ_spending_amount = 0.1
+			}
+			econ_spend_money_once_effect_raw_money = yes
+			custom_effect_tooltip = TNOIPN_MLY_revolution_land_reform_decision_tt
+		}
+		
+		remove_effect = {
+			TNO_improve_agriculture_med = yes
+			TNO_improve_admin_efficiency_low = yes
+			set_temp_variable = {
+				TNOIPN_PKM_legitimacy_temp_var = 2.5
+			}
+			TNOIPN_PKM_legitimacy_change = yes
+			set_temp_variable = {
+				TNOIPN_MLY_GUI_state_control_temp_var = 10
+			}
+			TNOIPN_PKM_Ipoh_local_strength_change = yes
+			set_country_flag = TNOIPN_MLY_WestThai_land_reform_flag
+		}
+	}
+	TNOIPN_MLY_revolution_land_reform_EastThai_decision = {
+		icon = GFX_decision_category_ODF_antarctica_ns
+
+		cost = 15
+		
+		days_remove = 28
+
+		fire_only_once = yes
+		
+		visible = {
+			tag = PKM
+			has_country_flag = TNOIPN_revolution_GUI_chosen_EastThai_flag
+			NOT = {
+				has_country_flag = TNOIPN_MLY_EastThai_land_reform_flag
+			}
+		}
+		
+		available = {
+			has_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: TNOIPN_MLY_revolution_land_reform_decision"
+			set_temp_variable = {
+				temp_econ_spending_amount = 0.1
+			}
+			econ_spend_money_once_effect_raw_money = yes
+			custom_effect_tooltip = TNOIPN_MLY_revolution_land_reform_decision_tt
+		}
+		
+		remove_effect = {
+			TNO_improve_agriculture_med = yes
+			TNO_improve_admin_efficiency_low = yes
+			set_temp_variable = {
+				TNOIPN_PKM_legitimacy_temp_var = 2.5
+			}
+			TNOIPN_PKM_legitimacy_change = yes
+			set_temp_variable = {
+				TNOIPN_MLY_GUI_state_control_temp_var = 10
+			}
+			TNOIPN_PKM_Ipoh_local_strength_change = yes
+			set_country_flag = TNOIPN_MLY_EastThai_land_reform_flag
+		}
+	}
+	TNOIPN_MLY_revolution_worker_training_Ipoh_decision = {
+		icon = GFX_decision_category_ODF_antarctica_ns
+
+		cost = 25
+		
+		days_remove = 42
+		
+		visible = {
+			tag = PKM
+			has_country_flag = TNOIPN_revolution_GUI_chosen_Ipoh_flag
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TNOIPN_MLY_state_land_reform_tt
+				has_country_flag = TNOIPN_revolution_GUI_chosen_Ipoh_flag
+				has_country_flag = TNOIPN_MLY_Ipoh_land_reform_flag
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: TNOIPN_MLY_revolution_land_reform_decision"
+			set_temp_variable = {
+				temp_econ_spending_amount = 0.15
+			}
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		
+		modifier = {
+			inflation_rate_modifier = 0.05
+			political_power_factor = -0.05
+			industrial_equipment_monthly_rate = -0.02
+			industrial_expertise_monthly_rate = 0.2
+		}
+
+		remove_effect = {
+			TNO_improve_academic_base_low = yes
+			TNO_improve_industrial_expertise_med = yes
+			set_temp_variable = {
+				gdp_growth_temp = 0.15
+			}
+			econ_gdp_growth_change = yes
+		}
+	}
+	TNOIPN_MLY_revolution_worker_training_WestThai_decision = {
+		icon = GFX_decision_category_ODF_antarctica_ns
+
+		cost = 25
+		
+		days_remove = 42
+		
+		visible = {
+			tag = PKM
+			has_country_flag = TNOIPN_revolution_GUI_chosen_WestThai_flag
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TNOIPN_MLY_state_land_reform_tt
+				has_country_flag = TNOIPN_revolution_GUI_chosen_WestThai_flag
+				has_country_flag = TNOIPN_MLY_WestThai_land_reform_flag
+			}
+			has_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: TNOIPN_MLY_revolution_land_reform_decision"
+			set_temp_variable = {
+				temp_econ_spending_amount = 0.15
+			}
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		
+		modifier = {
+			inflation_rate_modifier = 0.05
+			political_power_factor = -0.05
+			industrial_equipment_monthly_rate = -0.02
+			industrial_expertise_monthly_rate = 0.2
+		}
+
+		remove_effect = {
+			TNO_improve_academic_base_low = yes
+			TNO_improve_industrial_expertise_med = yes
+			set_temp_variable = {
+				gdp_growth_temp = 0.15
+			}
+			econ_gdp_growth_change = yes
+		}
+	}
+	TNOIPN_MLY_revolution_worker_training_EastThai_decision = {
+		icon = GFX_decision_category_ODF_antarctica_ns
+
+		cost = 25
+		
+		days_remove = 42
+		
+		visible = {
+			tag = PKM
+			has_country_flag = TNOIPN_revolution_GUI_chosen_EastThai_flag
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TNOIPN_MLY_state_land_reform_tt
+				has_country_flag = TNOIPN_revolution_GUI_chosen_EastThai_flag
+				has_country_flag = TNOIPN_MLY_EastThai_land_reform_flag
+			}
+			has_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: TNOIPN_MLY_revolution_land_reform_decision"
+			set_temp_variable = {
+				temp_econ_spending_amount = 0.15
+			}
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		
+		modifier = {
+			inflation_rate_modifier = 0.05
+			political_power_factor = -0.05
+			industrial_equipment_monthly_rate = -0.02
+			industrial_expertise_monthly_rate = 0.2
+		}
+
+		remove_effect = {
+			TNO_improve_academic_base_low = yes
+			TNO_improve_industrial_expertise_med = yes
+			set_temp_variable = {
+				gdp_growth_temp = 0.15
+			}
+			econ_gdp_growth_change = yes
+		}
+	}
+	TNOIPN_MLY_revolution_extend_party_Ipoh_decision = {
+		icon = GFX_decision_category_ODF_antarctica_ns
+
+		cost = 10
+		
+		days_remove = 15
+		
+		visible = {
+			tag = PKM
+			has_country_flag = TNOIPN_revolution_GUI_chosen_Ipoh_flag
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TNOIPN_MLY_state_land_reform_tt
+				has_country_flag = TNOIPN_revolution_GUI_chosen_Ipoh_flag
+				has_country_flag = TNOIPN_MLY_Ipoh_land_reform_flag
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: TNOIPN_MLY_revolution_land_reform_decision"
+			set_temp_variable = {
+				temp_econ_spending_amount = 0.15
+			}
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		
+		modifier = {
+			inflation_rate_modifier = 0.05
+			political_power_factor = -0.05
+			industrial_equipment_monthly_rate = -0.02
+			industrial_expertise_monthly_rate = 0.2
+		}
+
+		remove_effect = {
+			TNO_improve_academic_base_low = yes
+			TNO_improve_industrial_expertise_med = yes
+			set_temp_variable = {
+				gdp_growth_temp = 0.15
+			}
+			econ_gdp_growth_change = yes
+			set_temp_variable = {
+				TNOIPN_PKM_unity_temp_var = 4
+			}
+			TNOIPN_PKM_unity_change = yes
+			set_temp_variable = {
+				TNOIPN_MLY_GUI_state_control_temp_var = 4
+			}
+			TNOIPN_PKM_Ipoh_local_strength_change = yes
+		}
+	}
+	TNOIPN_MLY_revolution_extend_party_WestThai_decision = {
+		icon = GFX_decision_category_ODF_antarctica_ns
+
+		cost = 10
+		
+		days_remove = 15
+		
+		visible = {
+			tag = PKM
+			has_country_flag = TNOIPN_revolution_GUI_chosen_WestThai_flag
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TNOIPN_MLY_state_land_reform_tt
+				has_country_flag = TNOIPN_revolution_GUI_chosen_WestThai_flag
+				has_country_flag = TNOIPN_MLY_WestThai_land_reform_flag
+			}
+			has_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: TNOIPN_MLY_revolution_land_reform_decision"
+			set_temp_variable = {
+				temp_econ_spending_amount = 0.15
+			}
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		
+		modifier = {
+			inflation_rate_modifier = 0.05
+			political_power_factor = -0.05
+			industrial_equipment_monthly_rate = -0.02
+			industrial_expertise_monthly_rate = 0.2
+		}
+
+		remove_effect = {
+			TNO_improve_academic_base_low = yes
+			TNO_improve_industrial_expertise_med = yes
+			set_temp_variable = {
+				gdp_growth_temp = 0.15
+			}
+			econ_gdp_growth_change = yes
+			set_temp_variable = {
+				TNOIPN_PKM_unity_temp_var = 3
+			}
+			TNOIPN_PKM_unity_change = yes
+			set_temp_variable = {
+				TNOIPN_MLY_GUI_state_control_temp_var = 3
+			}
+			TNOIPN_PKM_Ipoh_local_strength_change = yes
+		}
+	}
+	TNOIPN_MLY_revolution_extend_party_EastThai_decision = {
+		icon = GFX_decision_category_ODF_antarctica_ns
+
+		cost = 10
+		
+		days_remove = 15
+		
+		visible = {
+			tag = PKM
+			has_country_flag = TNOIPN_revolution_GUI_chosen_EastThai_flag
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TNOIPN_MLY_state_land_reform_tt
+				has_country_flag = TNOIPN_revolution_GUI_chosen_EastThai_flag
+				has_country_flag = TNOIPN_MLY_EastThai_land_reform_flag
+			}
+			has_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: TNOIPN_MLY_revolution_land_reform_decision"
+			set_temp_variable = {
+				temp_econ_spending_amount = 0.15
+			}
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		
+		modifier = {
+			inflation_rate_modifier = 0.05
+			political_power_factor = -0.05
+			industrial_equipment_monthly_rate = -0.02
+			industrial_expertise_monthly_rate = 0.2
+		}
+
+		remove_effect = {
+			TNO_improve_academic_base_low = yes
+			TNO_improve_industrial_expertise_med = yes
+			set_temp_variable = {
+				gdp_growth_temp = 0.15
+			}
+			econ_gdp_growth_change = yes
+			set_temp_variable = {
+				TNOIPN_PKM_unity_temp_var = 3
+			}
+			TNOIPN_PKM_unity_change = yes
+			set_temp_variable = {
+				TNOIPN_MLY_GUI_state_control_temp_var = 3
+			}
+			TNOIPN_PKM_Ipoh_local_strength_change = yes
+		}
+	}
+	TNOIPN_MLY_revolution_university_expansion_decision = {
+		icon = GFX_decision_category_ODF_antarctica_ns
+
+		cost = 35
+		
+		days_remove = 60
+
+		fire_only_once = yes
+		
+		visible = {
+			tag = PKM
+			has_completed_focus = MLY_guerilla_ipoh_university
+			has_country_flag = TNOIPN_revolution_GUI_chosen_Ipoh_flag
+		}
+		
+		available = {
+			always = yes
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: TNOIPN_MLY_revolution_land_reform_decision"
+			set_temp_variable = {
+				temp_econ_spending_amount = 0.35
+			}
+			econ_spend_money_once_effect_raw_money = yes
+			set_temp_variable = {
+				TNOIPN_PKM_unity_temp_var = -2.5
+			}
+			TNOIPN_PKM_unity_change = yes
+		}
+		
+		modifier = {
+		}
+
+		remove_effect = {
+			TNO_improve_academic_base_high = yes
+			TNO_improve_admin_efficiency_med = yes
+			set_temp_variable = {
+				TNOIPN_PKM_legitimacy_temp_var = 10
+			}
+			TNOIPN_PKM_legitimacy_change = yes
+			add_research_slot = 1
+		}
+	}
+}

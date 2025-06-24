@@ -1,0 +1,21 @@
+spriteTypes = {
+	### PKM ###
+	### NKLF ###
+	### Xinjiang ###
+    spriteType = {
+        name = "GFX_idea_TNOIPN_XIN_enemies_encirclement"
+		texturefile = "gfx/interface/ideas/national_spirits/TNOIPN_XIN_enemies_encirclement.dds"
+    }
+    spriteType = {
+        name = "GFX_idea_TNOIPN_XIN_soviet_government"
+		texturefile = "gfx/interface/ideas/national_spirits/TNOIPN_XIN_soviet_government.dds"
+    }
+    spriteType = {
+        name = "GFX_idea_TNOIPN_XIN_delicate_national_balance"
+		texturefile = "gfx/interface/ideas/national_spirits/TNOIPN_XIN_delicate_national_balance.dds"
+    }
+    spriteType = {
+        name = "GFX_idea_TNOIPN_XIN_legacy_of_42_revolution"
+		texturefile = "gfx/interface/ideas/national_spirits/TNOIPN_XIN_legacy_of_42_revolution.dds"
+    }
+}

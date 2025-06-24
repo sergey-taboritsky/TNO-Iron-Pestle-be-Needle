@@ -1,0 +1,109 @@
+defined_text = {
+	name = Get_IPNMLY_state_name
+	text = {
+		trigger = { has_country_flag = TNOIPN_revolution_GUI_chosen_Ipoh_flag }
+		localization_key = "TNOIPN_revolution_GUI_chosen_Ipoh_tt"
+	}
+	text = {
+		trigger = { has_country_flag = TNOIPN_revolution_GUI_chosen_EastThai_flag }
+		localization_key = "TNOIPN_revolution_GUI_chosen_EastThai_tt"
+	}
+	text = {
+		trigger = { has_country_flag = TNOIPN_revolution_GUI_chosen_WestThai_flag }
+		localization_key = "TNOIPN_revolution_GUI_chosen_WestThai_tt"
+	}
+	text = {
+		trigger = { has_country_flag = TNOIPN_revolution_GUI_chosen_Penang_flag }
+		localization_key = "TNOIPN_revolution_GUI_chosen_Penang_tt"
+	}
+	text = {
+		trigger = { has_country_flag = TNOIPN_revolution_GUI_chosen_Ponhong_flag }
+		localization_key = "TNOIPN_revolution_GUI_chosen_Ponhong_tt"
+	}
+	text = {
+		trigger = { has_country_flag = TNOIPN_revolution_GUI_chosen_Perak_flag }
+		localization_key = "TNOIPN_revolution_GUI_chosen_Perak_tt"
+	}
+	text = {
+		trigger = { has_country_flag = TNOIPN_revolution_GUI_chosen_Johor_flag }
+		localization_key = "TNOIPN_revolution_GUI_chosen_Johor_tt"
+	}
+	text = {
+		trigger = { has_country_flag = TNOIPN_revolution_GUI_chosen_Malacca_flag }
+		localization_key = "TNOIPN_revolution_GUI_chosen_Malacca_tt"
+	}
+	text = {
+		trigger = { has_country_flag = TNOIPN_revolution_GUI_chosen_Zemerand_flag }
+		localization_key = "TNOIPN_revolution_GUI_chosen_Zemerand_tt"
+	}
+	text = {
+		trigger = { has_country_flag = TNOIPN_revolution_GUI_chosen_KL_flag }
+		localization_key = "TNOIPN_revolution_GUI_chosen_KL_tt"
+	}
+	text = {
+		trigger = { has_country_flag = TNOIPN_revolution_GUI_chosen_Singapore_flag }
+		localization_key = "TNOIPN_revolution_GUI_chosen_Singapore_tt"
+	}
+
+	## Default
+	text = {
+		localization_key = TNOIPN_revolution_GUI_chosen_Nothing_tt
+	}
+}
+
+defined_text = {
+	name = Get_IPNMLY_state_info
+	
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = TNOIPN_revolution_GUI_chosen_Ipoh_flag
+				AND = {	
+					OR = {
+						has_country_flag = TNOIPN_revolution_GUI_chosen_EastThai_flag
+						has_country_flag = TNOIPN_revolution_GUI_chosen_WestThai_flag
+					}
+					has_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
+				}
+			}
+		}
+		localization_key = "TNOIPN_revolution_GUI_info_base_tt"
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = TNOIPN_revolution_GUI_chosen_EastThai_flag
+				has_country_flag = TNOIPN_revolution_GUI_chosen_WestThai_flag
+			}
+			NOT = {
+				has_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
+			}
+		}
+		localization_key = "TNOIPN_revolution_GUI_info_Thai_tt"
+	}
+	text = {
+		trigger = {
+			has_country_flag = TNOIPN_revolution_GUI_chosen_Singapore_flag
+		}
+		localization_key = "TNOIPN_revolution_GUI_info_enemy_tt"
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = TNOIPN_revolution_GUI_chosen_Penang_flag
+				has_country_flag = TNOIPN_revolution_GUI_chosen_Perak_flag
+				has_country_flag = TNOIPN_revolution_GUI_chosen_Ponhong_flag
+				has_country_flag = TNOIPN_revolution_GUI_chosen_Johor_flag
+				has_country_flag = TNOIPN_revolution_GUI_chosen_Malacca_flag
+				has_country_flag = TNOIPN_revolution_GUI_chosen_Zemerand_flag
+				has_country_flag = TNOIPN_revolution_GUI_chosen_KL_flag
+			}
+		}
+		localization_key = "TNOIPN_revolution_GUI_info_occupied_tt"
+	}
+
+	## Default
+	text = {
+		localization_key = "TNOIPN_revolution_GUI_info_Blank_tt"
+	}
+}

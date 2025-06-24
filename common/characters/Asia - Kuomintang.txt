@@ -1,0 +1,406 @@
+characters = {
+	###############
+	### Nanjing ###
+	###############
+#Leaders
+	KMT_Zhou_Fohai = {
+		name = KMT_Zhou_Fohai
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Zhou_Fohai.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_ZHOU_FOHAI_DESC"
+			ideology = despotism_wang_jingwei_thought_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	KMT_Luo_Junqiang = {
+		name = KMT_Luo_Junqiang
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Luo_Junqiang.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_LUO_JUNQIANG_DESC"
+			ideology = despotism_wang_jingwei_thought_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	KMT_Mei_Siping = {
+		name = KMT_Mei_Siping
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Mei_Siping.png" }
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = KMT_Mei_Siping_hog
+			allowed = { original_tag = CHI }
+			traits = {
+				head_of_government
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	KMT_Yang_Xinghua = {
+		name = KMT_Yang_Xinghua
+		portraits = {
+			civilian = { large = "" }
+		}
+		advisor = {
+			slot = economy_minister
+			idea_token = KMT_Yang_Xinghua_eco
+			allowed = { original_tag = CHI }
+			traits = {
+				economy_minister
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	KMT_Gao_Zongwu = {
+		name = KMT_Gao_Zongwu
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/KMT/Portrait_KMT_Gao_Zongwu.png"
+				small = "GFX_idea_KMT_Gao_Zongwu"
+			}
+		}
+		advisor = {
+			slot = foreign_minister
+			idea_token = KMT_Gao_Zongwu_for
+			allowed = { original_tag = CHI }
+			traits = {
+				foreign_minister
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	KMT_Ding_Mocun = {
+		name = KMT_Ding_Mocun
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/KMT/Portrait_KMT_Ding_Mocun.png"
+				small = "GFX_idea_KMT_Ding_Mocun"
+			}
+		}
+		advisor = {
+			slot = security_minister
+			idea_token = KMT_Ding_Mocun_sec
+			allowed = { original_tag = CHI }
+			traits = {
+				security_minister
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	KMT_Ren_Yuandao = {
+		name = KMT_Ren_Yuandao
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/KMT/Portrait_KMT_Ren_Yuandao.png"
+				small = "GFX_idea_KMT_Ren_Yuandao"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = KMT_Ren_Yuandao_army_chief
+			allowed = { original_tag = CHI }
+			ledger = army
+			traits = {
+				army_chief
+				army_chief_old_guard
+				army_chief_drill_2
+			}
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	KMT_Lin_Bosheng = {
+		name = KMT_Lin_Bosheng
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Lin_Bosheng.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_LIN_BOSHENG_DESC"
+			ideology = despotism_wang_jingwei_thought_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	KMT_Chen_Gongbo = {
+		name = KMT_Chen_Gongbo
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Chen_Gongbo.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_CHEN_GONGBO_DESC"
+			ideology = despotism_1_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	KMT_Chu_Minyi = {
+		name = KMT_Chu_Minyi
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Chu_Minyi.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_CHU_MINYI_DESC"
+			ideology = despotism_2_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	KMT_Wang_Yintai = {
+		name = KMT_Wang_Yintai
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Wang_Yintai.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_WANG_YINTAI_DESC"
+			ideology = fascism_corporate_statism_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	KMT_Zuo_Shunsheng = {
+		name = KMT_Zuo_Shunsheng
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Zuo_Shunsheng.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_ZUO_SHUNSHENG_DESC"
+			ideology = liberal_conservatism_oligarchic_liberalism_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	KMT_Wen_Yiduo = {
+		name = KMT_Wen_Yiduo
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Wen_Yiduo.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_WEN_YIDUO_DESC"
+			ideology = liberalism_national_liberal_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	KMT_Pan_Hannian = {
+		name = KMT_Pan_Hannian
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Pan_Hannian.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_PAN_HANNIAN_DESC"
+			ideology = communist_mao_zedong_thought_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	KMT_Zhou_Youhai = {
+		name = KMT_Zhou_Youhai
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Zhou_Youhai.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_ZHOU_YOUHAI_DESC"
+			ideology = communist_mao_zedong_thought_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	###############
+	### Xichang ###
+	###############
+#Leaders
+	KMT_Chen_Cheng = {
+		name = KMT_Chen_Cheng
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Chen_Cheng.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_CHEN_CHENG_DESC"
+			ideology = despotism_chiang_kai_shek_thought_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+#Ministers
+	KMT_Guo_Rugui = {
+		name = KMT_Guo_Rugui
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/KMT/Portrait_KMT_Guo_Rugui.png"
+				small = "GFX_idea_KMT_Guo_Rugui"
+			}
+		}
+		advisor = {
+			slot = security_minister
+			idea_token = KMT_Guo_Rugui_sec
+			allowed = { original_tag = XIK }
+			traits = {
+				security_minister
+				sec_resistance_hero
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	###############
+	### Guangxi ###
+	###############
+#Leaders
+	KMT_Huang_Xuchu = {
+		name = KMT_Huang_Xuchu
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Huang_Xuchu.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_HUANG_XUCHU_DESC"
+			ideology = despotism_warlordism_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	KMT_Zhang_Fakui = {
+		name = KMT_Zhang_Fakui
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Zhang_Fakui.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_ZHANG_FAKUI_DESC"
+			ideology = paternalism_transitioning_democracy_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	KMT_Chu_Anping = {
+		name = KMT_Chu_Anping
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Chu_Anping.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_CHU_ANPING_DESC"
+			ideology = liberal_conservatism_big_tent_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	###############
+	### Sichuan ###
+	###############
+#Leaders
+	KMT_Deng_Xihou = {
+		name = KMT_Deng_Xihou
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Deng_Xihou.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_DENG_XIHOU_DESC"
+			ideology = despotism_warlordism_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	KMT_Li_Huang = {
+		name = KMT_Li_Huang
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Li_Huang.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_LI_HUANG_DESC"
+			ideology = liberal_conservatism_big_tent_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	###############
+	### Sichuan ###
+	###############
+#Leaders
+	KMT_Deng_Xihou = {
+		name = KMT_Deng_Xihou
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Deng_Xihou.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_DENG_XIHOU_DESC"
+			ideology = despotism_warlordism_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	KMT_Li_Huang = {
+		name = KMT_Li_Huang
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Li_Huang.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_LI_HUANG_DESC"
+			ideology = liberal_conservatism_big_tent_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	##############
+	### Yunnan ###
+	##############
+#Leaders
+	KMT_Luo_Longji = {
+		name = KMT_Luo_Longji
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Luo_Longji.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_LUO_LONGJI_DESC"
+			ideology = liberalism_national_liberal_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	#############
+	### Gansu ###
+	#############
+#Leaders
+	KMT_Zheng_Dazhang = {
+		name = KMT_Zheng_Dazhang
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Zheng_Dazhang.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_ZHENG_DAZHANG_DESC"
+			ideology = despotism_wang_jingwei_thought_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	KMT_Fan_Hanjie = {
+		name = KMT_Fan_Hanjie
+		portraits = {
+			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Fan_Hanjie.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_FAN_HANJIE_DESC"
+			ideology = despotism_chiang_kai_shek_thought_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+}

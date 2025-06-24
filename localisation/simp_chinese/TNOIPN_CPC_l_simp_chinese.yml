@@ -1,0 +1,49 @@
+﻿l_simp_chinese:
+## Countries ##
+ CPC: "苏维埃民主政府"
+ CPC_DEF: "中华苏维埃共和国临时民主政府"
+ CPC_ADJ: "中国共产党"
+## States and VPs ##
+## Cosmetic Tags ##
+ CPC_party_reunified: "西北抗日边区"
+ CPC_party_reunified_DEF: "西北抗日边区"
+ CPC_PRC: "中华人民共和国"
+ CPC_PRC_DEF: "中华人民共和国"
+ CPC_PRC_ADJ: "中国"
+## Characters ##
+ CPC_Gao_Gang: "高岗"
+ XIN_Chen_Tanqiu: "陈潭秋"
+ XIN_Mao_Zemin: "毛泽民"
+ XIN_Mao_Zemin_hog: "毛泽民"
+ XIN_Lin_Jilu: "林基路"
+ XIN_Lin_Jilu_eco: "林基路"
+ XIN_Lai_Zulie: "赖祖烈"
+ XIN_Lai_Zulie_for: "赖祖烈"
+ XIN_Hu_Jian: "胡鉴"
+ XIN_Hu_Jian_sec: "胡鉴"
+ XIN_Tian_Dexiu: "田德修"
+ XIN_Tian_Dexiu_army_chief: "田德修"
+ XIN_Ehmetjan_Qasimi: "阿合买提江·哈斯木"
+## Parties ##
+ #initial
+ CPC_communist_party: "中国共产党"
+ CPC_communist_party_long: "中国共产党"
+ CPC_communist_1_party: "中国共产党 - 西北局"
+ CPC_communist_1_party_long: "中国共产党 - 西北局"
+ CPC_socialist_party: "统一战线"
+ CPC_socialist_party_long: "中国民主革命统一战线"
+## Ideas ##
+ TNOIPN_XIN_enemies_encirclement: "强敌环伺"
+ TNOIPN_XIN_enemies_encirclement_desc: ""
+ TNOIPN_XIN_soviet_government: "苏维埃政府"
+ TNOIPN_XIN_soviet_government_desc: ""
+ TNOIPN_XIN_delicate_national_balance: "民族平衡"
+ TNOIPN_XIN_delicate_national_balance_desc: ""
+ TNOIPN_XIN_legacy_of_42_revolution: "1942年革命孑遗"
+ TNOIPN_XIN_legacy_of_42_revolution_desc: ""
+## Dynamic Modifiers ##
+## National Focus ##
+## Events ##
+## Decisions ##
+## GUI ##
+## Flags ##

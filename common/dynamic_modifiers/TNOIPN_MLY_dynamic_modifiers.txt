@@ -1,0 +1,24 @@
+#Dynamic Modifiers
+##################################################
+#             Liberation War Dynamic             #
+##################################################
+# MLY
+TNOIPN_liberation_MLY_dynamic_modifier = {
+	enable = { always = yes }
+	icon = ""
+
+	political_power_factor = IPN_MLY_lib_pp_var
+	army_attack_factor = IPN_MLY_lib_atk_var
+	army_defence_factor = IPN_MLY_lib_dfs_var
+	breakthrough_factor = IPN_MLY_lib_bkt_var
+}
+# SHO
+TNOIPN_liberation_SHO_dynamic_modifier = {
+	enable = { always = yes }
+	icon = ""
+
+	political_power_factor = IPN_SHO_lib_pp_var
+	army_attack_factor = IPN_SHO_lib_atk_var
+	army_defence_factor = IPN_SHO_lib_dfs_var
+	breakthrough_factor = IPN_SHO_lib_bkt_var
+}

@@ -1,0 +1,113 @@
+characters = {
+	##############
+	### Mongol ###
+	##############
+	MON_Wu_Heling = {
+		name = MON_Wu_Heling
+		portraits = {
+			civilian = { large = "gfx/leaders/MON/MON_Wu_Heling.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_WU_HELING_DESC"
+			ideology = despotism_aristocratic_conservatism_subtype
+			traits = { spirit_of_genghis }
+			expire = "1999.1.1.1"
+			id = -1
+		}
+	}
+	MON_Li_Shouxin = {
+		name = MON_Li_Shouxin
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/MEN/MON_Li_Shouxin.png"
+				small = "GFX_idea_MON_Li_Shouxin"
+			}
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = MON_Li_Shouxin_hog
+			allowed = { original_tag = MEN }
+			traits = {
+				head_of_government
+				hog_old_general
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	MON_Wu_Guting = {
+		name = MON_Wu_Guting
+		portraits = {
+			civilian = { small = "GFX_idea_MON_Wu_Guting" }
+		}
+		advisor = {
+			slot = foreign_minister
+			idea_token = MON_Wu_Guting_for
+			allowed = { original_tag = MEN }
+			traits = {
+				foreign_minister
+				for_the_cloak_n_dagger_schemer
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	MON_Degulai = {
+		name = MON_Degulai
+		portraits = {
+			civilian = { small = "GFX_idea_MON_Degulai" }
+		}
+		advisor = {
+			slot = economy_minister
+			idea_token = MON_Degulai_eco
+			allowed = { original_tag = MEN }
+			traits = {
+				economy_minister
+				eco_reformer
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	MON_Tao_Ketao = {
+		name = MON_Tao_Ketao
+		portraits = {
+			civilian = { small = "GFX_idea_MON_Tao_Ketao" }
+		}
+		advisor = {
+			slot = security_minister
+			idea_token = MON_Tao_Ketao_sec
+			allowed = { original_tag = MEN }
+			traits = {
+				security_minister
+				sec_resistance_hero
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	#############
+	### Tibet ###
+	#############
+	TIB_Qoigyi_Gyaltsen = {
+		name = TIB_Qoigyi_Gyaltsen
+		portraits = {
+			civilian = { large = "gfx/leaders/TIB/TIB_Qoigyi_Gyaltsen.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_QOIGYI_GYALTSEN_DESC"
+			ideology = despotism_theocracy_subtype
+			traits = { }
+			expire = "1999.1.1.1"
+			id = -1
+		}
+	}
+}

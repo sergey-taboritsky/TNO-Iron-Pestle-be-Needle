@@ -1,0 +1,21 @@
+TNOIPN_Malaysian_Revolution_category = {
+	icon = GFX_decision_category_EGY_ASU
+	scripted_gui = TNOIPN_MLY_revolution_GUI
+	visible = {
+		tag = PKM
+		NOT = {
+			has_country_flag = TNOIPN_NLY_liberated_flag
+		}
+		has_country_flag = TNOIPN_MLY_initial_passed_flag
+	}
+	visible_when_empty = yes
+}
+TNOIPN_MLY_PKM_party_category = {
+	icon = GFX_decision_category_EGY_ASU
+	scripted_gui = TNOIPN_MLY_PKM_party_GUI
+	visible = {
+		tag = PKM
+		has_country_flag = TNOIPN_MLY_PKM_in_control_flag
+	}
+	visible_when_empty = yes
+}

@@ -1,0 +1,992 @@
+#!gfx:interface\TNOIPN_goals.gfx
+focus_tree = {
+    id = MLY_start
+    country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = PKM
+		}
+	}
+	default = no
+
+    focus = {
+		id = MLY_start_break_out
+		icon = GFX_focus_MLY_start_break_out
+		cost = 1
+		x = 8
+		y = 0
+		completion_reward = {
+			country_event = { id = TNOIPN_MLY.1 }
+			add_timed_idea = {
+				idea = IPN_MLY_start_break_out_idea
+				days = 150
+			}
+		}
+	}
+    focus = {
+		id = MLY_start_count_ammo
+		icon = GFX_focus_MLY_start_count_ammo
+		cost = 1
+		x = 7
+		y = 1
+		prerequisite = {
+			focus = MLY_start_break_out
+		}
+		mutually_exclusive = {
+			focus = MLY_start_care_foodstuff
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 250
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 50
+			}
+		}
+	}
+	focus = {
+		id = MLY_start_care_foodstuff
+		icon = GFX_focus_MLY_start_care_foodstuff
+		cost = 1
+		x = 9
+		y = 1
+		prerequisite = {
+			focus = MLY_start_break_out
+		}
+		mutually_exclusive = {
+			focus = MLY_start_count_ammo
+		}
+		completion_reward = {
+			add_manpower = 1145
+			set_temp_variable = { temp_econ_GDP_boost_flat = 0.02 }
+			econ_GDP_boost_once_flat = yes
+		}
+	}
+	focus = {
+		id = MLY_start_evade_hunters
+		icon = GFX_focus_MLY_start_evade_hunters
+		cost = 1
+		x = 8
+		y = 2
+		prerequisite = {
+			focus = MLY_start_count_ammo
+			focus = MLY_start_care_foodstuff
+		}
+		completion_reward = {
+			country_event = { id = TNOIPN_MLY.2 }
+			white_peace = SHO
+			hidden_effect = {
+				PKM = {
+					news_event = TNOIPN_MLY_worldnews.1
+				}
+				SHO = {
+					news_event = TNOIPN_MLY_worldnews.1
+				}
+			}
+		}
+	}
+	focus = {
+		id = MLY_start_its_over
+		icon = GFX_focus_MLY_start_its_over
+		cost = 1
+		x = 8
+		y = 3
+		prerequisite = {
+			focus = MLY_start_evade_hunters
+		}
+		completion_reward = {
+			load_focus_tree = MLY_next_phase
+			SHO = {
+				white_peace = MCN
+				annex_country = {
+					target = MCN
+				}
+			}
+			set_country_flag = TNOIPN_MLY_initial_passed_flag
+			unlock_decision_category_tooltip = TNOIPN_Malaysian_Revolution_category
+		}
+	}
+}
+focus_tree = {
+    id = MLY_next_phase
+    country = {
+		factor = 0
+		modifier = {
+			add = 1
+			tag = PKM
+		}
+	}
+	default = no
+
+    focus = {
+		id = MLY_guerilla_reorganize_troops
+		icon = GFX_focus_MLY_guerilla_reorganize_troops
+		cost = 1
+		x = 8
+		y = 0
+		allow_branch = {
+			NOT = {
+				has_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
+			}
+		}
+		completion_reward = {
+			country_event = { id = TNOIPN_MLY.3 }
+		}
+	}
+    focus = {
+		id = MLY_guerilla_ipoh_conference
+		icon = GFX_focus_MLY_guerilla_ipoh_conference
+		cost = 1
+		x = 8
+		y = 1
+		prerequisite = {
+			focus = MLY_guerilla_reorganize_troops
+		}
+		completion_reward = {
+			country_event = { id = TNOIPN_MLY.4 }
+			unlock_decision_category_tooltip = TNOIPN_MLY_PKM_party_category
+			set_country_flag = TNOIPN_MLY_PKM_in_control_flag
+		}
+	}
+    focus = {
+		id = MLY_guerilla_solve_crisis
+		icon = GFX_focus_MLY_guerilla_solve_crisis
+		cost = 3
+		x = 8
+		y = 2
+		prerequisite = {
+			focus = MLY_guerilla_ipoh_conference
+		}
+		completion_reward = {
+			country_event = { id = TNOIPN_MLY.5 }
+			set_variable = {
+				TNOIPN_MLY_PKM_Thai_negotiation_var = 0
+			}
+		}
+	}
+    focus = {
+		id = MLY_guerilla_population_exchange
+		icon = GFX_focus_MLY_guerilla_population_exchange
+		cost = 2
+		x = 5
+		y = 3
+		prerequisite = {
+			focus = MLY_guerilla_solve_crisis
+		}
+		mutually_exclusive = {
+			focus = MLY_guerilla_deradicalisation_campaigns
+		}
+		completion_reward = {
+			set_temp_variable = {
+				TNOIPN_PKM_unity_temp_var = -5
+			}
+			TNOIPN_PKM_unity_change = yes
+			add_stability = -0.05
+			TNO_improve_penal_system_policy_effectiveness_med = yes
+			TNO_improve_training_policy_effectiveness_low = yes
+			add_to_variable = {
+				TNOIPN_MLY_PKM_Thai_negotiation_var = 30
+			}
+		}
+	}
+    focus = {
+		id = MLY_guerilla_deradicalisation_campaigns
+		icon = GFX_focus_MLY_guerilla_deradicalisation_campaigns
+		cost = 2
+		x = 7
+		y = 3
+		prerequisite = {
+			focus = MLY_guerilla_solve_crisis
+		}
+		mutually_exclusive = {
+			focus = MLY_guerilla_population_exchange
+		}
+		completion_reward = {
+			add_manpower = -25
+			add_command_power = -20
+			TNO_improve_training_policy_effectiveness_high = yes
+			TNO_improve_army_professionalism_low = yes
+			add_to_variable = {
+				TNOIPN_MLY_PKM_Thai_negotiation_var = 10
+			}
+		}
+	}
+    focus = {
+		id = MLY_guerilla_firearms_deal
+		icon = GFX_focus_MLY_guerilla_firearms_deal
+		cost = 5
+		x = 6
+		y = 4
+		prerequisite = {
+			focus = MLY_guerilla_population_exchange
+			focus = MLY_guerilla_deradicalisation_campaigns
+		}
+		completion_reward = {
+			set_temp_variable = {
+				temp_econ_spending_amount = 0.05
+			}
+			econ_spend_money_once_effect_raw_money = yes
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				producer = SIA
+				amount = 1500
+			}
+			add_to_variable = {
+				TNOIPN_MLY_PKM_Thai_negotiation_var = 30
+			}
+		}
+	}
+    focus = {
+		id = MLY_guerilla_promise_concessions
+		icon = GFX_focus_MLY_guerilla_promise_concessions
+		cost = 2
+		x = 9
+		y = 3
+		prerequisite = {
+			focus = MLY_guerilla_solve_crisis
+		}
+		mutually_exclusive = {
+			focus = MLY_guerilla_joint_excavation
+		}
+		completion_reward = {
+			set_temp_variable = {
+				TNOIPN_PKM_legitimacy_temp_var = -5
+			}
+			TNOIPN_PKM_legitimacy_change = yes
+			add_political_power = -15
+			TNO_improve_industrial_equipment_low = yes
+			TNO_improve_admin_efficiency_really_low = yes
+			add_to_variable = {
+				TNOIPN_MLY_PKM_Thai_negotiation_var = 30
+			}
+		}
+	}
+    focus = {
+		id = MLY_guerilla_joint_excavation
+		icon = GFX_focus_MLY_guerilla_joint_excavation
+		cost = 2
+		x = 11
+		y = 3
+		prerequisite = {
+			focus = MLY_guerilla_solve_crisis
+		}
+		mutually_exclusive = {
+			focus = MLY_guerilla_promise_concessions
+		}
+		completion_reward = {
+			set_temp_variable = {
+				temp_econ_spending_amount = 0.25
+			}
+			econ_spend_money_once_effect_raw_money = yes
+			add_tech_bonus = {
+				name = excavation_tech
+				bonus = 0.5
+				uses = 2
+				category = excavation_tech
+			}
+			TNO_improve_industrial_equipment_low = yes
+			add_to_variable = {
+				TNOIPN_MLY_PKM_Thai_negotiation_var = 30
+			}
+		}
+	}
+    focus = {
+		id = MLY_guerilla_party_connections
+		icon = GFX_focus_MLY_guerilla_party_connections
+		cost = 5
+		x = 10
+		y = 4
+		prerequisite = {
+			focus = MLY_guerilla_promise_concessions
+			focus = MLY_guerilla_joint_excavation
+		}
+		completion_reward = {
+			country_event = { id = TNOIPN_MLY.8 }
+			add_to_variable = {
+				TNOIPN_MLY_PKM_Thai_negotiation_var = 30
+			}
+		}
+	}
+    focus = {
+		id = MLY_guerilla_negotiation_result
+		icon = GFX_focus_MLY_guerilla_negotiation_result
+		cost = 2
+		x = 8
+		y = 5
+		available = {
+			always = no
+		}
+		prerequisite = {
+			focus = MLY_guerilla_firearms_deal
+		}
+		prerequisite = {
+			focus = MLY_guerilla_party_connections
+		}
+		completion_reward = {
+			effect_tooltip = {
+				country_event = { id = TNOIPN_MLY.6 }
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						check_variable = {
+							TNOIPN_MLY_PKM_Thai_negotiation_var > 99
+						}
+					}
+					country_event = { id = TNOIPN_MLY.6 }
+				}
+				else = {
+					country_event = { id = TNOIPN_MLY.7 }
+				}
+			}
+		}
+	}
+	focus = {
+		id = MLY_guerilla_establish_rationing
+		icon = GFX_focus_MLY_guerilla_establish_rationing
+		cost = 1
+		x = 6
+		y = 0
+		allow_branch = {
+			has_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_treasures_of_earth
+		icon = GFX_focus_MLY_guerilla_treasures_of_earth
+		cost = 1
+		x = 4
+		y = 1
+		prerequisite = {
+			focus = MLY_guerilla_establish_rationing
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_mine_closely
+		icon = GFX_focus_MLY_guerilla_mine_closely
+		cost = 1
+		x = 3
+		y = 2
+		prerequisite = {
+			focus = MLY_guerilla_treasures_of_earth
+		}
+		mutually_exclusive = {
+			focus = MLY_guerilla_develop_kedah
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_develop_kedah
+		icon = GFX_focus_MLY_guerilla_develop_kedah
+		cost = 1
+		x = 5
+		y = 2
+		prerequisite = {
+			focus = MLY_guerilla_treasures_of_earth
+		}
+		mutually_exclusive = {
+			focus = MLY_guerilla_mine_closely
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_perlis_port
+		icon = GFX_focus_MLY_guerilla_perlis_port
+		cost = 1
+		x = 4
+		y = 3
+		prerequisite = {
+			focus = MLY_guerilla_mine_closely
+			focus = MLY_guerilla_develop_kedah
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_path_bangkok
+		icon = GFX_focus_MLY_guerilla_path_bangkok
+		cost = 1
+		x = 3
+		y = 4
+		prerequisite = {
+			focus = MLY_guerilla_perlis_port
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_trail_delhi
+		icon = GFX_focus_MLY_guerilla_trail_delhi
+		cost = 1
+		x = 5
+		y = 4
+		prerequisite = {
+			focus = MLY_guerilla_perlis_port
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_ipoh_investments
+		icon = GFX_focus_MLY_guerilla_ipoh_investments
+		cost = 1
+		x = 8
+		y = 1
+		prerequisite = {
+			focus = MLY_guerilla_establish_rationing
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_peasant_bank
+		icon = GFX_focus_MLY_guerilla_peasant_bank
+		cost = 1
+		x = 8
+		y = 2
+		prerequisite = {
+			focus = MLY_guerilla_ipoh_investments
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_graze_kelantan
+		icon = GFX_focus_MLY_guerilla_graze_kelantan
+		cost = 1
+		x = 6
+		y = 3
+		prerequisite = {
+			focus = MLY_guerilla_peasant_bank
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_extend_handicraft
+		icon = GFX_focus_MLY_guerilla_extend_handicraft
+		cost = 1
+		x = 10
+		y = 3
+		prerequisite = {
+			focus = MLY_guerilla_peasant_bank
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_settle_scholars
+		icon = GFX_focus_MLY_guerilla_settle_scholars
+		cost = 1
+		x = 8
+		y = 3
+		prerequisite = {
+			focus = MLY_guerilla_peasant_bank
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_ipoh_university
+		icon = GFX_focus_MLY_guerilla_ipoh_university
+		cost = 1
+		x = 8
+		y = 4
+		prerequisite = {
+			focus = MLY_guerilla_settle_scholars
+		}
+		completion_reward = {
+			set_temp_variable = {
+				temp_econ_spending_amount = 0.15
+			}
+			econ_spend_money_once_effect_raw_money = yes
+			TNO_improve_academic_base_med = yes
+			unlock_decision_tooltip = TNOIPN_MLY_revolution_university_expansion_decision
+		}
+	}
+	focus = {
+		id = MLY_guerilla_strengthen_front
+		icon = GFX_focus_MLY_guerilla_strengthen_front
+		cost = 1
+		x = 14
+		y = 0
+		allow_branch = {
+			has_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_democratic_extension
+		icon = GFX_focus_MLY_guerilla_democratic_extension
+		cost = 1
+		x = 13
+		y = 1
+		prerequisite = {
+			focus = MLY_guerilla_strengthen_front
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_self_cleansing
+		icon = GFX_focus_MLY_guerilla_self_cleansing
+		cost = 1
+		x = 15
+		y = 1
+		prerequisite = {
+			focus = MLY_guerilla_strengthen_front
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_contact_gangster
+		icon = GFX_focus_MLY_guerilla_contact_gangster
+		cost = 1
+		x = 14
+		y = 2
+		prerequisite = {
+			focus = MLY_guerilla_democratic_extension
+		}
+		prerequisite = {
+			focus = MLY_guerilla_self_cleansing
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_organize_cpc
+		icon = GFX_focus_MLY_guerilla_organize_cpc
+		cost = 1
+		x = 12
+		y = 3
+		prerequisite = {
+			focus = MLY_guerilla_contact_gangster
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_contact_vietcong
+		icon = GFX_focus_MLY_guerilla_contact_vietcong
+		cost = 1
+		x = 14
+		y = 3
+		prerequisite = {
+			focus = MLY_guerilla_contact_gangster
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_support_taruc
+		icon = GFX_focus_MLY_guerilla_support_taruc
+		cost = 1
+		x = 16
+		y = 3
+		prerequisite = {
+			focus = MLY_guerilla_contact_gangster
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_broadcast_center
+		icon = GFX_focus_MLY_guerilla_broadcast_center
+		cost = 1
+		x = 14
+		y = 4
+		prerequisite = {
+			focus = MLY_guerilla_organize_cpc
+		}
+		prerequisite = {
+			focus = MLY_guerilla_contact_vietcong
+		}
+		prerequisite = {
+			focus = MLY_guerilla_support_taruc
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_formalize_army
+		icon = GFX_focus_MLY_guerilla_formalize_army
+		cost = 1
+		x = 22
+		y = 0
+		allow_branch = {
+			has_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_peoples_army
+		icon = GFX_focus_MLY_guerilla_peoples_army
+		cost = 1
+		x = 20
+		y = 1
+		prerequisite = {
+			focus = MLY_guerilla_formalize_army
+		}
+		mutually_exclusive = {
+			focus = MLY_guerilla_red_warriors
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_ease_out_teaming
+		icon = GFX_focus_MLY_guerilla_ease_out_teaming
+		cost = 1
+		x = 20
+		y = 2
+		prerequisite = {
+			focus = MLY_guerilla_peoples_army
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_red_warriors
+		icon = GFX_focus_MLY_guerilla_red_warriors
+		cost = 1
+		x = 24
+		y = 1
+		prerequisite = {
+			focus = MLY_guerilla_formalize_army
+		}
+		mutually_exclusive = {
+			focus = MLY_guerilla_peoples_army
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_introduce_platoons
+		icon = GFX_focus_MLY_guerilla_introduce_platoons
+		cost = 1
+		x = 24
+		y = 2
+		prerequisite = {
+			focus = MLY_guerilla_red_warriors
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_army_discipline
+		icon = GFX_focus_MLY_guerilla_army_discipline
+		cost = 1
+		x = 22
+		y = 2
+		prerequisite = {
+			focus = MLY_guerilla_peoples_army
+			focus = MLY_guerilla_red_warriors
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_jungle_training
+		icon = GFX_focus_MLY_guerilla_jungle_training
+		cost = 1
+		x = 21
+		y = 3
+		prerequisite = {
+			focus = MLY_guerilla_ease_out_teaming
+			focus = MLY_guerilla_introduce_platoons
+		}
+		prerequisite = {
+			focus = MLY_guerilla_army_discipline
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_city_seige
+		icon = GFX_focus_MLY_guerilla_city_seige
+		cost = 1
+		x = 23
+		y = 3
+		prerequisite = {
+			focus = MLY_guerilla_ease_out_teaming
+			focus = MLY_guerilla_introduce_platoons
+		}
+		prerequisite = {
+			focus = MLY_guerilla_army_discipline
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_clarify_leadership
+		icon = GFX_focus_MLY_guerilla_clarify_leadership
+		cost = 1
+		x = 22
+		y = 4
+		prerequisite = {
+			focus = MLY_guerilla_jungle_training
+		}
+		prerequisite = {
+			focus = MLY_guerilla_city_seige
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = MLY_guerilla_times_up
+		icon = GFX_focus_MLY_guerilla_times_up
+		cost = 1
+		x = 14
+		y = 5
+		prerequisite = {
+			focus = MLY_guerilla_path_bangkok
+			focus = MLY_guerilla_trail_delhi
+		}
+		prerequisite = {
+			focus = MLY_guerilla_ipoh_university
+		}
+		prerequisite = {
+			focus = MLY_guerilla_broadcast_center
+		}
+		prerequisite = {
+			focus = MLY_guerilla_clarify_leadership
+		}
+		available = {
+			JAP = {
+				has_country_flag = JAP_yasuda_crash_happened
+			}
+		}
+		completion_reward = {
+			add_war_support = 0.05
+			PKM = {
+				declare_war_on = {
+					target = SHO
+					type = annex_everything
+				}
+			}
+		}
+	}
+}
+focus_tree = {
+    id = MLY_postwar
+    country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = PKM
+		}
+	}
+	default = no
+
+    focus = {
+		id = MLY_postwar_establish_transition
+		icon = GFX_focus_MLY_postwar_establish_transition
+		cost = 1
+		x = 8
+		y = 0
+		completion_reward = {
+			set_capital = { state = 336 remember_old_capital = no }
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = MLY_TempGov
+		}
+	}
+    focus = {
+		id = MLY_postwar_integrate_armies
+		icon = GFX_focus_MLY_postwar_integrate_armies
+		cost = 1
+		x = 6
+		y = 1
+		prerequisite = {
+			focus = MLY_postwar_establish_transition
+		}
+		completion_reward = {
+		}
+	}
+    focus = {
+		id = MLY_postwar_insert_commissars
+		icon = GFX_focus_MLY_postwar_insert_commissars
+		cost = 1
+		x = 5
+		y = 2
+		prerequisite = {
+			focus = MLY_postwar_integrate_armies
+		}
+		mutually_exclusive = {
+			focus = MLY_postwar_begin_statify
+		}
+		completion_reward = {
+		}
+	}
+    focus = {
+		id = MLY_postwar_begin_statify
+		icon = GFX_focus_MLY_postwar_begin_statify
+		cost = 1
+		x = 7
+		y = 2
+		prerequisite = {
+			focus = MLY_postwar_integrate_armies
+		}
+		mutually_exclusive = {
+			focus = MLY_postwar_insert_commissars
+		}
+		completion_reward = {
+		}
+	}
+    focus = {
+		id = MLY_postwar_deal_collaborators
+		icon = GFX_focus_MLY_postwar_deal_collaborators
+		cost = 1
+		x = 10
+		y = 1
+		prerequisite = {
+			focus = MLY_postwar_establish_transition
+		}
+		completion_reward = {
+			country_event = { id = TNOIPN_MLY_postwar.1 }
+		}
+	}
+    focus = {
+		id = MLY_postwar_initiate_land_revolution
+		icon = GFX_focus_MLY_postwar_initiate_land_revolution
+		cost = 1
+		x = 10
+		y = 2
+		prerequisite = {
+			focus = MLY_postwar_deal_collaborators
+		}
+		completion_reward = {
+			country_event = { id = TNOIPN_MLY_postwar.2 }
+		}
+	}
+    focus = {
+		id = MLY_postwar_breaths_held
+		icon = GFX_focus_MLY_postwar_breaths_held
+		cost = 1
+		x = 8
+		y = 3
+		prerequisite = {
+			focus = MLY_postwar_insert_commissars
+			focus = MLY_postwar_begin_statify
+		}
+		prerequisite = {
+			focus = MLY_postwar_initiate_land_revolution
+		}
+		completion_reward = {
+			custom_effect_tooltip = MLY_postwar_breaths_held_tt
+			country_event = { id = TNOIPN_MLY_postwar.3 }
+		}
+	}
+    focus = {
+		id = MLY_postwar_democratic_republic
+		icon = GFX_focus_MLY_postwar_democratic_republic
+		cost = 1
+		x = 8
+		y = 4
+		allow_branch = {
+			has_country_flag = TNOIPN_MLY_PKM_win_flag
+		}
+		prerequisite = {
+			focus = MLY_postwar_breaths_held
+		}
+		completion_reward = {
+			set_cosmetic_tag = MLY_IPN_PDRM
+			hidden_effect = {
+				load_focus_tree = ZZZ_national_focus
+			}
+			TNO_Country_Closing_Screen_Show = yes
+		}
+	}
+    focus = {
+		id = MLY_postwar_emergency_elections
+		icon = GFX_focus_MLY_postwar_emergency_elections
+		cost = 1
+		x = 8
+		y = 4
+		allow_branch = {
+			has_country_flag = TNOIPN_MLY_PKM_lose_flag
+		}
+		prerequisite = {
+			focus = MLY_postwar_breaths_held
+		}
+		completion_reward = {
+			add_stability = -0.10
+			add_popularity = {
+				ideology = communist
+				popularity = -0.25
+			}
+			clr_country_flag = TNOIPN_MLY_PKM_in_control_flag
+		}
+	}
+    focus = {
+		id = MLY_postwar_socialist_front
+		icon = GFX_focus_MLY_postwar_socialist_front
+		cost = 1
+		x = 7
+		y = 5
+		prerequisite = {
+			focus = MLY_postwar_emergency_elections
+		}
+		completion_reward = {
+			country_event = { id = TNOIPN_MLY_postwar.4 }
+		}
+	}
+    focus = {
+		id = MLY_postwar_reunite_nationalist
+		icon = GFX_focus_MLY_postwar_reunite_nationalist
+		cost = 1
+		x = 9
+		y = 5
+		prerequisite = {
+			focus = MLY_postwar_emergency_elections
+		}
+		completion_reward = {
+			country_event = { id = TNOIPN_MLY_postwar.5 }
+		}
+	}
+    focus = {
+		id = MLY_postwar_commie_counterattack
+		icon = GFX_focus_MLY_postwar_commie_counterattack
+		cost = 1
+		x = 8
+		y = 6
+		prerequisite = {
+			focus = MLY_postwar_socialist_front
+		}
+		prerequisite = {
+			focus = MLY_postwar_reunite_nationalist
+		}
+		completion_reward = {
+			country_event = { id = TNOIPN_MLY_postwar.6 }
+		}
+	}
+    focus = {
+		id = MLY_postwar_ballot_boxes
+		icon = GFX_focus_MLY_postwar_commie_counterattack
+		cost = 5
+		cancelable = no
+		x = 8
+		y = 7
+		prerequisite = {
+			focus = MLY_postwar_commie_counterattack
+		}
+		completion_reward = {
+			set_cosmetic_tag = MLY_republic
+			hidden_effect = {
+				load_focus_tree = ZZZ_national_focus
+			}
+			country_event = { id = TNOIPN_MLY_postwar.7 }
+		}
+	}
+}

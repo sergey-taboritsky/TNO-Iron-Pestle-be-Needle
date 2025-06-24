@@ -1,0 +1,56 @@
+﻿add_namespace = TNOIPN_MLY_debug
+country_event = { #
+	id = TNOIPN_MLY_debug.1
+	title = TNOIPN_MLY_debug.1.t
+	desc = TNOIPN_MLY_debug.1.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {
+		name = "Chin Peng"
+		set_variable = {
+			PKM_gensec_portrait_frame_var = 1
+		}
+	}
+	option = {
+		name = "Yeung Kwo"
+		set_variable = {
+			PKM_gensec_portrait_frame_var = 2
+		}
+	}
+	option = {
+		name = "Abdullah CD"
+		set_variable = {
+			PKM_gensec_portrait_frame_var = 3
+		}
+	}
+	option = {
+		name = "Liu Yew"
+		set_variable = {
+			PKM_gensec_portrait_frame_var = 4
+		}
+	}
+}
+country_event = { #
+	id = TNOIPN_MLY_debug.2
+	title = TNOIPN_MLY_debug.2.t
+	desc = TNOIPN_MLY_debug.2.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {
+		name = "Yes"
+		MLY_Tan_Khai_Hee = {
+			remove_country_leader_role = {
+				ideology = socialist_1_subtype
+			}
+			add_country_leader_role = {
+				country_leader = {
+					#desc = ""
+					ideology = socialist_revolutionary_frontism_subtype
+					expire = "1985.1.1"
+					id = -1
+				}
+			}
+			promote_character = yes
+		}
+	}
+}

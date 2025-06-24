@@ -1,0 +1,107 @@
+defined_text = {
+	name = Get_MLYPKM_gensec_name
+	text = {
+		trigger = {
+			check_variable = {
+				PKM_gensec_portrait_frame_var = 1
+			}
+		}
+		localization_key = MLY_Chin_Peng
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PKM_gensec_portrait_frame_var = 2
+			}
+		}
+		localization_key = MLY_Yeung_Kwo
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PKM_gensec_portrait_frame_var = 3
+			}
+		}
+		localization_key = MLY_Abdullah_CD
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PKM_gensec_portrait_frame_var = 4
+			}
+		}
+		localization_key = MLY_Liu_Yew
+	}
+
+	## Default
+	text = {
+		localization_key = Get_MLYPKM_gensec_name_invalid_tt
+	}
+}
+defined_text = {
+	name = Get_MLYPKM_gensec_desc
+	text = {
+		trigger = {
+			check_variable = {
+				PKM_gensec_portrait_frame_var = 1
+			}
+		}
+		localization_key = POLITICS_CHIN_PENG_DESC
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PKM_gensec_portrait_frame_var = 2
+			}
+		}
+		localization_key = POLITICS_YEUNG_KWO_DESC
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PKM_gensec_portrait_frame_var = 3
+			}
+		}
+		localization_key = POLITICS_ABDULLAH_CD_DESC
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				PKM_gensec_portrait_frame_var = 4
+			}
+		}
+		localization_key = POLITICS_LIU_YEW_DESC
+	}
+
+	## Default
+	text = {
+		localization_key = Get_MLYPKM_gensec_desc_invalid_tt
+	}
+}
+defined_text = {
+	name = Get_MLYPRM_leader_name
+	text = {
+		trigger = {
+			check_variable = {
+				PRM_leader_portrait_frame_var = 1
+			}
+		}
+		localization_key = MLY_Ahmad_Boestamam
+	}
+
+	## Default
+	text = {
+		localization_key = Get_MLYPKM_gensec_name_invalid_tt
+	}
+}
+defined_text = {
+	name = Get_MLYPRM_leader_desc
+	text = {
+		trigger = {
+			check_variable = {
+				PRM_leader_portrait_frame_var = 1
+			}
+		}
+		localization_key = POLITICS_Ahmad_Boestamam_DESC
+	}
+}

@@ -1,0 +1,48 @@
+ideas = {
+	country = {
+		TNOIPN_XIN_enemies_encirclement = {
+			picture = GFX_idea_TNOIPN_XIN_enemies_encirclement
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.15
+				personnel_cost_factor_modifier = 0.10
+				military_R_D_expenditures_factor = 0.05
+				war_support_factor = 0.15
+				security_policy_monthly_rate = 0.03
+			}
+		}
+		TNOIPN_XIN_soviet_government = {
+			picture = GFX_idea_TNOIPN_XIN_soviet_government
+			modifier = {
+				communist_acceptance = 100
+				socialist_acceptance = 75
+				GDP_effect_on_poverty_modifier = -0.25
+				interest_rate_factor_modifier = -0.20
+				monetization_inflation_rate_modifier = -0.45
+				consumer_goods_production_factor = 0.15
+				production_units_to_GDP_ratio_modifier = 0.075
+			}
+		}
+		TNOIPN_XIN_delicate_national_balance = {
+			picture = GFX_idea_TNOIPN_XIN_delicate_national_balance
+			modifier = {
+				state_gdp_kept_on_occupation_modifier = -0.15
+				civilian_expenditures_factor = 0.10
+				taxable_population_factor = -0.20
+				social_program_cost_factor = 0.05
+				religious_rights_policy_monthly_rate = -0.01
+			}
+		}
+		TNOIPN_XIN_legacy_of_42_revolution = {
+			picture = GFX_idea_TNOIPN_XIN_legacy_of_42_revolution
+			modifier = {
+				political_power_factor = -0.075
+				improve_relations_maintain_cost_factor = 0.35
+				immigration_policy_monthly_rate = -0.01
+				admin_efficiency_monthly_rate = 0.01
+				admin_program_cost_factor = 0.05
+				military_expenditures_factor = 0.10
+			}
+		}
+	}
+}

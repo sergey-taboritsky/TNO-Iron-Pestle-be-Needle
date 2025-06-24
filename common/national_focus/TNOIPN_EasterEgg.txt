@@ -1,0 +1,499 @@
+focus_tree = {
+    id = MLY_EasterEgg
+    country = {
+		factor = 0
+		modifier = {
+			add = 1
+			tag = PKM
+		}
+	}
+	default = no
+
+    focus = {
+		id = MLY_EasterEgg_incredible_victory
+		icon = GFX_goal_unknown
+		cost = 1
+		x = 8
+		y = 0
+		completion_reward = {
+			country_event = { id = TNOIPN_MLY_easteregg.1 }
+		}
+	}
+	focus = {
+		id = MLY_EasterEgg_party_supreme
+		icon = GFX_goal_unknown
+		cost = 1
+		x = 6
+		y = 1
+		available = {
+			has_country_flag = TNOIPN_MLY_easteregg_China_flag
+		}
+		prerequisite = {
+			focus = MLY_EasterEgg_incredible_victory
+		}
+		mutually_exclusive = {
+			focus = MLY_EasterEgg_army_invincible
+		}
+		completion_reward = {
+			add_stability = 0.20
+		}
+	}
+	focus = {
+		id = MLY_EasterEgg_back_to_roots
+		icon = GFX_goal_unknown
+		cost = 1
+		x = 6
+		y = 2
+		prerequisite = {
+			focus = MLY_EasterEgg_party_supreme
+		}
+		completion_reward = {
+			set_cosmetic_tag = MLY_IPN_PRSS
+			set_party_name = {
+				ideology = communist
+				long_name = MLY_communist_CPCSS_long
+				name = MLY_communist_CPCSS
+			}
+		}
+	}
+	focus = {
+		id = MLY_EasterEgg_canton_revolution
+		icon = GFX_goal_unknown
+		cost = 1
+		x = 6
+		y = 3
+		prerequisite = {
+			focus = MLY_EasterEgg_back_to_roots
+		}
+		completion_reward = {
+			GNG = {
+				every_core_state = {
+					add_core_of = PKM
+					remove_core_of = GNG
+				}
+			}
+			PKM = {
+				annex_country = {
+					target = GNG
+					transfer_troops = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = MLY_EasterEgg_bring_home
+		icon = GFX_goal_unknown
+		cost = 1
+		x = 6
+		y = 4
+		prerequisite = {
+			focus = MLY_EasterEgg_canton_revolution
+		}
+		completion_reward = {
+			JAP = {
+				remove_from_faction = CHI
+			}
+			CHI = {
+				annex_country = {
+					target = MEN
+				}
+				annex_country = {
+					target = MAN
+				}
+				annex_country = {
+					target = YUN
+				}
+				annex_country = {
+					target = QIN
+				}
+				annex_country = {
+					target = SIC
+				}
+				annex_country = {
+					target = XIK
+				}
+				annex_country = {
+					target = XIN
+				}
+				annex_country = {
+					target = SHX
+				}
+				annex_country = {
+					target = GAN
+				}
+				annex_country = {
+					target = GUX
+				}
+				annex_country = {
+					target = GUZ
+				}
+				annex_country = {
+					target = TIB
+				}
+				declare_war_on = {
+					target = PKM
+					type = civil_war
+				}
+			}
+		}
+	}
+	focus = {
+		id = MLY_EasterEgg_revolution_realized
+		icon = GFX_goal_unknown
+		cost = 1
+		x = 6
+		y = 5
+		prerequisite = {
+			focus = MLY_EasterEgg_bring_home
+		}
+		available = {
+			NOT = {
+				country_exists = CHI
+			}
+		}
+		completion_reward = {
+			PKM = {
+				set_cosmetic_tag = MLY_IPN_PRC
+				set_capital = {
+					state = 608
+					remember_old_capital = no
+				}
+				set_party_name = {
+					ideology = communist
+					long_name = MLY_communist_CPC_long
+					name = MLY_communist_CPC
+				}
+				annex_country = {
+					target = CHI
+				}
+				CHI = {
+					every_core_state = {
+						add_core_of = PKM
+						remove_core_of = CHI
+					}
+				}
+				annex_country = {
+					target = MEN
+				}
+				MEN = {
+					every_core_state = {
+						add_core_of = PKM
+						remove_core_of = MEN
+					}
+				}
+				annex_country = {
+					target = MAN
+				}
+				MAN = {
+					every_core_state = {
+						add_core_of = PKM
+						remove_core_of = MAN
+					}
+				}
+				annex_country = {
+					target = YUN
+				}
+				YUN = {
+					every_core_state = {
+						add_core_of = PKM
+						remove_core_of = YUN
+					}
+				}
+				annex_country = {
+					target = QIN
+				}
+				QIN = {
+					every_core_state = {
+						add_core_of = PKM
+						remove_core_of = QIN
+					}
+				}
+				annex_country = {
+					target = SIC
+				}
+				SIC = {
+					every_core_state = {
+						add_core_of = PKM
+						remove_core_of = SIC
+					}
+				}
+				annex_country = {
+					target = XIK
+				}
+				XIK = {
+					every_core_state = {
+						add_core_of = PKM
+						remove_core_of = XIK
+					}
+				}
+				annex_country = {
+					target = XIN
+				}
+				XIN = {
+					every_core_state = {
+						add_core_of = PKM
+						remove_core_of = XIN
+					}
+				}
+				annex_country = {
+					target = SHX
+				}
+				SHX = {
+					every_core_state = {
+						add_core_of = PKM
+						remove_core_of = SHX
+					}
+				}
+				annex_country = {
+					target = GAN
+				}
+				GAN = {
+					every_core_state = {
+						add_core_of = PKM
+						remove_core_of = GAN
+					}
+				}
+				annex_country = {
+					target = GUX
+				}
+				GUX = {
+					every_core_state = {
+						add_core_of = PKM
+						remove_core_of = GUX
+					}
+				}
+				annex_country = {
+					target = GUZ
+				}
+				GUZ = {
+					every_core_state = {
+						add_core_of = PKM
+						remove_core_of = GUZ
+					}
+				}
+				annex_country = {
+					target = TIB
+				}
+				TIB = {
+					every_core_state = {
+						add_core_of = PKM
+						remove_core_of = TIB
+					}
+				}
+				JAP = {
+					release_on_controlled = PKM
+				}
+				524 = {
+					transfer_state_to = PKM
+					remove_core_of = JAP
+					add_core_of = PKM
+				}
+				1850 = {
+					transfer_state_to = PKM
+					remove_core_of = JAP
+					add_core_of = PKM
+				}
+				1855 = {
+					transfer_state_to = PKM
+					remove_core_of = JAP
+					add_core_of = PKM
+				}
+				1851 = {
+					transfer_state_to = PKM
+					remove_core_of = JAP
+					add_core_of = PKM
+				}
+				1852 = {
+					transfer_state_to = PKM
+					remove_core_of = JAP
+					add_core_of = PKM
+				}
+				1853 = {
+					transfer_state_to = PKM
+					remove_core_of = JAP
+					add_core_of = PKM
+				}
+				1854 = {
+					transfer_state_to = PKM
+					remove_core_of = JAP
+					add_core_of = PKM
+				}
+				1856 = {
+					transfer_state_to = PKM
+					remove_core_of = JAP
+					add_core_of = PKM
+				}
+				SOR = {
+					every_core_state = {
+						add_core_of = PKM
+						remove_core_of = SOR
+					}
+				}
+				AMR = {
+					release_on_controlled = PKM
+				}
+			}
+		}
+	}
+	focus = {
+		id = MLY_EasterEgg_army_invincible
+		icon = GFX_goal_unknown
+		cost = 1
+		x = 10
+		y = 1
+		available = {
+			has_country_flag = TNOIPN_MLY_easteregg_Malay_flag
+		}
+		mutually_exclusive = {
+			focus = MLY_EasterEgg_party_supreme
+		}
+		prerequisite = {
+			focus = MLY_EasterEgg_incredible_victory
+		}
+		completion_reward = {
+			add_war_support = 0.20
+		}
+	}
+	focus = {
+		id = MLY_EasterEgg_change_leadership
+		icon = GFX_goal_unknown
+		cost = 1
+		x = 10
+		y = 2
+		prerequisite = {
+			focus = MLY_EasterEgg_army_invincible
+		}
+		completion_reward = {
+			retire_character = yes
+			MLY_Rashid_Maidin = {
+				add_country_leader_role = {
+					country_leader = {
+						ideology = communist_national_communism_subtype
+						expire = "1999.1.1.1"
+						id = -1
+					}
+				}
+				promote_character = yes
+			}
+		}
+	}
+	focus = {
+		id = MLY_EasterEgg_encircle_archenemy
+		icon = GFX_goal_unknown
+		cost = 1
+		x = 10
+		y = 3
+		prerequisite = {
+			focus = MLY_EasterEgg_change_leadership
+		}
+		completion_reward = {
+			annex_country = {
+				target = NRB
+				transfer_troops = yes
+			}
+			NRB = {
+				every_core_state = {
+					add_core_of = PKM
+					remove_core_of = NRB
+				}
+			}
+			1332 = {
+				transfer_state_to = PKM
+				add_core_of = PKM
+			}
+			523 = {
+				transfer_state_to = PKM
+				add_core_of = PKM
+			}
+			2320 = {
+				transfer_state_to = PKM
+				add_core_of = PKM
+			}
+			2321 = {
+				transfer_state_to = PKM
+				add_core_of = PKM
+			}
+			737 = {
+				transfer_state_to = PKM
+				add_core_of = PKM
+			}
+			634 = {
+				transfer_state_to = PKM
+				add_core_of = PKM
+			}
+		}
+	}
+	focus = {
+		id = MLY_EasterEgg_ending_feud
+		icon = GFX_goal_unknown
+		cost = 1
+		x = 10
+		y = 4
+		prerequisite = {
+			focus = MLY_EasterEgg_encircle_archenemy
+		}
+		completion_reward = {
+			JAP = {
+				remove_from_faction = INS
+			}
+			declare_war_on = {
+				target = INS
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = FRI
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = DMP
+				type = annex_everything
+			}
+		}
+	}
+	focus = {
+		id = MLY_EasterEgg_union_peninsula
+		icon = GFX_goal_unknown
+		cost = 1
+		x = 10
+		y = 5
+		prerequisite = {
+			focus = MLY_EasterEgg_ending_feud
+		}
+		available = {
+			NOT = {
+				country_exists = INS
+			}
+			NOT = {
+				country_exists = FRI
+			}
+		}
+		completion_reward = {
+			set_cosmetic_tag = MLY_IPN_GPDRM
+			set_capital = {
+				state = 336
+				remember_old_capital = no
+			}
+			INS = {
+				every_core_state = {
+					remove_core_of = INS
+					add_core_of = PKM
+				}
+			}
+		}
+	}
+	focus = {
+		id = MLY_EasterEgg_demand_north
+		icon = GFX_goal_unknown
+		cost = 1
+		x = 8
+		y = 2
+		prerequisite = {
+			focus = MLY_EasterEgg_incredible_victory
+		}
+		completion_reward = {
+			THA = {
+				release_on_controlled = PKM
+			}
+		}
+	}
+}

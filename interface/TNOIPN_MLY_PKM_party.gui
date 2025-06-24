@@ -1,0 +1,140 @@
+guiTypes = {
+	containerWindowType = {
+#First Row
+		name = "TNOIPN_MLY_PKM_party_GUI"
+		position = { x = 0 y = 0 }
+		size = { height = 475 width = 482 }
+
+		iconType = {
+			name = "GFX_MLY_PKM_party_GUI_gensec_parties_frame"
+			position = { x = 10 y = 10 }
+			scale = 1
+			quadTextureSprite = "GFX_MLY_PKM_party_GUI_gensec_parties_frame"
+		}
+		iconType = {
+			name = "GFX_MLY_PKM_party_GUI_gensec_portrait"
+			position = { x = 20 y = 20 }
+			scale = 1
+			quadTextureSprite = "GFX_MLY_PKM_party_GUI_gensec_portrait"
+			pdx_tooltip = MLY_PKM_party_GUI_gensec_portrait_tt
+			pdx_tooltip_delayed = MLY_PKM_party_GUI_gensec_portrait_desc_tt
+		}
+		iconType = {
+			name = "GFX_MLY_PKM_party_GUI_gensec_portrait_frame"
+			position = { x = 10 y = 10 }
+			scale = 1
+			quadTextureSprite = "GFX_MLY_PKM_party_GUI_gensec_portrait_frame"
+			pdx_tooltip = MLY_PKM_party_GUI_gensec_portrait_tt
+			pdx_tooltip_delayed = MLY_PKM_party_GUI_gensec_portrait_desc_tt
+		}
+		instantTextboxType = {
+			name = TNOIPN_MLY_PKM_gensec_name
+			position = { x = 20 y = 238 }
+			font = "Bomb_18"
+			text = TNOIPN_MLY_PKM_gensec_name_tt
+			maxWidth = 155
+			maxHeight = 20
+			format = center
+			vertical_alignment = center
+		}
+		iconType = {
+			name = "GFX_MLY_PKM_party_GUI_PKM_party_logo"
+			position = { x = 240 y = 25 }
+			scale = 0.2
+			quadTextureSprite = "GFX_MLY_PKM_party_GUI_PKM_party_logo"
+			pdx_tooltip = MLY_PKM_party_GUI_PKM_party_logo_tt
+			pdx_tooltip_delayed = MLY_PKM_party_GUI_PKM_party_logo_desc_tt
+		}
+		instantTextBoxType = {
+			name = "GFX_MLY_revolution_GUI_PKM_info"
+			position = { x = 82 y = 200 }
+			text = MLY_revolution_GUI_PKM_info_tt
+			text_color_code = Y
+			font = "aldrich_18_outline"
+			format = centre
+			maxWidth = 482
+		}
+#Second Row
+		iconType = {
+			name = "GFX_MLY_PKM_party_GUI_politburo_Yeung_Kwo"
+			position = { x = 35 y = 277 }
+			scale = 1
+			quadTextureSprite = "GFX_MLY_PKM_party_GUI_politburo_Yeung_Kwo"
+			pdx_tooltip = MLY_PKM_party_GUI_politburo_Yeung_Kwo_tt
+			pdx_tooltip_delayed = MLY_PKM_party_GUI_politburo_Yeung_Kwo_desc_tt
+		}
+		iconType = {
+			name = "GFX_MLY_PKM_party_GUI_politburo_Liu_Yew"
+			position = { x = 151 y = 277 }
+			scale = 1
+			quadTextureSprite = "GFX_MLY_PKM_party_GUI_politburo_Liu_Yew"
+			pdx_tooltip = MLY_PKM_party_GUI_politburo_Liu_Yew_tt
+			pdx_tooltip_delayed = MLY_PKM_party_GUI_politburo_Liu_Yew_desc_tt
+		}
+		iconType = {
+			name = "GFX_MLY_PKM_party_GUI_politburo_Lee_An_Tung"
+			position = { x = 267 y = 277 }
+			scale = 1
+			quadTextureSprite = "GFX_MLY_PKM_party_GUI_politburo_Lee_An_Tung"
+			pdx_tooltip = MLY_PKM_party_GUI_politburo_Lee_An_Tung_tt
+			pdx_tooltip_delayed = MLY_PKM_party_GUI_politburo_Lee_An_Tung_desc_tt
+		}
+		iconType = {
+			name = "GFX_MLY_PKM_party_GUI_politburo_Abdullah_CD"
+			position = { x = 383 y = 277 }
+			scale = 1
+			quadTextureSprite = "GFX_MLY_PKM_party_GUI_politburo_Abdullah_CD"
+			pdx_tooltip = MLY_PKM_party_GUI_politburo_Abdullah_CD_tt
+			pdx_tooltip_delayed = MLY_PKM_party_GUI_politburo_Abdullah_CD_desc_tt
+		}
+#Third Row
+		iconType = {
+			name = "GFX_MLY_PKM_party_GUI_PRM_party_logo"
+			position = { x = 30 y = 382 }
+			scale = 0.07
+			quadTextureSprite = "GFX_MLY_PKM_party_GUI_PRM_party_logo"
+			pdx_tooltip = MLY_PKM_party_GUI_PRM_party_logo_tt
+			pdx_tooltip_delayed = MLY_PKM_party_GUI_PRM_party_logo_desc_tt
+		}
+		iconType = {
+			name = "GFX_MLY_PKM_party_GUI_PRM_party_leader"
+			position = { x = 90 y = 375 }
+			scale = 1
+			quadTextureSprite = "GFX_MLY_PKM_party_GUI_PRM_party_leader"
+			pdx_tooltip = MLY_PKM_party_GUI_PRM_party_leader_tt
+			pdx_tooltip_delayed = MLY_PKM_party_GUI_PRM_party_leader_desc_tt
+		}
+		iconType = {
+			name = "GFX_MLY_PKM_party_GUI_PBM_party_logo"
+			position = { x = 180 y = 382 }
+			scale = 0.07
+			quadTextureSprite = "GFX_MLY_PKM_party_GUI_PBM_party_logo"
+			pdx_tooltip = MLY_PKM_party_GUI_PBM_party_logo_tt
+			pdx_tooltip_delayed = MLY_PKM_party_GUI_PBM_party_logo_desc_tt
+		}
+		iconType = {
+			name = "GFX_MLY_PKM_party_GUI_PBM_party_leader"
+			position = { x = 240 y = 375 }
+			scale = 1
+			quadTextureSprite = "GFX_MLY_PKM_party_GUI_PBM_party_leader"
+			pdx_tooltip = MLY_revolution_GUI_Map_Ipoh_tt
+			pdx_tooltip_delayed = MLY_revolution_GUI_Map_Ipoh_desc_tt
+		}
+		iconType = {
+			name = "GFX_MLY_PKM_party_GUI_PKMM_party_logo"
+			position = { x = 330 y = 382 }
+			scale = 0.07
+			quadTextureSprite = "GFX_MLY_PKM_party_GUI_PKMM_party_logo"
+			pdx_tooltip = MLY_PKM_party_GUI_PKMM_party_logo_tt
+			pdx_tooltip_delayed = MLY_PKM_party_GUI_PKMM_party_logo_desc_tt
+		}
+		iconType = {
+			name = "GFX_MLY_PKM_party_GUI_PKMM_party_leader"
+			position = { x = 390 y = 375 }
+			scale = 1
+			quadTextureSprite = "GFX_MLY_PKM_party_GUI_PKMM_party_leader"
+			pdx_tooltip = MLY_revolution_GUI_Map_Ipoh_tt
+			pdx_tooltip_delayed = MLY_revolution_GUI_Map_Ipoh_desc_tt
+		}
+	}
+}

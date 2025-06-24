@@ -1,0 +1,44 @@
+focus_tree = {
+    id = CHI_whatever_focus
+    country = {
+		factor = 0
+		modifier = {
+			add = 1
+			tag = CHI
+		}
+	}
+	default = no
+}
+focus_tree = {
+    id = YUN_whatever_focus
+    country = {
+		factor = 0
+		modifier = {
+			add = 1
+			tag = YUN
+		}
+	}
+	default = no
+}
+focus_tree = {
+    id = CPC_whatever_focus
+    country = {
+		factor = 0
+		modifier = {
+			add = 1
+			tag = CPC
+		}
+	}
+	default = no
+}
+focus_tree = {
+    id = XIK_whatever_focus
+    country = {
+		factor = 0
+		modifier = {
+			add = 1
+			tag = XIK
+		}
+	}
+	default = no
+}

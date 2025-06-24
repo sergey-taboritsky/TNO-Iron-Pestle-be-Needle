@@ -1,0 +1,50 @@
+spriteTypes = {
+    spriteType = {
+        name = "GFX_idea_MLY_Yeung_Kwo"
+		texturefile = "gfx/interface/ideas/ministers/MLY_Yeung_Kwo.dds"
+    }
+    spriteType = {
+        name = "GFX_idea_MLY_Ahmad_Boestamam"
+		texturefile = "gfx/interface/ideas/ministers/MLY_Ahmad_Boestamam.dds"
+    }
+    spriteType = {
+        name = "GFX_idea_MLY_Li_An_Tung"
+		texturefile = "gfx/interface/ideas/ministers/MLY_Li_An_Tung.dds"
+    }
+    spriteType = {
+        name = "GFX_idea_MLY_Lee_Meng"
+		texturefile = "gfx/interface/ideas/ministers/MLY_Lee_Meng.dds"
+    }
+    spriteType = {
+        name = "GFX_idea_MLY_Rashid_Maidin"
+		texturefile = "gfx/interface/ideas/ministers/MLY_Rashid_Maidin.dds"
+    }
+    spriteType = {
+        name = "GFX_idea_XIN_Mao_Zemin"
+		texturefile = "gfx/interface/ideas/ministers/XIN_Mao_Zemin.dds"
+    }
+    spriteType = {
+        name = "GFX_idea_XIN_Lin_Jilu"
+		texturefile = "gfx/interface/ideas/ministers/XIN_Lin_Jilu.dds"
+    }
+    spriteType = {
+        name = "GFX_idea_XIN_Lai_Zulie"
+		texturefile = "gfx/interface/ideas/ministers/XIN_Lai_Zulie.dds"
+    }
+    spriteType = {
+        name = "GFX_idea_XIN_Hu_Jian"
+		texturefile = "gfx/interface/ideas/ministers/XIN_Hu_Jian.dds"
+    }
+    spriteType = {
+        name = "GFX_idea_KMT_Guo_Rugui"
+		texturefile = "gfx/interface/ideas/ministers/KMT_Guo_Rugui.dds"
+    }
+    spriteType = {
+        name = "GFX_idea_KMT_Gao_Zongwu"
+		texturefile = "gfx/interface/ideas/ministers/KMT_Gao_Zongwu.dds"
+    }
+    spriteType = {
+        name = "GFX_idea_KMT_Ren_Yuandao"
+		texturefile = "gfx/interface/ideas/ministers/KMT_Ren_Yuandao.dds"
+    }
+}

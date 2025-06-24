@@ -1,0 +1,141 @@
+guiTypes = {
+	containerWindowType = {
+		name = "TNOIPN_MLY_revolution_GUI"
+		position = { x = 0 y = 0 }
+		size = { height = 480 width = 482 }
+
+		instantTextBoxType = {
+			name = "GFX_MLY_revolution_GUI_info"
+			position = { x = 11 y = 410 }
+			text = MLY_revolution_GUI_info_tt
+			text_color_code = Y
+			font = "aldrich_24_outline"
+			format = centre
+			maxWidth = 482
+		}
+		buttonType = {
+			name = "GFX_MLY_revolution_GUI_Map_Ipoh"
+			position = { x = 104 y = 104 }
+			scale = 0.3
+			quadTextureSprite = "GFX_MLY_revolution_GUI_Map_Ipoh"
+			pdx_tooltip = MLY_revolution_GUI_Map_Ipoh_tt
+			pdx_tooltip_delayed = MLY_revolution_GUI_Map_Ipoh_desc_tt
+		}
+		buttonType = {
+			name = "GFX_MLY_revolution_GUI_Map_E_Blue"
+			position = { x = 132 y = 92 }
+			scale = 0.3
+			quadTextureSprite = "GFX_MLY_revolution_GUI_Map_E_Blue"
+			pdx_tooltip = MLY_revolution_GUI_Map_E_Blue_tt
+			pdx_tooltip_delayed = MLY_revolution_GUI_Map_E_Blue_desc_tt
+		}
+		buttonType = {
+			name = "GFX_MLY_revolution_GUI_Map_E_Red"
+			position = { x = 132 y = 92 }
+			scale = 0.3
+			quadTextureSprite = "GFX_MLY_revolution_GUI_Map_E_Red"
+			pdx_tooltip = MLY_revolution_GUI_Map_E_Red_tt
+			pdx_tooltip_delayed = MLY_revolution_GUI_Map_E_Red_desc_tt
+		}
+		buttonType = {
+			name = "GFX_MLY_revolution_GUI_Map_W_Blue"
+			position = { x = 80 y = 70 }
+			scale = 0.3
+			quadTextureSprite = "GFX_MLY_revolution_GUI_Map_W_Blue"
+			pdx_tooltip = MLY_revolution_GUI_Map_W_Blue_tt
+			pdx_tooltip_delayed = MLY_revolution_GUI_Map_W_Blue_desc_tt
+		}
+		buttonType = {
+			name = "GFX_MLY_revolution_GUI_Map_W_Red"
+			position = { x = 80 y = 70 }
+			scale = 0.3
+			quadTextureSprite = "GFX_MLY_revolution_GUI_Map_W_Red"
+			pdx_tooltip = MLY_revolution_GUI_Map_W_Red_tt
+			pdx_tooltip_delayed = MLY_revolution_GUI_Map_W_Red_desc_tt
+		}
+		buttonType = {
+			name = "GFX_MLY_revolution_GUI_Map_Penang"
+			position = { x = 89 y = 118 }
+			scale = 0.3
+			quadTextureSprite = "GFX_MLY_revolution_GUI_Map_Penang"
+			pdx_tooltip = MLY_revolution_GUI_Map_Penang_tt
+			pdx_tooltip_delayed = MLY_revolution_GUI_Map_Penang_desc_tt
+		}
+		buttonType = {
+			name = "GFX_MLY_revolution_GUI_Map_Perak"
+			position = { x = 90 y = 136 }
+			scale = 0.3
+			quadTextureSprite = "GFX_MLY_revolution_GUI_Map_Perak"
+			pdx_tooltip = MLY_revolution_GUI_Map_Perak_tt
+			pdx_tooltip_delayed = MLY_revolution_GUI_Map_Perak_desc_tt
+		}
+		buttonType = {
+			name = "GFX_MLY_revolution_GUI_Map_KL"
+			position = { x = 103 y = 201 }
+			scale = 0.3
+			quadTextureSprite = "GFX_MLY_revolution_GUI_Map_KL"
+			pdx_tooltip = MLY_revolution_GUI_Map_KL_tt
+			pdx_tooltip_delayed = MLY_revolution_GUI_Map_KL_desc_tt
+		}
+		buttonType = {
+			name = "GFX_MLY_revolution_GUI_Map_Ponhong"
+			position = { x = 132 y = 155 }
+			scale = 0.3
+			quadTextureSprite = "GFX_MLY_revolution_GUI_Map_Ponhong"
+			pdx_tooltip = MLY_revolution_GUI_Map_Ponhong_tt
+			pdx_tooltip_delayed = MLY_revolution_GUI_Map_Ponhong_desc_tt
+		}
+		buttonType = {
+			name = "GFX_MLY_revolution_GUI_Map_Zemerand"
+			position = { x = 146 y = 228 }
+			scale = 0.3
+			quadTextureSprite = "GFX_MLY_revolution_GUI_Map_Zemerand"
+			pdx_tooltip = MLY_revolution_GUI_Map_Zemerand_tt
+			pdx_tooltip_delayed = MLY_revolution_GUI_Map_Zemerand_desc_tt
+		}
+		buttonType = {
+			name = "GFX_MLY_revolution_GUI_Map_Johor"
+			position = { x = 188 y = 249 }
+			scale = 0.3
+			quadTextureSprite = "GFX_MLY_revolution_GUI_Map_Johor"
+			pdx_tooltip = MLY_revolution_GUI_Map_Johor_tt
+			pdx_tooltip_delayed = MLY_revolution_GUI_Map_Johor_desc_tt
+		}
+		buttonType = {
+			name = "GFX_MLY_revolution_GUI_Map_Malacca"
+			position = { x = 159 y = 266 }
+			scale = 0.3
+			quadTextureSprite = "GFX_MLY_revolution_GUI_Map_Malacca"
+			pdx_tooltip = MLY_revolution_GUI_Map_Malacca_tt
+			pdx_tooltip_delayed = MLY_revolution_GUI_Map_Malacca_desc_tt
+		}
+		buttonType = {
+			name = "GFX_MLY_revolution_GUI_Map_Singapore"
+			position = { x = 246 y = 325 }
+			scale = 0.3
+			quadTextureSprite = "GFX_MLY_revolution_GUI_Map_Singapore"
+			pdx_tooltip = MLY_revolution_GUI_Map_Singapore_tt
+			pdx_tooltip_delayed = MLY_revolution_GUI_Map_Singapore_desc_tt
+		}
+		iconType = {
+			name = "GFX_MLY_revolution_GUI_Progressbar_Container"
+			position = { x = 400 y = 70 }
+			scale = 0.3
+			quadTextureSprite = "GFX_MLY_revolution_GUI_Progressbar_Container"
+		}
+		iconType = {
+			name = "GFX_MLY_revolution_GUI_Progressbar_Red"
+			position = { x = 401 y = 70 }
+			scale = 0.3
+			quadTextureSprite = "GFX_MLY_revolution_GUI_Progressbar_Red"
+			pdx_tooltip = MLY_revolution_GUI_Map_W_tt
+		}
+		iconType = {
+			name = "GFX_MLY_revolution_GUI_Progressbar_Blue"
+			position = { x = 401 y = 70 }
+			scale = 0.3
+			quadTextureSprite = "GFX_MLY_revolution_GUI_Progressbar_Blue"
+			pdx_tooltip = MLY_revolution_GUI_Progressbar_Blue_tt
+		}
+	}
+}
