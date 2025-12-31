@@ -23,32 +23,64 @@ spriteTypes = {
 ### UMAJF phase two ###
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_reorganize_troops"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_reorganize_troops.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_reorganize_troops.png"
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_ipoh_conference"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_ipoh_conference.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_ipoh_conference.png"
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_solve_crisis"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_solve_crisis.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_solve_crisis.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_population_exchange"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_population_exchange.png"
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_deradicalisation_campaigns"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_deradicalisation_campaigns.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_deradicalisation_campaigns.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_firearms_deal"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_firearms_deal.png"
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_promise_concessions"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_promise_concessions.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_promise_concessions.png"
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_joint_excavation"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_joint_excavation.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_joint_excavation.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_party_connections"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_party_connections.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_negotiation_result"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_negotiation_result.png"
 	}
 ### UMAJF phase three ###
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_establish_rationing"
 		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_establish_rationing.dds"
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_treasures_of_earth"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_treasures_of_earth.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_mine_closely"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_mine_closely.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_develop_kedah"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_develop_kedah.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_ipoh_investments"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_ipoh_investments.png"
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_peasant_bank"
@@ -64,23 +96,39 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_strengthen_front"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_strengthen_front.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_strengthen_front.png"
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_democratic_extension"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_democratic_extension.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_democratic_extension.png"
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_self_cleansing"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_self_cleansing.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_self_cleansing.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_contact_gangster"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_contact_gangster.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_organize_cpc"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_organize_cpc.png"
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_contact_vietcong"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_contact_vietcong.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_contact_vietcong.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_support_taruc"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_support_taruc.png"
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_broadcast_center"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_broadcast_center.png"
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_formalize_army"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_formalize_army.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_formalize_army.png"
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_peoples_army"

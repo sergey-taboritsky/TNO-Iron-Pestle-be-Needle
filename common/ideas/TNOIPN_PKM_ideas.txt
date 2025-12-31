@@ -1,0 +1,109 @@
+ideas = {
+	country = {
+		TNOIPN_PKM_manpower_running_dry = {
+			picture = GFX_idea_TNOIPN_PKM_manpower_running_dry
+			modifier = {
+				personnel_cost_factor_modifier = 0.10
+				recruitable_population_factor = -0.15
+			}
+		}
+		TNOIPN_PKM_detachment_military = {
+			picture = GFX_idea_TNOIPN_PKM_detachment_military
+			modifier = {
+				army_org_factor = -0.10
+				army_morale_factor = 0.25
+				army_core_attack_factor = 0.05
+				experience_gain_army_factor = -0.75
+				command_power_gain_mult = -0.50 
+			}
+		}
+		TNOIPN_PKM_united_front_policy = {
+			picture = GFX_idea_TNOIPN_TNOIPN_PKM_united_front_policy
+			modifier = {
+				communist_acceptance = 100
+				socialist_acceptance = 75
+				progressivism_acceptance = 50
+				paternalism_acceptance = 50
+				improve_relations_maintain_cost_factor = -0.25
+				political_power_factor = -0.05
+			}
+		}
+		TNOIPN_PKM_CPC_KL_committee = {
+			picture = GFX_idea_TNOIPN_PKM_CPC_KL_committee
+			modifier = {
+				experience_gain_army_factor = 0.05
+				improve_relations_maintain_cost_factor = -0.05
+				political_power_factor = 0.035
+				custom_modifier_tooltip = TNOIPN_PKM_CPC_KL_committee_tt
+			}
+		}
+		TNOIPN_PKM_National_Liberation_Army = {
+			picture = GFX_idea_TNOIPN_PKM_National_Liberation_Army
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05 
+			}
+		}
+		TNOIPN_PKM_National_Liberation_Army_1 = {
+			picture = GFX_idea_TNOIPN_PKM_National_Liberation_Army
+			name = TNOIPN_PKM_National_Liberation_Army
+			modifier = {
+				army_core_attack_factor = 0.10
+				army_core_defence_factor = 0.05
+				recruitable_population_factor = 0.10
+				personnel_cost_factor_modifier = -0.05
+				conscription_policy_monthly_rate = 0.01
+			}
+		}
+		TNOIPN_PKM_National_Liberation_Army_1_1 = {
+			picture = GFX_idea_TNOIPN_PKM_National_Liberation_Army
+			name = TNOIPN_PKM_National_Liberation_Army
+			modifier = {
+				army_attack_factor = 0.10
+				army_defence_factor = 0.05
+				recruitable_population_factor = 0.10
+				army_org_factor = 0.05
+				personnel_cost_factor_modifier = -0.05
+				conscription_policy_monthly_rate = 0.01
+				military_supervision_policy_monthly_rate = 0.01
+			}
+		}
+		TNOIPN_PKM_National_Liberation_Army_2 = {
+			picture = GFX_idea_TNOIPN_PKM_National_Liberation_Army
+			name = TNOIPN_PKM_National_Liberation_Army
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				army_org_factor = 0.10
+				military_industry_cost_modifier = 0.05
+				military_supervision_policy_monthly_rate = 0.01
+				training_policy_monthly_rate = 0.01
+			}
+		}
+		TNOIPN_PKM_National_Liberation_Army_2_1 = {
+			picture = GFX_idea_TNOIPN_PKM_National_Liberation_Army
+			name = TNOIPN_PKM_National_Liberation_Army
+			modifier = {
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				army_org_factor = 0.15
+				military_industry_cost_modifier = 0.05
+				military_supervision_policy_monthly_rate = 0.02
+				training_policy_monthly_rate = 0.01
+			}
+		}
+		TNOIPN_PKM_gradual_easing = {
+			picture = GFX_idea_TNOIPN_PKM_gradual_easing
+			name = TNOIPN_PKM_gradual_easing
+			modifier = {
+				experience_gain_army_factor = 0.40
+				command_power_gain_mult = -0.25
+			}
+			on_remove = {
+				remove_ideas = TNOIPN_PKM_detachment_military
+				army_experience = 75
+				TNO_improve_army_professionalism_high = yes
+			}
+		}
+	}
+}

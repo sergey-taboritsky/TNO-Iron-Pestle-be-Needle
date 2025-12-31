@@ -10,7 +10,7 @@ bookmarks = {
 		desc = "THENEWORDER_DESC"
 		date = 1962.1.1.1
 		picture = "GFX_select_date_1939"
-		default_country = "BRA"
+		default_country = "PKM"
 		default = yes
 
 		effect = {
@@ -141,6 +141,9 @@ bookmarks = {
 			history = "PKM_THENEWORDER_DESC"
 			ideology = communist
 			ideas = {
+				TNOIPN_PKM_united_front_policy
+				TNOIPN_PKM_manpower_running_dry
+				TNOIPN_PKM_detachment_military
 			}
 			focuses = {
 				MLY_start_break_out
@@ -426,14 +429,8 @@ bookmarks = {
 			history = "YUN_THENEWORDER_DESC"
 			ideology = despotism
 			ideas = {
-				#YUN_bandit_holdouts
-				YUN_hidden_potential_0
-				YUN_army_of_the_southwest
 			}
 			focuses = {
-				YUN_evict_he_yingqin
-				YUN_xinan_insurgency
-				YUN_we_are_not_enemies
 			}
 		}
 		## CPS ##

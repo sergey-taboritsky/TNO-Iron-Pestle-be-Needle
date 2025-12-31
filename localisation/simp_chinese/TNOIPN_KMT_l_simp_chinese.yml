@@ -1,4 +1,6 @@
 ﻿l_simp_chinese:
+ TNOIPN_CHI_Third_United_Front: "第三次中国统一战线"
+ TNOIPN_CHI_defense_front: "大东亚共荣圈 - 中国防卫同盟"
 ## Countries ##
 ## States and VPs ##
 ## Cosmetic Tags ##
@@ -83,6 +85,11 @@
  TNOIPN_CHI_news.6.a: "中国人民的意志做出了选择。"
  TNOIPN_CHI_news.6.b: "这不是什么好事......"
  TNOIPN_CHI_news.6.c: "有趣。"
+ TNOIPN_CHI_news.7.t: "[Get_newspaper_header]西昌军队突袭成都"
+ TNOIPN_CHI_news.7.d: "在西部省份陷入动乱后，此前龟缩在西昌的国民政府终于抓住了扩张势力的机会。在邓锡侯外出疗养时，一支精锐部队在“军统”领袖郭汝瑰的带领下直扑成都，并在李璜与青年党民兵策应下迅速占据全城。随之而来的是四川各路驻军纷纷向西昌宣誓效忠，从重庆到雅安的大片地区兵不血刃地成功易主。\n\n南京政府对此严厉谴责，并开始动员军队。中国大陆或将再次爆发军事冲突。"
+ TNOIPN_CHI_news.7.a: "这是真的？"
+ TNOIPN_CHI_news.7.b: "我们不能坐视不管！"
+ TNOIPN_CHI_news.7.c: "有趣。"
 ## Decisions ##
 ## GUI ##
 ## Flags ##

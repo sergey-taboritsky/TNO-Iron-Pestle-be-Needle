@@ -489,3 +489,23 @@ TNOIPN_MLY_on_liberation_war_declared_effect = {
 		}
 	}
 }
+
+#change united front parties
+MLY_PRM_support_change = {
+	custom_effect_tooltip = MLY_PRM_support_change_tt
+	add_to_variable = {
+		IPNMLY_PRM_support_var = IPNMLY_PRM_support_temp_var
+	}
+}
+MLY_PBM_support_change = {
+	custom_effect_tooltip = MLY_PBM_support_change_tt
+	add_to_variable = {
+		IPNMLY_PBM_support_var = IPNMLY_PBM_support_temp_var
+	}
+}
+MLY_PKMM_support_change = {
+	custom_effect_tooltip = MLY_PKMM_support_change_tt
+	add_to_variable = {
+		IPNMLY_PKMM_support_var = IPNMLY_PKMM_support_temp_var
+	}
+}

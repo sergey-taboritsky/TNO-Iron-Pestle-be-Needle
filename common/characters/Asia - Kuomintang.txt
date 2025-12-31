@@ -331,34 +331,6 @@ characters = {
 			id = -1
 		}
 	}
-	###############
-	### Sichuan ###
-	###############
-#Leaders
-	KMT_Deng_Xihou = {
-		name = KMT_Deng_Xihou
-		portraits = {
-			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Deng_Xihou.png" }
-		}
-		country_leader = {
-			desc = "POLITICS_DENG_XIHOU_DESC"
-			ideology = despotism_warlordism_subtype
-			expire = "1985.1.1"
-			id = -1
-		}
-	}
-	KMT_Li_Huang = {
-		name = KMT_Li_Huang
-		portraits = {
-			civilian = { large = "gfx/leaders/KMT/Portrait_KMT_Li_Huang.png" }
-		}
-		country_leader = {
-			desc = "POLITICS_LI_HUANG_DESC"
-			ideology = liberal_conservatism_big_tent_subtype
-			expire = "1985.1.1"
-			id = -1
-		}
-	}
 	##############
 	### Yunnan ###
 	##############

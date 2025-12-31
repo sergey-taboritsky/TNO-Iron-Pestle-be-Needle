@@ -1,0 +1,21 @@
+on_actions = {
+	#STARTUP DEFINITIONS
+	on_startup = {
+		effect = {
+			PKM = {
+				set_variable = { GDP = 0.426 } #in billions
+				set_variable = { GDP_growth = 0.9 }
+				set_variable = { income_tax_rate = 0.125 }
+				set_variable = { business_tax_rate = 0.10 }
+				set_variable = { poverty_rate = 73 }
+				set_variable = { poverty_monthly_change = 0.1 }
+				set_variable = { money_reserves = 0.0 } #in billions
+				set_variable = { national_debt = 0.0 } #in billions
+				set_variable = { misc_income = 0.0 }
+				set_variable = { misc_costs = 0.0 }
+
+				initiate_display_vars = yes
+			}
+		}
+	}
+}

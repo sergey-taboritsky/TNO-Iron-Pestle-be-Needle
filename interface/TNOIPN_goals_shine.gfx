@@ -158,10 +158,10 @@ spriteTypes = {
 ### UMAJF phase two ###
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_reorganize_troops_shine"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_reorganize_troops.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_reorganize_troops.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_reorganize_troops.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_reorganize_troops.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -174,7 +174,7 @@ spriteTypes = {
 		}
 		
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_reorganize_troops.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_reorganize_troops.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -189,10 +189,10 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_ipoh_conference_shine"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_ipoh_conference.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_ipoh_conference.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_ipoh_conference.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_ipoh_conference.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -205,7 +205,7 @@ spriteTypes = {
 		}
 		
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_ipoh_conference.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_ipoh_conference.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -220,10 +220,10 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_solve_crisis_shine"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_solve_crisis.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_solve_crisis.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_solve_crisis.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_solve_crisis.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -236,7 +236,38 @@ spriteTypes = {
 		}
 		
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_solve_crisis.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_solve_crisis.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_population_exchange_shine"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_population_exchange.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_population_exchange.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_population_exchange.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -251,10 +282,10 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_deradicalisation_campaigns_shine"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_deradicalisation_campaigns.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_deradicalisation_campaigns.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_deradicalisation_campaigns.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_deradicalisation_campaigns.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -267,7 +298,38 @@ spriteTypes = {
 		}
 		
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_deradicalisation_campaigns.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_deradicalisation_campaigns.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_firearms_deal_shine"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_firearms_deal.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_firearms_deal.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_firearms_deal.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -282,10 +344,10 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_promise_concessions_campaigns_shine"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_promise_concessions.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_promise_concessions.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_promise_concessions.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_promise_concessions.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -298,7 +360,7 @@ spriteTypes = {
 		}
 		
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_promise_concessions.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_promise_concessions.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -313,10 +375,10 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_joint_excavation_campaigns_shine"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_joint_excavation.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_joint_excavation.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_joint_excavation.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_joint_excavation.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -329,7 +391,69 @@ spriteTypes = {
 		}
 		
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_joint_excavation.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_joint_excavation.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_party_connections_shine"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_party_connections.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_party_connections.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_party_connections.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_negotiation_result_shine"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_negotiation_result.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_negotiation_result.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_negotiation_result.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -362,6 +486,130 @@ spriteTypes = {
 		
 		animation = {
 			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_establish_rationing.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_treasures_of_earth_shine"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_treasures_of_earth.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_treasures_of_earth.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_treasures_of_earth.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_mine_closely_shine"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_mine_closely.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_mine_closely.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_mine_closely.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_develop_kedah_shine"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_develop_kedah.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_develop_kedah.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_develop_kedah.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_ipoh_investments_shine"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_ipoh_investments.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_ipoh_investments.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_ipoh_investments.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -469,10 +717,10 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_strengthen_front_shine"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_strengthen_front.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_strengthen_front.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_strengthen_front.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_strengthen_front.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -485,7 +733,7 @@ spriteTypes = {
 		}
 		
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_strengthen_front.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_strengthen_front.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -500,10 +748,10 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_democratic_extension_shine"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_democratic_extension.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_democratic_extension.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_democratic_extension.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_democratic_extension.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -516,7 +764,7 @@ spriteTypes = {
 		}
 		
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_democratic_extension.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_democratic_extension.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -531,10 +779,10 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_self_cleansing_shine"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_self_cleansing.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_self_cleansing.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_self_cleansing.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_self_cleansing.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -547,7 +795,69 @@ spriteTypes = {
 		}
 		
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_self_cleansing.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_self_cleansing.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_contact_gangster_shine"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_contact_gangster.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_contact_gangster.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_contact_gangster.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_organize_cpc_shine"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_organize_cpc.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_organize_cpc.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_organize_cpc.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -562,10 +872,10 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_contact_vietcong_shine"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_contact_vietcong.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_contact_vietcong.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_contact_vietcong.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_contact_vietcong.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -578,7 +888,69 @@ spriteTypes = {
 		}
 		
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_contact_vietcong.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_contact_vietcong.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_support_taruc_shine"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_support_taruc.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_support_taruc.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_support_taruc.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		legacy_lazy_load = no
+	}
+	SpriteType = {
+		name = "GFX_focus_MLY_guerilla_broadcast_center_shine"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_broadcast_center.png"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_broadcast_center.png"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 }
+		}
+		
+		animation = {
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_broadcast_center.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no
@@ -593,10 +965,10 @@ spriteTypes = {
 	}
 	SpriteType = {
 		name = "GFX_focus_MLY_guerilla_formalize_army_shine"
-		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_formalize_army.dds"
+		texturefile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_formalize_army.png"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_formalize_army.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_formalize_army.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = -90.0
 			animationlooping = no
@@ -609,7 +981,7 @@ spriteTypes = {
 		}
 		
 		animation = {
-			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_formalize_army.dds"
+			animationmaskfile = "gfx/interface/goals/MLY/GFX_focus_MLY_guerilla_formalize_army.png"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
 			animationrotation = 90.0
 			animationlooping = no

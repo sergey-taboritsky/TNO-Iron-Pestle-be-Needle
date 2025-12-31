@@ -70,19 +70,19 @@ characters = {
 			civilian = { large = "gfx/leaders/MLY/Portrait_MLY_Tan_Khai_Hee.png" }
 		}
 		country_leader = {
-			#desc = ""
+			#desc = "POLITICS_THAN_KHAIHEE_DESC"
 			ideology = socialist_1_subtype
 			expire = "1985.1.1"
 			id = -1
 		}
 	}
 	MLY_Burnahuddin_Al_Helmy = {
-		name = SHO_Burnahuddin_Al_Helmy
+		name = MLY_Burnahuddin_Al_Helmy
 		portraits = {
 			civilian = { large = "gfx/leaders/SHO/Portrait_Shonan_Burhanuddin_al-Helmy.png" }
 		}
 		country_leader = {
-			#desc = ""
+			#desc = "POLITICS_DR_BUHANUDDIN_DESC"
 			ideology = socialist_2_subtype
 			expire = "1985.1.1"
 			id = -1

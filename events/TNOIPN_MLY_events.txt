@@ -20,6 +20,8 @@ country_event = { #怡保会师
 	is_triggered_only = yes
 	option = {
 		name = TNOIPN_MLY.2.a
+		add_manpower = 250000
+		remove_ideas = TNOIPN_PKM_manpower_running_dry
 	}
 }
 country_event = { #怡保改编
@@ -129,6 +131,44 @@ country_event = { #党首会谈
 				popularity = 0.03
 			}
 		}
+	}
+}
+country_event = { #MNLA诞生
+	id = TNOIPN_MLY.9
+	title = TNOIPN_MLY.9.t
+	desc = TNOIPN_MLY.9.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {
+		name = TNOIPN_MLY.9.a
+		TNO_improve_army_professionalism_med = yes
+	}
+}
+country_event = { #伍天旺会见李光耀
+	id = TNOIPN_MLY.10
+	title = TNOIPN_MLY.10.t
+	desc = TNOIPN_MLY.10.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {
+		name = TNOIPN_MLY.10.a
+		SHO = {
+			add_stability = -0.02
+			add_popularity = {
+				ideology = socialist_1
+				popularity = 0.03
+			}
+		}
+	}
+}
+country_event = { #南洋临委成立大会
+	id = TNOIPN_MLY.11
+	title = TNOIPN_MLY.11.t
+	desc = TNOIPN_MLY.11.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {
+		name = TNOIPN_MLY.11.a
 	}
 }
 

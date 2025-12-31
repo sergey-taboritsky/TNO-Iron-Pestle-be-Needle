@@ -2314,3 +2314,8 @@ YUN_liberated_government = {
 	color = rgb { 45 45 166 }
 	color_ui = rgb { 45 45 166 }
 }
+
+SIC_liberated_government = {
+	color = rgb { 45 45 166 }
+	color_ui = rgb { 45 45 166 }
+}

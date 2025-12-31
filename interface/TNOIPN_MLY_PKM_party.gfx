@@ -1,4 +1,9 @@
 spriteTypes = {
+	spriteType = {
+		name = "GFX_communist_mao_zedong_thought_picture"
+		texturefile = "gfx/interface/ideologies/communist_mao_zedong_thought_picture.dds"
+		legacy_lazy_load = no
+	}
 #MLY revolution
 	spriteType = {
 		name = "GFX_TNO_OpeningScreen_Poster_PKM"
@@ -7,6 +12,12 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_PKM_texticon"
 		texturefile = "gfx/interface/MLY_gui/texticon_PKM.png"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_CPC_KL_committee_leader_portrait"
+		texturefile = "gfx/interface/MLY_gui/texticon_GFX_CPC_KL_committee_leader_portrait.png"
+		legacy_lazy_load = no
 	}
 	spriteType = {
 		name = "GFX_MLY_revolution_GUI_Map_W_Blue"
@@ -146,6 +157,7 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_MLY_PKM_party_GUI_PBM_party_leader"
 		texturefile = "gfx/interface/MLY_gui/PKMparty/GFX_MLY_PKM_party_GUI_PBM_party_leader.png"
+		noOfFrames = 2
 	}
 	spriteType = {
 		name = "GFX_MLY_PKM_party_GUI_PKMM_party_logo"
@@ -154,5 +166,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_MLY_PKM_party_GUI_PKMM_party_leader"
 		texturefile = "gfx/interface/MLY_gui/PKMparty/GFX_MLY_PKM_party_GUI_PKMM_party_leader.png"
+		noOfFrames = 2
 	}
 }

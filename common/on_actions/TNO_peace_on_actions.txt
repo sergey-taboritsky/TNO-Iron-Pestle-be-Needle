@@ -9339,14 +9339,13 @@ on_actions = {
 					set_global_flag = MAD_colony_won
 				}
 
+				### IPN ###
 				#Western Insurrection
 				else_if = {#NPA defeats China before Jaabn intervenes
 					limit = {
-						NOT = { has_global_flag = CHI_Western_Insurection_RoC_defeated }
-						has_global_flag = CHI_Western_Insurrection_Crisis
 						FROM = {
 							OR = {
-								original_tag = YUN
+								original_tag = XIK
 								has_idea = NLF_Member
 							}
 						}
@@ -9359,172 +9358,53 @@ on_actions = {
 							NOT = { has_war_together_with = JAP }
 						}
 					}
-					set_global_flag = YUN_WI_thx_paradox
-
-					for_each_scope_loop = {
-						array = global.greater_china_states
-						if = {
-							limit = {
-								check_variable = { china_state_ref > 6 }
-								check_variable = { china_state_ref < 14 }
-							}
-							set_demilitarized_zone = no
-							transfer_state_to = NCC
-						}
-					}
+					set_global_flag = TNOIPN_XIK_win_CHI_flag
 
 					TNO_KD_Consequences_of_Annexation = yes #China is one of the few places that can use it
 
-					CHI = {
-						every_unit_leader = {
-							set_nationality = NCC
-						}
-					}
-					NCC = {
-						load_oob = "NCC_GAW"
-						econ_join_sphere_JAP = yes
-					}
-					every_other_country = {
-						limit = { is_in_faction_with = YUN }
-						NCC = { set_embargo_PREV = yes }
-						NCC = { PREV = { set_embargo_PREV = yes } }
-					}
-					YUN = {
-						country_event = { id = yun_wi.30 }
+					XIK = {
 						white_peace = CHI
 						annex_country = {
 							target = CHI
 							transfer_troops = no
 						}
+						every_owned_state = {
+							add_core_of = XIK
+						}
 						set_temp_variable = { money_reserves_temp = 10 }
 						econ_money_reserves_change_raw_money = yes
 					}
-					JAP = {
-						add_to_faction = NCC
-						country_event = { id = japchiinteraction.3 days = 8 }
-					}
-					set_global_flag = CHI_Western_Insurection_RoC_defeated
-					clr_global_flag = YUN_WI_thx_paradox
 					set_global_flag = skip_default_capitulation
 				}
 				else_if = {#Other Chinese states are capitulated by Long Yun
 					limit = {
 						FROM = {
 							OR = {
-								original_tag = YUN
+								original_tag = XIK
 								has_idea = NLF_Member
 							}
 						}
 
 						ROOT = {
 							OR = {
-								original_tag = MAN
 								original_tag = MEN
 								original_tag = GNG
-								original_tag = GAN
-								original_tag = GUX
+								original_tag = GUZ
 								original_tag = SHX
-								original_tag = XIK
-								original_tag = QIN
-								original_tag = TIB
-								original_tag = XIN
-								original_tag = NCC
 							}
 						}
 					}
-					set_global_flag = YUN_WI_thx_paradox
 					TNO_KD_Consequences_of_Annexation = yes #China is one of the few places that can use it
-					YUN = {
+					XIK = {
 						white_peace = ROOT
+						ROOT = {
+							every_core_state = {
+								add_core_of = XIK
+							}
+						}
 						annex_country = {
 							target = ROOT
-							transfer_troops = no
-						}
-						if = {
-							limit = {
-								ROOT = { original_tag = NCC }
-							}
-							country_event = { id = yun_wi.36 }
-						}
-						else_if = {
-							limit = {
-								ROOT = { original_tag = MAN }
-							}
-							country_event = { id = yun_wi.37 }
-						}
-						else_if = {
-							limit = {
-								ROOT = { original_tag = TIB }
-							}
-							country_event = { id = yun_wi.38 }
-						}
-						else_if = {
-							limit = {
-								ROOT = { original_tag = GNG }
-							}
-							country_event = { id = yun_wi.39 }
-						}
-						else_if = {
-							limit = {
-								ROOT = { original_tag = MEN }
-							}
-							country_event = { id = yun.139 }
-						}
-					}
-					if = {
-						limit = {
-							ROOT = {
-								OR = {
-									original_tag = NCC
-									original_tag = MEN
-									original_tag = GNG
-									original_tag = MAN
-								}
-								NOT = { has_country_flag = YUN_NPA_despair_branch }
-							}
-						}
-						YUN = {
-							add_to_variable = { npagawprogress = 1 }
-						}
-						if = {
-							limit = {
-								check_variable = { YUN.npagawprogress = 4 }
-							}
-							YUN = {
-								country_event = { id = yun_wi.45 days = 2 }
-							}
-							JAP = {
-								527 = { set_demilitarized_zone = no }
-								537 = { set_demilitarized_zone = no }
-								1024 = { set_demilitarized_zone = no }
-								1820 = { set_demilitarized_zone = no }
-							}
-						}
-						else_if = {
-							limit = {
-								check_variable = { YUN.npagawprogress < 4 }
-								NOT = { country_exists = GAN }
-								NOT = { country_exists = NCC }
-							}
-							YUN = {
-								country_event = { id = yun_wi.42 days = 2 }
-							}
-						}
-						if = {
-							limit = {
-								check_variable = { YUN.npagawprogress = 1 }
-							}
-							every_country = {
-								limit = {
-									has_idea = YUN_SEA_NOT_YOUR_BUSINESS_STOP
-									is_in_faction_with = JAP
-								}
-								remove_ideas = YUN_SEA_NOT_YOUR_BUSINESS_STOP
-								add_to_war = {
-									targeted_alliance = JAP
-									enemy = YUN
-								}
-							}
+							transfer_troops = yes
 						}
 					}
 					clr_global_flag = YUN_WI_thx_paradox
@@ -9539,107 +9419,40 @@ on_actions = {
 						}
 						ROOT = {
 							OR = {
-								original_tag = YUN
+								original_tag = XIK
 								has_idea = NLF_Member
 							}
 						}
-						has_global_flag = CHI_Western_Insurrection_Crisis
-						NOT = { has_global_flag = JAP_Western_Insurrection_Intervention }
 					}
 
 					FROM = {
 						white_peace = ROOT
 					}
 
-					YUN = {
+					XIK = {
 						delete_unit = {}
-						YUN_NPA_fails_effects = yes
-						set_party_name = {
-							ideology = despotism
-							name = YUN_despotism_XRA_party
-							long_name = YUN_despotism_XRA_party_long
+					}
+					every_country = {
+						limit = {
+							has_idea = NLF_Member
 						}
-						YUN_zhou_longxiang = {
-							add_country_leader_role = {
-								country_leader = {
-									desc = "POLITICS_ZHOU_LONGXIANG_DESC"
-									ideology = despotism_interim_government_subtype
-									traits = {  }
-									expire = "1999.1.1.1"
-									id = -1
-								}
-								promote_leader = yes
+						CHI = {
+							annex_country = {
+								target = PREV
 							}
 						}
-						set_politics = {
-							ruling_party = despotism
-							last_election = "1933.3.5"
-							election_frequency = 48
-							elections_allowed = no
-						}
-						set_popularities = {
-							progressivism = 0
-							liberalism = 0
-							liberal_conservatism = 0
-							despotism = 54
-							conservatism = 4
-							paternalism = 38
-							fascism = 0
-							national_socialism = 0
-							ultranationalism = 4
-						}
-						set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_Dirigisme }
-						econ_subtype_change = yes
-						set_cosmetic_tag = YUN_southwest_united_reconstruction
-						if = {
-							limit = { has_global_flag = WI_NPA_takes_Sichuan }
-							country_event = { id = yun_zhengtong.15 days = 3 }
-							country_event = { id = yun_zhengtong.22 days = 7 }
-							for_each_scope_loop = {
-								array = global.greater_china_states
-								if = {
-									limit = {
-										OR = {
-											check_variable = { china_state_ref = 15 }
-											check_variable = { china_state_ref = 16 }
-											check_variable = { china_state_ref = 17 }
-										}
-									}
-									transfer_state_to = CHI
-								}
-							}
-						}
-						if = {
-							limit = { has_global_flag = GUX_joins_NPA }
-							country_event = { id = yun_zhengtong.36 days = 4 }
-						}
-						set_variable = { national_debt = 0 }
-						country_event = { id = yun_zhengtong.29 days = 2 }
-						country_event = { id = yun_zhengtong.43 days = 3 }
-						country_event = { id = yun_zhengtong.50 days = 5 }
 					}
 					CHI = {
-						country_event = { id = chi_wi.5 }
-						if = {
-							limit = {
-								OR = {
-									GUX = { has_idea = NLF_Member }
-									SHX = { has_idea = NLF_Member }
-								}
-							}
-							country_event = {
-								id = chi.6674
-								days = 365
-							}
-						}
-						country_event = {
-							id = chi.6672
-							days = 730
+						annex_country = {
+							target = XIK
 						}
 						set_temp_variable = { temp_credit_rating = 6 }
 						set_temp_variable = { temp_credit_rating_min = 4 }
 						set_temp_variable = { temp_credit_rating_max = 8 }
 						econ_initialize_credit_rating_system = yes
+						every_owned_state = {
+							add_core_of = CHI
+						}
 					}
 					for_each_scope_loop = {
 						array = global.greater_china_states
@@ -9656,90 +9469,6 @@ on_actions = {
 							id = GNG_Western_Insurrection.7
 							hours = 6
 						}
-					}
-					if = {
-						limit = {
-							XIK = {
-								is_in_faction_with = CHI
-								has_capitulated = yes
-							}
-							NOT = { country_exists = XIK }
-						}
-						every_state = {
-							limit = { is_core_of = XIK }
-							XIK = { transfer_state = PREV }
-						}
-					}
-					else_if = {
-						limit = {
-							XIK = { has_idea = NLF_Member }
-						}
-						every_state = {
-							limit = { is_core_of = XIK }
-							YUN = { transfer_state = PREV }
-							remove_core_of = XIK
-						}
-					}
-					
-					if = {
-						limit = {
-							GUX = {
-								is_in_faction_with = CHI
-								has_capitulated = yes
-							}
-						}
-						every_state = {
-							limit = { is_core_of = GUX }
-							GUX = { transfer_state = PREV }
-						}
-					}
-					else_if = {
-						limit = {
-							GUX = { has_idea = NLF_Member }
-						}
-						CHI = {
-							annex_country = {
-								target = GUX
-								transfer_troops = no
-							}
-						}
-					}
-
-					if = {
-						limit = {
-							SHX = {
-								is_in_faction_with = CHI
-								has_capitulated = yes
-							}
-						}
-						every_state = {
-							limit = { is_core_of = SHX }
-							SHX = { transfer_state = PREV }
-						}
-					}
-					else_if = {
-						limit = {
-							SHX = { has_idea = NLF_Member }
-						}
-						CHI = {
-							annex_country = {
-								target = SHX
-								transfer_troops = no
-							}
-						}
-					}
-
-					if = {
-						limit = {
-							GAN = { has_capitulated = yes }
-						}
-						every_state = {
-							limit = { is_core_of = GAN }
-							GAN = { transfer_state = PREV }
-						}
-					}
-					YUN = {
-						every_owned_state = { add_core_of = PREV }
 					}
 					set_global_flag = skip_default_capitulation
 				}

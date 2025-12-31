@@ -7,8 +7,8 @@ state = {
 	}
 
 	history = {
-		owner = GAN
-		add_core_of = GAN
+		owner = CPC
+		add_core_of = CPC
 		victory_points = {
 			19593 5
 		}

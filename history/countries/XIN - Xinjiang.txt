@@ -152,7 +152,6 @@ set_popularities = {
 	despotism = 0
 	fascism = 0
 }
-
 add_ideas = {
 	XIN_Mao_Zemin_hog
 	XIN_Lai_Zulie_for

@@ -1,5 +1,17 @@
 spriteTypes = {
 	### PKM ###
+    spriteType = {
+        name = "GFX_idea_TNOIPN_PKM_manpower_running_dry"
+		texturefile = "gfx/interface/ideas/national_spirits/TNOIPN_PKM_manpower_running_dry.png"
+    }
+    spriteType = {
+        name = "GFX_idea_TNOIPN_PKM_detachment_military"
+		texturefile = "gfx/interface/ideas/national_spirits/TNOIPN_PKM_detachment_military.png"
+    }
+    spriteType = {
+        name = "GFX_idea_TNOIPN_PKM_united_front_policy"
+		texturefile = "gfx/interface/ideas/national_spirits/TNOIPN_PKM_united_front_policy.png"
+    }
 	### NKLF ###
 	### Xinjiang ###
     spriteType = {

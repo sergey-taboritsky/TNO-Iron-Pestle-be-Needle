@@ -1,7 +1,11 @@
 ﻿add_namespace = TNOIPN_CHI_skeleton
+add_namespace = TNOIPN_CPC_skeleton
 add_namespace = TNOIPN_GUX_skeleton
 add_namespace = TNOIPN_YUN_skeleton
+add_namespace = TNOIPN_XIK_skeleton
+add_namespace = TNOIPN_SIC_skeleton
 add_namespace = TNOIPN_CHI_news
+add_namespace = TNOIPN_CPC_news
 country_event = { #
 	id = TNOIPN_CHI_skeleton.1
 	title = TNOIPN_CHI_skeleton.1.t
@@ -80,6 +84,108 @@ country_event = { #
 	}
 }
 country_event = { #
+	id = TNOIPN_SIC_skeleton.1
+	title = TNOIPN_SIC_skeleton.1.t
+	desc = TNOIPN_SIC_skeleton.1.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = TNOIPN_SIC_skeleton.1.a
+		kill_country_leader = yes
+		add_popularity = {
+			ideology = despotism
+			popularity = -0.05
+		}
+		set_politics = {
+			ruling_party = despotism
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = KMT_Guo_Rugui
+			picture = "gfx/leaders/KMT/Portrait_KMT_Guo_Rugui.png"
+			ideology = despotism_chiang_kai_shek_thought_subtype
+		}
+		set_cosmetic_tag = SIC_liberated_government
+		CHI = {
+			end_puppet = SIC
+		}
+		JAP = {
+			remove_from_faction = SIC
+		}
+		CPC = { news_event = { id = TNOIPN_CHI_news.7 } }
+		XIK = { news_event = { id = TNOIPN_CHI_news.7 } }
+		CHI = { news_event = { id = TNOIPN_CHI_news.7 } }
+		SIC = { news_event = { id = TNOIPN_CHI_news.7 } }
+		econ_leave_sphere = yes
+	}
+}
+country_event = { #
+	id = TNOIPN_CPC_skeleton.1
+	title = TNOIPN_CPC_skeleton.1.t
+	desc = TNOIPN_CPC_skeleton.1.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = TNOIPN_CPC_skeleton.1.a
+		annex_country = {
+			target = GAN
+			transfer_troops = yes
+		}
+		2423 = {
+			transfer_state_to = UYG
+		}
+		283 = {
+			transfer_state_to = UYG
+		}
+		1302 = {
+			transfer_state_to = UYG
+		}
+		UYG = {
+			every_owned_state = {
+				add_core_of = UYG
+			}
+		}
+		every_owned_state = {
+			add_core_of = CPC
+		}
+		every_country = {
+			news_event = TNOIPN_CPC_news.1
+		}
+	}
+	option = {
+		name = TNOIPN_CPC_skeleton.1.b
+		UYG = {
+			annex_country = {
+				target = GAN
+				transfer_troops = yes
+			}
+			every_owned_state = {
+				add_core_of = UYG
+			}
+		}
+		2415 = {
+			transfer_state_to = CPC
+		}
+		2416 = {
+			transfer_state_to = CPC
+		}
+		2424 = {
+			transfer_state_to = CPC
+		}
+		2425 = {
+			transfer_state_to = CPC
+		}
+		every_owned_state = {
+			add_core_of = CPC
+		}
+		every_country = {
+			news_event = TNOIPN_CPC_news.2
+		}
+	}
+}
+country_event = { #
 	id = TNOIPN_GUX_skeleton.1
 	title = TNOIPN_GUX_skeleton.1.t
 	desc = TNOIPN_GUX_skeleton.1.desc
@@ -111,6 +217,11 @@ country_event = { #
 		XIK = { news_event = { id = TNOIPN_CHI_news.5 } }
 		CHI = { news_event = { id = TNOIPN_CHI_news.5 } }
 		GUX = { news_event = { id = TNOIPN_CHI_news.5 } }
+		hidden_effect = {
+			SIC = {
+				country_event = { id = TNOIPN_SIC_skeleton.1 days = 14 }
+			}
+		}
 	}
 }
 country_event = { #
@@ -122,34 +233,39 @@ country_event = { #
 	fire_only_once = yes
 	option = {
 		name = TNOIPN_GUX_skeleton.2.a
-		set_popularities = {
-			liberal_conservatism = 65
-			paternalism = 35
+		hidden_effect = {
+			set_popularities = {
+				liberal_conservatism = 65
+				paternalism = 35
+			}
+			set_politics = {
+				ruling_party = liberal_conservatism
+				last_election = "1965.1.1"
+				election_frequency = 48
+				elections_allowed = yes
+			}
+			set_party_name = {
+				ideology = liberal_conservatism
+				long_name = GUX_liberal_conservatism_national_party_long
+				name = GUX_liberal_conservatism_national_party
+			}
+			transfer_state = 1016
+			transfer_state = 2434
+			transfer_state = 602
+			transfer_state = 608
+			transfer_state = 2365
+			transfer_state = 2325
+			transfer_state = 2436
+			transfer_state = 1020
+			transfer_state = 812
+			every_owned_state = {
+				add_core_of = GUX
+			}
+			news_event = { id = TNOIPN_CHI_news.4 }
+			XIK = {
+				country_event = { id = TNOIPN_XIK_skeleton.1 days = 7 }
+			}
 		}
-		set_politics = {
-			ruling_party = liberal_conservatism
-			last_election = "1965.1.1"
-			election_frequency = 48
-			elections_allowed = yes
-		}
-		set_party_name = {
-			ideology = liberal_conservatism
-			long_name = GUX_liberal_conservatism_national_party_long
-			name = GUX_liberal_conservatism_national_party
-		}
-		transfer_state = 1016
-		transfer_state = 2434
-		transfer_state = 602
-		transfer_state = 608
-		transfer_state = 2365
-		transfer_state = 2325
-		transfer_state = 2436
-		transfer_state = 1020
-		transfer_state = 812
-		every_owned_state = {
-			add_core_of = GUX
-		}
-		news_event = { id = TNOIPN_CHI_news.4 }
 	}
 }
 country_event = { #
@@ -175,12 +291,88 @@ country_event = { #
 			election_frequency = 48
 			elections_allowed = yes
 		}
+		CHI = {
+			end_puppet = YUN
+		}
+		JAP = {
+			remove_from_faction = YUN
+		}
 		econ_leave_sphere = yes
 		set_cosmetic_tag = YUN_liberated_government
 		CPC = { news_event = { id = TNOIPN_CHI_news.6 } }
 		XIK = { news_event = { id = TNOIPN_CHI_news.6 } }
 		CHI = { news_event = { id = TNOIPN_CHI_news.6 } }
 		YUN = { news_event = { id = TNOIPN_CHI_news.6 } }
+	}
+}
+country_event = { #
+	id = TNOIPN_XIK_skeleton.1
+	title = TNOIPN_XIK_skeleton.1.t
+	desc = TNOIPN_XIK_skeleton.1.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = TNOIPN_XIK_skeleton.1.a
+		SIC = {
+			every_core_state = {
+				add_core_of = CHI
+				remove_core_of = SIC
+			}
+		}
+		CHI = {
+			transfer_units_fraction = {
+				target = XIK
+				army_ratio = 0.8
+				air_ratio = 0.6
+			}
+		}
+		annex_country = {
+			target = SIC
+			transfer_troops = yes
+		}
+		create_faction = TNOIPN_CHI_Third_United_Front
+		add_to_faction = TIB
+		TIB = { add_ideas = NLF_Member }
+		add_to_faction = YUN
+		YUN = { add_ideas = NLF_Member }
+		add_to_faction = CPC
+		CPC = { add_ideas = NLF_Member }
+		add_to_faction = UYG
+		UYG = { add_ideas = NLF_Member }
+		add_to_faction = QIN
+		QIN = { add_ideas = NLF_Member }
+		add_to_faction = XIN
+		XIN = { add_ideas = NLF_Member }
+		add_to_faction = GUX
+		GUX = { add_ideas = NLF_Member }
+		add_ideas = NLF_Leader
+		JAP = {
+			remove_from_faction = CHI
+			remove_from_faction = GNG
+		}
+		CHI = {
+			create_faction = TNOIPN_CHI_defense_front
+			add_to_faction = GNG
+		}
+		XIK = {
+			declare_war_on = {
+				target = CHI
+				type = annex_everything
+			}
+		}
+		CPC = {
+			declare_war_on = {
+				target = CHI
+				type = annex_everything
+			}
+		}
+		GUX = {
+			declare_war_on = {
+				target = CHI
+				type = annex_everything
+			}
+		}
 	}
 }
 news_event = { #
@@ -216,7 +408,7 @@ news_event = { #
 		name = TNOIPN_CHI_news.1.c
 		trigger = {
 			OR = {
-				tag = JAP
+				tag = XIK
 				tag = CPC
 			}
 		}
@@ -255,7 +447,7 @@ news_event = { #
 		name = TNOIPN_CHI_news.2.c
 		trigger = {
 			OR = {
-				tag = JAP
+				tag = XIK
 				tag = CPC
 			}
 		}
@@ -294,7 +486,7 @@ news_event = { #
 		name = TNOIPN_CHI_news.3.c
 		trigger = {
 			OR = {
-				tag = JAP
+				tag = XIK
 				tag = CPC
 			}
 		}
@@ -333,7 +525,7 @@ news_event = { #
 		name = TNOIPN_CHI_news.4.c
 		trigger = {
 			OR = {
-				tag = JAP
+				tag = XIK
 				tag = CPC
 			}
 		}
@@ -413,6 +605,123 @@ news_event = { #
 					tag = CHI
 					is_in_faction_with = CHI
 				}
+			}
+		}
+	}
+}
+news_event = { #
+	id = TNOIPN_CHI_news.7
+	title = TNOIPN_CHI_news.7.t
+	desc = TNOIPN_CHI_news.7.d
+	picture = GFX_news_event_MLY_collab_victory
+	is_triggered_only = yes
+	major = no
+	option = {
+		name = TNOIPN_CHI_news.7.a
+		trigger = {
+			OR = {
+				tag = XIK
+				tag = CPC
+			}
+		}
+	}
+	option = {
+		name = TNOIPN_CHI_news.7.b
+		trigger = {
+			OR = {
+				tag = CHI
+				is_in_faction_with = CHI
+			}
+		}
+	}
+	option = {
+		name = TNOIPN_CHI_news.7.c
+		trigger = {
+			NOT = {
+				OR = {
+					tag = XIK
+					tag = CPC
+					tag = CHI
+					is_in_faction_with = CHI
+				}
+			}
+		}
+	}
+}
+news_event = { #
+	id = TNOIPN_CPC_news.1
+	title = TNOIPN_CPC_news.1.t
+	desc = TNOIPN_CPC_news.1.d
+	picture = GFX_news_event_MLY_collab_victory
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = TNOIPN_CPC_news.1.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = JAP
+					is_in_faction_with = JAP
+					tag = XIK
+					tag = CPC
+				}
+			}
+		}
+	}
+	option = {
+		name = TNOIPN_CPC_news.1.b
+		trigger = {
+			OR = {
+				tag = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+	option = {
+		name = TNOIPN_CPC_news.1.c
+		trigger = {
+			OR = {
+				tag = XIK
+				tag = CPC
+			}
+		}
+	}
+}
+news_event = { #
+	id = TNOIPN_CPC_news.2
+	title = TNOIPN_CPC_news.2.t
+	desc = TNOIPN_CPC_news.2.d
+	picture = GFX_news_event_MLY_collab_victory
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = TNOIPN_CPC_news.2.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = JAP
+					is_in_faction_with = JAP
+					tag = XIK
+					tag = CPC
+				}
+			}
+		}
+	}
+	option = {
+		name = TNOIPN_CPC_news.2.b
+		trigger = {
+			OR = {
+				tag = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+	option = {
+		name = TNOIPN_CPC_news.2.c
+		trigger = {
+			OR = {
+				tag = XIK
+				tag = CPC
 			}
 		}
 	}

@@ -10,7 +10,7 @@ bookmarks = {
 		desc = "THENEWORDER_DESC"
 		date = 1962.1.1.1
 		picture = "GFX_select_date_1939"
-		default_country = "AAO"
+		default_country = "PKM"
 		default = yes
 
 		effect = {
@@ -137,18 +137,18 @@ bookmarks = {
 		"ZZZ" = { history = "" }
 		"ZZZ" = { history = "" }
 
-		"CHI" = {
-			history = "CHI_THENEWORDER_DESC"
-			ideology = fascism
+		"PKM" = {
+			history = "PKM_THENEWORDER_DESC"
+			ideology = communist
 			ideas = {
-				CHI_japans_breadbasket_0
-				CHI_small_army
-				CHI_slave_of_the_samurai_0
+				TNOIPN_PKM_united_front_policy
+				TNOIPN_PKM_manpower_running_dry
+				TNOIPN_PKM_detachment_military
 			}
 			focuses = {
-				CHI_Education
-				CHI_Technology
-				CHI_Industrialization
+				MLY_start_break_out
+				MLY_guerilla_ipoh_conference
+				MLY_guerilla_times_up
 			}
 		}
 

@@ -535,6 +535,20 @@ focus_tree = {
 			focus = MLY_guerilla_strengthen_front
 		}
 		completion_reward = {
+			add_political_power = -25
+			set_temp_variable = {
+				IPNMLY_PRM_support_temp_var = 5
+			}
+			MLY_PRM_support_change = yes
+			set_temp_variable = {
+				IPNMLY_PBM_support_temp_var = 5
+			}
+			MLY_PBM_support_change = yes
+			set_temp_variable = {
+				IPNMLY_PKMM_support_temp_var = 5
+			}
+			MLY_PKMM_support_change = yes
+			TNO_improve_political_parties_policy_effectiveness_monthly_low = yes
 		}
 	}
 	focus = {
@@ -547,6 +561,13 @@ focus_tree = {
 			focus = MLY_guerilla_strengthen_front
 		}
 		completion_reward = {
+			set_temp_variable = {
+				IPNMLY_PKMM_support_temp_var = -2.5
+			}
+			MLY_PKMM_support_change = yes
+			add_manpower = -15
+			TNO_improve_penal_system_policy_effectiveness_high = yes
+			TNO_improve_military_supervision_policy_effectiveness_low = yes
 		}
 	}
 	focus = {
@@ -562,6 +583,17 @@ focus_tree = {
 			focus = MLY_guerilla_self_cleansing
 		}
 		completion_reward = {
+			set_temp_variable = {
+				IPNMLY_PBM_support_temp_var = 2.5
+			}
+			MLY_PBM_support_change = yes
+			add_intel = {
+				target = SHO
+				army_intel = 50
+				navy_intel = 25
+				airforce_intel = 25
+			}
+			country_event = { id = TNOIPN_MLY.10 }
 		}
 	}
 	focus = {
@@ -574,6 +606,8 @@ focus_tree = {
 			focus = MLY_guerilla_contact_gangster
 		}
 		completion_reward = {
+			add_ideas = TNOIPN_PKM_CPC_KL_committee
+			country_event = { id = TNOIPN_MLY.11 }
 		}
 	}
 	focus = {
@@ -628,6 +662,8 @@ focus_tree = {
 			has_country_flag = TNOIPN_Thai_Negotiations_Succeed_flag
 		}
 		completion_reward = {
+			country_event = { id = TNOIPN_MLY.9 }
+			add_ideas = TNOIPN_PKM_National_Liberation_Army
 		}
 	}
 	focus = {
@@ -643,6 +679,10 @@ focus_tree = {
 			focus = MLY_guerilla_red_warriors
 		}
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = TNOIPN_PKM_National_Liberation_Army
+				add_idea = TNOIPN_PKM_National_Liberation_Army_1
+			}
 		}
 	}
 	focus = {
@@ -655,6 +695,16 @@ focus_tree = {
 			focus = MLY_guerilla_peoples_army
 		}
 		completion_reward = {
+			add_timed_idea = {
+				idea = TNOIPN_PKM_gradual_easing
+				days = 75
+			}
+			custom_effect_tooltip = TNOIPN_idea_remove_tt
+			effect_tooltip = {
+				remove_ideas = TNOIPN_PKM_detachment_military
+				army_experience = 75
+				TNO_improve_army_professionalism_high = yes
+			}
 		}
 	}
 	focus = {
@@ -670,6 +720,10 @@ focus_tree = {
 			focus = MLY_guerilla_peoples_army
 		}
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = TNOIPN_PKM_National_Liberation_Army
+				add_idea = TNOIPN_PKM_National_Liberation_Army_2
+			}
 		}
 	}
 	focus = {
@@ -682,6 +736,10 @@ focus_tree = {
 			focus = MLY_guerilla_red_warriors
 		}
 		completion_reward = {
+			remove_ideas = TNOIPN_PKM_detachment_military
+			add_stability = -0.05
+			add_war_support = -0.10
+			TNO_improve_army_professionalism_low = yes
 		}
 	}
 	focus = {
@@ -695,6 +753,26 @@ focus_tree = {
 			focus = MLY_guerilla_red_warriors
 		}
 		completion_reward = {
+			TNO_improve_military_supervision_policy_effectiveness_monthly_low = yes
+			TNO_improve_army_professionalism_med = yes
+			if = {
+				limit = {
+					has_idea = TNOIPN_PKM_National_Liberation_Army_1
+				}
+				swap_ideas = {
+					remove_idea = TNOIPN_PKM_National_Liberation_Army_1
+					add_idea = TNOIPN_PKM_National_Liberation_Army_1_1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = TNOIPN_PKM_National_Liberation_Army_2
+				}
+				swap_ideas = {
+					remove_idea = TNOIPN_PKM_National_Liberation_Army_2
+					add_idea = TNOIPN_PKM_National_Liberation_Army_2_1
+				}
+			}
 		}
 	}
 	focus = {

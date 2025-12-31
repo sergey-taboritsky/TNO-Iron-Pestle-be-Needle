@@ -56,6 +56,15 @@ set_variable = {
 set_variable = {
 	TNOIPN_MLY_GUI_state_control_Singapore_var = 20
 }
+set_variable = {
+	IPNMLY_PRM_support_var = 75
+}
+set_variable = {
+	IPNMLY_PBM_support_var = 70
+}
+set_variable = {
+	IPNMLY_PKMM_support_var = 55
+}
 # Leaders
 recruit_character = MLY_Chin_Peng
 recruit_character = MLY_Ahmad_Boestamam
@@ -251,6 +260,9 @@ add_ideas = {
 	MLY_Rashid_Maidin_army_chief
 
 	#Country
+	TNOIPN_PKM_manpower_running_dry
+	TNOIPN_PKM_detachment_military
+	TNOIPN_PKM_united_front_policy
 
 	#Political
 	tno_political_parties_one_party_state

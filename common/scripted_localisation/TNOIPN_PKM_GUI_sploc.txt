@@ -105,3 +105,57 @@ defined_text = {
 		localization_key = POLITICS_Ahmad_Boestamam_DESC
 	}
 }
+defined_text = {
+	name = Get_MLYPBM_leader_name
+	text = {
+		trigger = {
+			check_variable = {
+				PBM_leader_portrait_frame_var = 1
+			}
+		}
+		localization_key = MLY_Tan_Khai_Hee
+	}
+
+	## Default
+	text = {
+		localization_key = Get_MLYPBM_gensec_name_invalid_tt
+	}
+}
+defined_text = {
+	name = Get_MLYPBM_leader_desc
+	text = {
+		trigger = {
+			check_variable = {
+				PRM_leader_portrait_frame_var = 1
+			}
+		}
+		localization_key = POLITICS_THAN_KHAIHEE_DESC
+	}
+}
+defined_text = {
+	name = Get_MLYPKMM_leader_name
+	text = {
+		trigger = {
+			check_variable = {
+				PKMM_leader_portrait_frame_var = 1
+			}
+		}
+		localization_key = MLY_Burnahuddin_Al_Helmy
+	}
+
+	## Default
+	text = {
+		localization_key = Get_MLYPKMM_gensec_name_invalid_tt
+	}
+}
+defined_text = {
+	name = Get_MLYPKMM_leader_desc
+	text = {
+		trigger = {
+			check_variable = {
+				PKMM_leader_portrait_frame_var = 1
+			}
+		}
+		localization_key = POLITICS_DR_BUHANUDDIN_DESC
+	}
+}

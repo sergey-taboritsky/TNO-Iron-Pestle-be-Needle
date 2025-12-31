@@ -527,3 +527,5 @@ TNOIPN_Malaysian_Revolution_category = {
 		}
 	}
 }
+TNOIPN_MLY_PKM_party_category = {
+}

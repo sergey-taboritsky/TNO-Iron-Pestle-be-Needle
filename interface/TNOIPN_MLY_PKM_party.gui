@@ -117,8 +117,8 @@ guiTypes = {
 			position = { x = 240 y = 375 }
 			scale = 1
 			quadTextureSprite = "GFX_MLY_PKM_party_GUI_PBM_party_leader"
-			pdx_tooltip = MLY_revolution_GUI_Map_Ipoh_tt
-			pdx_tooltip_delayed = MLY_revolution_GUI_Map_Ipoh_desc_tt
+			pdx_tooltip = MLY_PKM_party_GUI_PBM_party_leader_tt
+			pdx_tooltip_delayed = MLY_PKM_party_GUI_PBM_party_leader_desc_tt
 		}
 		iconType = {
 			name = "GFX_MLY_PKM_party_GUI_PKMM_party_logo"
@@ -133,8 +133,8 @@ guiTypes = {
 			position = { x = 390 y = 375 }
 			scale = 1
 			quadTextureSprite = "GFX_MLY_PKM_party_GUI_PKMM_party_leader"
-			pdx_tooltip = MLY_revolution_GUI_Map_Ipoh_tt
-			pdx_tooltip_delayed = MLY_revolution_GUI_Map_Ipoh_desc_tt
+			pdx_tooltip = MLY_PKM_party_GUI_PKMM_party_leader_tt
+			pdx_tooltip_delayed = MLY_PKM_party_GUI_PKMM_party_leader_desc_tt
 		}
 	}
 }
