@@ -22,10 +22,10 @@
  BRU_despotism_party: "文莱王朝"
  BRU_despotism_party_long: "文莱王朝(House Waddien)"
 ## Ideas ##
- TNOIPN_SHO_ninteenth_army_support: "第十九军的支援"
- TNOIPN_SHO_ninteenth_army_support_desc: "尽管1960年的大暴动严重损伤了二十五军的根基，但东京方面已经指定第十九军前来帮助平乱。\n\n§R然而，第十九军的调动也意味着其在北婆罗洲地区的兵力将被削弱，倘若这些地区出现新的冲突，南洋日军将面临两难抉择。§!"
+ TNOIPN_SHO_ninteenth_army_support: "第三十七军的支援"
+ TNOIPN_SHO_ninteenth_army_support_desc: "尽管1960年的大暴动严重损伤了二十五军的根基，但东京方面已经指定第三十七军前来帮助平乱。\n\n§R然而，第三十七军的调动也意味着其在北婆罗洲地区的兵力将被削弱，倘若这些地区出现新的冲突，南洋日军将面临两难抉择。§!"
  TNOIPN_SHO_defenses_emptied: "防御空虚"
- TNOIPN_SHO_defenses_emptied_desc: "由于此地原本的驻军第十九军已经被调走支援马来半岛，如今砂拉越、文莱与北婆罗洲的防御只能依赖当地民兵与土著武装。这些军队不但战斗力值得怀疑，而且忠诚度也同样不能高估。若马来半岛战事拖延过长，北婆罗洲的动荡随时可能演变为与马来亚1960年相似的全面暴乱。"
+ TNOIPN_SHO_defenses_emptied_desc: "由于此地原本的驻军第三十七军已经被调走支援马来半岛，如今砂拉越、文莱与北婆罗洲的防御只能依赖当地民兵与土著武装。这些军队不但战斗力值得怀疑，而且忠诚度也同样不能高估。若马来半岛战事拖延过长，北婆罗洲的动荡随时可能演变为与马来亚1960年相似的全面暴乱。"
 ## Dynamic Modifiers ##
 ## National Focus ##
 ## Events ##
