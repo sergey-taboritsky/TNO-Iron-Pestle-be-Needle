@@ -1,0 +1,22 @@
+ideas = {
+	country = {
+		TNOIPN_SHO_ninteenth_army_support = {
+			picture = GFX_idea_TNOIPN_SHO_ninteenth_army_support
+			modifier = {
+				army_org_factor = 0.05
+				army_morale_factor = 0.05
+				army_speed_factor = -0.10
+			}
+		}
+		TNOIPN_SHO_defenses_emptied = {
+			picture = GFX_idea_TNOIPN_SHO_defenses_emptied
+			modifier = {
+				army_org_factor = -0.50
+				army_core_attack_factor = -0.20
+				army_core_defence_factor = -0.20
+				command_power_gain_mult = -0.75
+				recruitable_population_factor = -0.40
+			}
+		}
+	}
+}

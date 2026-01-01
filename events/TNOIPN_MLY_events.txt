@@ -1,4 +1,5 @@
 ﻿add_namespace = TNOIPN_MLY
+add_namespace = TNOIPN_MLY_Brunei
 add_namespace = TNOIPN_MLY_postwar
 add_namespace = TNOIPN_MLY_easteregg
 add_namespace = TNOIPN_MLY_worldnews
@@ -171,6 +172,47 @@ country_event = { #南洋临委成立大会
 		name = TNOIPN_MLY.11.a
 	}
 }
+
+country_event = { #文莱革命报告
+	id = TNOIPN_MLY_Brunei.1
+	title = TNOIPN_MLY_Brunei.1.t
+	desc = TNOIPN_MLY_Brunei.1.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {
+		name = TNOIPN_MLY_Brunei.1.a
+		set_variable = {
+			TNOIPN_MLY_north_borneo_revolt_supporter_var = 3
+		}
+	}
+}
+country_event = { #文莱革命报告
+	id = TNOIPN_MLY_Brunei.2
+	title = TNOIPN_MLY_Brunei.2.t
+	desc = TNOIPN_MLY_Brunei.2.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {
+		name = TNOIPN_MLY_Brunei.2.a
+		set_variable = {
+			TNOIPN_MLY_north_borneo_revolt_supporter_var = 2
+		}
+	}
+}
+country_event = { #文莱革命报告
+	id = TNOIPN_MLY_Brunei.3
+	title = TNOIPN_MLY_Brunei.3.t
+	desc = TNOIPN_MLY_Brunei.3.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {
+		name = TNOIPN_MLY_Brunei.3.a
+		set_variable = {
+			TNOIPN_MLY_north_borneo_revolt_supporter_var = 1
+		}
+	}
+}
+
 
 country_event = { #
 	id = TNOIPN_MLY_postwar.1
@@ -694,6 +736,58 @@ news_event = { #马来亚紧急状态结束
 		name = TNOIPN_MLY_worldnews.1.b
 		trigger = {
 			tag = PKM
+		}
+	}
+}
+
+news_event = { #文莱革命
+	id = TNOIPN_MLY_worldnews.2
+	title = TNOIPN_MLY_worldnews.2.t
+	desc = TNOIPN_MLY_worldnews.2.d
+	picture = GFX_news_event_MLY_collab_victory
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	immediate = {
+		set_global_flag = TNOIPN_MLY_north_borneo_revolt_ongoing_flag
+	}
+	option = {
+		name = TNOIPN_MLY_worldnews.2.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = PKM
+					tag = JAP
+					tag = INS
+				}
+			}
+		}
+	}
+	option = {
+		name = TNOIPN_MLY_worldnews.2.b
+		trigger = {
+			tag = PKM
+		}
+		hidden_effect = {
+			country_event = { id = TNOIPN_MLY_Brunei.1 }
+		}
+	}
+	option = {
+		name = TNOIPN_MLY_worldnews.2.c
+		trigger = {
+			tag = JAP
+		}
+		hidden_effect = {
+			country_event = { id = TNOIPN_MLY_Brunei.3 }
+		}
+	}
+	option = {
+		name = TNOIPN_MLY_worldnews.2.e
+		trigger = {
+			tag = INS
+		}
+		hidden_effect = {
+			country_event = { id = TNOIPN_MLY_Brunei.2 }
 		}
 	}
 }

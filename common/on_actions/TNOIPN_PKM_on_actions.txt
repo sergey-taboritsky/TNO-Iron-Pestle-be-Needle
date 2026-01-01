@@ -16,6 +16,13 @@ on_actions = {
 
 				initiate_display_vars = yes
 			}
+			SHO = {
+				add_ideas = TNOIPN_SHO_ninteenth_army_support
+			}
+			NRB = {
+				add_ideas = TNOIPN_SHO_defenses_emptied
+			}
+			news_event = TNOIPN_MLY_worldnews.2 days = 15
 		}
 	}
 }

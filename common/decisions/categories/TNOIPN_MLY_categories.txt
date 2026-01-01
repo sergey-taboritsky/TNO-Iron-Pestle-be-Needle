@@ -19,3 +19,16 @@ TNOIPN_MLY_PKM_party_category = {
 	}
 	visible_when_empty = yes
 }
+TNOIPN_MLY_north_borneo_revolt_category = {
+	icon = GFX_decision_category_EGY_ASU
+	scripted_gui = TNOIPN_MLY_north_borneo_revolt_GUI
+	visible = {
+		OR = {
+			tag = PKM
+			tag = INS
+			tag = JAP
+		}
+		has_global_flag = TNOIPN_MLY_north_borneo_revolt_ongoing_flag
+	}
+	visible_when_empty = yes
+}

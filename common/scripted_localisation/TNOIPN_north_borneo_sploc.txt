@@ -1,0 +1,30 @@
+defined_text = {
+	name = Get_TNOIPN_MLY_north_borneo_revolt_supporter_sploc
+	text = {
+		trigger = {
+			check_variable = {
+				TNOIPN_MLY_north_borneo_revolt_supporter_var = 3
+			}
+		}
+		localization_key = TNOIPN_MLY_north_borneo_revolt_supporter_communist
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				TNOIPN_MLY_north_borneo_revolt_supporter_var = 2
+			}
+		}
+		localization_key = TNOIPN_MLY_north_borneo_revolt_supporter_indonesia
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				TNOIPN_MLY_north_borneo_revolt_supporter_var = 1
+			}
+		}
+		localization_key = TNOIPN_MLY_north_borneo_revolt_supporter_japan
+	}
+	text = {
+		localization_key = TNOIPN_MLY_north_borneo_revolt_supporter_NA
+	}
+}

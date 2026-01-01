@@ -1,0 +1,34 @@
+﻿l_simp_chinese:
+## Countries ##
+## States and VPs ##
+## Cosmetic Tags ##
+## Characters ##
+ BRU_Wu_Chan: "伍禅"
+ BRU_Wen_Min_Chyuan: "文铭权"
+ BRU_Ahmad_Azahari: "阿末·阿扎哈里"
+ BRU_Yassin_Affandi: "亚辛·阿凡迪"
+ BRU_Salleh_Masri: "沙利·马斯里"
+## Parties ##
+ BRU_communist_party: "婆罗洲反日同盟会"
+ BRU_communist_party_long: "婆罗洲反日同盟会(Persatuan Anti-Jepang Borneo)"
+ BRU_communist_1_party: "砂拉越人民革命军"
+ BRU_communist_1_party_long: "砂拉越人民革命军(Pasukan Gerilya Rakyat Sarawak)"
+ BRU_socialist_party: "文莱人民党 - 激进派"
+ BRU_socialist_party_long: "文莱人民党(Parti Rakyat Brunei)"
+ BRU_socialist_1_party: "北加里曼丹国民军"
+ BRU_socialist_1_party_long: "北加里曼丹国民军(Tentera Nasional Kalimantan Utara)"
+ BRU_progressivism_party: "文莱人民党 - 主流派"
+ BRU_progressivism_party_long: "文莱人民党(Parti Rakyat Brunei)"
+ BRU_despotism_party: "文莱王朝"
+ BRU_despotism_party_long: "文莱王朝(House Waddien)"
+## Ideas ##
+ TNOIPN_SHO_ninteenth_army_support: "第十九军的支援"
+ TNOIPN_SHO_ninteenth_army_support_desc: "尽管1960年的大暴动严重损伤了二十五军的根基，但东京方面已经指定第十九军前来帮助平乱。\n\n§R然而，第十九军的调动也意味着其在北婆罗洲地区的兵力将被削弱，倘若这些地区出现新的冲突，南洋日军将面临两难抉择。§!"
+ TNOIPN_SHO_defenses_emptied: "防御空虚"
+ TNOIPN_SHO_defenses_emptied_desc: "由于此地原本的驻军第十九军已经被调走支援马来半岛，如今砂拉越、文莱与北婆罗洲的防御只能依赖当地民兵与土著武装。这些军队不但战斗力值得怀疑，而且忠诚度也同样不能高估。若马来半岛战事拖延过长，北婆罗洲的动荡随时可能演变为与马来亚1960年相似的全面暴乱。"
+## Dynamic Modifiers ##
+## National Focus ##
+## Events ##
+## Decisions ##
+## GUI ##
+## Flags ##

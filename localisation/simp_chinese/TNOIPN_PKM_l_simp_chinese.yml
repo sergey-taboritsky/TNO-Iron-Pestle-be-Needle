@@ -252,6 +252,18 @@
  TNOIPN_MLY.11.d: ""
  TNOIPN_MLY.11.a: ""
 
+ TNOIPN_MLY_Brunei.1.t: "文莱暴动"
+ TNOIPN_MLY_Brunei.1.desc: "近日，由兄弟党“婆罗洲反日同盟会”传来最新消息：文莱境内的北加里曼丹国民军已于数日前发动暴动，试图夺取文莱的控制权。由于原本驻扎北婆罗洲的日军第十九军主力目前仍在马来半岛镇压我方游击队，北加国民军在战场上进展迅速。\n\n北加国民军成立于1948年，由部分曾在印度尼西亚独立武装中效力的马来贵族支持，旨在推翻日本在婆罗洲的统治，并让北加里曼丹并入印度尼西亚。\n\n据悉，北加国民军在暴动中得到了文莱本地第一大党文莱人民党中大部分左翼力量的支持，尤其是那些对日本统治不满的群体，并已经占据紧邻文莱、毗邻印度尼西亚的林梦县城。然而，暴动也遭到了东京的谴责，目前局势仍然紧张。\n\n婆罗洲反日同盟会如今已经派遣部分军事力量加入暴动军，并声称将与北加国民军合作，争取当地从日本殖民统治中得到解放。"
+ TNOIPN_MLY_Brunei.1.a: "或许，第十九军也该回到砂拉越了？"
+ TNOIPN_MLY_Brunei_1_tt: "§R随着第十九军的回防，我们即将得到一丝喘息之机......§!"
+ TNOIPN_MLY_Brunei.2.t: "文莱起义"
+ TNOIPN_MLY_Brunei.2.desc: "（占位符）北加里曼丹国民军暴动，支持北加国民军"
+ TNOIPN_MLY_Brunei.2.a: "大印度尼西亚将收复这片土地！"
+ TNOIPN_MLY_Brunei.3.t: "文莱叛乱"
+ TNOIPN_MLY_Brunei.3.desc: "（占位符）北加里曼丹国民军暴动，支持十九军平叛"
+ TNOIPN_MLY_Brunei.3.a: "我们必须阻止这场可笑的“革命”。"
+
+
  TNOIPN_MLY_postwar.1.t: "处置叛徒"
  TNOIPN_MLY_postwar.1.desc: ""
  TNOIPN_MLY_postwar.1.a: "解散半岛马来人运动，新马来亚容不得亲日派。"
@@ -291,6 +303,12 @@
  TNOIPN_MLY_worldnews.1.d: "近日，南洋日军司令[SHO.GetLeader]宣布为期超过一年的“马来亚紧急状态”正式宣告结束。\n\n一年前，随着马来亚工人发起总罢工，盘踞在丛林中的马来亚共产党游击队顺势南下，攻击城市、占领乡村，并将武器提供给暴动工人使其对南洋日军奋起反抗。在混乱持续一年后，暴动工人终于被镇压殆尽，而罢工者也逐渐恢复务工。南洋日军骄傲地宣布，马来半岛的经济与政治秩序已经基本恢复。\n\n然而，有传闻声称，马来亚共产党及其“马来亚人民抗日军”已经趁势夺取北方重镇、马来亚第四大城市怡保。日军司令[SHO.GetLeader]对此矢口否认，并坚称马共已经元气大伤，不再构成任何威胁。"
  TNOIPN_MLY_worldnews.1.a: "马六甲海峡能恢复通航吗？"
  TNOIPN_MLY_worldnews.1.b: "这可没完，日本鬼......"
+ TNOIPN_MLY_worldnews.2.t: "[Get_newspaper_header]北加里曼丹国民军暴动"
+ TNOIPN_MLY_worldnews.2.d: "自从日本帝国陆军占领北加里曼丹以来，当地便存在着形形色色的反抗势力。然而，这些势力向来都对南洋日军的统治毫无威胁。\n\n不过近日，随着号称“北加里曼丹国民军”的武装力量占领紧邻文莱的砂拉越林梦县城，日本在北加里曼丹的统治似乎受到了前所未有的挑战。由于南洋日军主力仍在马来半岛参与镇压马来亚共产党暴动，北加里曼丹国民军向文莱的进军似乎无可阻挡。\n\n尽管东京方面谴责北加国民军为“共产主义恐怖分子”，但按观察家分析，其真实支持者有很高概率为日本名义上的盟友，印度尼西亚总统苏加诺。\n\n如今，随着北加里曼丹国民军的进展，旭日在该地的未来正变得愈发扑朔迷离。"
+ TNOIPN_MLY_worldnews.2.a: "有趣。"
+ TNOIPN_MLY_worldnews.2.b: "伍禅同志，你还好吗......"
+ TNOIPN_MLY_worldnews.2.c: "是时候调回第十九军了。"
+ TNOIPN_MLY_worldnews.2.e: "我们的同胞们一定会成功！"
 ## Decisions ##
  TNOIPN_Malaysian_Revolution_category: "马来亚革命"
  TNOIPN_Malaysian_Revolution_category_desc: ""
@@ -319,6 +337,12 @@
  TNOIPN_MLY_revolution_university_expansion_decision_desc: "随着我们对新加入我党行列的知识分子进行整合，现如今我们已经能够在怡保建立新的大学设施，用于推进我方技术研究，并将这些进步知识分子妥善安置。"
  #
  TNOIPN_MLY_PKM_party_category: "革命统一战线"
+ TNOIPN_MLY_north_borneo_revolt_category: "北婆罗洲角力"
+ TNOIPN_MLY_north_borneo_revolt_category_desc: "随着林梦的一声枪响，北婆罗洲陷入了全面暴动中。如今，追求泛民族主义的印度尼西亚、追求革命的共产党以及希望独立的本土民族主义者形成了合力，向日本占领军发起冲击，而东京也在迅速调集军队予以镇压。我们无从得知北婆罗洲的未来将会如何发展，但可以肯定的是，这片土地的命运将会在这场暴动中被彻底改写。\n\n我方如今支持：[Get_TNOIPN_MLY_north_borneo_revolt_supporter_sploc]\n"
+ TNOIPN_MLY_north_borneo_revolt_supporter_communist: "§e婆罗洲反日同盟会§!§Y及其共产主义游击队§!"
+ TNOIPN_MLY_north_borneo_revolt_supporter_indonesia: "§B北加里曼丹国民军§!§Y及大印度尼西亚主义者§!"
+ TNOIPN_MLY_north_borneo_revolt_supporter_japan: "§G日本帝国第十九军§!§Y及文莱苏丹国政府§!"
+ TNOIPN_MLY_north_borneo_revolt_supporter_NA: "§Y尚未选定盟友§!"
 ## GUI ##
  #Parti Komunis Malaya
  MLY_PKM_party_GUI_gensec_portrait_tt: "[Get_MLYPKM_gensec_name]"

@@ -1,0 +1,67 @@
+characters = {
+	####################
+	### NORTH BORNEO ###
+	####################
+#Leaders
+	BRU_Wu_Chan = {
+		name = BRU_Wu_Chan
+		portraits = {
+			civilian = { large = "gfx/leaders/BRU/Portrait_BRU_Wu_Chan.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_WU_CHAN_DESC"
+			ideology = communist_mao_zedong_thought_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	BRU_Wen_Min_Chyuan = {
+		name = BRU_Wen_Min_Chyuan
+		portraits = {
+			civilian = { large = "gfx/leaders/BRU/Portrait_BRU_Wen_Min_Chyuan.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_WEN_MIN_CHYUAN_DESC"
+			ideology = communist_1_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	BRU_Ahmad_Azahari = {
+		name = BRU_Ahmad_Azahari
+		portraits = {
+			civilian = { large = "gfx/leaders/BRU/Portrait_BRU_Ahmad_Azahari.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_A_M_AZAHARI_DESC"
+			ideology = socialist_left_wing_nationalism_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	BRU_Yassin_Affandi = {
+		name = BRU_Yassin_Affandi
+		portraits = {
+			civilian = { large = "gfx/leaders/BRU/Portrait_BRU_Yassin_Affandi.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_YASSIN_AFFANDI_DESC"
+			ideology = socialist_1_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	BRU_Salleh_Masri = {
+		name = BRU_Salleh_Masri
+		portraits = {
+			civilian = { large = "gfx/leaders/BRU/Portrait_BRU_Salleh_Masri.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_SALLEH_MASRI_DESC"
+			ideology = progressivism_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+#Ministers
+}
