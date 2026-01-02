@@ -27,6 +27,18 @@ characters = {
 			id = -1
 		}
 	}
+	BRU_Bong_Kee_Chok = {
+		name = BRU_Bong_Kee_Chok
+		portraits = {
+			civilian = { large = "gfx/leaders/BRU/Portrait_BRU_Bong_Kee_Chok.png" }
+		}
+		country_leader = {
+			desc = "POLITICS_BONG_KEE_CHOK_DESC"
+			ideology = communist_2_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
 	BRU_Ahmad_Azahari = {
 		name = BRU_Ahmad_Azahari
 		portraits = {
@@ -58,7 +70,7 @@ characters = {
 		}
 		country_leader = {
 			desc = "POLITICS_SALLEH_MASRI_DESC"
-			ideology = progressivism_subtype
+			ideology = progressivism_popular_front_subtype
 			expire = "1985.1.1"
 			id = -1
 		}

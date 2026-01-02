@@ -529,3 +529,222 @@ TNOIPN_Malaysian_Revolution_category = {
 }
 TNOIPN_MLY_PKM_party_category = {
 }
+TNOIPN_MLY_north_borneo_revolt_category = {
+	TNOIPN_MLY_north_borneo_revolt_37A_Coming_Back_mission = {
+		priority = 100
+		days_mission_timeout = 150
+		activation = {
+			always = no
+		}
+		available = {
+			hidden_trigger = {
+				check_variable = { TNOIPN_MLY_north_borneo_revolt_power_resistance_var > 66 }
+			}
+		}
+		complete_effect = {
+			clr_global_flag = TNOIPN_MLY_north_borneo_revolt_ongoing_flag
+			#outcome of Brunei revolt here --
+			BRU = {
+				set_cosmetic_tag = BRU_revolution_republic
+				add_state_core = 807
+				transfer_state = 807
+				add_state_core = 2297
+				transfer_state = 2297
+				every_owned_state = { remove_core_of = NRB }
+				TNO_startup_nation = yes
+				set_variable = { GDP_growth = 2.8 }
+				set_variable = { income_tax_rate = 0.21 }
+				set_variable = { business_tax_rate = 0.15 }
+				update_economy_tab = yes
+
+				set_temp_variable = { temp_credit_rating = 5 }
+				set_temp_variable = { temp_credit_rating_min = 1 }
+				set_temp_variable = { temp_credit_rating_max = 7 }
+				econ_initialize_credit_rating_system = yes
+				set_politics = {
+					ruling_party = progressivism
+					last_election = "1962.6.5"
+					election_frequency = 48
+					elections_allowed = no
+				}
+				set_popularities = {
+					communist = 14
+					communist_1 = 6
+					ultranationalism = 0
+					socialist = 25
+					socialist_1 = 7
+					progressivism = 28
+					liberalism = 0
+				
+					conservatism = 0
+					paternalism = 0
+					despotism = 20
+					fascism = 0
+					
+				}
+				country_event = { id = TNOIPN_MLY_Brunei.4 hours = 6  }
+			}
+		}
+		timeout_effect = {
+			clr_global_flag = TNOIPN_MLY_north_borneo_revolt_ongoing_flag
+			#outcome of Brunei revolt here --
+		}
+	}
+	TNOIPN_MLY_north_borneo_revolt_PKM_strengthen_singapore_connections_decision = {
+		icon = GFX_decision_category_ODF_antarctica_ns
+
+		cost = 5
+		
+		days_remove = 7
+
+		days_re_enable = 7
+		
+		visible = {
+			tag = PKM
+			has_global_flag = TNOIPN_MLY_north_borneo_revolt_ongoing_flag
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+
+		modifier = {
+			command_power_gain_mult = -0.10
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: TNOIPN_MLY_north_borneo_revolt_PKM_strengthen_singapore_connections_decision"
+			set_temp_variable = {
+				temp_econ_spending_amount = 0.05
+			}
+			econ_spend_money_once_effect_raw_money = yes
+		}
+		
+		remove_effect = {
+			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_power_nationalist_rise_tt
+			add_to_variable = {
+				TNOIPN_MLY_north_borneo_revolt_power_resistance_var = 1.5
+			}
+			add_to_variable = {
+				TNOIPN_MLY_north_borneo_revolt_power_japan_var = -1.5
+			}
+			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_power_communist_rise_tt
+			add_to_variable = {
+				TNOIPN_MLY_north_borneo_revolt_power_communist_var = 1
+			}
+			add_to_variable = {
+				TNOIPN_MLY_north_borneo_revolt_power_nationalist_var = -1
+			}
+		}
+	}
+	TNOIPN_MLY_north_borneo_revolt_PKM_prepare_weapon_stashes_decision = {
+		icon = GFX_decision_category_ODF_antarctica_ns
+
+		cost = 10
+		
+		days_remove = 14
+
+		days_re_enable = 7
+		
+		visible = {
+			tag = PKM
+			has_global_flag = TNOIPN_MLY_north_borneo_revolt_ongoing_flag
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		modifier = {
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: TNOIPN_MLY_north_borneo_revolt_PKM_prepare_weapon_stashes_decision"
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -50
+			}
+		}
+		
+		remove_effect = {
+			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_power_nationalist_rise_tt
+			add_to_variable = {
+				TNOIPN_MLY_north_borneo_revolt_power_resistance_var = 2.5
+			}
+			add_to_variable = {
+				TNOIPN_MLY_north_borneo_revolt_power_japan_var = -2.5
+			}
+			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_power_communist_rise_tt
+			add_to_variable = {
+				TNOIPN_MLY_north_borneo_revolt_power_communist_var = 0.5
+			}
+			add_to_variable = {
+				TNOIPN_MLY_north_borneo_revolt_power_nationalist_var = -0.5
+			}
+			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_BRP_left_rise_tt
+			add_to_variable = {
+				TNOIPN_MLY_north_borneo_revolt_BRP_left_var = 1.5
+			}
+			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_BRP_independent_rise_tt
+			add_to_variable = {
+				TNOIPN_MLY_north_borneo_revolt_BRP_independent_var = 1
+			}
+			add_to_variable = {
+				TNOIPN_MLY_north_borneo_revolt_BRP_indonesia_var = -2.5
+			}
+		}
+	}
+	TNOIPN_MLY_north_borneo_revolt_PKM_concessions_to_Soekarno_decision = {
+		icon = GFX_decision_category_ODF_antarctica_ns
+
+		cost = 15
+		
+		days_remove = 21
+
+		days_re_enable = 7
+		
+		visible = {
+			tag = PKM
+			has_global_flag = TNOIPN_MLY_north_borneo_revolt_ongoing_flag
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
+		modifier = {
+		}
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: TNOIPN_MLY_north_borneo_revolt_PKM_concessions_to_Soekarno_decision"
+		}
+		
+		remove_effect = {
+			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_power_nationalist_rise_tt
+			add_to_variable = {
+				TNOIPN_MLY_north_borneo_revolt_power_resistance_var = 3
+			}
+			add_to_variable = {
+				TNOIPN_MLY_north_borneo_revolt_power_japan_var = -3
+			}
+			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_power_indonesia_rise_tt
+			add_to_variable = {
+				TNOIPN_MLY_north_borneo_revolt_power_nationalist_var = 1
+			}
+			add_to_variable = {
+				TNOIPN_MLY_north_borneo_revolt_power_communist_var = -1
+			}
+			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_BRP_left_rise_tt
+			add_to_variable = {
+				TNOIPN_MLY_north_borneo_revolt_BRP_left_var = 1.5
+			}
+			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_BRP_indonesia_rise_tt
+			add_to_variable = {
+				TNOIPN_MLY_north_borneo_revolt_BRP_indonesia_var = 1
+			}
+			add_to_variable = {
+				TNOIPN_MLY_north_borneo_revolt_BRP_independent_var = -2.5
+			}
+		}
+	}
+}

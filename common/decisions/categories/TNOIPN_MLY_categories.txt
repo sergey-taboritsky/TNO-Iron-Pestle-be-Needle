@@ -30,5 +30,4 @@ TNOIPN_MLY_north_borneo_revolt_category = {
 		}
 		has_global_flag = TNOIPN_MLY_north_borneo_revolt_ongoing_flag
 	}
-	visible_when_empty = yes
 }

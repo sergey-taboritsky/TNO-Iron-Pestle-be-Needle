@@ -212,6 +212,61 @@ country_event = { #文莱革命报告
 		}
 	}
 }
+country_event = { #文莱革命成功
+	id = TNOIPN_MLY_Brunei.4
+	title = TNOIPN_MLY_Brunei.4.t
+	desc = TNOIPN_MLY_Brunei.4.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {
+		name = TNOIPN_MLY_Brunei.4.a
+		trigger = {
+			check_variable = {
+				TNOIPN_MLY_north_borneo_revolt_power_communist_var > TNOIPN_MLY_north_borneo_revolt_power_nationalist_var
+			}
+		}
+		set_politics = {
+			ruling_party = communist
+		}
+		add_popularity = {
+			ideology = communist
+			popularity = 0.35
+		}
+	}
+	option = {
+		name = TNOIPN_MLY_Brunei.4.b
+		trigger = {
+			check_variable = {
+				TNOIPN_MLY_north_borneo_revolt_power_communist_var < TNOIPN_MLY_north_borneo_revolt_power_nationalist_var
+			}
+			check_variable = {
+				TNOIPN_MLY_north_borneo_revolt_BRP_left_var > TNOIPN_MLY_north_borneo_revolt_BRP_indonesia_var
+			}
+		}
+		set_politics = {
+			ruling_party = socialist
+		}
+		add_popularity = {
+			ideology = socialist
+			popularity = 0.35
+		}
+	}
+	option = {
+		name = TNOIPN_MLY_Brunei.4.c
+		trigger = {
+			check_variable = {
+				TNOIPN_MLY_north_borneo_revolt_power_communist_var < TNOIPN_MLY_north_borneo_revolt_power_nationalist_var
+			}
+			check_variable = {
+				TNOIPN_MLY_north_borneo_revolt_BRP_left_var < TNOIPN_MLY_north_borneo_revolt_BRP_indonesia_var
+			}
+		}
+		add_popularity = {
+			ideology = progressivism
+			popularity = 0.35
+		}
+	}
+}
 
 
 country_event = { #
@@ -770,6 +825,7 @@ news_event = { #文莱革命
 		}
 		hidden_effect = {
 			country_event = { id = TNOIPN_MLY_Brunei.1 }
+			activate_mission = TNOIPN_MLY_north_borneo_revolt_37A_Coming_Back_mission
 		}
 	}
 	option = {

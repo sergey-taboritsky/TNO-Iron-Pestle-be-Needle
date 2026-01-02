@@ -6,6 +6,7 @@ fill_empty_minister_nochecks = yes # Please remove if you're adding ministers.
 
 recruit_character = BRU_Wu_Chan
 recruit_character = BRU_Wen_Min_Chyuan
+recruit_character = BRU_Bong_Kee_Chok
 recruit_character = BRU_Ahmad_Azahari
 recruit_character = BRU_Yassin_Affandi
 recruit_character = BRU_Salleh_Masri
