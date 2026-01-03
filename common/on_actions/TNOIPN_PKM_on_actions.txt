@@ -2,8 +2,9 @@ on_actions = {
 	#STARTUP DEFINITIONS
 	on_startup = {
 		effect = {
-			every_country = { news_event = { id = TNOIPN_MLY_worldnews.2 days = 15 } }
 			PKM = {
+				news_event = { id = TNOIPN_MLY_worldnews.2 days = 15 }
+
 				set_variable = { GDP = 0.426 } #in billions
 				set_variable = { GDP_growth = 0.9 }
 				set_variable = { income_tax_rate = 0.125 }

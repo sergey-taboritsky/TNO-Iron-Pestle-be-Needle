@@ -222,7 +222,7 @@ country_event = { #文莱革命成功
 		name = TNOIPN_MLY_Brunei.4.a
 		trigger = {
 			check_variable = {
-				TNOIPN_MLY_north_borneo_revolt_power_communist_var > TNOIPN_MLY_north_borneo_revolt_power_nationalist_var
+				global.TNOIPN_MLY_north_borneo_revolt_power_communist_var > global.TNOIPN_MLY_north_borneo_revolt_power_nationalist_var
 			}
 		}
 		set_politics = {
@@ -232,15 +232,18 @@ country_event = { #文莱革命成功
 			ideology = communist
 			popularity = 0.35
 		}
+		every_country = {
+			news_event = TNOIPN_MLY_worldnews.3
+		}
 	}
 	option = {
 		name = TNOIPN_MLY_Brunei.4.b
 		trigger = {
 			check_variable = {
-				TNOIPN_MLY_north_borneo_revolt_power_communist_var < TNOIPN_MLY_north_borneo_revolt_power_nationalist_var
+				global.TNOIPN_MLY_north_borneo_revolt_power_communist_var < global.TNOIPN_MLY_north_borneo_revolt_power_nationalist_var
 			}
 			check_variable = {
-				TNOIPN_MLY_north_borneo_revolt_BRP_left_var > TNOIPN_MLY_north_borneo_revolt_BRP_indonesia_var
+				global.TNOIPN_MLY_north_borneo_revolt_BRP_left_var > global.TNOIPN_MLY_north_borneo_revolt_BRP_indonesia_var
 			}
 		}
 		set_politics = {
@@ -250,20 +253,93 @@ country_event = { #文莱革命成功
 			ideology = socialist
 			popularity = 0.35
 		}
+		every_country = {
+			news_event = TNOIPN_MLY_worldnews.4
+		}
 	}
 	option = {
 		name = TNOIPN_MLY_Brunei.4.c
 		trigger = {
 			check_variable = {
-				TNOIPN_MLY_north_borneo_revolt_power_communist_var < TNOIPN_MLY_north_borneo_revolt_power_nationalist_var
+				global.TNOIPN_MLY_north_borneo_revolt_power_communist_var < global.TNOIPN_MLY_north_borneo_revolt_power_nationalist_var
 			}
 			check_variable = {
-				TNOIPN_MLY_north_borneo_revolt_BRP_left_var < TNOIPN_MLY_north_borneo_revolt_BRP_indonesia_var
+				global.TNOIPN_MLY_north_borneo_revolt_BRP_left_var < global.TNOIPN_MLY_north_borneo_revolt_BRP_indonesia_var
 			}
 		}
 		add_popularity = {
 			ideology = progressivism
 			popularity = 0.35
+		}
+		every_country = {
+			news_event = TNOIPN_MLY_worldnews.4
+		}
+	}
+}
+country_event = { #文莱革命失败
+	id = TNOIPN_MLY_Brunei.5
+	title = TNOIPN_MLY_Brunei.5.t
+	desc = TNOIPN_MLY_Brunei.5.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			BRU = {
+				BRU_Wu_Chan = {
+					demote_leader = yes
+					set_nationality = PKM
+				}
+				BRU_Wen_Min_Chyuan = {
+					demote_leader = yes
+					set_nationality = PKM
+				}
+				BRU_Bong_Kee_Chok = {
+					set_nationality = PKM
+				}
+			}
+		}
+	}
+	option = {
+		name = TNOIPN_MLY_Brunei.5.a
+		effect_tooltip = {
+			BRU = {
+				BRU_Wu_Chan = {
+					set_nationality = PKM
+				}
+				BRU_Wen_Min_Chyuan = {
+					set_nationality = PKM
+				}
+				BRU_Bong_Kee_Chok = {
+					set_nationality = PKM
+				}
+			}
+		}
+		add_corps_commander_role = {
+			character = BRU_Wu_Chan
+			traits = {  }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 4
+		}
+		add_corps_commander_role = {
+			character = BRU_Wen_Min_Chyuan
+			traits = {  }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+		add_corps_commander_role = {
+			character = BRU_Bong_Kee_Chok
+			traits = {  }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
 		}
 	}
 }

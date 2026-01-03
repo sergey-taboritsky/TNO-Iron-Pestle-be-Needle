@@ -538,56 +538,66 @@ TNOIPN_MLY_north_borneo_revolt_category = {
 		}
 		available = {
 			hidden_trigger = {
-				check_variable = { TNOIPN_MLY_north_borneo_revolt_power_resistance_var > 66 }
+				check_variable = { global.TNOIPN_MLY_north_borneo_revolt_power_resistance_var > 66 }
 			}
 		}
 		complete_effect = {
 			clr_global_flag = TNOIPN_MLY_north_borneo_revolt_ongoing_flag
 			#outcome of Brunei revolt here --
-			BRU = {
-				set_cosmetic_tag = BRU_revolution_republic
-				add_state_core = 807
-				transfer_state = 807
-				add_state_core = 2297
-				transfer_state = 2297
-				every_owned_state = { remove_core_of = NRB }
-				TNO_startup_nation = yes
-				set_variable = { GDP_growth = 2.8 }
-				set_variable = { income_tax_rate = 0.21 }
-				set_variable = { business_tax_rate = 0.15 }
-				update_economy_tab = yes
+			hidden_effect = {
+				BRU = {
+					set_cosmetic_tag = BRU_revolution_republic
+					add_state_core = 807
+					transfer_state = 807
+					add_state_core = 2297
+					transfer_state = 2297
+					every_owned_state = { remove_core_of = NRB }
+					TNO_startup_nation = yes
+					set_variable = { GDP_growth = 2.8 }
+					set_variable = { income_tax_rate = 0.21 }
+					set_variable = { business_tax_rate = 0.15 }
+					update_economy_tab = yes
 
-				set_temp_variable = { temp_credit_rating = 5 }
-				set_temp_variable = { temp_credit_rating_min = 1 }
-				set_temp_variable = { temp_credit_rating_max = 7 }
-				econ_initialize_credit_rating_system = yes
-				set_politics = {
-					ruling_party = progressivism
-					last_election = "1962.6.5"
-					election_frequency = 48
-					elections_allowed = no
-				}
-				set_popularities = {
-					communist = 14
-					communist_1 = 6
-					ultranationalism = 0
-					socialist = 25
-					socialist_1 = 7
-					progressivism = 28
-					liberalism = 0
-				
-					conservatism = 0
-					paternalism = 0
-					despotism = 20
-					fascism = 0
+					set_temp_variable = { temp_credit_rating = 5 }
+					set_temp_variable = { temp_credit_rating_min = 1 }
+					set_temp_variable = { temp_credit_rating_max = 7 }
+					econ_initialize_credit_rating_system = yes
+					set_politics = {
+						ruling_party = progressivism
+						last_election = "1962.6.5"
+						election_frequency = 48
+						elections_allowed = no
+					}
+					set_popularities = {
+						communist = 14
+						communist_1 = 6
+						ultranationalism = 0
+						socialist = 25
+						socialist_1 = 7
+						progressivism = 28
+						liberalism = 0
 					
+						conservatism = 0
+						paternalism = 0
+						despotism = 20
+						fascism = 0
+						
+					}
+					country_event = { id = TNOIPN_MLY_Brunei.4 hours = 6  }
 				}
-				country_event = { id = TNOIPN_MLY_Brunei.4 hours = 6  }
 			}
 		}
 		timeout_effect = {
 			clr_global_flag = TNOIPN_MLY_north_borneo_revolt_ongoing_flag
 			#outcome of Brunei revolt here --
+			hidden_effect = {
+				every_country = {
+					news_event = TNOIPN_MLY_worldnews.5
+				}
+				PKM = {
+					country_event = { id = TNOIPN_MLY_Brunei.5 }
+				}
+			}
 		}
 	}
 	TNOIPN_MLY_north_borneo_revolt_PKM_strengthen_singapore_connections_decision = {
@@ -623,17 +633,17 @@ TNOIPN_MLY_north_borneo_revolt_category = {
 		remove_effect = {
 			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_power_nationalist_rise_tt
 			add_to_variable = {
-				TNOIPN_MLY_north_borneo_revolt_power_resistance_var = 1.5
+				global.TNOIPN_MLY_north_borneo_revolt_power_resistance_var = 1.5
 			}
 			add_to_variable = {
-				TNOIPN_MLY_north_borneo_revolt_power_japan_var = -1.5
+				global.TNOIPN_MLY_north_borneo_revolt_power_japan_var = -1.5
 			}
 			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_power_communist_rise_tt
 			add_to_variable = {
-				TNOIPN_MLY_north_borneo_revolt_power_communist_var = 1
+				global.TNOIPN_MLY_north_borneo_revolt_power_communist_var = 1
 			}
 			add_to_variable = {
-				TNOIPN_MLY_north_borneo_revolt_power_nationalist_var = -1
+				global.TNOIPN_MLY_north_borneo_revolt_power_nationalist_var = -1
 			}
 		}
 	}
@@ -669,28 +679,28 @@ TNOIPN_MLY_north_borneo_revolt_category = {
 		remove_effect = {
 			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_power_nationalist_rise_tt
 			add_to_variable = {
-				TNOIPN_MLY_north_borneo_revolt_power_resistance_var = 2.5
+				global.TNOIPN_MLY_north_borneo_revolt_power_resistance_var = 2.5
 			}
 			add_to_variable = {
-				TNOIPN_MLY_north_borneo_revolt_power_japan_var = -2.5
+				global.TNOIPN_MLY_north_borneo_revolt_power_japan_var = -2.5
 			}
 			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_power_communist_rise_tt
 			add_to_variable = {
-				TNOIPN_MLY_north_borneo_revolt_power_communist_var = 0.5
+				global.TNOIPN_MLY_north_borneo_revolt_power_communist_var = 0.5
 			}
 			add_to_variable = {
-				TNOIPN_MLY_north_borneo_revolt_power_nationalist_var = -0.5
+				global.TNOIPN_MLY_north_borneo_revolt_power_nationalist_var = -0.5
 			}
 			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_BRP_left_rise_tt
 			add_to_variable = {
-				TNOIPN_MLY_north_borneo_revolt_BRP_left_var = 1.5
+				global.TNOIPN_MLY_north_borneo_revolt_BRP_left_var = 1.5
 			}
 			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_BRP_independent_rise_tt
 			add_to_variable = {
-				TNOIPN_MLY_north_borneo_revolt_BRP_independent_var = 1
+				global.TNOIPN_MLY_north_borneo_revolt_BRP_independent_var = 1
 			}
 			add_to_variable = {
-				TNOIPN_MLY_north_borneo_revolt_BRP_indonesia_var = -2.5
+				global.TNOIPN_MLY_north_borneo_revolt_BRP_indonesia_var = -2.5
 			}
 		}
 	}
@@ -722,28 +732,28 @@ TNOIPN_MLY_north_borneo_revolt_category = {
 		remove_effect = {
 			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_power_nationalist_rise_tt
 			add_to_variable = {
-				TNOIPN_MLY_north_borneo_revolt_power_resistance_var = 3
+				global.TNOIPN_MLY_north_borneo_revolt_power_resistance_var = 3
 			}
 			add_to_variable = {
-				TNOIPN_MLY_north_borneo_revolt_power_japan_var = -3
+				global.TNOIPN_MLY_north_borneo_revolt_power_japan_var = -3
 			}
 			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_power_indonesia_rise_tt
 			add_to_variable = {
-				TNOIPN_MLY_north_borneo_revolt_power_nationalist_var = 1
+				global.TNOIPN_MLY_north_borneo_revolt_power_nationalist_var = 1
 			}
 			add_to_variable = {
-				TNOIPN_MLY_north_borneo_revolt_power_communist_var = -1
+				global.TNOIPN_MLY_north_borneo_revolt_power_communist_var = -1
 			}
 			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_BRP_left_rise_tt
 			add_to_variable = {
-				TNOIPN_MLY_north_borneo_revolt_BRP_left_var = 1.5
+				global.TNOIPN_MLY_north_borneo_revolt_BRP_left_var = 1.5
 			}
 			custom_effect_tooltip = TNOIPN_MLY_north_borneo_revolt_BRP_indonesia_rise_tt
 			add_to_variable = {
-				TNOIPN_MLY_north_borneo_revolt_BRP_indonesia_var = 1
+				global.TNOIPN_MLY_north_borneo_revolt_BRP_indonesia_var = 1
 			}
 			add_to_variable = {
-				TNOIPN_MLY_north_borneo_revolt_BRP_independent_var = -2.5
+				global.TNOIPN_MLY_north_borneo_revolt_BRP_independent_var = -2.5
 			}
 		}
 	}
