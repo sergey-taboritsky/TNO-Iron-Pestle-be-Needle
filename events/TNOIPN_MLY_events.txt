@@ -218,6 +218,16 @@ country_event = { #文莱革命成功
 	desc = TNOIPN_MLY_Brunei.4.desc
 	picture = GFX_paratroopers_bg
 	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			NRB = {
+				remove_ideas = TNOIPN_SHO_defenses_emptied
+			}
+			SHO = {
+				remove_ideas = TNOIPN_SHO_ninteenth_army_support
+			}
+		}
+	}
 	option = {
 		name = TNOIPN_MLY_Brunei.4.a
 		trigger = {

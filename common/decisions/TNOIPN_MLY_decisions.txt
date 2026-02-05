@@ -590,6 +590,12 @@ TNOIPN_MLY_north_borneo_revolt_category = {
 		timeout_effect = {
 			clr_global_flag = TNOIPN_MLY_north_borneo_revolt_ongoing_flag
 			#outcome of Brunei revolt here --
+			NRB = {
+				remove_ideas = TNOIPN_SHO_defenses_emptied
+			}
+			SHO = {
+				remove_ideas = TNOIPN_SHO_ninteenth_army_support
+			}
 			hidden_effect = {
 				every_country = {
 					news_event = TNOIPN_MLY_worldnews.5
