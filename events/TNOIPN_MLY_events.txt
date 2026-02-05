@@ -235,6 +235,9 @@ country_event = { #文莱革命成功
 		every_country = {
 			news_event = TNOIPN_MLY_worldnews.3
 		}
+		hidden_effect = {
+			country_event = { id = TNOIPN_MLY_Brunei.6 days = 7 }
+		}
 	}
 	option = {
 		name = TNOIPN_MLY_Brunei.4.b
@@ -341,6 +344,29 @@ country_event = { #文莱革命失败
 			planning_skill = 2
 			logistics_skill = 3
 		}
+	}
+}
+country_event = { #文莱战争
+	id = TNOIPN_MLY_Brunei.6
+	title = TNOIPN_MLY_Brunei.6.t
+	desc = TNOIPN_MLY_Brunei.6.desc
+	picture = GFX_paratroopers_bg
+	is_triggered_only = yes
+	option = {
+		name = TNOIPN_MLY_Brunei.6.a
+		JAP = {
+			remove_from_faction = NRB
+		}
+		NRB = {
+			declare_war_on = {
+				target = BRU
+				type = annex_everything
+			}
+		}
+		every_country = {
+			news_event = TNOIPN_MLY_worldnews.5
+		}
+
 	}
 }
 
@@ -921,6 +947,70 @@ news_event = { #文莱革命
 		hidden_effect = {
 			country_event = { id = TNOIPN_MLY_Brunei.2 }
 		}
+	}
+}
+
+news_event = {
+	id = TNOIPN_MLY_worldnews.3
+	title = TNOIPN_MLY_worldnews.3.t
+	desc = TNOIPN_MLY_worldnews.3.d
+	picture = GFX_news_event_MLY_collab_victory
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	immediate = {
+		set_global_flag = TNOIPN_MLY_north_borneo_revolt_ongoing_flag
+	}
+	option = {
+		name = TNOIPN_MLY_worldnews.3.a
+	}
+}
+
+news_event = {
+	id = TNOIPN_MLY_worldnews.4
+	title = TNOIPN_MLY_worldnews.4.t
+	desc = TNOIPN_MLY_worldnews.4.d
+	picture = GFX_news_event_MLY_collab_victory
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	immediate = {
+		set_global_flag = TNOIPN_MLY_north_borneo_revolt_ongoing_flag
+	}
+	option = {
+		name = TNOIPN_MLY_worldnews.4.a
+	}
+}
+
+news_event = {
+	id = TNOIPN_MLY_worldnews.5
+	title = TNOIPN_MLY_worldnews.5.t
+	desc = TNOIPN_MLY_worldnews.5.d
+	picture = GFX_news_event_MLY_collab_victory
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	immediate = {
+		set_global_flag = TNOIPN_MLY_north_borneo_revolt_ongoing_flag
+	}
+	option = {
+		name = TNOIPN_MLY_worldnews.5.a
+	}
+}
+
+news_event = {
+	id = TNOIPN_MLY_worldnews.6
+	title = TNOIPN_MLY_worldnews.6.t
+	desc = TNOIPN_MLY_worldnews.6.d
+	picture = GFX_news_event_MLY_collab_victory
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	immediate = {
+		set_global_flag = TNOIPN_MLY_north_borneo_revolt_ongoing_flag
+	}
+	option = {
+		name = TNOIPN_MLY_worldnews.6.a
 	}
 }
 

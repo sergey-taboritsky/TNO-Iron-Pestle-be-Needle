@@ -7966,6 +7966,33 @@ on_actions = {
 					set_global_flag = skip_default_capitulation
 				}
 				
+				#Brunei Invasion
+				else_if = { #Total Japanese victory
+					limit = {
+						FROM = { original_tag = NRB }
+						ROOT = { original_tag = BRU }
+					}
+					NRB = {
+						white_peace = BRU
+						annex_country = {
+							target = BRU
+							transfer_troops = no
+						}
+						every_owned_state = {
+							add_core_of = NRB
+							remove_core_of = BRU
+						}
+					}
+					JAP = {
+						add_to_faction = NRB
+					}
+					PKM = {
+						country_event = { id = TNOIPN_MLY_Brunei.5 days = 1 }
+					}
+					set_global_flag = skip_default_capitulation
+				}
+				#IPN end
+
 				else_if = { # Brazilian Civil War - Amazonas wins
 					limit = {
 						FROM = { 
