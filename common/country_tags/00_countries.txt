@@ -203,7 +203,6 @@ KOR = "countries/Japan - Overseas.txt"			# Korea - for resistance
 
 # /// China /// #
 CHI = "countries/China.txt"						# China
-CPC = "countries/China.txt"						# Communist China
 MAN = "countries/China.txt"						# Manchukuo
 MEN = "countries/China.txt"						# Menjiang
 YUN = "countries/China.txt"						# Yunnan Province
