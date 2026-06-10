@@ -140,7 +140,7 @@ FIT = "countries/France.txt"					# Italy-aligned France - Sidos CW tag
 
 # /// Nothern Europe /// #
 SWE = "countries/West Europe.txt"				# Sweden
-FIN = "countries/East Europe.txt"				# Finland
+FIN = "countries/West Europe.txt"				# Finland
 RFI = "countries/East Europe.txt"				# Red Finland - Finnish CW
 KRL = "countries/East Europe.txt"				# Karelia - Unused with MPR addition
 MPR = "countries/West Russia.txt"				# Murmansk People's Republic
@@ -152,19 +152,18 @@ SWI = "countries/West Europe.txt"				# Switzerland
 
 IBR = "countries/Iberia.txt"					# Iberia
 POR = "countries/Iberia.txt"					# Portugal - Divorce/Iberian Wars
-GNS = "countries/Iberia.txt"					# National Salvation Government - Iberian Wars
-PPR = "countries/Iberia.txt"					# Portuguese Peoples Republic - Iberian Wars
-RPP = "countries/Iberia.txt"					# Portuguese Provisional Republic - Iberian Wars
+GNS = "countries/Iberia.txt"					# Kingdom of Portugal - Iberian Wars
+PPR = "countries/Iberia.txt"					# Portuguese People's Front - Iberian Wars
+RPP = "countries/Iberia.txt"					# Portuguese Republic - Iberian Wars
 SPA = "countries/Iberia.txt"					# Spain - Divorce
-SPS = "countries/Iberia.txt"					# Spanish State - Iberian Wars
+SPS = "countries/Iberia.txt"					# Spanish National Junta - Iberian Wars
 SPR = "countries/Iberia.txt"					# Spanish Republic - Iberian Wars
-FSR = "countries/Iberia.txt"					# National Redemption Front - Iberian Wars
-FZL = "countries/Iberia.txt"					# Frente Azul - Iberian Wars
-FML = "countries/Iberia.txt"					# Iberian Admiralty - Iberian Wars Unused on Master
-GIB = "countries/Iberia.txt"					# Gibraltar - Iberian Wars
-TBA = "countries/Iberia.txt"					# Asturian Workers Battalions - Iberian Wars
+FSR = "countries/Iberia.txt"					# Kingdom of Spain - Iberian Wars
+FZL = "countries/Iberia.txt"					# Spanish National Council - Iberian Wars
+FML = "countries/Iberia.txt"					# Atlantic Naval Command - Iberian Wars
+TBA = "countries/Iberia.txt"					# Asturian Socialist Republic - Iberian Wars
 CTL = "countries/Iberia.txt"					# Catalonia - Iberian Wars
-CNT = "countries/Iberia.txt"					# Revolutionary Catalonia - Iberian Wars
+CNT = "countries/Iberia.txt"					# Catalan Popular Front - Iberian Wars
 GAL = "countries/Iberia.txt"					# Galicia - Iberian Wars
 BSQ = "countries/Iberia.txt"					# Basque - Iberian Wars
 ADL = "countries/Iberia.txt"					# Andalusia - Iberian Wars
@@ -257,7 +256,7 @@ MLY = "countries/Asia.txt"						# UMAJF Malaya
 PKM = "countries/Asia.txt"						# Communist Malaya
 MCN = "countries/Asia.txt"						# Malaysian Chinese
 JHR = "countries/Asia - Sphere.txt"				# Johor - for partial Japanese defeat
-MAL = "countries/Asia.txt"						# Malaysia - Unused
+MAL = "countries/Asia.txt"						# Malaya - Unused
 BUR = "countries/Asia - Sphere.txt"				# Burma
 
 # /// India /// #
@@ -382,7 +381,7 @@ BKV = "countries/Africa.txt"					# Bukavu - Stage 3 Fragment
 
 # /// East Africa /// #
 GRO = "countries/Germany - Africa.txt"			# RK Ostafrika
-RSD = "countries/Germany - Africa.txt"			# SS Divison Hindenburg - Reichsstaat Breakaway
+RSD = "countries/Germany - Africa.txt"			# SS Division Hindenburg - Reichsstaat Breakaway
 RSQ = "countries/Germany - Africa.txt"			# Abteilung Ostafrika - Reichsstaat Breakaway
 RSZ = "countries/Germany - Africa.txt"			# Kolonialverwaltung Sambesi - Reichsstaat Breakaway
 MZB = "countries/USA - Africa.txt"				# OFN East Africa
@@ -458,10 +457,9 @@ HRR = "countries/Africa.txt"					# Hereroland
 # /// West Africa /// #
 CAO = "countries/Africa.txt"					# Cameroon
 FFR = "countries/West Europe.txt"				# Free France
-SUS = "countries/Africa.txt"					# Guinea
-WOL = "countries/Africa.txt"					# Senegal/Wolofia
+GUI = "countries/Africa.txt"					# Guinea
+SEN = "countries/Africa.txt"					# Senegal/Wolofia
 
-JOL = "countries/Africa.txt"					# Casamance/Jola
 GNB = "countries/Africa.txt"					# Guinea-Bissau
 CPV = "countries/Africa.txt"					# Cabo Verde
 MLI = "countries/Africa.txt"					# Mali
@@ -472,12 +470,12 @@ HAU = "countries/Africa.txt"					# Sokoto
 FTF = "countries/Africa.txt"					# Fuuta Massina/Fuuta Fulbe
 ZAR = "countries/Africa.txt"					# Zarmaganda/Zarmaland
 NGR = "countries/Africa.txt"					# Niger - FMA/WAA Ally
-SWB = "countries/Africa.txt"					# Sawaba - PALF Ally
-EWE = "countries/Africa.txt"					# Ghana
+NGS = "countries/Africa.txt"					# Sawaba - PALF Ally
+GHA = "countries/Africa.txt"					# Ghana
 CPP = "countries/Africa.txt"					# Ghana - PALF CW Ally
-GBE = "countries/Africa.txt"					# Benin/Gbeland
+DAH = "countries/Africa.txt"					# Benin/Dahomey
 
-MDI = "countries/Africa.txt"					# Sierra Leone
+SIE = "countries/Africa.txt"					# Sierra Leone
 LIB = "countries/Africa.txt"					# Liberia
 
 AYR = "countries/Africa.txt"					# Aïr
@@ -487,9 +485,9 @@ YOR = "countries/Africa.txt"					# Yorubaland
 BFR = "countries/Africa.txt"					# Biafra - Cameroon Breakaway
 NNG = "countries/Africa.txt"					# Northern Nigeria - Cameroon Breakaway
 NGA = "countries/Africa.txt"					# Nigeria - Cameroon Breakaway
-KNM = "countries/Africa.txt"					# Kanem
-CHD = "countries/Africa.txt"					# Sara Republic - Cameroon Breakaway
-CHF = "countries/Africa.txt"					# Sao Front/Saraland - Cameroon Breakaway 
+CHD = "countries/Africa.txt"					# Chad
+CHR = "countries/Africa.txt"					# Republic of Chad
+CHF = "countries/Africa.txt"					# Nationalist Chad
 
 # // MENA // #
 
@@ -542,11 +540,8 @@ PAK = "countries/Middle East.txt"				# Northwest Frontier Provinces/Pakistan
 KLT = "countries/Middle East.txt"				# Kalat
 
 # /// North Africa /// #
-MOR = "countries/Middle East - Iberia.txt"		# Morocco - Iberian Wars
-RIF = "countries/Middle East - Iberia.txt"		# Rif Republic - Iberian Wars
-MAU = "countries/Middle East - Iberia.txt"		# Maurtania - Unused
-TRZ = "countries/Middle East.txt"				# Trarza
-KBY = "countries/Middle East.txt"				# Kabylia - Unused on Master
+MOR = "countries/Middle East - Iberia.txt"		# Morocco
+MAU = "countries/Middle East.txt"				# Mauritania
 ALG = "countries/Middle East.txt"				# Algeria
 SLG = "countries/Iberia.txt"					# Iberian Algeria
 ILG = "countries/Italy - Overseas.txt"			# Italian Algeria
@@ -588,6 +583,7 @@ CLD = "countries/Latin America - Pakt.txt"		# Colombian Nazis
 ECU = "countries/Latin America.txt"				# Ecuador
 GAX = "countries/Latin America.txt"				# Galapagos
 GUY = "countries/Latin America - Canada.txt"	# Guyana
+ESQ = "countries/Latin America.txt"				# Essequibo
 GUC = "countries/Latin America.txt"				# Guiana-Cayenne
 GUN = "countries/Brazil.txt"					# Guanabara Anarchy
 SUR = "countries/Latin America - Canada.txt"	# Suriname
@@ -595,7 +591,9 @@ CUR = "countries/Latin America - Canada.txt"	# Curacao
 URG = "countries/Latin America.txt"				# Uruguay
 PRU = "countries/Latin America.txt"				# Peru
 VEN = "countries/Latin America.txt"				# Venezuela
-PAR = "countries/Latin America.txt"				# Paraguay
+VNS = "countries/Latin America.txt"				# Venezuela Socialists
+VNI = "countries/Latin America.txt"				# Venezuela Intervention
+PAR = "countries/Latin America.txt"				# Paraguay Socialists
 ARP = "countries/Latin America.txt"				# Argentine Paraguay - Post-2nd WoTA
 BRP = "countries/Latin America.txt"				# Braziian Paraguay - Post-2nd WoTA
 URP = "countries/Latin America.txt"				# Uruguayan Paraguay - Post-2nd WoTA
@@ -616,16 +614,19 @@ HIS = "countries/Latin America.txt"				# Hispaniola - Unused
 
 WIN = "countries/Caribbean.txt"					# West Indies Federation
 JAM = "countries/Caribbean.txt"					# Jamaica
-SKN = "countries/Caribbean.txt"					# Saint Kitts and Nevis
+FWI = "countries/Caribbean.txt"					# French West Indies
+SKN = "countries/Caribbean.txt"					# Leeward Islands - Saint Kitts and Nevis
+AGL = "countries/Caribbean.txt"					# Anguilla
+SVI = "countries/Caribbean.txt"					# Windward Islands - Saint Vincent and the Grenadines
+BRB = "countries/Caribbean.txt"					# Barbados
+TRI = "countries/Caribbean.txt"					# Trinidad and Tobago
+
 ANT = "countries/Caribbean.txt"					# Antigua and Barbuda
 GUD = "countries/Caribbean.txt"					# Guadeloupe
-DMI = "countries/Caribbean.txt"					# Dominica
 MRT = "countries/Caribbean.txt"					# Martinique
+DMI = "countries/Caribbean.txt"					# Dominica
 SLU = "countries/Caribbean.txt"					# Saint Lucia
-BRB = "countries/Caribbean.txt"					# Barbados
-SVI = "countries/Caribbean.txt"					# Saint Vincent and the Grenadines
 GND = "countries/Caribbean.txt"					# Grenada
-TRI = "countries/Caribbean.txt"					# Trinidad and Tobago
 
 #Antarctica
 AAG = "countries/Germany - Proper.txt"			# Neuschwabenland

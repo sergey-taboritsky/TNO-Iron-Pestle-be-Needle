@@ -8,7 +8,7 @@ on_actions = {
 
 	# FROM = winner
 	# ROOT = country being capitulated/loser
-	
+
 	# Anytime y'all are triggering the popup manually, please add 1 to the dirty variable, `global.peace_popup_dirty`
 
 	#See TNO_economy_scripted_effects regarding how transfer_GDP works
@@ -124,6 +124,32 @@ on_actions = {
 					#### Consequences of Annexation
 					TNO_KD_Consequences_of_Annexation = yes
 					RUS_capitulation_effect = yes
+
+					### IRKUTSK-BURYAT CIVIL WAR
+					if = {
+						limit = {
+							OR = {
+								AND = {
+									OR = {
+										FROM = { tag = BRY }
+										FROM = { tag = IRK }
+									}
+									OR = {
+										ROOT = { tag = BRY }
+										ROOT = { tag = IRK }
+									}
+								}
+								AND = {
+									ROOT = { tag = BRY }
+									NOT = { FROM = { tag = IRK } }
+									NOT = { IRK = { owns_state = 890 } }
+								}
+							}
+						}
+						FROM = {
+							country_event = { id = IRK_BRY_post_war.1 days = 5 }
+						}
+					}
 				}
 
 				else_if = { # WAC, when it feels like running through this block
@@ -170,6 +196,15 @@ on_actions = {
 						}
 					}
 					log = "[GetDateText]: FROM: [From.GetName] ROOT: [Root.GetName] on_capitulation WAC"
+					if = {
+						limit = {
+							AND = {
+								has_global_flag = WAC_scenario_2
+								ROOT = { tag = FFR }
+							}
+						}
+						IBR = { country_event = { id = west_african_crisis.253 } }
+					}
 
 					if = { # SCENARIO 1 / WAA vs. PALF
 						limit = { has_global_flag = WAC_scenario_1 }
@@ -304,7 +339,7 @@ on_actions = {
 							ROOT = {
 								OR = {
 									tag = LIB
-									tag = MDI
+									tag = SIE
 								}
 							}
 						}
@@ -315,7 +350,7 @@ on_actions = {
 
 					set_global_flag = skip_default_capitulation
 				}
-				
+
 				#Second Triple Alliance War, Paraguay must accept its destiny.
 				else_if = {
 					limit = {
@@ -332,6 +367,7 @@ on_actions = {
 					}
 
 					clr_global_flag = PAR_invasion_ongoing
+					set_global_flag = PAR_OAS_victory
 
 					every_country = {
 						limit = { has_war_with = PAR }
@@ -339,13 +375,6 @@ on_actions = {
 					}
 
 					FROM = {
-						every_country = {
-							limit = { is_ai = no }
-							news_event = {
-								id = LATAM_news.248
-								hours = 4
-							}
-						}
 						ARP = {
 							add_state_core = 1622
 							add_state_core = 1621
@@ -403,6 +432,13 @@ on_actions = {
 								add_state_core = 1616
 								transfer_state = 1616
 							}
+							every_country = {
+								limit = { is_ai = no }
+								news_event = {
+									id = LATAM_news.248
+									hours = 4
+								}
+							}
 						}
 						else = {
 							ARP = {
@@ -416,7 +452,7 @@ on_actions = {
 								autonomy_state = autonomy_military_government
 							}
 						}
-						BRA = { 
+						BRA = {
 							set_autonomy = {
 								target = BRP
 								autonomy_state = autonomy_military_government
@@ -601,9 +637,7 @@ on_actions = {
 								original_tag = GMS
 							}
 						}
-
 					}
-					clr_global_flag = SER_TestGarrison
 
 					FROM = {
 						annex_country = {
@@ -638,7 +672,7 @@ on_actions = {
 									set_global_flag = SER_collabs_won_civil_war
 									set_cosmetic_tag = GMS_COLLAB
 									promote_character = SER_Dragomir_Jovanovic
-									promote_character = SER_Konstantin_Musicki
+									promote_character = SER_Jakov_Ljotic
 									set_politics = { ruling_party = ultranationalism }
 									set_popularities = {
 										ultranationalism = 40
@@ -1149,20 +1183,17 @@ on_actions = {
 						white_peace = ROOT
 					}
 
+					every_state = {
+						limit = { is_core_of = ROOT }
+						remove_core_of = ROOT
+					}
+
 					if = { # Reclamation defeated
 						limit = {
 							has_global_flag = FFR_reclamation_civil_war_happening
 							ROOT = { original_tag = FRD }
 						}
-
 						FFR_reclamation_defeat = yes
-					}
-
-					every_state = {
-						limit = {
-							is_core_of = ROOT
-						}
-						remove_core_of = ROOT
 					}
 
 					FROM = {
@@ -1233,7 +1264,6 @@ on_actions = {
 										is_in_faction_with = FFR
 									}
 								}
-
 								set_global_flag = FFR_reclamation_successful
 								FFR_reclamation_victory = yes
 							}
@@ -1241,13 +1271,13 @@ on_actions = {
 								limit = { has_country_flag = FRA_sidos_elected }
 
 								if = {
-									limit = { 
+									limit = {
 										FRA = {
-											check_variable = { ECON_SPHERE_LEADER = ITA } 
+											check_variable = { ECON_SPHERE_LEADER = ITA }
 										}
 									}
 									ITA = { add_to_faction = FRA }
-									ITA = { 
+									ITA = {
 										set_temp_variable = { target = FRA }
 										TNO_clear_and_recall_volunteers = yes
 									}
@@ -1264,6 +1294,18 @@ on_actions = {
 											limit = { ITA = { has_idea = ITA_Rome_Pact_Leader } }
 											add_ideas = ITA_Rome_Pact_Member
 										}
+									}
+									GER = {
+										set_temp_variable = { Victory_ID = 5 }
+										set_temp_variable = { Victory_Outcome = 2 }
+										set_temp_variable = { Victory_Points = -150 }
+										Cold_War_GUI_ManipulateVictory = yes
+									}
+									USA = {
+										set_temp_variable = { Victory_ID = 5 }
+										set_temp_variable = { Victory_Outcome = 2 }
+										set_temp_variable = { Victory_Points = -100 }
+										Cold_War_GUI_ManipulateVictory = yes
 									}
 								}
 								else_if = {
@@ -1289,6 +1331,18 @@ on_actions = {
 									limit = { is_ai = no }
 									news_event = { id = WORLD.30101 days = 1 }
 								}
+								GER = {
+									set_temp_variable = { Victory_ID = 5 }
+									set_temp_variable = { Victory_Outcome = 4 }
+									set_temp_variable = { Victory_Points = 150 }
+									Cold_War_GUI_ManipulateVictory = yes
+								}
+								USA = {
+									set_temp_variable = { Victory_ID = 5 }
+									set_temp_variable = { Victory_Outcome = 2 }
+									set_temp_variable = { Victory_Points = -150 }
+									Cold_War_GUI_ManipulateVictory = yes
+								}
 							}
 							else_if = {
 								limit = { has_country_flag = FRA_poujade_elected }
@@ -1306,6 +1360,18 @@ on_actions = {
 									limit = { is_ai = no }
 									news_event = { id = WORLD.30108 days = 1 }
 								}
+								GER = {
+									set_temp_variable = { Victory_ID = 5 }
+									set_temp_variable = { Victory_Outcome = 4 }
+									set_temp_variable = { Victory_Points = 100 }
+									Cold_War_GUI_ManipulateVictory = yes
+								}
+								USA = {
+									set_temp_variable = { Victory_ID = 5 }
+									set_temp_variable = { Victory_Outcome = 2 }
+									set_temp_variable = { Victory_Points = -150 }
+									Cold_War_GUI_ManipulateVictory = yes
+								}
 							}
 							else_if = {
 								limit = { country_exists = FRD }
@@ -1315,25 +1381,62 @@ on_actions = {
 									limit = { is_ai = no }
 									news_event = { id = WORLD.30102 days = 1 }
 								}
+								GER = {
+									set_temp_variable = { Victory_ID = 5 }
+									set_temp_variable = { Victory_Outcome = 2 }
+									set_temp_variable = { Victory_Points = -100 }
+									Cold_War_GUI_ManipulateVictory = yes
+								}
+								USA = {
+									set_temp_variable = { Victory_ID = 5 }
+									set_temp_variable = { Victory_Outcome = 4 }
+									set_temp_variable = { Victory_Points = 100 }
+									Cold_War_GUI_ManipulateVictory = yes
+								}
 							}
 							else_if = {
 								limit = { country_exists = FRV }
-								
+
 								set_cosmetic_tag = FRA_postCW
 								every_country = {
 									limit = { is_ai = no }
 									news_event = { id = WORLD.30103 days = 1 }
 								}
+								GER = {
+									set_temp_variable = { Victory_ID = 5 }
+									set_temp_variable = { Victory_Outcome = 2 }
+									set_temp_variable = { Victory_Points = -150 }
+									Cold_War_GUI_ManipulateVictory = yes
+								}
+								USA = {
+									set_temp_variable = { Victory_ID = 5 }
+									set_temp_variable = { Victory_Outcome = 2 }
+									set_temp_variable = { Victory_Points = -50 }
+									Cold_War_GUI_ManipulateVictory = yes
+								}
 							}
 							else_if = {
 								limit = { country_exists = FRM }
-								
+
 								set_cosmetic_tag = FRA_postCW
 								every_country = {
 									limit = { is_ai = no }
 									news_event = { id = WORLD.30104 days = 1 }
 								}
-								
+
+								GER = {
+									set_temp_variable = { Victory_ID = 5 }
+									set_temp_variable = { Victory_Outcome = 5 }
+									set_temp_variable = { Victory_Points = 200 }
+									Cold_War_GUI_ManipulateVictory = yes
+								}
+								USA = {
+									set_temp_variable = { Victory_ID = 5 }
+									set_temp_variable = { Victory_Outcome = 1 }
+									set_temp_variable = { Victory_Points = -200 }
+									Cold_War_GUI_ManipulateVictory = yes
+								}
+
 								GER = {
 									add_to_faction = FRM
 									set_temp_variable = { SeaZone_ID = 3 } # 3; North Atlantic
@@ -1355,13 +1458,26 @@ on_actions = {
 							}
 							else_if = {
 								limit = { country_exists = FMM }
-								
+
 								set_cosmetic_tag = FRA_postCW
 								every_country = {
 									limit = { is_ai = no }
 									news_event = { id = WORLD.30105 days = 1 }
 								}
-								
+
+								GER = {
+									set_temp_variable = { Victory_ID = 5 }
+									set_temp_variable = { Victory_Outcome = 5 }
+									set_temp_variable = { Victory_Points = 200 }
+									Cold_War_GUI_ManipulateVictory = yes
+								}
+								USA = {
+									set_temp_variable = { Victory_ID = 5 }
+									set_temp_variable = { Victory_Outcome = 1 }
+									set_temp_variable = { Victory_Points = -200 }
+									Cold_War_GUI_ManipulateVictory = yes
+								}
+
 								GER = {
 									add_to_faction = FMM
 									set_temp_variable = { SeaZone_ID = 3 } # 3; North Atlantic
@@ -1383,11 +1499,24 @@ on_actions = {
 							}
 							else_if = {
 								limit = { country_exists = FGR }
-								
+
 								set_cosmetic_tag = FRA_postCW
 								every_country = {
 									limit = { is_ai = no }
 									news_event = { id = WORLD.30106 days = 1 }
+								}
+
+								GER = {
+									set_temp_variable = { Victory_ID = 5 }
+									set_temp_variable = { Victory_Outcome = 5 }
+									set_temp_variable = { Victory_Points = 200 }
+									Cold_War_GUI_ManipulateVictory = yes
+								}
+								USA = {
+									set_temp_variable = { Victory_ID = 5 }
+									set_temp_variable = { Victory_Outcome = 1 }
+									set_temp_variable = { Victory_Points = -200 }
+									Cold_War_GUI_ManipulateVictory = yes
 								}
 
 								GER = {
@@ -1411,7 +1540,7 @@ on_actions = {
 							}
 							else_if = {
 								limit = { country_exists = FIT }
-								
+
 								set_cosmetic_tag = FRA_postCW
 								every_country = {
 									limit = { is_ai = no }
@@ -1427,7 +1556,7 @@ on_actions = {
 								ITA = {
 									set_autonomy = {
 										target = FIT
-										autonomy_state = autonomy_italy_associate
+										autonomy_state = autonomy_associated
 									}
 								}
 								FIT = {
@@ -1442,6 +1571,19 @@ on_actions = {
 									}
 									USA = { add_to_faction = FIT }
 									add_ideas = OFN_Independent_Member
+
+									GER = {
+										set_temp_variable = { Victory_ID = 5 }
+										set_temp_variable = { Victory_Outcome = 1 }
+										set_temp_variable = { Victory_Points = -200 }
+										Cold_War_GUI_ManipulateVictory = yes
+									}
+									USA = {
+										set_temp_variable = { Victory_ID = 5 }
+										set_temp_variable = { Victory_Outcome = 5 }
+										set_temp_variable = { Victory_Points = 200 }
+										Cold_War_GUI_ManipulateVictory = yes
+									}
 								}
 								else_if = {
 									limit = {
@@ -1450,6 +1592,25 @@ on_actions = {
 									}
 									JAP = { add_to_faction = FIT }
 									add_ideas = Sphere_Coequal
+
+									GER = {
+										set_temp_variable = { Victory_ID = 5 }
+										set_temp_variable = { Victory_Outcome = 1 }
+										set_temp_variable = { Victory_Points = -200 }
+										Cold_War_GUI_ManipulateVictory = yes
+									}
+									USA = {
+										set_temp_variable = { Victory_ID = 5 }
+										set_temp_variable = { Victory_Outcome = 2 }
+										set_temp_variable = { Victory_Points = -100 }
+										Cold_War_GUI_ManipulateVictory = yes
+									}
+									JAP = {
+										set_temp_variable = { Victory_ID = 5 }
+										set_temp_variable = { Victory_Outcome = 4 }
+										set_temp_variable = { Victory_Points = 100 }
+										Cold_War_GUI_ManipulateVictory = yes
+									}
 								}
 								econ_join_sphere_ITA = yes
 							}
@@ -1503,7 +1664,7 @@ on_actions = {
 							}
 						}
 					}
-						
+
 					set_global_flag = FFR_reclamation_successful
 					FFR_reclamation_victory = yes
 
@@ -1651,7 +1812,7 @@ on_actions = {
 
 					if = {
 						limit = {
-							FROM = { is_in_faction_with = GER}
+							FROM = { is_in_faction_with = GER }
 						}
 						ROOT = {
 							if = {
@@ -1685,7 +1846,7 @@ on_actions = {
 						}
 					}
 					CRI = { every_owned_state = { remove_core_of = ROOT } }
-					
+
 					set_global_flag = skip_default_capitulation
 				}
 
@@ -1732,7 +1893,7 @@ on_actions = {
 							}
 						}
 					}
-					
+
 					set_global_flag = skip_default_capitulation
 				}
 				else_if = { # Polish Victory
@@ -1769,11 +1930,11 @@ on_actions = {
 							}
 						}
 					}
-					
+
 					set_global_flag = skip_default_capitulation
 				}
-				else_if = { #Crimean War 
-					limit = { 
+				else_if = { #Crimean War
+					limit = {
 						FROM = {
 							OR = {
 								original_tag = FUK
@@ -1881,7 +2042,7 @@ on_actions = {
 						ROOT = {
 							original_tag = UTL
 						}
-						has_global_flag = TNO_TURKES_KENES_OVER_USA_WINS
+						has_global_flag = TNO_TURKES_KENES_OVER_TUR_WINS
 					}
 					TRK = {
 						country_event = {
@@ -1914,7 +2075,7 @@ on_actions = {
 								original_tag = KYR
 							}
 						}
-						has_global_flag = TNO_TURKES_KENES_OVER_USA_WINS
+						has_global_flag = TNO_TURKES_KENES_OVER_TUR_WINS
 					}
 					TRK = {
 						annex_country = {
@@ -1967,7 +2128,16 @@ on_actions = {
 					FROM = {
 						white_peace = ROOT
 						TUR = {
-							country_event = itatur.10
+							if = {
+								limit = {
+									has_game_rule = {
+										rule = SECOND_TWR_PEACE_DEAL_PATH
+										option = SECOND_TWR_PEACE_DEAL_PATH_PRO_TURKISH
+									}
+								}
+								country_event = itatur.5
+							}
+							else = { country_event = itatur.10 }
 						}
 					}
 					set_global_flag = skip_default_capitulation
@@ -1982,7 +2152,7 @@ on_actions = {
 							}
 						}
 						ROOT = {
-							original_tag = IME						
+							original_tag = IME
 						}
 					}
 					FROM = {
@@ -2041,14 +2211,13 @@ on_actions = {
 						every_owned_state = {
 							remove_core_of = ROOT
 						}
+						1705 = { remove_core_of = ROOT }
 						YEM = { country_event = { id = YEM.6 } }
 					}
 					set_global_flag = OC_Yemen_CW_over
 					OIL_YEM_win_yemen = yes
 					OIL_check_remove_forpol_tab = yes
-					GNG = {
-						clr_country_flag = GNG_OC_is_sending_volunteers_YEM
-					}
+					GNG = { clr_country_flag = GNG_OC_is_sending_volunteers_YEM }
 					set_global_flag = skip_default_capitulation
 				}
 				else_if = {
@@ -2060,7 +2229,6 @@ on_actions = {
 							original_tag = YEM
 						}
 					}
-
 					FROM = {
 						white_peace = ROOT
 						annex_country = {
@@ -2128,6 +2296,7 @@ on_actions = {
 						every_owned_state = {
 							remove_core_of = YEM
 						}
+						1705 = { remove_core_of = YEM }
 						NYM = { country_event = { id = YEM.10 } }
 					}
 					set_global_flag = OC_Yemen_CW_over
@@ -2155,6 +2324,7 @@ on_actions = {
 						every_owned_state = {
 							remove_core_of = NYM
 						}
+						1705 = { remove_core_of = NYM }
 						SAU = { country_event = { id = YEM.9 } }
 					}
 					set_global_flag = OC_Yemen_CW_over
@@ -2365,7 +2535,7 @@ on_actions = {
 									}
 								}
 								NZL = {
-									add_to_variable = { NZ_OC_loses = 1}
+									add_to_variable = { NZ_OC_loses = 1 }
 									add_to_variable = { NZ_lost_proxies = 1 }
 								}
 							}
@@ -2628,7 +2798,7 @@ on_actions = {
 								KUR = { country_event = { id = IraqCW.13 } }
 								OIL_KUR_win_iraq = yes
 								NZL = {
-									add_to_variable = { NZ_OC_loses = 1}
+									add_to_variable = { NZ_OC_loses = 1 }
 									add_to_variable = { NZ_lost_proxies = 1 }
 								}
 							}
@@ -2648,7 +2818,7 @@ on_actions = {
 										}
 									}
 									NZL = {
-										add_to_variable = { NZ_OC_loses = 1}
+										add_to_variable = { NZ_OC_loses = 1 }
 										add_to_variable = { NZ_lost_proxies = 1 }
 									}
 								}
@@ -2664,7 +2834,7 @@ on_actions = {
 										}
 									}
 									NZL = {
-										add_to_variable = { NZ_OC_loses = 1}
+										add_to_variable = { NZ_OC_loses = 1 }
 										add_to_variable = { NZ_lost_proxies = 1 }
 									}
 								}
@@ -2674,7 +2844,7 @@ on_actions = {
 								BIR = { country_event = { id = IraqCW.9 } }
 								OIL_BIR_win_iraq = yes
 								NZL = {
-									add_to_variable = { NZ_OC_loses = 1}
+									add_to_variable = { NZ_OC_loses = 1 }
 									add_to_variable = { NZ_lost_proxies = 1 }
 								}
 							}
@@ -2686,7 +2856,7 @@ on_actions = {
 									clr_country_flag = GNG_OC_is_sending_volunteers_SNI
 								}
 								NZL = {
-									add_to_variable = { NZ_OC_loses = 1}
+									add_to_variable = { NZ_OC_loses = 1 }
 									add_to_variable = { NZ_lost_proxies = 1 }
 								}
 							}
@@ -2801,10 +2971,10 @@ on_actions = {
 								NZL = {
 									add_to_variable = { NZL_World_Stage_var = -1 }
 									add_to_variable = { NZL_Social_Fabric_var = -2 }
-									NZ_Skeleton_Effect = yes	
+									NZ_Skeleton_Effect = yes
 									add_to_variable = { NZ_lost_proxies = 1 }
-									add_to_variable = { NZ_OC_loses = 1}
-								}								
+									add_to_variable = { NZ_OC_loses = 1 }
+								}
 								every_owned_state = {
 									add_core_of = FROM
 									remove_core_of = IRL
@@ -2833,8 +3003,8 @@ on_actions = {
 								NZL = {
 									add_to_variable = { NZL_World_Stage_var = 1 }
 									add_to_variable = { NZL_Social_Fabric_var = 1 }
-									NZ_Skeleton_Effect = yes	
-								}								
+									NZ_Skeleton_Effect = yes
+								}
 								JAP = {
 									set_temp_variable = { Victory_ID = 12 }
 									set_temp_variable = { Victory_Outcome = 2 }
@@ -2877,7 +3047,7 @@ on_actions = {
 									add_to_variable = { NZL_Social_Fabric_var = -2 }
 									NZ_Skeleton_Effect = yes
 									add_to_variable = { NZ_lost_proxies = 1 }
-									add_to_variable = { NZ_OC_loses = 1}
+									add_to_variable = { NZ_OC_loses = 1 }
 								}
 								every_owned_state = {
 									add_core_of = FROM
@@ -2913,7 +3083,7 @@ on_actions = {
 									add_to_variable = { NZL_Social_Fabric_var = -2 }
 									NZ_Skeleton_Effect = yes
 									add_to_variable = { NZ_lost_proxies = 1 }
-									add_to_variable = { NZ_OC_loses = 1}
+									add_to_variable = { NZ_OC_loses = 1 }
 								}
 								every_owned_state = {
 									add_core_of = FROM
@@ -2949,7 +3119,7 @@ on_actions = {
 									add_to_variable = { NZL_Social_Fabric_var = -2 }
 									NZ_Skeleton_Effect = yes
 									add_to_variable = { NZ_lost_proxies = 1 }
-									add_to_variable = { NZ_OC_loses = 1}
+									add_to_variable = { NZ_OC_loses = 1 }
 								}
 								every_owned_state = {
 									add_core_of = FROM
@@ -2985,7 +3155,7 @@ on_actions = {
 									add_to_variable = { NZL_Social_Fabric_var = -2 }
 									NZ_Skeleton_Effect = yes
 									add_to_variable = { NZ_lost_proxies = 1 }
-									add_to_variable = { NZ_OC_loses = 1}
+									add_to_variable = { NZ_OC_loses = 1 }
 								}
 								every_owned_state = {
 									add_core_of = FROM
@@ -3031,9 +3201,9 @@ on_actions = {
 								NZL = {
 									add_to_variable = { NZL_World_Stage_var = 1 }
 									add_to_variable = { NZL_Social_Fabric_var = 2 }
-									NZ_Skeleton_Effect = yes	
+									NZ_Skeleton_Effect = yes
 									add_to_variable = { NZ_lost_proxies = 1 }
-								}							
+								}
 								JAP = {
 									set_temp_variable = { Victory_ID = 12 }
 									set_temp_variable = { Victory_Outcome = 2 }
@@ -3072,9 +3242,9 @@ on_actions = {
 								}
 								NZL = {
 									add_to_variable = { NZL_Social_Fabric_var = -2 }
-									NZ_Skeleton_Effect = yes		
+									NZ_Skeleton_Effect = yes
 									add_to_variable = { NZ_lost_proxies = 1 }
-								}							
+								}
 								every_owned_state = {
 									add_core_of = FROM
 									remove_core_of = PER
@@ -3220,7 +3390,7 @@ on_actions = {
 						GRE = { save_party_popularities = yes }
 						set_autonomy = {
 							target = GRE
-							autonomy_state = autonomy_italy_reliant
+							autonomy_state = autonomy_reliant
 						}
 						GRE = {
 							apply_party_popularities = yes
@@ -3322,8 +3492,7 @@ on_actions = {
 						puppet = SYR
 					}
 					SYR = {
-						set_cosmetic_tag = ITA_middle_east_government
-						set_country_flag = italian_names 
+						TNO_endo_exo_add_italian_names = yes
 						promote_character = SYR_Italo_Balbo_Ruler_Of_Arabia
 						econ_leave_sphere = yes
 
@@ -3335,87 +3504,6 @@ on_actions = {
 							despotism = 13
 							fascism = 37
 							ultranationalism = 10
-						}
-						set_party_name = {
-							ideology = despotism
-							long_name = SAU_ITA_despotism_long
-							name = SAU_ITA_despotism
-						}
-						set_party_name = {
-							ideology = fascism
-							long_name = SAU_ITA_despotism_long
-							name = SAU_ITA_despotism
-						}
-						econ_join_sphere_ITA = yes
-						set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Corporatism }
-						econ_type_change = yes
-					}
-					set_global_flag = skip_default_capitulation
-				}
-				#Saudis
-				else_if = {
-					limit = {
-						FROM = {
-							OR = {
-								original_tag = ITA
-								is_in_faction_with = ITA
-								is_subject_of = ITA
-							}
-						}
-						ROOT = {
-							OR = {
-								tag = SAU
-								is_in_faction_with = SAU
-								is_subject_of = SAU
-							}
-						}
-					}
-					if = {
-						limit = {
-							YEM = {
-								is_subject_of = SAU
-							}
-						}
-						SAU = {
-							annex_country = {
-								target = YEM
-								transfer_troops = no
-							}
-						}
-					}
-					if = {
-						limit = {
-							GUL = {
-								is_subject_of = SAU
-							}
-						}
-						SAU = {
-							annex_country = {
-								target = GUL
-								transfer_troops = no
-							}
-						}
-					}
-					ITA = {
-						white_peace = SAU
-						set_autonomy = {
-							target = SAU
-							autonomy_state = autonomy_italy_governate
-						}
-					}
-					SAU = {
-						set_cosmetic_tag = ITA_middle_east_government_saudis
-
-						promote_character = SAU_Italo_Balbo_Ruler_Of_Arabia
-
-						set_politics = { ruling_party = despotism }
-						set_popularities = {
-							communist = 7
-							socialist = 14
-							paternalism = 4
-							despotism = 13
-							fascism = 37
-							ultranationalism = 25
 						}
 						set_party_name = {
 							ideology = despotism
@@ -3887,7 +3975,7 @@ on_actions = {
 						}
 					}
 				}
-				
+
 				else_if = { # Pan-African Revolution in Namibia
 					limit = {
 						FROM = {
@@ -4080,7 +4168,13 @@ on_actions = {
 										JAP = { country_event = { id = GAZ.7 days = 1 } }
 									}
 								}
-								news_event = { id = WORLD.18145 days = 1 }
+								every_country = {
+									limit = {
+										is_ai = no
+										HasAfricaInterest = yes
+									}
+									news_event = { id = WORLD.18145 days = 1 }
+								}
 							}
 							else_if = {
 								limit = { tag = GZS } #No need to check for flag since GZS only exists if US backs em
@@ -4103,12 +4197,24 @@ on_actions = {
 										current_election_date = "[?global.date.GetDateStringNoHour]"
 									}
 								}
-								news_event = { id = WORLD.18146 days = 1 }
+								every_country = {
+									limit = {
+										is_ai = no
+										HasAfricaInterest = yes
+									}
+									news_event = { id = WORLD.18146 days = 1 }
+								}
 							}
 							else = {
 								JAP = { country_event = { id = GAZ.10 days = 1 } }
 								USA = { country_event = { id = GAZ.11 days = 1 } }
-								news_event = { id = WORLD.18144 days = 1 }
+								every_country = {
+									limit = {
+										is_ai = no
+										HasAfricaInterest = yes
+									}
+									news_event = { id = WORLD.18144 days = 1 }
+								}
 							}
 							every_owned_state = { add_core_of = FROM }
 							clr_global_flag = mozambique_civil_war_active
@@ -4145,6 +4251,7 @@ on_actions = {
 								original_tag = GRO
 								original_tag = COG
 								original_tag = KSI
+								original_tag = CAF
 							}
 						}
 						ROOT = {
@@ -4156,6 +4263,7 @@ on_actions = {
 								original_tag = GRO
 								original_tag = COG
 								original_tag = KSI
+								original_tag = CAF
 							}
 						}
 					}
@@ -4328,7 +4436,7 @@ on_actions = {
 								GRO_REICHSSTAAT_collapsed_oberkommando
 							}
 						}
-								
+
 						GER = {
 							country_event = {
 								id = COG_PW.5
@@ -4463,9 +4571,7 @@ on_actions = {
 					else_if = { # CAF beats AZD
 						limit = {
 							country_exists = CAF
-							NOT = {
-								country_exists = AZD
-							}
+							NOT = { country_exists = AZD }
 						}
 						CAF = {
 							annex_country = {
@@ -4473,27 +4579,22 @@ on_actions = {
 								transfer_troops = no
 							}
 						}
+						TNO_CCW_JAP_Faction_Gone = yes
 						clr_global_flag = congo_PW_CAF_joined
 					}
 					else_if = { # AZD beats CAF
 						limit = {
 							country_exists = AZD
-							NOT = {
-								country_exists = CAF
-							}
+							NOT = { country_exists = CAF }
 						}
-						CAF = {
-							white_peace = AZD
-						}
+						CAF = { white_peace = AZD }
 						clr_global_flag = congo_PW_CAF_joined
 					}
 					set_global_flag = skip_default_capitulation
 				}
 				else_if = { # CAF beats CPR
 					limit = {
-						FROM = {
-							original_tag = CAF
-						}
+						FROM = { original_tag = CAF }
 						ROOT = { original_tag = CPR }
 					}
 					CAF = {
@@ -4523,19 +4624,15 @@ on_actions = {
 				}
 				else_if = { # CPR beats CAF
 					limit = {
-						FROM = {
-							original_tag = CPR
-						}
+						FROM = { original_tag = CPR }
 						ROOT = { original_tag = CAF }
 					}
 					CPR = {
-						country_event = {
-							id = COG_PW.19
-						}
+						country_event = { id = COG_PW.19 }
 					}
 					set_global_flag = skip_default_capitulation
 				}
-				
+
 				#################################################
 				##=|           Germany Peace Deals           |=##
 				##======================| |====================##
@@ -4731,7 +4828,7 @@ on_actions = {
 								apply_party_popularities = yes
 								set_politics = { ruling_party = fascism }
 								join_zollverein = yes
-								remove_ideas = Pakt_Marionettenstaat
+								remove_faction_status = yes
 								add_ideas = Pakt_Mitstreiter
 								add_popularity = {
 									ideology = fascism
@@ -4842,7 +4939,7 @@ on_actions = {
 								ruling_party = national_socialism
 								elections_allowed = no
 							}
-						}	
+						}
 					}
 					set_global_flag = skip_default_capitulation
 				}
@@ -4913,7 +5010,7 @@ on_actions = {
 								autonomy_state = autonomy_collaborator_puppet_state
 							}
 							POL = {
-								set_country_flag = german_names
+								TNO_endo_exo_add_german_names = yes
 								join_zollverein = yes
 								apply_party_popularities = yes
 								add_ideas = Pakt_Marionettenstaat
@@ -4944,28 +5041,6 @@ on_actions = {
 								set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_Gelenkte_Wirtschaft }
 								econ_subtype_change = yes
 								econ_join_sphere_GER = yes
-								state_control_effect_10 = yes
-								state_control_effect_1381 = yes
-								state_control_effect_1380 = yes
-								state_control_effect_2261 = yes
-								state_control_effect_1383 = yes
-								state_control_effect_90 = yes
-								state_control_effect_1382 = yes
-								state_control_effect_1386 = yes
-								state_control_effect_88 = yes
-								state_control_effect_1385 = yes
-								state_control_effect_1384 = yes
-								state_control_effect_92 = yes
-								state_control_effect_1390 = yes
-								state_control_effect_1389 = yes
-								state_control_effect_1387 = yes
-								state_control_effect_1391 = yes
-								state_control_effect_1388 = yes
-								state_control_effect_89 = yes
-								state_control_effect_1392 = yes
-								state_control_effect_1393 = yes
-								state_control_effect_1394 = yes
-								state_control_effect_91 = yes
 							}
 						}
 					}
@@ -5023,11 +5098,20 @@ on_actions = {
 								GER = { transfer_state = PREV }
 							}
 						}
+						ROOT = {
+							if = {
+								limit = {
+									has_country_flag = UKR_ukraine_must_survive_insurgency_phase
+								}
+								UKR_calculate_ending_capitulated = yes
+							}
+						}
 						if = {
 							limit = { NOT = { country_exists = UKR } }
 							UKR = {
 								annex_country = { target = ROOT transfer_troops = no }
 								save_party_popularities = yes
+								change_tag_from = ROOT
 							}
 							set_autonomy = {
 								target = UKR
@@ -5105,6 +5189,7 @@ on_actions = {
 									remove_core_of = BOV
 									remove_core_of = FUK
 								}
+								UKR_apply_ending = yes
 							}
 						}
 						else = {
@@ -5187,6 +5272,20 @@ on_actions = {
 								remove_core_of = UKS
 							}
 						}
+						if = {
+							limit = {
+								OR = {
+									has_global_flag = UKR_ukraine_must_survive_best_ending
+									has_global_flag = UKR_ukraine_must_survive_good_ending
+									has_global_flag = UKR_ukraine_must_survive_bad_ending
+									has_global_flag = UKR_ukraine_must_survive_worst_ending
+								}
+							}
+							UKR = {
+								UKR_apply_ending = yes
+							}
+						}
+
 					}
 					set_global_flag = skip_default_capitulation
 				}
@@ -5210,7 +5309,7 @@ on_actions = {
 								original_tag = BLR
 							}
 						}
-						
+
 					}
 					GER = {
 						white_peace = ROOT
@@ -5324,7 +5423,7 @@ on_actions = {
 											socialist = 5
 										}
 										promote_character = GER_alfred_zerbel
-										
+
 										set_party_name = {
 											ideology = national_socialism
 											long_name = OST_speer_occupation_government_fascism_long
@@ -5332,23 +5431,18 @@ on_actions = {
 										}
 										set_party_name = {
 											ideology = despotism
-											long_name = OST_speer_belarus_liberation_front
-											name = OST_speer_belarus_liberation_front_long
+											long_name = OST_speer_belarus_liberation_front_long
+											name = OST_speer_belarus_liberation_front
 										}
 										set_party_name = {
 											ideology = conservatism
-											long_name = OST_speer_united_baltic_army
-											name = OST_speer_united_baltic_army_long
-										}
-										set_party_name = {
-											ideology = conservatism
-											long_name = OST_speer_united_baltic_army
-											name = OST_speer_united_baltic_army_long
+											long_name = OST_speer_united_baltic_army_long
+											name = OST_speer_united_baltic_army
 										}
 										set_party_name = {
 											ideology = socialist
-											long_name = OST_speer_student_movement
-											name = OST_speer_student_movement_long
+											long_name = OST_speer_student_movement_long
+											name = OST_speer_student_movement
 										}
 									}
 								}
@@ -5404,23 +5498,18 @@ on_actions = {
 									}
 									set_party_name = {
 										ideology = despotism
-										long_name = OST_speer_belarus_liberation_front
-										name = OST_speer_belarus_liberation_front_long
+										long_name = OST_speer_belarus_liberation_front_long
+										name = OST_speer_belarus_liberation_front
 									}
 									set_party_name = {
 										ideology = conservatism
-										long_name = OST_speer_united_baltic_army
-										name = OST_speer_united_baltic_army_long
-									}
-									set_party_name = {
-										ideology = conservatism
-										long_name = OST_speer_united_baltic_army
-										name = OST_speer_united_baltic_army_long
+										long_name = OST_speer_united_baltic_army_long
+										name = OST_speer_united_baltic_army
 									}
 									set_party_name = {
 										ideology = socialist
-										long_name = OST_speer_student_movement
-										name = OST_speer_student_movement_long
+										long_name = OST_speer_student_movement_long
+										name = OST_speer_student_movement
 									}
 								}
 							}
@@ -5524,7 +5613,7 @@ on_actions = {
 							transfer_troops = yes
 						}
 						every_owned_state = { remove_core_of = OKB }
-						
+
 						set_country_flag = SGR_SR_good_end
 						country_event = {
 							id = speerreichsbanner.1
@@ -5585,8 +5674,8 @@ on_actions = {
 						}
 						set_party_name = {
 							ideology = despotism
-							long_name = MCW_despotism_postSR_party
-							name = MCW_despotism_postSR_party_long
+							long_name = MCW_despotism_postSR_party_long
+							name = MCW_despotism_postSR_party
 						}
 						set_popularities = {
 							despotism = 40
@@ -5632,7 +5721,10 @@ on_actions = {
 						}
 					}
 					every_country = {
-						limit = { is_ai = no }
+						limit = {
+							is_ai = no
+							HasEuropeInterest = yes
+							}
 						news_event = {
 							id = WORLD_REICH.213
 						}
@@ -5691,13 +5783,19 @@ on_actions = {
 						}
 						#Baltikum
 						every_controlled_state = {
-							limit = { is_core_of = OST NOT = { is_core_of = BLR } }
+							limit = {
+								is_core_of = OST
+								NOT = { is_core_of = BLR }
+							}
 							OST = { transfer_state = PREV }
 							remove_core_of = SRT
 						}
 						#Belarus
 						every_controlled_state = {
-							limit = { is_core_of = BLR NOT = { is_core_of = OST } }
+							limit = {
+								is_core_of = BLR
+								NOT = { is_core_of = OST }
+							}
 							BLR = { transfer_state = PREV }
 							remove_core_of = SRT
 						}
@@ -5712,6 +5810,7 @@ on_actions = {
 							limit = { is_core_of = CAU }
 							CAU = { transfer_state = PREV }
 							remove_core_of = SRT
+							remove_core_of = DFK
 						}
 					}
 					CAU = {
@@ -5812,7 +5911,10 @@ on_actions = {
 					}
 
 					every_country = {
-						limit = { is_ai = no }
+						limit = {
+							is_ai = no
+							HasEuropeInterest = yes
+							}
 						news_event = {
 							id = WORLD_REICH.214
 						}
@@ -6065,11 +6167,19 @@ on_actions = {
 								}
 								every_state = {
 									remove_core_of = ROOT
+									remove_claim_by = ROOT
 								}
 							}
 						}
 					}
-					if = {
+					ELS = {
+						delete_unit = {
+							state = 314
+							disband = yes
+						}
+						load_oob = ELS_1962
+					}
+					if = { #New Granada Lost
 						limit = {
 							ROOT = {
 								original_tag = CLC
@@ -6083,6 +6193,27 @@ on_actions = {
 						ITA = {
 							set_temp_variable = { target = CLC }
 							TNO_clear_num_volunteers = yes
+						}
+						VEN = {
+							set_temp_variable = { target = CLC }
+							TNO_clear_num_volunteers = yes
+						}
+						ELS = {
+							set_temp_variable = { target = CLC }
+							TNO_clear_num_volunteers = yes
+							if = {
+								limit = {
+									AND = {
+										ELS = { has_country_flag = ELS_Nationalist_Coup }
+										country_exists = IBR
+									}
+								}
+								ELS = { econ_join_sphere_IBR = yes }
+								JAP = { country_event = { id = ELS_forpol.16 days = 23 } }
+								IBR = { country_event = { id = ELS_forpol.15 days = 23 } }
+								IBR = { country_event = { id = ELS_forpol.17 days = 100 } }
+								#IBR = { country_event = { id = ELS_forpol.18 days = 375 } } #Deprecating what was thought deprecated
+							}
 						}
 						every_country = {
 							limit = { has_idea = PAR_condor_legion }
@@ -6120,11 +6251,43 @@ on_actions = {
 						}
 						set_global_flag = skip_default_capitulation
 					}
-					if = {
+					if = { #Republic Lost
 						limit = {
 							ROOT = {
 								original_tag = COL
 							}
+						}
+						ELS = {
+							set_temp_variable = { target = COL }
+							TNO_clear_num_volunteers = yes
+						}
+						NIC = {
+							set_temp_variable = { target = COL }
+							TNO_clear_num_volunteers = yes
+						}
+						VEN = {
+							set_temp_variable = { target = COL }
+							TNO_clear_num_volunteers = yes
+						}
+						CAN = {
+							set_temp_variable = { target = COL }
+							TNO_clear_num_volunteers = yes
+						}
+						FRA = {
+							set_temp_variable = { target = COL }
+							TNO_clear_num_volunteers = yes
+						}
+						SPA = {
+							set_temp_variable = { target = COL }
+							TNO_clear_num_volunteers = yes
+						}
+						CUB = {
+							set_temp_variable = { target = COL }
+							TNO_clear_num_volunteers = yes
+						}
+						MEX = {
+							set_temp_variable = { target = COL }
+							TNO_clear_num_volunteers = yes
 						}
 						if = {
 							limit = {
@@ -6142,6 +6305,31 @@ on_actions = {
 								set_temp_variable = { target = COL }
 								TNO_clear_num_volunteers = yes
 							}
+							###El Salvador
+							if = {
+								limit = {
+									AND = {
+										ELS = { has_country_flag = ELS_Nationalist_Coup }
+										country_exists = IBR
+									}
+								}
+								ELS = { econ_join_sphere_JAP = yes }
+								JAP = { country_event = { id = ELS_forpol.19 days = 23 } }
+								JAP = { country_event = { id = ELS_forpol.20 days = 100 } }
+								JAP = { country_event = { id = ELS_forpol.21 days = 375 } }
+							}
+						}
+						if = {
+							limit = {
+								AND = {
+									ELS = { has_country_flag = ELS_Nationalist_Coup }
+									NOT = { country_exists = IBR }
+								}
+							}
+							ELS = { econ_join_sphere_JAP = yes }
+							JAP = { country_event = { id = ELS_forpol.19 days = 23 } }
+							JAP = { country_event = { id = ELS_forpol.20 days = 100 } }
+							JAP = { country_event = { id = ELS_forpol.21 days = 375 } }
 						}
 						if = {
 							limit = {
@@ -6156,17 +6344,36 @@ on_actions = {
 								TNO_clear_num_volunteers = yes
 							}
 						}
-						CUB = {
-							set_temp_variable = { target = COL }
-							TNO_clear_num_volunteers = yes
+						if = {
+							limit = {
+								check_variable = {
+									GER.COL_faction_support = COL.id
+								}
+							}
+							GER = {
+								TNO_fopo_remove_colombian_civil_war_tab = yes
+								set_temp_variable = { target = COL }
+								TNO_clear_num_volunteers = yes
+							}
+							FRA = {
+								set_temp_variable = { target = COL }
+								TNO_clear_num_volunteers = yes
+							}
 						}
-						MEX = {
-							set_temp_variable = { target = COL }
-							TNO_clear_num_volunteers = yes
+						if = {
+							limit = { has_global_flag = US_betrayed_CLL }
+							USA = {
+								set_temp_variable = { target = COL }
+								TNO_clear_num_volunteers = yes
+							}
+							CAN = {
+								set_temp_variable = { target = COL }
+								TNO_clear_num_volunteers = yes
+							}
 						}
 						set_global_flag = skip_default_capitulation
 					}
-					if = {
+					if = { ### CRU Lost
 						limit = {
 							ROOT = {
 								original_tag = CLL
@@ -6174,15 +6381,30 @@ on_actions = {
 						}
 						USA = {
 							if = {
-								limit = { FROM = { tag = CLC } }
-								country_event = { id = USA_colombia.9 }
+								limit = { 
+									NOT = { has_global_flag = US_betrayed_CLL }
+								}
+								if = {
+									limit = { FROM = { tag = CLC } }
+									country_event = { id = USA_colombia.9 }
+								}
+								else = { country_event = { id = USA_colombia.8 } }
+								TNO_fopo_remove_colombian_civil_war_tab = yes
+								set_temp_variable = { target = CLL }
+								TNO_clear_num_volunteers = yes
+								clear_variable = USA_manpower_depletion_COLCW
 							}
-							else = { country_event = { id = USA_colombia.8 } }
-							TNO_fopo_remove_colombian_civil_war_tab = yes
-							set_temp_variable = { target = CLL }
-							TNO_clear_num_volunteers = yes
-							clear_variable = USA_manpower_depletion_COLCW
+							if = {
+								limit = {
+									AND = {
+										check_variable = { NIC.ECON_SPHERE_LEADER = USA }
+										NOT = { has_global_flag = US_betrayed_CLL }
+									}
+								}
+								USA = { country_event = { id = NIC_forpol.9 days = 30 } }
+							}
 						}
+
 						if = {
 							limit = {
 								check_variable = {
@@ -6204,13 +6426,25 @@ on_actions = {
 							set_temp_variable = { target = CLL }
 							TNO_clear_num_volunteers = yes
 						}
+						CAN = {
+							set_temp_variable = { target = CLL }
+							TNO_clear_num_volunteers = yes
+						}
 						MEX = {
+							set_temp_variable = { target = CLL }
+							TNO_clear_num_volunteers = yes
+						}
+						ELS = {
+							set_temp_variable = { target = CLL }
+							TNO_clear_num_volunteers = yes
+						}
+						VEN = {
 							set_temp_variable = { target = CLL }
 							TNO_clear_num_volunteers = yes
 						}
 						set_global_flag = skip_default_capitulation
 					}
-					if = {
+					if = { ## CLD Lost
 						limit = {
 							ROOT = {
 								original_tag = CLD
@@ -6221,9 +6455,30 @@ on_actions = {
 							set_temp_variable = { target = CLD }
 							TNO_clear_num_volunteers = yes
 						}
+						FRA = {
+							set_temp_variable = { target = CLD }
+							TNO_clear_num_volunteers = yes
+						}
+						if = {
+							limit = {
+								check_variable = {
+									global.IBR_COL_faction_support = CLD.id
+								}
+							}
+							IBR = {
+								if = {
+									limit = { has_character = IBR_Antonio_Salazar }
+									country_event = { id = IBR_colombia.6 }
+								}
+								else = { country_event = { id = IBR_colombia.7 } }
+								TNO_fopo_remove_colombian_civil_war_tab = yes
+								set_temp_variable = { target = CLD }
+								TNO_clear_num_volunteers = yes
+							}
+						}
 						set_global_flag = skip_default_capitulation
 					}
-					if = {
+					if = { ### NEW GRANADA VICTORY
 						limit = {
 							FROM = {
 								original_tag = CLC
@@ -6235,29 +6490,23 @@ on_actions = {
 							}
 						}
 						every_country = {
-							limit = { is_ai = no }
-							news_event = { id = WORLD.30111 days = 1 }
+							limit = {
+								is_ai = no
+								HasColombiaInterest = yes
+							}
+							news_event = { id = COL_News.18 days = 1 }
 						}
 						CLC = {
 							set_capital = { state = 306 }
-							set_cosmetic_tag = CLC_unification
-							country_event = { id = CLC_post_war.1 days = 60 }
-							if = {
-								limit = {
-									ITA = {
-										has_country_leader = {
-											character = ITA_Carlo_Scorza
-											ruling_only = yes
-										}
-									}
-								}
-								econ_join_sphere_ITA = yes
-							}
-							else = {
-								econ_leave_sphere = yes
-							}
+							set_cosmetic_tag = CLC_postwar
+							country_event = { id = CLC_post_war.1 }
 							add_opinion_modifier = { target = MEX modifier = TNO_embargoed_us_100 }
 							reverse_add_opinion_modifier = { target = MEX modifier = TNO_embargo_100 }
+
+							set_temp_variable = { TabName = token:BoP_Tab_GlobalConflicts }
+							TNO_BoP_AddTab = yes
+							remove_dynamic_modifier = { modifier = COL_Decay_Nation }
+							save_global_event_target_as = CCW_winner
 						}
 						JAP = {
 							TNO_fopo_remove_colombian_civil_war_tab = yes
@@ -6279,12 +6528,29 @@ on_actions = {
 							set_temp_variable = { Victory_Outcome = 1 }
 							set_temp_variable = { Victory_Points = -200 }
 							Cold_War_GUI_ManipulateVictory = yes
+							if = {
+								limit = { NOT = { has_global_flag = US_betrayed_CLL } }
+								country_event = { id = USA_colombia.8 }
+							}
+							else = {
+								country_event = { id = USA_colombia.9 }
+							}
 						}
-						MEX = {
-							set_variable = { trade_opinion_embargo@CLC = 1 }
+						CLC = {
+							MEX = {
+								set_embargo_PREV = yes
+							}
 						}
 						GNG_PTRG_Colombia_END = yes
 						ITA = {
+							set_temp_variable = { target = CLC }
+							TNO_clear_num_volunteers = yes
+						}
+						VEN = {
+							set_temp_variable = { target = CLC }
+							TNO_clear_num_volunteers = yes
+						}
+						ELS = {
 							set_temp_variable = { target = CLC }
 							TNO_clear_num_volunteers = yes
 						}
@@ -6293,34 +6559,56 @@ on_actions = {
 							set_temp_variable = { target = CLC }
 							TNO_clear_num_volunteers = yes
 						}
-						if = {
-							limit = {
-								check_variable = {
-									global.IBR_COL_faction_support = CLC.id
-								}
-							}
-							IBR = {
-								country_event = { id = IBR_colombia.8 }
-								TNO_fopo_remove_colombian_civil_war_tab = yes
-								set_temp_variable = { target = CLC }
-								TNO_clear_num_volunteers = yes
-							}
+						IBR = {
+							TNO_fopo_remove_colombian_civil_war_tab = yes
 						}
 						set_global_flag = COL_conservatives_won
 						clr_global_flag = COL_civil_war_ongoing
 						set_global_flag = COL_civil_war_over
 						remove_from_array = { global.TNO_SA_cold_war_nations = COL }
 						add_to_array = { global.TNO_SA_cold_war_nations = CLC }
-						set_variable = { CLC.SA_cold_war_value = 30 }
 						CLC = {
-							set_variable = { SA_cold_war_map_x = 73 }
-							set_variable = { SA_cold_war_map_y = 72 }
-
-							set_variable = { TNO_SA_influence^global.UNALIGNED = 90 }
-							set_variable = { TNO_SA_influence^global.ARG = 10 }
+							set_variable = { TNO_SA_influence^global.UNALIGNED = 45 }
+							set_variable = { TNO_SA_influence^global.IBERIA = 0 }
+							set_variable = { TNO_SA_influence^global.ARGENTINA = 55 }
+							SA_set_alignment = yes
 						}
+
+						CLC = {
+							every_owned_state = {
+								limit = {
+									OR = {
+										state = 486
+										state = 1651
+										state = 1652
+										state = 1658
+									}
+								}
+								set_temp_variable = { admin_title_temp = token:Admin_Title_Special_Commissariat }
+								TNO_adjust_admin_title = yes
+							}
+						}
+						### El Salvador
+						if = {
+							limit = {
+								ELS = { has_country_flag = ELS_Nationalist_Coup }
+							}
+							ELS = { econ_join_sphere_JAP = yes }
+							#JAP = { country_event = { id = ELS_forpol.19 days = 23 } }
+							JAP = { country_event = { id = ELS_forpol.20 days = 100 } }
+							JAP = { country_event = { id = ELS_forpol.21 days = 375 } }
+						}
+						### Nicaragua
+						if = {
+							limit = { NIC = { NOT = { check_variable = { ECON_SPHERE_LEADER = USA } } } }
+							USA = { country_event = { id = NIC_forpol.16 days = 2 } }
+							IBR = { country_event = { id = NIC_forpol.16 days = 2 } }
+							JAP = { country_event = { id = NIC_forpol.16 days = 2 } }
+							JAP = { country_event = { id = NIC_forpol.15 days = 39 } }
+						}
+
 					}
-					if = {
+					if = { ### Revolutionaries Won
 						limit = {
 							FROM = {
 								original_tag = CLL
@@ -6332,32 +6620,91 @@ on_actions = {
 							}
 						}
 						every_country = {
-							limit = { is_ai = no }
-							news_event = { id = WORLD.30110 days = 1 }
+							limit = {
+									is_ai = no
+									HasColombiaInterest = yes
+								}
+							news_event = { id = COL_News.17 days = 1 }
 						}
 						USA = {
 							TNO_fopo_remove_colombian_civil_war_tab = yes
 							set_temp_variable = { target = CLL }
 							TNO_clear_num_volunteers = yes
-							set_temp_variable = { Victory_ID = 30 }
-							set_temp_variable = { Victory_Outcome = 4 }
-							set_temp_variable = { Victory_Points = 100 }
-							Cold_War_GUI_ManipulateVictory = yes
+						}
+						ITA = {
+							set_temp_variable = { target = CLL }
+							TNO_clear_num_volunteers = yes
+						}
+						CUB = {
+							set_temp_variable = { target = CLL }
+							TNO_clear_num_volunteers = yes
+						}
+						CAN = {
+							set_temp_variable = { target = CLL }
+							TNO_clear_num_volunteers = yes
+						}
+						MEX = {
+							set_temp_variable = { target = CLL }
+							TNO_clear_num_volunteers = yes
+						}
+						ELS = {
+							set_temp_variable = { target = CLL }
+							TNO_clear_num_volunteers = yes
+						}
+						VEN = {
+							set_temp_variable = { target = CLL }
+							TNO_clear_num_volunteers = yes
+						}
+						if = {
+							limit = { NOT = { has_global_flag = US_betrayed_CLL } }
+							USA = {
+								set_temp_variable = { Victory_ID = 30 }
+								set_temp_variable = { Victory_Outcome = 4 }
+								set_temp_variable = { Victory_Points = 100 }
+								Cold_War_GUI_ManipulateVictory = yes
 
-							country_event = { id = kirk.30 days = 2 random_days = 5 }
-							country_event = { id = USA_colombia.7 }
+								country_event = { id = kirk.30 days = 2 random_days = 5 }
+								country_event = { id = USA_colombia.7 }
+							}
+							JAP = {
+								set_temp_variable = { Victory_ID = 30 }
+								set_temp_variable = { Victory_Outcome = 1 }
+								set_temp_variable = { Victory_Points = -150 }
+								Cold_War_GUI_ManipulateVictory = yes
+							}
+							GER = {
+								set_temp_variable = { Victory_ID = 30 }
+								set_temp_variable = { Victory_Outcome = 1 }
+								set_temp_variable = { Victory_Points = -200 }
+								Cold_War_GUI_ManipulateVictory = yes
+							}
+							USA = {
+								if = {
+									limit = { check_variable = { NIC.ECON_SPHERE_LEADER = USA } }
+									USA = { country_event = { id = NIC_forpol.10 days = 30 } }
+								}
+							}
 						}
-						GER = {
-							set_temp_variable = { Victory_ID = 30 }
-							set_temp_variable = { Victory_Outcome = 1 }
-							set_temp_variable = { Victory_Points = -200 }
-							Cold_War_GUI_ManipulateVictory = yes
-						}
-						JAP = {
-							set_temp_variable = { Victory_ID = 30 }
-							set_temp_variable = { Victory_Outcome = 1 }
-							set_temp_variable = { Victory_Points = -200 }
-							Cold_War_GUI_ManipulateVictory = yes
+						else = {
+							USA = {
+								set_temp_variable = { Victory_ID = 30 }
+								set_temp_variable = { Victory_Outcome = 1 }
+								set_temp_variable = { Victory_Points = -200 }
+								Cold_War_GUI_ManipulateVictory = yes
+								country_event = { id = USA_colombia.8 }
+							}
+							JAP = {
+								set_temp_variable = { Victory_ID = 30 }
+								set_temp_variable = { Victory_Outcome = 2 }
+								set_temp_variable = { Victory_Points = -100 }
+								Cold_War_GUI_ManipulateVictory = yes
+							}
+							GER = {
+								set_temp_variable = { Victory_ID = 30 }
+								set_temp_variable = { Victory_Outcome = 1 }
+								set_temp_variable = { Victory_Points = -100 }
+								Cold_War_GUI_ManipulateVictory = yes
+							}
 						}
 						if = {
 							limit = {
@@ -6372,6 +6719,7 @@ on_actions = {
 								TNO_clear_num_volunteers = yes
 							}
 						}
+						VEN = { VEN_commie_increase_small = yes }
 						CLL = {
 							set_capital = { state = 306 }
 							add_ideas = {
@@ -6379,23 +6727,81 @@ on_actions = {
 							}
 							set_cosmetic_tag = CLL_unification
 							country_event = { id = CLL_post_war.1 days = 30 }
+							remove_dynamic_modifier = { modifier = COL_Decay_Nation }
+							set_temp_variable = { TabName = token:BoP_Tab_GlobalConflicts }
+							TNO_BoP_AddTab = yes
+
+							save_global_event_target_as = CCW_winner
 						}
 						set_global_flag = COL_liberals_won
 						clr_global_flag = COL_civil_war_ongoing
 						set_global_flag = COL_civil_war_over
 						remove_from_array = { global.TNO_SA_cold_war_nations = COL }
 						add_to_array = { global.TNO_SA_cold_war_nations = CLL }
-						set_variable = { CLL.SA_cold_war_value = 30 }
-						CLL = {
-							set_variable = { SA_cold_war_map_x = 73 }
-							set_variable = { SA_cold_war_map_y = 72 }
+						if = {
+							limit = {
+								BRA = {
+									has_country_flag = BRA_supports_CRU
+								}
+							}
+							CLL = {
+								set_variable = { TNO_SA_influence^global.UNALIGNED = 25 }
+								set_variable = { TNO_SA_influence^global.USA = 20 }
+								set_variable = { TNO_SA_influence^global.BRAZIL = 55 }
+								SA_set_alignment = yes
+							}
+						}
+						else = {
+							CLL = {
+								set_variable = { TNO_SA_influence^global.UNALIGNED = 0 }
+								set_variable = { TNO_SA_influence^global.USA = 85 }
+								set_variable = { TNO_SA_influence^global.BRAZIL = 15 }
+								SA_set_alignment = yes
+							}
+						}
 
-							set_variable = { TNO_SA_influence^global.UNALIGNED = 0 }
-							set_variable = { TNO_SA_influence^global.USA = 85 }
-							set_variable = { TNO_SA_influence^global.BRA = 15 }
+						493 = {
+							set_temp_variable = { admin_title_temp = token:Admin_Title_Department }
+							TNO_adjust_admin_title = yes
+						}
+						else_if = {
+							limit = {
+								ELS = { has_country_flag = ELS_Castrist_Coup }
+							}
+							ELS = {
+								set_temp_variable = { target = CLL }
+								TNO_clear_num_volunteers = yes
+							}
+						}
+						### Nicaragua
+						#Failsafe Option - Nicaragua Picks a Random Partner
+						NIC = {
+							if = {
+								limit = { NOT = { check_variable = { ECON_SPHERE_LEADER = USA } } }
+								if = {
+									limit = {
+										ARG = { has_country_leader = { character = ARG_Juan_Domingo_Peron ruling_only = yes } }
+									}
+									econ_join_sphere_ARG = yes
+								}
+								else_if = {
+									limit = {
+										OR = {
+											BRA = { has_country_leader = { character = BRA_Adhemar_de_Barros ruling_only = yes } }
+											BRA = { has_country_leader = { character = BRA_Pedro_Aleixo ruling_only = yes } }
+											BRA = { has_country_leader = { character = BRA_Getulio_Vargas_Filho ruling_only = yes } }
+											BRA = { has_country_leader = { character = BRA_Costa_e_Silva ruling_only = yes } }
+										}
+									}
+									econ_join_sphere_BRA = yes
+								}
+								else = { LATAM_Partner_Preference_selector = yes }
+								set_country_flag = NIC_Dictator
+								country_event = { id = NIC_scripted.8 }
+							}
 						}
 					}
-					if = {
+					if = { ### CLD Victory
 						limit = {
 							FROM = {
 								original_tag = CLD
@@ -6407,8 +6813,15 @@ on_actions = {
 							}
 						}
 						every_country = {
-							limit = { is_ai = no }
-							news_event = { id = WORLD.30113 days = 1 }
+							limit = {
+								is_ai = no
+								HasColombiaInterest = yes
+							}
+							news_event = { id = COL_News.19 days = 1 }
+						}
+						FRA = {
+							set_temp_variable = { target = CLD }
+							TNO_clear_num_volunteers = yes
 						}
 						GER = {
 							TNO_fopo_remove_colombian_civil_war_tab = yes
@@ -6416,110 +6829,122 @@ on_actions = {
 							TNO_clear_num_volunteers = yes
 							set_temp_variable = { Victory_ID = 30 }
 							set_temp_variable = { Victory_Outcome = 4 }
-							set_temp_variable = { Victory_Points = 100 }
+							set_temp_variable = { Victory_Points = 250 }
 							Cold_War_GUI_ManipulateVictory = yes
 						}
 						JAP = {
-							set_temp_variable = { Victory_ID = 30 }
-							set_temp_variable = { Victory_Outcome = 1 }
-							set_temp_variable = { Victory_Points = -200 }
-							Cold_War_GUI_ManipulateVictory = yes
-						}
-						USA = {
 							set_temp_variable = { Victory_ID = 30 }
 							set_temp_variable = { Victory_Outcome = 2 }
 							set_temp_variable = { Victory_Points = -100 }
 							Cold_War_GUI_ManipulateVictory = yes
 						}
-						MEX = {
-							set_variable = { trade_opinion_embargo@CLD = 1 }
+						USA = {
+							set_temp_variable = { Victory_ID = 30 }
+							set_temp_variable = { Victory_Outcome = 1 }
+							set_temp_variable = { Victory_Points = -200 }
+							Cold_War_GUI_ManipulateVictory = yes
 						}
+						
+						CLD = {
+							MEX = {
+								set_embargo_PREV = yes
+							}
+						}
+
+						if = {
+							limit = {
+								check_variable = {
+									global.IBR_COL_faction_support = CLD.id
+								}
+							}
+							IBR = {
+								country_event = { id = IBR_colombia.8 }
+								TNO_fopo_remove_colombian_civil_war_tab = yes
+								set_temp_variable = { target = CLD }
+								TNO_clear_num_volunteers = yes
+							}
+							###El Salvador
+							if = {
+								limit = {
+									AND = {
+										ELS = { has_country_flag = ELS_Nationalist_Coup }
+										country_exists = IBR
+									}
+								}
+								ELS = { econ_join_sphere_IBR = yes }
+								JAP = { country_event = { id = ELS_forpol.16 days = 23 } }
+								IBR = { country_event = { id = ELS_forpol.15 days = 23 } }
+								IBR = { country_event = { id = ELS_forpol.17 days = 100 } }
+								#IBR = { country_event = { id = ELS_forpol.18 days = 375 } } # No loc
+							}
+						}
+						### El Salvador
+						else_if = {
+							limit = {
+								ELS = { has_country_flag = ELS_Nationalist_Coup }
+							}
+							ELS = { econ_join_sphere_JAP = yes }
+						}
+						### Nicaragua
+						if = {
+							limit = { NIC = { NOT = { check_variable = { ECON_SPHERE_LEADER = USA } } } }
+							USA = { country_event = { id = NIC_forpol.19 days = 2 } }
+							GER = { country_event = { id = NIC_forpol.19 days = 2 } }
+							IBR = { country_event = { id = NIC_forpol.19 days = 2 } }
+							JAP = { country_event = { id = NIC_forpol.19 days = 2 } }
+							GER = { country_event = { id = NIC_forpol.20 days = 39 } }
+						}
+
+
 						CLD = {
 							set_capital = { state = 306 }
 							remove_ideas = {
-								CLL_La_Violencia
 								CLL_Shoulder_of_Giant
-								CLL_Agrarian_Crisis
 							}
-							remove_dynamic_modifier = { modifier = CLD_German_Support_dm }
+							remove_dynamic_modifier = { modifier = CLD_German_Support_dynmod }
 							add_ideas = {
 								Pakt_Observer
 							}
 							econ_join_sphere_GER = yes
 							set_cosmetic_tag = CLD_unification
-							country_event = { id = colombia.20 months = 6 }
+							country_event = { id = CLD_post_war.1 days = 50 }
 							add_opinion_modifier = { target = MEX modifier = TNO_embargoed_us_100 }
 							reverse_add_opinion_modifier = { target = MEX modifier = TNO_embargo_100 }
-						}
-						CLC = {
-							set_capital = {
-								state = 1659
-								remember_old_capital = no
-							}
-							set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_Gelenkte_Wirtschaft }
-							econ_subtype_change = yes
-							remove_ideas = {
-								CLC_La_Violencia
-								CLC_Shoulder_of_Giant
-								CLC_Agrarian_Crisis
-								CLC_Reactionary_Den
-								CLC_Saints_Sinners
-							}
-							set_party_name = {
-								ideology = national_socialism
-								long_name = CLC_national_socialism_nazis_party_long
-								name = CLC_national_socialism_nazis_party
-							}
-							set_party_name = {
-								ideology = ultranationalism
-								long_name = CLC_OKW
-								name = CLC_OKW_party
-							}
-							remove_all_ministers = yes
-							econ_leave_sphere = yes
-							retire_country_leader = yes
-							promote_character = CLC_Heriberto_Schwartau
-							set_politics = {
-								ruling_party = national_socialism
-							}
-							set_cosmetic_tag = CLC_CCW2
-							set_variable = { national_debt = 0 }
-						}
-						CLL = {
-							set_temp_variable = { TNO_economy_subtype_temp = token:Econ_Subtype_Military_Directed }
-							econ_subtype_change = yes
-							remove_ideas = {
-								CLL_La_Violencia
-								CLL_Shoulder_of_Giant
-								CLL_Agrarian_Crisis
-								CLL_OFN_Support
-								CLL_Saints_Sinners
-							}
-							set_cosmetic_tag = CLL_Partisans
-							remove_all_ministers = yes
-							econ_leave_sphere = yes
-							retire_country_leader = yes
-							promote_character = CLL_Frente_Democratico_Unido
-							set_politics = {
-								ruling_party = despotism
-							}
-							set_variable = { national_debt = 0 }
+							remove_dynamic_modifier = { modifier = COL_Decay_Nation }
+							set_temp_variable = { TabName = token:BoP_Tab_GlobalConflicts }
+							TNO_BoP_AddTab = yes
+
+							save_global_event_target_as = CCW_winner
 						}
 						set_global_flag = COL_nazis_won
 						clr_global_flag = COL_civil_war_ongoing
 						set_global_flag = COL_civil_war_over
 						remove_from_array = { global.TNO_SA_cold_war_nations = COL }
 						add_to_array = { global.TNO_SA_cold_war_nations = CLD }
-						set_variable = { CLD.SA_cold_war_value = 30 }
 						CLD = {
-							set_variable = { SA_cold_war_map_x = 73 }
-							set_variable = { SA_cold_war_map_y = 72 }
-
 							set_variable = { TNO_SA_influence^global.UNALIGNED = 90 }
 							set_variable = { TNO_SA_influence^global.ARGENTINA = 10 }
+							SA_set_alignment = yes
 						}
+
+						CLD = {
+							every_owned_state = {
+								limit = {
+									OR = {
+										state = 486
+										state = 1651
+										state = 1652
+										state = 1658
+									}
+								}
+								set_temp_variable = { admin_title_temp = token:Admin_Title_Special_Commissariat }
+								TNO_adjust_admin_title = yes
+							}
+						}
+						add_to_variable = { IBR.IBR_PKT_Alignment = 1 }
+						custom_effect_tooltip = IBR_PKT_proxy_alignment_gain
 					}
-					if = {
+					if = { ### REPUBLIC WIN
 						limit = {
 							FROM = {
 								original_tag = COL
@@ -6530,6 +6955,39 @@ on_actions = {
 								country_exists = CLD
 							}
 						}
+						NIC = {
+							set_temp_variable = { target = COL }
+							TNO_clear_num_volunteers = yes
+						}
+						VEN = {
+							set_temp_variable = { target = COL }
+							TNO_clear_num_volunteers = yes
+						}
+						ELS = {
+							set_temp_variable = { target = COL }
+							TNO_clear_num_volunteers = yes
+						}
+						CAN = {
+							set_temp_variable = { target = COL }
+							TNO_clear_num_volunteers = yes
+						}
+						FRA = {
+							set_temp_variable = { target = COL }
+							TNO_clear_num_volunteers = yes
+						}
+						SPA = {
+							set_temp_variable = { target = COL }
+							TNO_clear_num_volunteers = yes
+						}
+						CUB = {
+							set_temp_variable = { target = COL }
+							TNO_clear_num_volunteers = yes
+						}
+						MEX = {
+							set_temp_variable = { target = COL }
+							TNO_clear_num_volunteers = yes
+						}
+						COL = { remove_dynamic_modifier = { modifier = COL_Decay_Nation } }
 						if = {
 							limit = {
 								COL = {
@@ -6540,14 +6998,57 @@ on_actions = {
 								}
 							}
 							every_country = {
-								limit = { is_ai = no }
-								news_event = { id = WORLD.30112 days = 1 }
+								limit = {
+									is_ai = no
+									HasColombiaInterest = yes
+								}
+								news_event = { id = COL_News.15 days = 1 }
 							}
+							GER = {
+								set_temp_variable = { Victory_ID = 30 }
+								set_temp_variable = { Victory_Outcome = 3 }
+								set_temp_variable = { Victory_Points = -100 }
+								Cold_War_GUI_ManipulateVictory = yes
+							}
+						}
+						else_if = {
+							limit = {
+								COL = {
+									has_country_leader = {
+										character = COL_Roberto_Urdaneta_Arbelaez
+										ruling_only = yes
+									}
+								}
+							}
+							every_country = {
+								limit = {
+									is_ai = no
+									HasColombiaInterest = yes
+								}
+								news_event = { id = COL_News.16 days = 1 }
+							}
+							GER = {
+								set_temp_variable = { Victory_ID = 30 }
+								set_temp_variable = { Victory_Outcome = 4 }
+								set_temp_variable = { Victory_Points = 150 }
+								Cold_War_GUI_ManipulateVictory = yes
+							}
+							add_to_variable = { IBR.IBR_PKT_Alignment = 1 }
+							COL = { remove_dynamic_modifier = { modifier = CLD_German_Support_dynmod } }
 						}
 						else = {
 							every_country = {
-								limit = { is_ai = no }
-								news_event = { id = WORLD.30109 days = 1 }
+								limit = {
+									is_ai = no
+									HasColombiaInterest = yes
+								}
+								news_event = { id = COL_News.14 days = 1 }
+							}
+							GER = {
+								set_temp_variable = { Victory_ID = 30 }
+								set_temp_variable = { Victory_Outcome = 3 }
+								set_temp_variable = { Victory_Points = -100 }
+								Cold_War_GUI_ManipulateVictory = yes
 							}
 						}
 						if = {
@@ -6562,24 +7063,77 @@ on_actions = {
 								set_temp_variable = { target = COL }
 								TNO_clear_num_volunteers = yes
 							}
+							if = {
+								limit = { NIC = { NOT = { check_variable = { ECON_SPHERE_LEADER = USA } } } }
+								IBR = { country_event = { id = NIC_forpol.13 days = 2 } }
+							}
 						}
-						GER = {
-							set_temp_variable = { Victory_ID = 30 }
-							set_temp_variable = { Victory_Outcome = 3 }
-							set_temp_variable = { Victory_Points = -100 }
-							Cold_War_GUI_ManipulateVictory = yes
+						else = { #Failsafe Option - Nicaragua Picks a Random Partner
+							NIC = {
+								if = {
+									limit = { NOT = { check_variable = { ECON_SPHERE_LEADER = USA } } }
+									if = {
+										limit = {
+											ARG = { has_country_leader = { character = ARG_Juan_Domingo_Peron ruling_only = yes }}
+										}
+										econ_join_sphere_ARG = yes
+									}
+									else_if = {
+										limit = {
+											OR = {
+												BRA = { has_country_leader = { character = BRA_Adhemar_de_Barros ruling_only = yes } }
+												BRA = { has_country_leader = { character = BRA_Pedro_Aleixo ruling_only = yes } }
+												BRA = { has_country_leader = { character = BRA_Getulio_Vargas_Filho ruling_only = yes } }
+												BRA = { has_country_leader = { character = BRA_Costa_e_Silva ruling_only = yes } }
+											}
+										}
+										econ_join_sphere_BRA = yes
+									}
+									else = { LATAM_Partner_Preference_selector = yes }
+									set_country_flag = NIC_Dictator
+									country_event = { id = NIC_scripted.8 }
+								}
+							}
 						}
-						JAP = {
-							set_temp_variable = { Victory_ID = 30 }
-							set_temp_variable = { Victory_Outcome = 3 }
-							set_temp_variable = { Victory_Points = -100 }
-							Cold_War_GUI_ManipulateVictory = yes
+						if = {
+							limit = { has_global_flag = US_betrayed_CLL }
+							USA = {
+								set_temp_variable = { target = COL }
+								TNO_clear_num_volunteers = yes
+							}
+							CAN = {
+								set_temp_variable = { target = COL }
+								TNO_clear_num_volunteers = yes
+							}
+							USA = {
+								set_temp_variable = { Victory_ID = 30 }
+								set_temp_variable = { Victory_Outcome = 4 }
+								set_temp_variable = { Victory_Points = 150 }
+								Cold_War_GUI_ManipulateVictory = yes
+								Cold_War_GUI_ManipulateVictory = yes
+								country_event = { id = USA_colombia.7 }
+							}
+							JAP = {
+								set_temp_variable = { Victory_ID = 30 }
+								set_temp_variable = { Victory_Outcome = 2 }
+								set_temp_variable = { Victory_Points = -150 }
+								Cold_War_GUI_ManipulateVictory = yes
+							}
 						}
-						USA = {
-							set_temp_variable = { Victory_ID = 30 }
-							set_temp_variable = { Victory_Outcome = 3 }
-							set_temp_variable = { Victory_Points = -100 }
-							Cold_War_GUI_ManipulateVictory = yes
+						else = {
+							USA = {
+								set_temp_variable = { Victory_ID = 30 }
+								set_temp_variable = { Victory_Outcome = 3 }
+								set_temp_variable = { Victory_Points = -200 }
+								Cold_War_GUI_ManipulateVictory = yes
+								country_event = { id = USA_colombia.9 }
+							}
+							JAP = {
+								set_temp_variable = { Victory_ID = 30 }
+								set_temp_variable = { Victory_Outcome = 2 }
+								set_temp_variable = { Victory_Points = -100 }
+								Cold_War_GUI_ManipulateVictory = yes
+							}
 						}
 						if = {
 							limit = {
@@ -6594,262 +7148,502 @@ on_actions = {
 								TNO_clear_num_volunteers = yes
 							}
 						}
-						if = {
-							limit = {
-								COL = {
-									has_country_leader = {
-										character = COL_Alberto_Lleras_Camargo
-										ruling_only = yes
-									}
-								}
-							}
-							COL = {
-								country_event = { id = COL_post_war.1 days = 1460 }
-							}
+						COL = {
+							country_event = { id = COL_post_war.1 }
+
+							set_temp_variable = { TabName = token:BoP_Tab_GlobalConflicts }
+							TNO_BoP_AddTab = yes
+
+							save_global_event_target_as = CCW_winner
 						}
 						if = {
 							limit = {
-								COL = {
-									has_country_leader = {
-										character = COL_Guillermo_Leon_Valencia
-										ruling_only = yes
-									}
+								BRA = {
+									has_country_flag = BRA_supports_BOG
 								}
 							}
 							COL = {
-								country_event = { id = COL_post_war.2 days = 1460 }
+								set_variable = { TNO_SA_influence^global.UNALIGNED = 45 }
+								set_variable = { TNO_SA_influence^global.IBERIA = 0 }
+								set_variable = { TNO_SA_influence^global.USA = 0 }
+								set_variable = { TNO_SA_influence^global.BRAZIL = 55 }
+								SA_set_alignment = yes
 							}
 						}
 						set_global_flag = COL_central_government_won
 						clr_global_flag = COL_civil_war_ongoing
 						set_global_flag = COL_civil_war_over
-						set_variable = { COL.SA_cold_war_value = 30 }
+
+						COL = {
+							every_owned_state = {
+								limit = {
+									OR = {
+										state = 486
+										state = 1651
+										state = 1652
+										state = 1658
+									}
+								}
+								set_temp_variable = { admin_title_temp = token:Admin_Title_Special_Commissariat }
+								TNO_adjust_admin_title = yes
+							}
+						}
 					}
 					set_global_flag = skip_default_capitulation
 					set_variable = { test_var = 1 }
 					log = "[GetDateText]: [Root.GetName] peaced out [From.GetName]"
 				}
 
-				###CCW2###
-				else_if = {
+				else_if = { #Venezuela Conquers Essequibo
 					limit = {
-						has_global_flag = COL_Nazis_won
-						NOT = { has_global_flag = COL_CCW3 }
-						FROM = {
-							OR = {
-								tag = CLL
-								tag = CLC
-								tag = CLD
-							}
-						}
-						ROOT = {
-							OR = {
-								tag = CLL
-								tag = CLC
-								tag = CLD
-							}
+						AND = { #No Cheesing it
+							FROM = { original_tag = VEN }
+							ROOT = { original_tag = GUY }
 						}
 					}
-					FROM = {
-						every_enemy_country = {
-							limit = {
-								OR = {
-									original_tag = ROOT
-									is_in_faction_with = ROOT
+					VEN = { set_country_flag = VEN_ESQ_success }
+					if = {
+						limit = {
+							VEN = {
+								NOT = {
+									has_government = fascism
+									has_government = despotism
 								}
 							}
-							FROM = {
-								white_peace = PREV
-								annex_country = {
-									target = PREV
-									transfer_troops = no
-								}
-								every_state = {
-									remove_core_of = ROOT
-								}
+						}
+						1551 = { add_core_of = ESQ }
+						1551 = { transfer_state_to = ESQ }
+					}
+					else = {
+						1551 = { add_core_of = VEN }
+						1551 = { transfer_state_to = VEN }
+					}
+					2442 = { add_core_of = SUR }
+					2442 = { transfer_state_to = SUR }
+					GUY = { country_event = { id = ESQ_scripted.3 } }
+					if = {
+						limit = { GUY = { has_idea = OFN_Dependent_Member } }
+						USA = { country_event = { id = GUY_US.60 } }
+						USA = {
+							set_temp_variable = { Victory_ID = 48 }
+							set_temp_variable = { Victory_Outcome = 1 }
+							set_temp_variable = { Victory_Points = -200 }
+							Cold_War_GUI_AddVictory = yes
+						}
+					}
+					VEN = {
+						remove_ideas = VEN_el_esequibo_es_nuestro
+						add_ideas = VEN_esequibo_avenged
+					}
+					687 = { transfer_state_to = GUY }
+					every_country = {
+						limit = {
+							is_ai = no
+							HasAxisAmericasInterest = yes
+						}
+						news_event = {
+							id = VEN_news.63
+						}
+					}
+				}
+				else_if = { #Venezuelan Commies Conquer Essequibo
+					limit = {
+						AND = { #No Cheesing it
+							FROM = { original_tag = VNS }
+							ROOT = { original_tag = GUY }
+						}
+					}
+					1551 = { add_core_of = VNS }
+					1551 = { transfer_state_to = VNS }
+					687 = { transfer_state_to = GUY }
+					2442 = { add_core_of = SUR }
+					2442 = { transfer_state_to = SUR }
+					GUY = { country_event = { id = ESQ_scripted.3 } }
+					VNS = {
+						add_ideas = VEN_esequibo_avenged
+					}
+				}
+
+				else_if = { #Venezuela Government Victory
+					limit = {
+						AND = {
+							FROM = { original_tag = VEN }
+							OR = {
+								ROOT = { original_tag = VNS }
+								ROOT = { original_tag = VNI }
 							}
 						}
 					}
 					if = {
 						limit = {
-							FROM = {
-								original_tag = CLC
-							}
-							NOT = {
-								country_exists = CLD
-								country_exists = CLL
+							ROOT = { original_tag = VNI }
+						}
+						USA = { country_event = { id = GUY_US.61 hours = 3 } }
+						if = {
+							limit = { NOT = {country_exists = VNS } }
+							USA = { country_event = { id = GUY_US.63 hours = 40 } }
+							clr_global_flag = VEN_OAS_invasion_ongoing
+							remove_ideas = {
+								VEN_thrown_to_wolves
 							}
 						}
-						CLC = {
-							add_ideas = {
-								Pakt_Observer
-							}
-							set_cosmetic_tag = CLC_Nazis
-							set_capital = { state = 306 }
+						USA = {
+							set_temp_variable = { Victory_ID = 48 }
+							set_temp_variable = { Victory_Outcome = 2 }
+							set_temp_variable = { Victory_Points = -150 }
+							Cold_War_GUI_ManipulateVictory = yes
 						}
-						GER = {
-							set_temp_variable = { Victory_ID = 30 }
+					}
+					if = {
+						limit = {
+							ROOT = { original_tag = VNS }
+							has_global_flag = VEN_OAS_invasion_ongoing
+						}
+						if = {
+							limit = { NOT = {country_exists = VNI } }
+							USA = { country_event = { id = GUY_US.63 hours = 40 } }
+							clr_global_flag = VEN_OAS_invasion_ongoing
+							remove_ideas = {
+								VEN_thrown_to_wolves
+							}
+						}
+					}
+					FROM = {
+						white_peace = ROOT
+						annex_country = {
+							target = ROOT
+							transfer_troops = no
+						}
+					}
+					VEN = {
+						set_country_flag = VEN_Socialists_Banned
+						if = {
+							limit = { has_global_flag = VEN_venezuela_revolution_ongoing }
+							if = {
+								limit = { check_variable = { global.VEN_VR_govt_backer = 1 } }
+								IBR = { country_event = { id = IBR_VEN.44 hours = 5 } }
+							}
+							else_if = {
+								limit = { check_variable = { global.VEN_VR_govt_backer = 2 } }
+								USA = { country_event = { id = USA_VEN.33 hours = 5 } }
+								MEX = { country_event = { id = MEX_VEN.58 hours = 5 } }
+							}
+							else_if = {
+								limit = { check_variable = { global.VEN_VR_govt_backer = 3 } }
+								GER = { country_event = { id = GER_VEN.2 hours = 5 } }
+							}
+							clr_global_flag = VEN_venezuela_revolution_ongoing
+							clear_variable = global.VEN_VR_govt_backer
+							remove_ideas = {
+								VEN_govt_legitimacy
+							}
+						}
+					}
+
+					every_owned_state = {
+						remove_core_of = VNI
+						remove_core_of = VNS
+					}
+					if = {
+						limit = {
+							NOT = { country_exists = VNI }
+							NOT = { country_exists = VNS }
+						}
+						VEN = {
+							if = {
+								limit = { has_country_leader = { character = VEN_Pablo_Antonio_Flores ruling_only = yes } }
+								#country_event = { id = VEN_skeleton.101 }
+							}
+						}
+					}
+				}
+				else_if = { #Venezuelan Communist Victory
+					limit = {
+						AND = {
+							FROM = { original_tag = VNS }
+							OR = {
+								ROOT = { original_tag = VEN }
+								ROOT = { original_tag = VNI }
+							}
+						}
+					}
+					if = {
+						limit = {
+							NOT = { country_exists = VNI }
+							ROOT = { original_tag = VEN }
+							has_global_flag = VEN_venezuela_revolution_ongoing
+						}
+						VNS = {
+							country_event = { id = VEN_revolution.10 hours = 6 }
+							drop_cosmetic_tag = yes
+							every_owned_state = { remove_core_of = VEN }
+							set_capital = { state = 307 remember_old_capital = no }
+							delete_unit_template_and_units = {
+								division_template = "Milicia Revolucionario"
+								disband = yes
+							}
+							load_oob = VNS_PostWar
+							VNS_Gustavo_Machado = { set_portraits = { civilian = { large = "gfx/leaders/VEN/Portrait_Venezuela_Gustavo_Machado_Unused.png" } } }
+						}
+					}
+					if = {
+						limit = {
+							ROOT = { original_tag = VNI }
+						}
+						USA = { country_event = { id = GUY_US.61 hours = 5 } }
+						if = {
+							limit = { NOT = {country_exists = VEN } }
+							USA = { country_event = { id = GUY_US.69 hours = 20 } }
+							clr_global_flag = VEN_OAS_invasion_ongoing
+							VNS = { set_cosmetic_tag = VNS_postwar }
+						}
+						USA = {
+							set_temp_variable = { Victory_ID = 48 }
+							set_temp_variable = { Victory_Outcome = 2 }
+							set_temp_variable = { Victory_Points = -150 }
+							Cold_War_GUI_ManipulateVictory = yes
+						}
+						VNS = {
+							every_owned_state = { remove_core_of = VEN }
+							every_owned_state = { remove_core_of = VNI }
+						}
+					}
+					FROM = {
+						white_peace = ROOT
+						annex_country = {
+							target = ROOT
+							transfer_troops = no
+						}
+					}
+					VNS = {
+						if = {
+							limit = { has_global_flag = VEN_venezuela_revolution_ongoing }
+							if = {
+								limit = { check_variable = { global.VEN_VR_govt_backer = 1 } }
+								IBR = { country_event = { id = IBR_VEN.45 hours = 5 } }
+							}
+							else_if = {
+								limit = { check_variable = { global.VEN_VR_govt_backer = 2 } }
+								USA = { country_event = { id = USA_VEN.32 hours = 5 } }
+								MEX = { country_event = { id = MEX_VEN.57 hours = 5 } }
+							}
+							else_if = {
+								limit = { check_variable = { global.VEN_VR_govt_backer = 3 } }
+								GER = { country_event = { id = GER_VEN.9 hours = 5 } }
+							}
+							clr_global_flag = VEN_venezuela_revolution_ongoing
+							clear_variable = global.VEN_VR_govt_backer
+						}
+					}
+				}
+				else_if = { # Communist Capitulation
+					limit = {
+						AND = {
+							OR = {
+								FROM = { original_tag = VEN }
+								FROM = { original_tag = VNI }
+							}
+							ROOT = { original_tag = VNS }
+							country_exists = VEN
+							country_exists = VNI
+						}
+					}
+					FROM = {
+						white_peace = ROOT
+						annex_country = {
+							target = ROOT
+							transfer_troops = no
+						}
+					}
+					if = {
+						limit = {
+							country_exists = VNI
+							has_global_flag = VEN_OAS_invasion_ongoing
+						}
+						USA = { country_event = { id = GUY_US.67 days = 1 } }
+					}
+				}
+				else_if = { # Bolivarian Govt Capitulation
+					limit = {
+						AND = {
+							OR = {
+								FROM = { original_tag = VNS }
+								FROM = { original_tag = VNI }
+							}
+							ROOT = { original_tag = VEN }
+							country_exists = VNS
+							country_exists = VNI
+						}
+					}
+					FROM = {
+						white_peace = ROOT
+						annex_country = {
+							target = ROOT
+							transfer_troops = no
+						}
+					}
+					if = {
+						limit = {
+							country_exists = VNI
+							has_global_flag = VEN_OAS_invasion_ongoing
+						}
+						USA = { country_event = { id = GUY_US.68 days = 1 } }
+					}
+				}
+				else_if = { #OFN Intervention Liberates Venezuela
+					limit = {
+						AND = {
+							FROM = { original_tag = VNI }
+							OR = {
+								ROOT = { original_tag = VEN }
+								ROOT = { original_tag = VNS }
+							}
+						}
+					}
+					FROM = {
+						white_peace = ROOT
+						annex_country = {
+							target = ROOT
+							transfer_troops = no
+						}
+					}
+					if = {
+						limit = {
+							NOT = { country_exists = VNS }
+							NOT = { country_exists = VEN }
+						}
+						every_owned_state = {
+							remove_core_of = VEN
+						}
+						USA = { country_event = { id = GUY_US.62 hours = 6 } }
+						clr_global_flag = VEN_OAS_invasion_ongoing
+						USA = {
+							set_temp_variable = { Victory_ID = 48 }
 							set_temp_variable = { Victory_Outcome = 5 }
 							set_temp_variable = { Victory_Points = 200 }
 							Cold_War_GUI_ManipulateVictory = yes
 						}
-						USA = {
-							set_temp_variable = { Victory_ID = 30 }
-							set_temp_variable = { Victory_Outcome = 1 }
-							set_temp_variable = { Victory_Points = -200 }
-							Cold_War_GUI_ManipulateVictory = yes
-						}
-						every_country = {
-							limit = { is_ai = no }
-							news_event = { id = WORLD.30118 days = 1 }
-						}
 					}
-					if = {
-						limit = {
-							FROM = {
-								OR = {
-									original_tag = CLD
-									original_tag = CLL
-								}
-							}
-						}
-						CLD = {
-							set_capital = { state = 306 }
-							set_cosmetic_tag = CLD_CCW3
-							retire_character = CLD_Diogenes_Gil
-							promote_character = CLD_Jose_Camacho_Carreno
-							set_variable = { national_debt = 0 }
-							add_ideas = {
-								CLD_The_Free_Dissipation_of_Babylon
-								CLD_Bolivarian_Evocations
-							}
-							diplomatic_relation = {
-								country = CLL
-								relation = military_access
-								active = no
-							}
-							country_event = { id = colombia.22 months = 6 }
-						}
-						CLL = {
-							set_temp_variable = { TNO_economy_type_temp = token:Econ_Type_Capitalism }
-							econ_type_change = yes
-							set_cosmetic_tag = CLL_CCW3
-							econ_join_sphere_USA = yes
-							promote_character = {
-								character = CLL_Frente_Democratico_Unido
-								ideology = paternalism_provisional_government_subtype
-							}
-						}
-					}
-					set_global_flag = skip_default_capitulation
-					set_variable = { test_var = 1 }
-					log="[GetDateText]: [Root.GetName] peaced out [From.GetName]"
 				}
 
-				###CCW3###
-				else_if = {
-					limit = {
-						has_global_flag = COL_CCW3
+				else_if = { #Venezuelan-Colombian War - Colombian Victory
+					limit = { #Say sike right now
 						FROM = {
 							OR = {
-								tag = CLL
+								tag = COL
 								tag = CLC
 								tag = CLD
+								tag = CLL
 							}
 						}
 						ROOT = {
 							OR = {
-								tag = CLL
+								tag = VEN
+								tag = VNS
+							}
+						}
+					}
+					every_country = {
+						limit = { has_war_with = FROM }
+						white_peace = FROM
+					}
+					every_country = { #Failsafe for Ecuador/Guyana Puppet
+						limit = { has_war_with = ROOT }
+						white_peace = ROOT
+					}
+				}
+				else_if = { #Venezuelan-Colombian War - Venezuelan Victory
+					limit = { #Say sike right now
+						FROM = {
+							OR = {
+								tag = COL
 								tag = CLC
 								tag = CLD
+								tag = CLL
+							}
+						}
+						ROOT = {
+							OR = {
+								tag = VEN
+								tag = VNS
 							}
 						}
 					}
-					FROM = {
-						every_enemy_country = {
-							limit = {
+					every_country = {
+						limit = { has_war_with = FROM }
+						white_peace = FROM
+					}
+					every_country = { #Failsafe for Ecuador/Guyana Puppet
+						limit = { has_war_with = ROOT }
+						white_peace = ROOT
+					}
+				}
+
+				else_if = { #Invasion of Guatemala
+					limit = {
+						OR = {
+							AND = { #No Cheesing it
 								OR = {
-									original_tag = ROOT
-									is_in_faction_with = ROOT
+									FROM = { original_tag = MEX }
+									FROM = { original_tag = CUB }
+									FROM = { original_tag = DOM }
+									FROM = { original_tag = ELS }
 								}
+								ROOT = { original_tag = GUA }
 							}
-							FROM = {
-								white_peace = PREV
-								annex_country = {
-									target = PREV
-									transfer_troops = no
-								}
-								every_state = {
-									remove_core_of = ROOT
+							AND = {
+								FROM = { original_tag = GUA }
+								OR = {
+									ROOT = { original_tag = MEX }
+									ROOT = { original_tag = CUB }
+									ROOT = { original_tag = DOM }
+									ROOT = { original_tag = ELS }
 								}
 							}
 						}
 					}
-					if = {
-						limit = {
-							FROM = {
-								original_tag = CLD
+					USA = {
+						set_temp_variable = { Victory_ID = 50 }
+						set_temp_variable = { Victory_Outcome = 2 }
+						set_temp_variable = { Victory_Points = -50 }
+						Cold_War_GUI_ManipulateVictory = yes
+					}
+					MEX = { white_peace = GUA }
+					GUA = { white_peace = CUB }
+					GUA = { white_peace = DOM }
+					GUA = { white_peace = ELS }
+					GUA = { set_state_owner = 313 } #Failsafe
+					GUA = { country_event = { id = GUA_scripted.6 } }
+				}
+				else_if = { #Invasion of Belize
+					limit = {
+						OR = {
+							AND = { #No Cheesing it
+								OR = {
+									FROM = { original_tag = MEX }
+									FROM = { original_tag = GUA }
+								}
+								ROOT = { original_tag = BLZ }
 							}
-							has_global_flag = COL_CCW3
-						}
-						USA = {
-							set_temp_variable = { Victory_ID = 30 }
-							set_temp_variable = { Victory_Outcome = 1 }
-							set_temp_variable = { Victory_Points = -200 }
-							Cold_War_GUI_ManipulateVictory = yes
-						}
-						every_country = {
-							limit = { is_ai = no }
-							news_event = { id = WORLD.30119 days = 1 }
+							AND = {
+								OR = {
+									ROOT = { original_tag = MEX }
+									ROOT = { original_tag = GUA }
+								}
+								FROM = { original_tag = BLZ }
+							}
 						}
 					}
-					if = {
-						limit = {
-							FROM = {
-								original_tag = CLL
-							}
-							has_global_flag = COL_CCW3
-							NOT = {
-								country_exists = CLD
-							}
-						}
-						CLL = {
-							set_capital = { state = 306 }
-							add_ideas = {
-								OFN_Independent_Member
-							}
-							add_country_leader_role = {
-								character = CLL_Consejo_Democratico_Colombiano
-								promote_leader = yes
-								country_leader = {
-									expire = "1990.2.2"
-									ideology = paternalism_transitioning_democracy_subtype
-									traits = { }
-									id = -1
-								}
-							}
-						}
-						USA = { add_to_faction = CLL }
-						GER = {
-							set_temp_variable = { Victory_ID = 30 }
-							set_temp_variable = { Victory_Outcome = 2 }
-							set_temp_variable = { Victory_Points = -100 }
-							Cold_War_GUI_ManipulateVictory = yes
-						}
-						USA = {
-							set_temp_variable = { Victory_ID = 30 }
-							set_temp_variable = { Victory_Outcome = 4 }
-							set_temp_variable = { Victory_Points = 100 }
-							Cold_War_GUI_ManipulateVictory = yes
-						}
-						every_country = {
-							limit = { is_ai = no }
-							news_event = { id = WORLD.30120 days = 1 }
-						}
+					MEX = { white_peace = BLZ }
+					GUA = { white_peace = BLZ }
+					GUA = { country_event = { id = BLZ_skeleton.7 } }
+					USA = {
+						set_temp_variable = { Victory_ID = 64 }
+						set_temp_variable = { Victory_Outcome = 2 }
+						set_temp_variable = { Victory_Points = -50 }
+						Cold_War_GUI_AddVictory = yes
 					}
 					set_global_flag = skip_default_capitulation
-					set_variable = { test_var = 1 }
-					log="[GetDateText]: [Root.GetName] peaced out [From.GetName]"
 				}
 
 				#YEMENI CIVIL WAR
@@ -7079,20 +7873,14 @@ on_actions = {
 							target = ENG
 							modifier = TNO_illegitimate_govt
 						}
-						set_variable = { trade_opinion_embargo@ENG = 0 }
-						remove_opinion_modifier = {
-							target = ENG
-							modifier = TNO_embargo_50
-						}
 					}
 					ENG = {
 						remove_opinion_modifier = {
 							target = MEX
 							modifier = TNO_refused_to_recognize_us
 						}
-						remove_opinion_modifier = {
-							target = MEX
-							modifier = TNO_embargoed_us_50
+						MEX = {
+							clear_embargo_PREV = yes
 						}
 					}
 					every_country = {
@@ -7101,11 +7889,11 @@ on_actions = {
 					}
 					set_global_flag = skip_default_capitulation
 				}
-				
+
 				else_if = { # NEW ECW - HMMLR victory
 					limit = {
 						FROM = { original_tag = FEN }
-						ROOT = { original_tag = ENG }	
+						ROOT = { original_tag = ENG }
 					}
 					clr_global_flag = TFL_ECW_ongoing
 					set_global_flag = FEN_GF_WonEcw
@@ -7198,29 +7986,26 @@ on_actions = {
 							target = ENG
 							modifier = TNO_illegitimate_govt
 						}
-						set_variable = { trade_opinion_embargo@ENG = 0 }
-						remove_opinion_modifier = {
-							target = ENG
-							modifier = TNO_embargo_50
-						}
 					}
 					ENG = {
 						remove_opinion_modifier = {
 							target = MEX
 							modifier = TNO_refused_to_recognize_us
 						}
-						remove_opinion_modifier = {
-							target = MEX
-							modifier = TNO_embargoed_us_50
+						MEX = {
+							clear_embargo_PREV = yes
 						}
 					}
 					every_country = {
-						limit = { is_ai = no }
+						limit = {
+							is_ai = no
+							HasBritishInterest = yes
+						}
 						news_event = { id = WORLD_ENG.2 }
 					}
 					set_global_flag = skip_default_capitulation
 				}
-				
+
 				else_if = { # OLD ECW - Collab victory
 					limit = {
 						has_game_rule = {
@@ -7335,7 +8120,7 @@ on_actions = {
 					}
 					BLZ = {
 						country_event = {
-							id = BLZ_skeleton.5
+							id = BLZ_skeleton.21
 							days = 1
 						}
 					}
@@ -7357,7 +8142,7 @@ on_actions = {
 						news_event = { id = WORLD.50002 }
 					}
 				}
-				
+
 				else_if = { # NEW ECW - Collab victory
 					limit = {
 						FROM = { original_tag = ENG }
@@ -7387,7 +8172,7 @@ on_actions = {
 								ENG_British_Fighting_Spirit
 								ENG_Oil_Reserves
 								ENG_A_Mere_Puppet
-								ENG_British_Free_Corp_Influence_Low
+								ENG_British_Free_Corps_Influence_Low
 								ENG_Garrison_Support
 								ENG_Chaos_in_Production
 								ENG_Big_Bad_Buff
@@ -7457,7 +8242,7 @@ on_actions = {
 					}
 					BLZ = {
 						country_event = {
-							id = BLZ_skeleton.5
+							id = BLZ_skeleton.21
 							days = 1
 						}
 					}
@@ -7465,14 +8250,17 @@ on_actions = {
 					set_global_flag = ENG_GF_WonEcw
 					set_global_flag = ECW_Finished
 					every_country = {
-						limit = { is_ai = no }
+						limit = {
+							is_ai = no
+							HasBritishInterest = yes
+						}
 						news_event = { id = WORLD_ENG.1 }
 					}
 				}
 
 				else_if = { #Sealion II
 					limit = {
-						FROM = { 
+						FROM = {
 							OR = {
 								original_tag = GER
 								is_in_faction_with = GER
@@ -7483,7 +8271,7 @@ on_actions = {
 					ENG_CC_end_sealion_2 = yes
 					set_global_flag = skip_default_capitulation
 				}
-				
+
 				else_if = {
 					limit = {
 						FROM = { original_tag = ENG }
@@ -7692,7 +8480,7 @@ on_actions = {
 					}
 					set_global_flag = skip_default_capitulation
 				}
-                
+
                 #IPN
                 #MALAYA PROXY WAR
                 #MALAYA VICTORY
@@ -7992,220 +8780,150 @@ on_actions = {
 					set_global_flag = skip_default_capitulation
 				}
 				#IPN end
-
-				else_if = { # Brazilian Civil War - Amazonas wins
+				else_if = { # Brazilian Civil War
 					limit = {
-						FROM = { 
-							original_tag = BRR 
-						}
-						ROOT = {
+						FROM = {
 							OR = {
-								original_tag = CAS
-								original_tag = GUN
-								original_tag = BRA
-							}
-						}
-						NOT = {
-							OR = {
-								AND = {
-									country_exists = GUN
-									country_exists = CAS
-								}
-								AND = {
-									country_exists = BRA
-									country_exists = CAS
-								}
-								AND = {
-									country_exists = GUN
-									country_exists = BRA
-								}
-							}
-						}
-					}
-					every_state = {
-						limit = { is_core_of = FROM }
-						remove_core_of = ROOT
-					}
-					FROM = {
-						annex_country = {
-							target = BRP
-							transfer_troops = no
-						}
-						every_country = {
-							limit = { is_ai = no }
-							news_event = {
-								id = LATAM_news.242
-								hours = 4
-							}
-						}
-					}
-					ARG = {
-						set_autonomy = {
-							target = ARS
-							autonomy_state = autonomy_military_government
-						}
-					}
-					ARS = { 
-						set_politics = {
-							ruling_party = despotism
-							elections_allowed = no
-						}
-						set_popularities = {
-							communist = 0
-							socialist = 0
-							despotism = 60
-							despotism_1 = 40 
-						}
-						transfer_state = 502
-						add_state_core = 502
-						econ_join_sphere_ARG = yes
-						load_oob = ARS_civil_war
-					}
-					clr_global_flag = skip_default_capitulation
-				}
-				else_if = { # Brazilian Civil War - Government wins
-					limit = {
-						FROM = { 
-							original_tag = BRA 
-						}
-						ROOT = {
-							OR = {
-								original_tag = CAS
-								original_tag = GUN
-								original_tag = BRR
-							}
-						}
-						NOT = {
-							OR = {
-								AND = {
-									country_exists = GUN
-									country_exists = CAS
-								}
-								AND = {
-									country_exists = BRR
-									country_exists = CAS
-								}
-								AND = {
-									country_exists = GUN
-									country_exists = BRR
-								}
-							}
-						}
-					}
-					every_state = {
-						limit = { is_core_of = FROM }
-						remove_core_of = ROOT
-					}
-					FROM = {
-						annex_country = {
-							target = BRP
-							transfer_troops = no
-						}
-						every_country = {
-							limit = { is_ai = no }
-							news_event = {
-								id = LATAM_news.241
-								hours = 4
-							}
-						}
-					}
-					clr_global_flag = skip_default_capitulation
-				}
-				else_if = { # Brazilian Civil War - Junta wins
-					limit = {
-						FROM = { 
-							original_tag = GUN 
-						}
-						ROOT = {
-							OR = {
-								original_tag = CAS
 								original_tag = BRA
 								original_tag = BRR
+								original_tag = CAS
+								original_tag = GUN
 							}
-						}
-						NOT = {
-							OR = {
-								AND = {
-									country_exists = BRA
-									country_exists = CAS
-								}
-								AND = {
-									country_exists = BRR
-									country_exists = CAS
-								}
-								AND = {
-									country_exists = BRA
-									country_exists = BRR
-								}
-							}
-						}
-					}
-					every_state = {
-						limit = { is_core_of = FROM }
-						remove_core_of = ROOT
-					}
-					FROM = {
-						annex_country = {
-							target = BRP
-							transfer_troops = no
-						}
-						every_country = {
-							limit = { is_ai = no }
-							news_event = {
-								id = LATAM_news.244
-								hours = 4
-							}
-						}
-					}
-					clr_global_flag = skip_default_capitulation
-				}
-				else_if = { # Brazilian Civil War - Brizola wins
-					limit = {
-						FROM = { 
-							original_tag = CAS 
 						}
 						ROOT = {
 							OR = {
 								original_tag = BRA
-								original_tag = GUN
 								original_tag = BRR
+								original_tag = CAS
+								original_tag = GUN
 							}
 						}
-						NOT = {
-							OR = {
-								AND = {
-									country_exists = GUN
-									country_exists = BRA
-								}
-								AND = {
-									country_exists = BRR
-									country_exists = BRA
-								}
-								AND = {
-									country_exists = GUN
-									country_exists = BRR
-								}
-							}
+					}
+					FROM = {
+						annex_country = {
+							target = ROOT
+							transfer_troops = no
 						}
 					}
 					every_state = {
 						limit = { is_core_of = FROM }
 						remove_core_of = ROOT
 					}
-					FROM = {
-						annex_country = {
-							target = BRP
-							transfer_troops = no
+					if = {
+						limit = {
+							NOT = {
+								count_triggers = {
+									amount = 2
+									country_exists = BRA
+									country_exists = BRR
+									country_exists = CAS
+									country_exists = GUN
+								}
+							}
 						}
-						every_country = {
-							limit = { is_ai = no }
-							news_event = {
-								id = LATAM_news.245
-								hours = 4
+						FROM = {
+							annex_country = {
+								target = BRP
+								transfer_troops = no
+							}
+							every_state = {
+								limit = { is_core_of = BRP }
+								remove_core_of = BRP
+							}
+							every_owned_state = {
+								set_demilitarized_zone = no
+							}
+						}
+						if = { # Brazilian Civil War - Government wins
+							limit = {
+								FROM = {
+									original_tag = BRA
+								}
+							}
+							every_country = {
+								limit = { is_ai = no }
+								news_event = {
+									id = LATAM_news.241
+									hours = 4
+								}
+							}
+						}
+						else_if = { # Brazilian Civil War - Amazonas wins
+							limit = {
+								FROM = {
+									original_tag = BRR
+								}
+							}
+							every_country = {
+								limit = { is_ai = no }
+								news_event = {
+									id = LATAM_news.242
+									hours = 4
+								}
+							}
+							ARG = {
+								set_autonomy = {
+									target = ARS
+									autonomy_state = autonomy_military_government
+								}
+							}
+							ARS = {
+								set_politics = {
+									ruling_party = despotism
+									elections_allowed = no
+								}
+								set_popularities = {
+									communist = 0
+									socialist = 0
+									despotism = 60
+									despotism_1 = 40
+								}
+								set_party_name = {
+									ideology = despotism
+									name = ARG_despotism_colorados_party
+									long_name = ARG_despotism_colorados_party_long
+								}
+								set_party_name = {
+									ideology = despotism_1
+									name = ARG_despotism_azules_party
+									long_name = ARG_despotism_azules_party_long
+								}
+								transfer_state = 502
+								add_state_core = 502
+								econ_join_sphere_ARG = yes
+								load_oob = ARS_civil_war
+							}
+						}
+						else_if = { # Brazilian Civil War - Junta wins
+							limit = {
+								FROM = {
+									original_tag = GUN
+								}
+							}
+							every_country = {
+								limit = { is_ai = no }
+								news_event = {
+									id = LATAM_news.244
+									hours = 4
+								}
+							}
+						}
+						else_if = { # Brazilian Civil War - Brizola wins
+							limit = {
+								FROM = {
+									original_tag = CAS
+								}
+							}
+							every_country = {
+								limit = { is_ai = no }
+								news_event = {
+									id = LATAM_news.245
+									hours = 4
+								}
 							}
 						}
 					}
-					clr_global_flag = skip_default_capitulation
+					set_global_flag = skip_default_capitulation
 				}
 
 				###PHILIPPINES WARS###
@@ -8267,21 +8985,6 @@ on_actions = {
 								NOT = { country_exists = SPH }
 							}
 							TNO_Blitz_PHI_Victory = yes
-							clear_variable = PHI.PHI_fucking_surrender_limit
-							clear_variable = UPH.UPH_fucking_surrender_limit
-							clear_variable = SPH.SPH_fucking_surrender_limit
-							USA = {
-								set_temp_variable = { Victory_ID = 19 }
-								set_temp_variable = { Victory_Outcome = 1 }
-								set_temp_variable = { Victory_Points = -100 }
-								Cold_War_GUI_ManipulateVictory = yes
-							}
-							JAP = {
-								set_temp_variable = { Victory_ID = 19 }
-								set_temp_variable = { Victory_Outcome = 5 }
-								set_temp_variable = { Victory_Points = 100 }
-								Cold_War_GUI_ManipulateVictory = yes
-							}
 						}
 					}
 					set_global_flag = skip_default_capitulation
@@ -8305,21 +9008,6 @@ on_actions = {
 								NOT = { country_exists = UPH }
 							}
 							TNO_Blitz_PHI_Victory = yes
-							clear_variable = PHI.PHI_fucking_surrender_limit
-							clear_variable = UPH.UPH_fucking_surrender_limit
-							clear_variable = SPH.SPH_fucking_surrender_limit
-							USA = {
-								set_temp_variable = { Victory_ID = 19 }
-								set_temp_variable = { Victory_Outcome = 1 }
-								set_temp_variable = { Victory_Points = -100 }
-								Cold_War_GUI_ManipulateVictory = yes
-							}
-							JAP = {
-								set_temp_variable = { Victory_ID = 19 }
-								set_temp_variable = { Victory_Outcome = 5 }
-								set_temp_variable = { Victory_Points = 100 }
-								Cold_War_GUI_ManipulateVictory = yes
-							}
 						}
 					}
 					set_global_flag = skip_default_capitulation
@@ -8463,7 +9151,7 @@ on_actions = {
 						}
 					}
 				}
-				
+
 				## Indian Civil War ##
 				else_if = { # Azad Hind victory
 					limit = {
@@ -8550,9 +9238,16 @@ on_actions = {
 								AZH_blockade_1
 								AZH_blockade_2
 								AZH_blockade_3
-								AZH_JAP_pressured_military
-								AZH_JAP_military_advisors
-								AZH_JAP_administrative_assistance
+								AZH_JAP_military_advisors_0
+								AZH_JAP_military_advisors_1
+								AZH_JAP_military_advisors_2
+								AZH_JAP_military_advisors_3
+								AZH_JAP_military_advisors_4
+								AZH_JAP_administrative_assistance_0
+								AZH_JAP_administrative_assistance_1
+								AZH_JAP_administrative_assistance_2
+								AZH_JAP_administrative_assistance_3
+								AZH_JAP_administrative_assistance_4
 							}
 							remove_dynamic_modifier = { modifier = AZH_black_years_dynamic_modifier }
 						}
@@ -8564,6 +9259,104 @@ on_actions = {
 								}
 							}
 							remove_war_buff = yes
+						}
+						every_owned_state = {
+							limit = {
+								check_variable = { AssocRegion = Assoc_Region_Punjab_PMA }
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Punjab_AR }
+							TNO_adjust_assoc_region = yes
+						}
+						every_owned_state = {
+							limit = {
+								check_variable = { AssocRegion = Assoc_Region_Himachal_Pradesh_UT }
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Himachal_Pradesh_AR }
+							TNO_adjust_assoc_region = yes
+						}
+						every_owned_state = {
+							limit = {
+								check_variable = { AssocRegion = Assoc_Region_Jammu_Kashmir_PMA }
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Jammu_Kashmir_AR }
+							TNO_adjust_assoc_region = yes
+						}
+						every_owned_state = {
+							limit = {
+								check_variable = { AssocRegion = Assoc_Region_Sindh_PMA }
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Sindh_AR }
+							TNO_adjust_assoc_region = yes
+						}
+						every_owned_state = {
+							limit = {
+								check_variable = { AssocRegion = Assoc_Region_Rajasthan_PMA }
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Rajasthan_AR }
+							TNO_adjust_assoc_region = yes
+						}
+						every_owned_state = {
+							limit = {
+								check_variable = { AssocRegion = Assoc_Region_Uttar_Pradesh_PMA }
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Uttar_Pradesh_AR }
+							TNO_adjust_assoc_region = yes
+						}
+						every_owned_state = {
+							limit = {
+								check_variable = { AssocRegion = Assoc_Region_Madhya_Pradesh_PMA }
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Madhya_Pradesh_AR }
+							TNO_adjust_assoc_region = yes
+						}
+						every_owned_state = {
+							limit = {
+								check_variable = { AssocRegion = Assoc_Region_Gujarat_PMA }
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Gujarat_AR }
+							TNO_adjust_assoc_region = yes
+						}
+						every_owned_state = {
+							limit = {
+								check_variable = { AssocRegion = Assoc_Region_Maharashtra_PMA }
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Maharashtra_AR }
+							TNO_adjust_assoc_region = yes
+						}
+						every_owned_state = {
+							limit = {
+								check_variable = { AssocRegion = Assoc_Region_Mysore_PMA }
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Mysore_AR }
+							TNO_adjust_assoc_region = yes
+						}
+						every_owned_state = {
+							limit = {
+								check_variable = { AssocRegion = Assoc_Region_Madras_PMA }
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Madras_AR }
+							TNO_adjust_assoc_region = yes
+						}
+						every_owned_state = {
+							limit = {
+								check_variable = { AssocRegion = Assoc_Region_Andhra_Pradesh_PMA }
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Andhra_Pradesh_AR }
+							TNO_adjust_assoc_region = yes
+						}
+						every_owned_state = {
+							limit = {
+								check_variable = { AssocRegion = Assoc_Region_Orissa_PMA }
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Orissa_AR }
+							TNO_adjust_assoc_region = yes
+						}
+						every_owned_state = {
+							limit = {
+								check_variable = { AssocRegion = Assoc_Region_Bihar_PMA }
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Bihar_AR }
+							TNO_adjust_assoc_region = yes
 						}
 					}
 					NEP = {
@@ -8777,31 +9570,34 @@ on_actions = {
 							transfer_troops = no
 						}
 						BHU = { CHI_save_pre_puppet_politics = yes }
-						SIK = { CHI_save_pre_puppet_politics = yes }
 						set_autonomy = {
 							target = BHU
-							autonomous_state = autonomy_italy_reliant
-						}
-						set_autonomy = {
-							target = SIK
-							autonomous_state = autonomy_italy_reliant
+							autonomous_state = autonomy_reliant
 						}
 						BHU = { CHI_apply_pre_puppet_politics = yes }
-						SIK = { CHI_apply_pre_puppet_politics = yes }
-						set_politics = {
-							last_election = "1962.7.25"
-							election_frequency = 60
-							elections_allowed = yes
+						SIK = { CHI_save_pre_puppet_politics = yes }
+						set_autonomy = {
+							target = SIK
+							autonomous_state = autonomy_reliant
 						}
+						SIK = { CHI_apply_pre_puppet_politics = yes }
+						#set_politics = { # Commenting this out because it makes India leaderless if the war took too long and the 1967 election happened beforehand. Not sure why it's there in the first place ? Hopefully that wasn't important.
+						#	ruling_party = progressivism
+						#	last_election = "1962.7.25"
+						#	election_frequency = 60
+						#	elections_allowed = yes
+						#}
 						if = {
 							limit = {
-								NOT = { 
-									has_global_flag = PAK_obq_success
-								} 
+								AND = {
+									has_country_leader = { character = IND_Lal_Bahadur_Shastri ruling_only = yes }
+									NOT = { has_global_flag = PAK_obq_success }
+								}
 							}
 							add_ideas = IND_The_Behemoth_Shastri
 						}
-						else = {
+						else_if = {
+							limit = { has_country_leader = { character = IND_Lal_Bahadur_Shastri ruling_only = yes } }
 							add_ideas = IND_The_Behemoth_Shastri_OBQ
 						}
 						set_temp_variable = { temp_econ_GDP_boost_flat = -5.0 }
@@ -8816,9 +9612,16 @@ on_actions = {
 								IND_blockade_1
 								IND_blockade_2
 								IND_blockade_3
-								IND_USA_pressured_military
-								IND_USA_military_advisors
-								IND_USA_administrative_assistance
+								IND_USA_military_advisors_0
+								IND_USA_military_advisors_1
+								IND_USA_military_advisors_2
+								IND_USA_military_advisors_3
+								IND_USA_military_advisors_4
+								IND_USA_administrative_assistance_0
+								IND_USA_administrative_assistance_1
+								IND_USA_administrative_assistance_2
+								IND_USA_administrative_assistance_3
+								IND_USA_administrative_assistance_4
 								IND_Cry_Havoc
 							}
 							remove_dynamic_modifier = { modifier = IND_black_years_dynamic_modifier }
@@ -8832,18 +9635,38 @@ on_actions = {
 							}
 							remove_war_buff = yes
 						}
+						every_owned_state = {
+							limit = {
+								check_variable = { AssocRegion = Assoc_Region_Orissa_UT }
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Orissa_State }
+							TNO_adjust_assoc_region = yes
+						}
+						every_owned_state = {
+							limit = {
+								check_variable = { AssocRegion = Assoc_Region_Bihar_UT }
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Bihar_State }
+							TNO_adjust_assoc_region = yes
+						}
+						every_owned_state = {
+							limit = {
+								check_variable = { AssocRegion = Assoc_Region_Bengal_UT }
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Bengal_State }
+							TNO_adjust_assoc_region = yes
+						}
+						every_owned_state = {
+							limit = {
+								check_variable = { AssocRegion = Assoc_Region_Assam_UT }
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Assam_State }
+							TNO_adjust_assoc_region = yes
+						}
 					}
 					BHU = {
 						leave_faction = yes
 						econ_leave_sphere = yes
-						set_politics = {
-							ruling_party = paternalism
-						}
-						set_popularities = {
-							paternalism = 67
-							despotism = 19
-							conservatism = 14
-						}
 						remove_ideas = {
 							BHU_In_Kolkatas_Shadow
 							Sphere_Fully_Dependent
@@ -8852,18 +9675,6 @@ on_actions = {
 					SIK = {
 						leave_faction = yes
 						econ_leave_sphere = yes
-						set_politics = {
-							ruling_party = paternalism
-						}
-						set_popularities = {
-							communist = 1
-							socialist = 4
-							liberalism = 10
-							liberal_conservatism = 25
-							conservatism = 20
-							paternalism = 30
-							despotism = 10
-						}
 						remove_ideas = {
 							SIK_Legacy_of_Tumlong
 							Sphere_Fully_Dependent
@@ -8952,6 +9763,49 @@ on_actions = {
 							target = ROOT
 							transfer_troops = no
 						}
+
+						every_owned_state = {
+							limit = {
+								OR = {
+									state = 442
+									state = 1895
+									state = 1896
+									state = 1897
+									state = 1899
+								}
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Gandhara_State }
+							TNO_adjust_assoc_region = yes
+						}
+						every_owned_state = {
+							limit = {
+								OR = {
+									state = 444
+									state = 445
+									state = 749
+									state = 929
+									state = 1533
+									state = 1534
+									state = 1889
+									state = 1890
+									state = 1891
+									state = 1892
+									state = 1893
+								}
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Balochistan_State }
+							TNO_adjust_assoc_region = yes
+						}
+						every_owned_state = {
+							limit = {
+								OR = {
+									state = 1894
+									state = 1898
+								}
+							}
+							set_temp_variable = { assoc_region_temp = token:Assoc_Region_Punjab_State }
+							TNO_adjust_assoc_region = yes
+						}
 					}
 					USA = {
 						if = {
@@ -8968,7 +9822,7 @@ on_actions = {
 						set_temp_variable = { Victory_Outcome = 1 }
 						set_temp_variable = { Victory_Points = -50 }
 						Cold_War_GUI_ManipulateVictory = yes
-						TNO_fopo_remove_operation_bin_qasim_tab = yes 
+						TNO_fopo_remove_operation_bin_qasim_tab = yes
 						set_temp_variable = { target = PAK }
 						TNO_clear_num_volunteers = yes
 					}
@@ -9017,7 +9871,7 @@ on_actions = {
 					PAK_obq_success_effect = yes
 					set_global_flag = skip_default_capitulation
 				}
-				
+
 				## Invasion of Pakistan (Peaceful Indian Reunification) ##
 				else_if = {
 					limit = {
@@ -9100,6 +9954,25 @@ on_actions = {
 						}
 					}
 					AFG = { remove_ideas = AFG_The_Split_Pashtunkhwa }
+					every_owned_state = {
+						limit = {
+							OR = {
+								state = 444
+								state = 445
+								state = 749
+								state = 929
+								state = 1533
+								state = 1534
+								state = 1889
+								state = 1890
+								state = 1891
+								state = 1892
+								state = 1893
+							}
+						}
+						set_temp_variable = { assoc_region_temp = token:Assoc_Region_Balochistan_State }
+						TNO_adjust_assoc_region = yes
+					}
 					set_global_flag = skip_default_capitulation
 				}
 
@@ -9128,23 +10001,23 @@ on_actions = {
 				}
 
 				## Vietnamese Invasion of Kampuchea ##
-				else_if = { 
+				else_if = {
 					limit = {
 						FROM = { original_tag = VIC }
 						ROOT = { original_tag = CAM }
 					}
-					VIC = { 
+					VIC = {
 						white_peace = CAM
 						set_autonomy = {
 							target = CAM
-							autonomy_state = autonomy_italy_hefty_influence
+							autonomy_state = autonomy_heavily_associated
 						}
 					}
-					CAM = { 
+					CAM = {
 						set_politics = {
 							ruling_party = socialist
 						}
-						promote_character = { character = CAM_Son_Ngoc_Minh ideology = socialist_revolutionary_frontism_subtype } 
+						promote_character = { character = CAM_Son_Ngoc_Minh ideology = socialist_revolutionary_frontism_subtype }
 						remove_ideas = {
 							CAM_Dictatorial_Devaraja
 							CAM_The_Unloving_Father
@@ -9161,7 +10034,7 @@ on_actions = {
 							CAM_The_Second_Five_Year_Plan
 							CAM_The_Third_Five_Year_Plan
 							CAM_Expansionist_Pariah
-						}	
+						}
 						add_ideas = {
 							CAM_A_Confused_Revolution
 							CAM_The_Squabbling_Brothers
@@ -9184,14 +10057,14 @@ on_actions = {
 					JAP = { country_event = { id = VIN.12 days = 15 } }
 					set_global_flag = skip_default_capitulation
 				}
-				
+
 				## Japanese Invasion of Indochina ##
-				else_if = { 
+				else_if = {
 					limit = {
 						FROM = { is_in_faction_with = JAP }
 						ROOT = { original_tag = CAM }
 					}
-					JAP = { 
+					JAP = {
 						white_peace = CAM
 						set_autonomy = {
 							target = CAM
@@ -9204,7 +10077,7 @@ on_actions = {
 						set_politics = {
 							ruling_party = despotism
 						}
-						promote_character = { character = CAM_Sim_Var ideology = despotism_managerial_state_subtype } 
+						promote_character = { character = CAM_Sim_Var ideology = despotism_managerial_state_subtype }
 						remove_ideas = {
 							CAM_A_Confused_Revolution
 							CAM_The_Squabbling_Brothers
@@ -9238,8 +10111,8 @@ on_actions = {
 					}
 					set_global_flag = skip_default_capitulation
 				}
-				
-				else_if = { 
+
+				else_if = {
 					limit = {
 						FROM = { is_in_faction_with = JAP }
 						ROOT = { original_tag = VIC }
@@ -9251,7 +10124,7 @@ on_actions = {
 							transfer_troops = no
 						}
 					}
-					JAP = { 
+					JAP = {
 						set_autonomy = {
 							target = VIN
 							autonomy_state = autonomy_satellite
@@ -9286,6 +10159,7 @@ on_actions = {
 							VIN_idea_a_new_phase
 						}
 						set_cosmetic_tag = VIN_republic
+						TNO_force_update_renamings = yes
 					}
 					every_country = {
 						limit = { is_in_faction_with = JAP }
@@ -9294,13 +10168,13 @@ on_actions = {
 					THA = { remove_ideas = YUN_JAPAN_OH_GOD_OH_FUCK }
 					set_global_flag = skip_default_capitulation
 				}
-				
-				else_if = { 
+
+				else_if = {
 					limit = {
 						FROM = { is_in_faction_with = JAP }
 						ROOT = { original_tag = LAO }
 					}
-					JAP = { 
+					JAP = {
 						white_peace = LAO
 						set_autonomy = {
 							target = LAO
@@ -9366,13 +10240,14 @@ on_actions = {
 					set_global_flag = MAD_colony_won
 				}
 
-				### IPN ###
 				#Western Insurrection
 				else_if = {#NPA defeats China before Jaabn intervenes
 					limit = {
+						NOT = { has_global_flag = CHI_Western_Insurection_RoC_defeated }
+						has_global_flag = CHI_Western_Insurrection_Crisis
 						FROM = {
 							OR = {
-								original_tag = XIK
+								original_tag = YUN
 								has_idea = NLF_Member
 							}
 						}
@@ -9385,53 +10260,173 @@ on_actions = {
 							NOT = { has_war_together_with = JAP }
 						}
 					}
-					set_global_flag = TNOIPN_XIK_win_CHI_flag
+					set_global_flag = YUN_WI_thx_paradox
+
+					for_each_scope_loop = {
+						array = global.greater_china_states
+						if = {
+							limit = {
+								check_variable = { china_state_ref > 6 }
+								check_variable = { china_state_ref < 14 }
+							}
+							set_demilitarized_zone = no
+							transfer_state_to = NCC
+						}
+					}
 
 					TNO_KD_Consequences_of_Annexation = yes #China is one of the few places that can use it
 
-					XIK = {
+					CHI = {
+						every_unit_leader = {
+							set_nationality = NCC
+						}
+					}
+					NCC = {
+						load_oob = "NCC_GAW"
+						econ_join_sphere_JAP = yes
+					}
+					NCC = {
+						every_country = {
+							limit = { is_in_faction_with = YUN }
+							set_embargo_PREV_mutual = yes
+						}
+					}
+					YUN = {
+						country_event = { id = yun_wi.30 }
 						white_peace = CHI
 						annex_country = {
 							target = CHI
 							transfer_troops = no
 						}
-						every_owned_state = {
-							add_core_of = XIK
-						}
 						set_temp_variable = { money_reserves_temp = 10 }
 						econ_money_reserves_change_raw_money = yes
 					}
+					JAP = {
+						add_to_faction = NCC
+						country_event = { id = japchiinteraction.3 days = 8 }
+					}
+					set_global_flag = CHI_Western_Insurection_RoC_defeated
+					clr_global_flag = YUN_WI_thx_paradox
 					set_global_flag = skip_default_capitulation
 				}
 				else_if = {#Other Chinese states are capitulated by Long Yun
 					limit = {
 						FROM = {
 							OR = {
-								original_tag = XIK
+								original_tag = YUN
 								has_idea = NLF_Member
 							}
 						}
 
 						ROOT = {
 							OR = {
+								original_tag = MAN
 								original_tag = MEN
 								original_tag = GNG
-								original_tag = GUZ
+								original_tag = GAN
+								original_tag = GUX
 								original_tag = SHX
+								original_tag = XIK
+								original_tag = QIN
+								original_tag = TIB
+								original_tag = XIN
+								original_tag = NCC
 							}
 						}
 					}
+					set_global_flag = YUN_WI_thx_paradox
 					TNO_KD_Consequences_of_Annexation = yes #China is one of the few places that can use it
-					XIK = {
+					YUN = {
 						white_peace = ROOT
-						ROOT = {
-							every_core_state = {
-								add_core_of = XIK
-							}
-						}
 						annex_country = {
 							target = ROOT
-							transfer_troops = yes
+							transfer_troops = no
+						}
+						if = {
+							limit = {
+								ROOT = { original_tag = NCC }
+							}
+							country_event = { id = yun_wi.36 }
+						}
+						else_if = {
+							limit = {
+								ROOT = { original_tag = MAN }
+							}
+							country_event = { id = yun_wi.37 }
+						}
+						else_if = {
+							limit = {
+								ROOT = { original_tag = TIB }
+							}
+							country_event = { id = yun_wi.38 }
+						}
+						else_if = {
+							limit = {
+								ROOT = { original_tag = GNG }
+							}
+							country_event = { id = yun_wi.39 }
+						}
+						else_if = {
+							limit = {
+								ROOT = { original_tag = MEN }
+							}
+							country_event = { id = yun.139 }
+						}
+					}
+					if = {
+						limit = {
+							ROOT = {
+								OR = {
+									original_tag = NCC
+									original_tag = MEN
+									original_tag = GNG
+									original_tag = MAN
+								}
+								NOT = { has_country_flag = YUN_NPA_despair_branch }
+							}
+						}
+						YUN = {
+							add_to_variable = { npagawprogress = 1 }
+						}
+						if = {
+							limit = {
+								check_variable = { YUN.npagawprogress = 4 }
+							}
+							YUN = {
+								country_event = { id = yun_wi.45 days = 2 }
+							}
+							JAP = {
+								527 = { set_demilitarized_zone = no }
+								537 = { set_demilitarized_zone = no }
+								1024 = { set_demilitarized_zone = no }
+								1820 = { set_demilitarized_zone = no }
+							}
+						}
+						else_if = {
+							limit = {
+								check_variable = { YUN.npagawprogress < 4 }
+								NOT = { country_exists = GAN }
+								NOT = { country_exists = NCC }
+							}
+							YUN = {
+								country_event = { id = yun_wi.42 days = 2 }
+							}
+						}
+						if = {
+							limit = {
+								check_variable = { YUN.npagawprogress = 1 }
+							}
+							every_country = {
+								limit = {
+									has_idea = YUN_SEA_NOT_YOUR_BUSINESS_STOP
+									is_in_faction_with = JAP
+								}
+								remove_ideas = YUN_SEA_NOT_YOUR_BUSINESS_STOP
+								add_to_war = {
+									targeted_alliance = JAP
+									enemy = YUN
+								}
+							}
 						}
 					}
 					clr_global_flag = YUN_WI_thx_paradox
@@ -9446,73 +10441,12 @@ on_actions = {
 						}
 						ROOT = {
 							OR = {
-								original_tag = XIK
-								has_idea = NLF_Member
-							}
-						}
-					}
-
-					FROM = {
-						white_peace = ROOT
-					}
-
-					XIK = {
-						delete_unit = {}
-					}
-					every_country = {
-						limit = {
-							has_idea = NLF_Member
-						}
-						CHI = {
-							annex_country = {
-								target = PREV
-							}
-						}
-					}
-					CHI = {
-						annex_country = {
-							target = XIK
-						}
-						set_temp_variable = { temp_credit_rating = 6 }
-						set_temp_variable = { temp_credit_rating_min = 4 }
-						set_temp_variable = { temp_credit_rating_max = 8 }
-						econ_initialize_credit_rating_system = yes
-						every_owned_state = {
-							add_core_of = CHI
-						}
-					}
-					for_each_scope_loop = {
-						array = global.greater_china_states
-						if = {
-							limit = {
-								check_variable = { china_state_ref > 6 }
-								check_variable = { china_state_ref < 14 }
-							}
-							set_demilitarized_zone = no
-						}
-					}
-					GNG = {
-						country_event = { #Reaction Event
-							id = GNG_Western_Insurrection.7
-							hours = 6
-						}
-					}
-					set_global_flag = skip_default_capitulation
-				}
-				else_if = {#Western Insurrection, Yunnan is defeated with Jaabnese help
-					limit = {
-						FROM = {
-							is_in_faction_with = CHI
-							NOT = { is_in_faction_with = JAP }
-						}
-						ROOT = {
-							OR = {
 								original_tag = YUN
 								has_idea = NLF_Member
 							}
 						}
 						has_global_flag = CHI_Western_Insurrection_Crisis
-						has_global_flag = JAP_WI_intervention_begun
+						NOT = { has_global_flag = JAP_Western_Insurrection_Intervention }
 					}
 
 					FROM = {
@@ -9522,41 +10456,7 @@ on_actions = {
 					YUN = {
 						delete_unit = {}
 						YUN_NPA_fails_effects = yes
-						set_party_name = {
-							ideology = despotism
-							name = YUN_despotism_XRA_party
-							long_name = YUN_despotism_XRA_party_long
-						}
-						YUN_zhou_longxiang = {
-							add_country_leader_role = {
-								country_leader = {
-									desc = "POLITICS_ZHOU_LONGXIANG_DESC"
-									ideology = despotism_interim_government_subtype
-									traits = {  }
-									expire = "1999.1.1.1"
-									id = -1
-								}
-								promote_leader = yes
-							}
-						}
-						set_politics = {
-							ruling_party = despotism
-							last_election = "1933.3.5"
-							election_frequency = 48
-							elections_allowed = no
-						}
-						set_popularities = {
-							progressivism = 0
-							liberalism = 0
-							liberal_conservatism = 0
-							despotism = 54
-							conservatism = 4
-							paternalism = 38
-							fascism = 0
-							national_socialism = 0
-							ultranationalism = 4
-						}
-						set_cosmetic_tag = YUN_southwest_united_reconstruction
+						YUN_southwest_reconstruction_effects = yes
 						if = {
 							limit = { has_global_flag = WI_NPA_takes_Sichuan }
 							country_event = { id = yun_zhengtong.15 days = 3 }
@@ -9579,10 +10479,48 @@ on_actions = {
 							limit = { has_global_flag = GUX_joins_NPA }
 							country_event = { id = yun_zhengtong.36 days = 4 }
 						}
-						set_variable = { national_debt = 0 }
 						country_event = { id = yun_zhengtong.29 days = 2 }
 						country_event = { id = yun_zhengtong.43 days = 3 }
 						country_event = { id = yun_zhengtong.50 days = 5 }
+					}
+					CHI = {
+						country_event = { id = chi_wi.5 }
+						if = {
+							limit = {
+								OR = {
+									GUX = { has_idea = NLF_Member }
+									SHX = { has_idea = NLF_Member }
+								}
+							}
+							country_event = {
+								id = chi.6674
+								days = 365
+							}
+						}
+						country_event = {
+							id = chi.6672
+							days = 730
+						}
+						set_temp_variable = { temp_credit_rating = 6 }
+						set_temp_variable = { temp_credit_rating_min = 4 }
+						set_temp_variable = { temp_credit_rating_max = 8 }
+						econ_initialize_credit_rating_system = yes
+					}
+					for_each_scope_loop = {
+						array = global.greater_china_states
+						if = {
+							limit = {
+								check_variable = { china_state_ref > 6 }
+								check_variable = { china_state_ref < 14 }
+							}
+							set_demilitarized_zone = no
+						}
+					}
+					GNG = {
+						country_event = { #Reaction Event
+							id = GNG_Western_Insurrection.7
+							hours = 6
+						}
 					}
 					if = {
 						limit = {
@@ -9655,7 +10593,145 @@ on_actions = {
 							}
 						}
 					}
-					
+
+					if = {
+						limit = {
+							GAN = { has_capitulated = yes }
+						}
+						every_state = {
+							limit = { is_core_of = GAN }
+							GAN = { transfer_state = PREV }
+						}
+					}
+					YUN = {
+						every_owned_state = { add_core_of = PREV }
+					}
+					set_global_flag = skip_default_capitulation
+				}
+				else_if = {#Western Insurrection, Yunnan is defeated with Jaabnese help
+					limit = {
+						FROM = {
+							is_in_faction_with = CHI
+							NOT = { is_in_faction_with = JAP }
+						}
+						ROOT = {
+							OR = {
+								original_tag = YUN
+								has_idea = NLF_Member
+							}
+						}
+						has_global_flag = CHI_Western_Insurrection_Crisis
+						has_global_flag = JAP_WI_intervention_begun
+					}
+
+					FROM = {
+						white_peace = ROOT
+					}
+
+					YUN = {
+						delete_unit = {}
+						YUN_NPA_fails_effects = yes
+						YUN_southwest_reconstruction_effects = yes
+						if = {
+							limit = { has_global_flag = WI_NPA_takes_Sichuan }
+							country_event = { id = yun_zhengtong.15 days = 3 }
+							country_event = { id = yun_zhengtong.22 days = 7 }
+							for_each_scope_loop = {
+								array = global.greater_china_states
+								if = {
+									limit = {
+										OR = {
+											check_variable = { china_state_ref = 15 }
+											check_variable = { china_state_ref = 16 }
+											check_variable = { china_state_ref = 17 }
+										}
+									}
+									transfer_state_to = CHI
+								}
+							}
+						}
+						if = {
+							limit = { has_global_flag = GUX_joins_NPA }
+							country_event = { id = yun_zhengtong.36 days = 4 }
+						}
+						country_event = { id = yun_zhengtong.29 days = 2 }
+						country_event = { id = yun_zhengtong.43 days = 3 }
+						country_event = { id = yun_zhengtong.50 days = 5 }
+					}
+					XIK = { drop_cosmetic_tag = yes }
+					GUX = { drop_cosmetic_tag = yes }
+					if = {
+						limit = {
+							XIK = {
+								is_in_faction_with = CHI
+								has_capitulated = yes
+							}
+							NOT = { country_exists = XIK }
+						}
+						every_state = {
+							limit = { is_core_of = XIK }
+							XIK = { transfer_state = PREV }
+						}
+					}
+					else_if = {
+						limit = {
+							XIK = { has_idea = NLF_Member }
+						}
+						every_state = {
+							limit = { is_core_of = XIK }
+							YUN = { transfer_state = PREV }
+							remove_core_of = XIK
+						}
+					}
+
+					if = {
+						limit = {
+							GUX = {
+								is_in_faction_with = CHI
+								has_capitulated = yes
+							}
+						}
+						every_state = {
+							limit = { is_core_of = GUX }
+							GUX = { transfer_state = PREV }
+						}
+					}
+					else_if = {
+						limit = {
+							GUX = { has_idea = NLF_Member }
+						}
+						CHI = {
+							annex_country = {
+								target = GUX
+								transfer_troops = no
+							}
+						}
+					}
+
+					if = {
+						limit = {
+							SHX = {
+								is_in_faction_with = CHI
+								has_capitulated = yes
+							}
+						}
+						every_state = {
+							limit = { is_core_of = SHX }
+							SHX = { transfer_state = PREV }
+						}
+					}
+					else_if = {
+						limit = {
+							SHX = { has_idea = NLF_Member }
+						}
+						CHI = {
+							annex_country = {
+								target = SHX
+								transfer_troops = no
+							}
+						}
+					}
+
 					if = {
 						limit = {
 							GAN = { has_capitulated = yes }
@@ -9819,7 +10895,7 @@ on_actions = {
 						}
 						YUN = {
 							YUN_NPA_fails_effects = yes
-							every_owned_state = { transfer_state_to = NCC } 
+							every_owned_state = { transfer_state_to = NCC }
 						}
 						JAP = {
 							set_temp_variable = { Victory_ID = 27 }
@@ -9875,7 +10951,42 @@ on_actions = {
 					}
 					set_global_flag = skip_default_capitulation
 				}
-
+				#Iberian Algeria wins vs Italian one
+				else_if = {
+					limit = {
+						has_global_flag = algeria_war
+						FROM = {
+							tag = SLG
+						}
+						ROOT = {
+							tag = ILG
+						}
+					}
+					IBR = {
+						country_event = {
+							id = SLG.21
+						}
+					}
+					set_global_flag = skip_default_capitulation
+				}
+				#Italian Algeria wins vs Iberian one
+				else_if = {
+					limit = {
+						has_global_flag = algeria_war
+						FROM = {
+							tag = ILG
+						}
+						ROOT = {
+							tag = SLG
+						}
+					}
+					ITA = {
+						country_event = {
+							id = ILG.7
+						}
+					}
+					set_global_flag = skip_default_capitulation
+				}
 				#Yves gets curbestomped by Iberia
 				else_if = {
 					limit = {
@@ -9888,37 +10999,20 @@ on_actions = {
 					}
 					IBR = {
 						country_event = {
-							id = IBR.3005
+							id = IBR_algeria.16
 						}
 					}
 					set_global_flag = skip_default_capitulation
 				}
+				# Morocco War
 				else_if = {
 					limit = {
-						FROM = {
-							tag = IBR
-						}
-						ROOT = {
-							tag = SPA
-						}
-					}
-					IBR = {
-						country_event = {
-							id = IBR.819
-						}
-					}
-					set_global_flag = skip_default_capitulation
-				}
-				# Morroccon War
-				if = {
-					limit = {
-						ROOT = {
-							tag = MOR
-						}
+						FROM = { tag = MAU }
+						ROOT = { tag = MOR }
 					}
 					every_country = {
 						limit = {
-						is_iberian_nation = yes
+							is_iberian_nation = yes
 							has_war_with = ROOT
 						}
 						ROOT = {
@@ -9928,9 +11022,7 @@ on_actions = {
 					ROOT = {
 						every_owned_state = {
 							limit = {
-								check_variable = {
-									THIS.controller = IBR
-								}
+								is_controlled_by = IBR
 							}
 							IBR = {
 								transfer_state = PREV
@@ -9939,36 +11031,56 @@ on_actions = {
 						every_owned_state = {
 							limit = {
 								OR = {
-									is_claimed_by = TRZ
-									is_core_of = TRZ
+									is_claimed_by = MAU
+									is_core_of = MAU
 								}
 								NOT = { is_owned_by = IBR }
 							}
-							TRZ = {
+							MAU = {
 								add_state_core = PREV
 								transfer_state = PREV
 							}
 						}
 					}
-					if = {   
-						limit = { has_country_flag = Morroco_puppet_War }
+					if = {
+						limit = {
+							AND = {
+								country_exists = IBR
+								MOR = { has_country_flag = MOR_associate }
+							}
+						}
+						MOR = { save_party_popularities = yes }
 						IBR = {
 							country_event = { id = MOR_IBR.26 }
 							set_autonomy = {
 								target = MOR
-								autonomous_state = autonomy_italy_associate
+								autonomous_state = autonomy_associated
 							}
 						}
+						MOR = { apply_party_popularities = yes }
 					}
-					TRZ = {
-						set_cosmetic_tag = TRZ_iberian_war
+					else_if = {
+						limit = {
+							AND = {
+								country_exists = SPA
+								MOR = { has_country_flag = MOR_associate }
+							}
+						}
+						MOR = { save_party_popularities = yes }
+						SPA = {
+							#country_event = { id = MOR_IBR.26 }
+							set_autonomy = {
+								target = MOR
+								autonomous_state = autonomy_associated
+							}
+						}
+						MOR = { apply_party_popularities = yes }
 					}
 				}
 				else_if = {
 					limit = {
-						ROOT = {
-							tag = TRZ
-						}
+						FROM = { tag = MOR }
+						ROOT = { tag = MAU }
 					}
 					MOR = {
 						ROOT = {
@@ -9977,29 +11089,60 @@ on_actions = {
 					}
 					ROOT = {
 						every_owned_state = {
-							MOR = {
-								add_state_core = PREV
-							}
+							add_core_of = MOR
+							remove_core_of = MAU
+							remove_claim_by = MAU
 						}
 					}
 					if = {
-						limit = { has_country_flag = Morroco_puppet_War }
+						limit = { MOR = { has_country_flag = MOR_associate } }
 						IBR = {
 							country_event = { id = MOR_IBR.25 }
 							set_autonomy = {
 								target = MOR
-								autonomous_state = autonomy_italy_associate
+								autonomous_state = autonomy_associated
 							}
 						}
 					}
 					MOR = {
-						annex_country = { target = TRZ }
+						annex_country = { target = MAU }
+						set_politics = { ruling_party = despotism }
 						set_popularities = {
 							despotism = 70
 							paternalism = 15
 							socialist = 15
 						}
 					}
+				}
+				else_if = {
+					limit = {
+						ROOT = { tag = MOR }
+						FROM = { tag = IBR }
+					}
+					IBR = {
+						ROOT = {
+							white_peace = PREV
+						}
+					}
+					ROOT = {
+						every_owned_state = {
+							add_core_of = MOR
+							remove_core_of = MAU
+						}
+					}
+					IBR = {
+						transfer_state = 1545
+						transfer_state = 1546
+						transfer_state = 290
+						transfer_state = 1005
+						transfer_state = 1008
+						transfer_state = 699
+						transfer_state = 1155
+						transfer_state = 1009
+						transfer_state = 1156
+						transfer_state = 1158
+					}
+					set_global_flag = skip_default_capitulation
 				}
 				#IBERIAN WARS
 				else_if = {
@@ -10011,430 +11154,372 @@ on_actions = {
 							is_iberian_nation = yes
 						}
 					}
-					# Deal with some special cases first
-					# Morrocco
+					log = "[GetDateText]: [Root.GetName]: IBERIAN WARS PEACE BLOCK ENTERED"
+					#Remove faction from proxy arrays
 					if = {
 						limit = {
-							ROOT = {
-								tag = MOR
+							is_in_array = { USA.Iberian_Wars_supported_factions = ROOT.id }
+						}
+						remove_from_array = { USA.Iberian_Wars_supported_factions = ROOT.id }
+					}
+					if = {
+						limit = {
+							is_in_array = { GER.Iberian_Wars_supported_factions = ROOT.id }
+						}
+						remove_from_array = { GER.Iberian_Wars_supported_factions = ROOT.id }
+					}
+					if = {
+						limit = {
+							is_in_array = { ITA.Iberian_Wars_supported_factions = ROOT.id }
+						}
+						remove_from_array = { ITA.Iberian_Wars_supported_factions = ROOT.id }
+					}
+					if = {
+						limit = {
+							is_in_array = { TUR.Iberian_Wars_supported_factions = ROOT.id }
+						}
+						remove_from_array = { TUR.Iberian_Wars_supported_factions = ROOT.id }
+					}
+					if = {
+						limit = {
+							is_in_array = { BRA.Iberian_Wars_supported_factions = ROOT.id }
+						}
+						remove_from_array = { BRA.Iberian_Wars_supported_factions = ROOT.id }
+					}
+					if = {
+						limit = {
+							is_in_array = { ARG.Iberian_Wars_supported_factions = ROOT.id }
+						}
+						remove_from_array = { ARG.Iberian_Wars_supported_factions = ROOT.id }
+					}
+					if = {
+						limit = {
+							is_in_array = { MEX.Iberian_Wars_supported_factions = ROOT.id }
+						}
+						remove_from_array = { MEX.Iberian_Wars_supported_factions = ROOT.id }
+					}
+					if = {
+						limit = {
+							is_in_array = { COL.Iberian_Wars_supported_factions = ROOT.id }
+						}
+						remove_from_array = { COL.Iberian_Wars_supported_factions = ROOT.id }
+					}
+					if = {
+						limit = {
+							is_in_array = { FRS.Iberian_Wars_supported_factions = ROOT.id }
+						}
+						remove_from_array = { FRS.Iberian_Wars_supported_factions = ROOT.id }
+					}
+					if = {#Regional defeats last standing Spain
+						limit = {
+							AND = {
+								OR = {
+									ROOT = { tag = SPR }
+									ROOT = { tag = SPS }
+									ROOT = { tag = FSR }
+									ROOT = { tag = FZL }
+								}
+								OR = {
+									FROM = { tag = GAL }
+									FROM = { tag = BSQ }
+									FROM = { tag = CTL }
+									FROM = { tag = CNT }
+									FROM = { tag = ADL }
+									FROM = { tag = TBA }
+								}
 							}
 						}
-						every_country = {
+						log = "[GetDateText]: [Root.GetName]: Regional defeats last standing Spain"
+						set_global_flag = IBR_Wars_regional_defeated_SPA_flag
+					}
+					if = { #Andalusia Defeats Spain
+						limit = {
+							AND = {
+								OR = {
+									ROOT = { tag = SPR }
+									ROOT = { tag = SPS }
+									ROOT = { tag = FSR }
+									ROOT = { tag = FZL }
+								}
+								OR = {
+									FROM = { tag = ADL }
+									ROOT = { has_war_with = ADL }
+								}
+							}
+						}
+						log = "[GetDateText]: [Root.GetName]: Andalusia defeats Spain"
+						ADL = { set_country_flag = ADL_Defeated_Spain }
+					}
+					if = { #Andalusia Defeats Portugal
+						limit = {
+							AND = {
+								OR = {
+									ROOT = { tag = POR }
+									ROOT = { tag = PPR }
+									ROOT = { tag = GNS }
+									ROOT = { tag = RPP }
+								}
+								OR = {
+									FROM = { tag = ADL }
+									ROOT = { has_war_with = ADL }
+								}
+							}
+						}
+						log = "[GetDateText]: [Root.GetName]: Andalusia defeats Portugal"
+						ADL = { set_country_flag = ADL_Defeated_Portugal }
+					}
+					if = {#Spanish-Portuguese War - RPP victory
+						limit = {
+							AND = {
+								OR = {
+									ROOT = { tag = SPR }
+									ROOT = { tag = SPS }
+									ROOT = { tag = FSR }
+									ROOT = { tag = FZL }
+								}
+								FROM = { tag = RPP }
+							}
+						}
+						log = "[GetDateText]: [Root.GetName]: Spanish-Portuguese War - RPP victory"
+						RPP = { set_country_flag = IBR_Wars_Spanish_Portuguese_RPP_victory_flag }
+					}
+					if = {#Spanish-Portuguese War - POR victory
+						limit = {
+							AND = {
+								OR = {
+									ROOT = { tag = SPR }
+									ROOT = { tag = SPS }
+									ROOT = { tag = FSR }
+									ROOT = { tag = FZL }
+								}
+								FROM = { tag = POR }
+							}
+						}
+						log = "[GetDateText]: [Root.GetName]: Spanish-Portuguese War - POR victory"
+						POR = { set_country_flag = IBR_Wars_Spanish_Portuguese_POR_victory_flag }
+					}
+					if = {#Spanish-Portuguese War - GNS victory
+						limit = {
+							AND = {
+								OR = {
+									ROOT = { tag = SPR }
+									ROOT = { tag = SPS }
+									ROOT = { tag = FSR }
+									ROOT = { tag = FZL }
+								}
+								FROM = { tag = GNS }
+							}
+						}
+						log = "[GetDateText]: [Root.GetName]: Spanish-Portuguese War - GNS victory"
+						GNS = { set_country_flag = IBR_Wars_Spanish_Portuguese_GNS_victory_flag }
+					}
+					if = {#Spanish-Portuguese War - SPR victory
+						limit = {
+							AND = {
+								OR = {
+									ROOT = { tag = PPR }
+									ROOT = { tag = GNS }
+								}
+								FROM = { tag = SPR }
+							}
+						}
+						log = "[GetDateText]: [Root.GetName]: Spanish-Portuguese War - SPR victory"
+						SPR = { set_country_flag = IBR_Wars_Spanish_Portuguese_SPR_victory_flag }
+					}
+					if = {#Spanish-Portuguese War - SPS victory
+						limit = {
+							AND = {
+								OR = {
+									ROOT = { tag = PPR }
+									ROOT = { tag = GNS }
+								}
+								FROM = { tag = SPS }
+							}
+						}
+						log = "[GetDateText]: [Root.GetName]: Spanish-Portuguese War - SPS victory"
+						SPS = { set_country_flag = IBR_Wars_Spanish_Portuguese_SPS_victory_flag }
+					}
+					if = {#Spanish-Portuguese War - FSR victory
+						limit = {
+							AND = {
+								OR = {
+									ROOT = { tag = PPR }
+									ROOT = { tag = GNS }
+								}
+								FROM = { tag = FSR }
+							}
+						}
+						log = "[GetDateText]: [Root.GetName]: Spanish-Portuguese War - FSR victory"
+						FSR = { set_country_flag = IBR_Wars_Spanish_Portuguese_FSR_victory_flag }
+					}
+					if = {#Spanish-Portuguese War - FZL victory
+						limit = {
+							AND = {
+								OR = {
+									ROOT = { tag = PPR }
+									ROOT = { tag = GNS }
+								}
+								FROM = { tag = FZL }
+								NOT = { has_global_flag = IBR_Wars_German_Invasion }
+							}
+						}
+						log = "[GetDateText]: [Root.GetName]: Spanish-Portuguese War - FZL victory"
+						FZL = { set_country_flag = IBR_Wars_Spanish_Portuguese_FZL_victory_flag }
+					}
+					if = {#When a Spanish faction defeats another Spanish faction
+						limit = {
+							AND = {
+								OR = {
+									ROOT = { tag = SPR }
+									ROOT = { tag = SPS }
+									ROOT = { tag = FSR }
+									ROOT = { tag = FZL }
+								}
+								OR = {
+									FROM = { tag = SPR }
+									FROM = { tag = SPS }
+									FROM = { tag = FSR }
+									FROM = { tag = FZL }
+								}
+							}
+						}
+						log = "[GetDateText]: [Root.GetName]: When a Spanish faction defeats another Spanish faction"
+						annex_country = {
+							target = ROOT
+							transfer_troops = no
+						}
+						every_state = {
 							limit = {
-								is_iberian_nation = yes
-								has_war_with = ROOT
+								is_core_of = ROOT
+								is_claimed_by = FROM
 							}
-							ROOT = {
-								white_peace = PREV
-							}
-						}
-						ROOT = {
-							every_owned_state = {
-								limit = {
-									check_variable = {
-										THIS.controller = IBR
-									}
-								}
-								IBR = {
-									transfer_state = PREV
-								}
-							}
-							every_owned_state = {
-								limit = {
-									OR = {
-										is_claimed_by = TRZ
-										is_core_of = TRZ
-									}
-									NOT = { is_owned_by = IBR }
-								}
-								TRZ = {
-									add_state_core = PREV
-									transfer_state = PREV
-								}
-							}
-							every_owned_state = {
-								limit = {
-									OR = {
-										is_claimed_by = RIF
-										is_core_of = RIF
-									}
-									NOT = { is_owned_by = IBR }
-								}
-								RIF = {
-									add_state_core = PREV
-									transfer_state = PREV
-								}
-							}
-						}
-						TRZ = {
-							set_cosmetic_tag = TRZ_iberian_war
-							set_capital = { state = 1010 }
-						}
-						RIF = {
-							set_cosmetic_tag = RIF_postwar
-							set_capital = { state = 1150 }
-							add_ideas = Sphere_Observer
-							econ_join_sphere_JAP = yes
-						}
-						JAP = {
-							set_temp_variable = { SeaZone_ID = 3 } # 3; North Atlantic
-							Cold_War_GUI_PowerProjection_AddSeaZone = yes
-							diplomatic_relation = {
-								country = RIF
-								relation = docking_rights
-								active = yes
-							}
+							add_core_of = FROM
+							remove_core_of = ROOT
+							remove_claim_by = ROOT
 						}
 					}
-					else_if = {
+					if = {#PPR Unification Wars
 						limit = {
-							FROM = { tag = MOR }
-							ROOT = { tag = RIF }
+							AND = {
+								OR = {
+									ROOT = { tag = SPR }
+									ROOT = { tag = SPS }
+									ROOT = { tag = FSR }
+									ROOT = { tag = FZL }
+									ROOT = { tag = BSQ }
+									ROOT = { tag = GAL }
+									ROOT = { tag = CTL }
+									ROOT = { tag = CNT }
+									ROOT = { tag = ADL }
+									ROOT = { tag = TBA }
+								}
+								FROM = { tag = PPR }
+							}
 						}
-						every_country = {
+						log = "[GetDateText]: [Root.GetName]: PPR Unification Wars"
+						every_state = {
 							limit = {
-								is_iberian_nation = yes
-								has_war_with = ROOT
+								is_owned_by = ROOT
 							}
-							ROOT = {
-								white_peace = PREV
-							}
+							add_core_of = FROM
+							remove_core_of = ROOT
+							set_temp_variable = { temp_state_value_addition = -0.025 }
+							econ_state_value_change_addition = yes
 						}
-						MOR = {
+						every_state = { remove_claim_by = ROOT }
+						FROM = {
 							annex_country = {
-								target = RIF
+								target = ROOT
 								transfer_troops = no
 							}
-							every_owned_state = {
-								limit = { is_core_of = RIF }
-								add_core_of = MOR
-								remove_core_of = RIF
-							}
 						}
-						MOR = { remove_state_core = 1546 }
+						if = {
+							limit = {
+								AND = {
+									NOT = { country_exists = SPR }
+									NOT = { country_exists = SPS }
+									NOT = { country_exists = FSR }
+									NOT = { country_exists = FZL }
+									NOT = { country_exists = BSQ }
+									NOT = { country_exists = GAL }
+									NOT = { country_exists = CTL }
+									NOT = { country_exists = CNT }
+									NOT = { country_exists = ADL }
+									NOT = { country_exists = TBA }
+								}
+							}
+							PPR = { set_country_flag = IBR_Wars_Spanish_Portuguese_PPR_victory_flag }
+						}
 					}
-					else_if = {
+					#Generic winner takes all claims and cores from loser
+					every_state = {
 						limit = {
-							FROM = { tag = IBR }
+							is_owned_by = ROOT
 							OR = {
-								ROOT = { tag = RIF }
-								ROOT = { tag = TRZ }
+								is_claimed_by = FROM
+								is_core_of = FROM
 							}
 						}
-						every_state = {
-							limit = {
-								is_owned_by = ROOT
-							}
-							IBR = {
-								transfer_state = PREV
-							}
-						}
-					}
-					# GNS
-					else_if = {
-						limit = {
-							FROM = { tag = GNS }
-						}
-						every_state = {
-							limit = {
-								is_owned_by = ROOT
-							}
-							GNS = {
-								transfer_state = PREV
-							}
-						}
-					}
-					# Everyone Else
-					else = {
-						# The winner could take states controlled by the capitulated country / them
-						every_state = {
-							limit = {
-								is_owned_by = ROOT
-								OR = {
-									check_variable = {
-										THIS.controller = FROM
-									}
-									check_variable = {
-										THIS.controller = ROOT
-									}
-								}
-								OR = {
-									is_claimed_by = FROM
-									is_core_of = FROM
-								}
-							}
-							FROM = {
-								add_state_core = PREV
-								transfer_state = PREV
-								every_owned_state = { remove_core_of = ROOT }
-							}
-						}
-						# Every other country could take states controlled by them
-						every_country = {
-							limit = {
-								is_iberian_nation = yes
-								has_war_with = ROOT
-							}
-							every_state = {
-								limit = {
-									is_owned_by = ROOT
-									check_variable = {
-										THIS.controller = PREV
-									}
-									OR = {
-										is_claimed_by = PREV
-										is_core_of = PREV
-									}
-								}
-								PREV = {
-									add_state_core = PREV
-									transfer_state = PREV
-									every_owned_state = { remove_core_of = ROOT }
-								}
-							}
-						}
-						# Finally the winner can take states countrolled by other people
-						every_state = {
-							limit = {
-								is_owned_by = ROOT
-								OR = {
-									is_claimed_by = FROM
-									is_core_of = FROM
-								}
-							}
-							FROM = {
-								add_state_core = PREV
-								transfer_state = PREV
-								every_owned_state = { remove_core_of = ROOT }
-							}
-						}
-					}
-					every_country = {
-						limit = {
-							is_iberian_nation = yes
-							has_war_with = ROOT
+						log = "[GetDateText]: [Root.GetName]: Generic winner takes all claims and cores from loser"
+						FROM = {
+							add_state_core = PREV
+							transfer_state = PREV
 						}
 						ROOT = {
-							white_peace = PREV
+							remove_state_core = PREV
+							remove_state_claim = PREV
 						}
-					}
-					# Custom peacedeal if Spain take Portugal / Portugal take Spain
-					if = {
-						limit = {
-							FROM = { tag = SPS }
-							ROOT = {
-								OR = {
-									tag = POR
-									tag = GNS
-									tag = PPR
-									tag = RPP
+						FROM = { #Failsafe
+							if = {
+								limit = {
+									OR = {
+										tag = SPR
+										tag = SPS
+										tag = FSR
+										tag = FZL
+
+										tag = POR
+										tag = GNS
+										tag = RPP
+										tag = PPR
+									}
+									OR = {
+										tag = CTL
+										ROOT = { tag = CNT }
+									}
+									OR = {
+										tag = CNT
+										ROOT = { tag = CTL }
+									}
+								}
+								annex_country = {
+									target = ROOT
+									transfer_troops = no
 								}
 							}
 						}
-						every_state = {
-							limit = {
-								is_portuguese_state = yes
-								is_owned_by = ROOT
-							}
-							GNS = {
-								add_state_core = PREV
-								transfer_state = PREV
-							}
-						}
-						SPS = {
-							country_event = {
-								id = iberiawars.35
-							}
-						}
 					}
-					else_if = {
-						limit = {
-							FROM = { tag = FZL }
-							ROOT = {
-								OR = {
-									tag = POR
-									tag = GNS
-									tag = PPR
-									tag = RPP
-								}
-							}
-						}
-						every_state = {
-							limit = {
-								is_portuguese_state = yes
-								is_owned_by = ROOT
-							}
-							GNS = {
-								add_state_core = PREV
-								transfer_state = PREV
-							}
-						}
-						FZL = {
-							country_event = {
-								id = iberiawars.35
-							}
-						}
-					}
-					else_if = {
-						limit = {
-							FROM = { tag = SPR }
-							ROOT = {
-								OR = {
-									tag = POR
-									tag = GNS
-									tag = PPR
-									tag = RPP
-								}
-							}
-						}
-						every_state = {
-							limit = {
-								is_portuguese_state = yes
-								is_owned_by = ROOT
-							}
-							GNS = {
-								add_state_core = PREV
-								transfer_state = PREV
-							}
-						}
-						SPR = {
-							country_event = {
-								id = iberiawars.34
-							}
-						}
-					}
-					else_if = {
-						limit = {
-							FROM = { tag = PPR }
-							ROOT = {
-								OR = {
-									tag = IBR
-									tag = FSR
-									tag = FZL
-									tag = SPR
-									tag = SPA
-									tag = SPS
-								}
-							}
-						}
-						every_state = {
-							limit = {
-								is_owned_by = ROOT
-								is_spanish_state = yes
-							}
-							SPR = {
-								add_state_core = PREV
-								transfer_state = PREV
-							}
-						}
-						PPR = {
-							country_event = {
-								id = iberiawars.37
-							}
-						}
-					}
-					else_if = {
-						limit = {
-							FROM = { tag = RPP }
-							ROOT = {
-								OR = {
-									tag = IBR
-									tag = FSR
-									tag = FZL
-									tag = SPR
-									tag = SPA
-									tag = SPS
-								}
-							}
-						}
-						every_state = {
-							limit = {
-								is_owned_by = ROOT
-								is_spanish_state = yes
-							}
-							SPR = {
-								add_state_core = PREV
-								transfer_state = PREV
-							}
-						}
-						RPP = {
-							country_event = {
-								id = iberiawars.36
-							}
-						}
-					}
-					else_if = {
-						limit = {
-							FROM = { tag = POR }
-							ROOT = {
-								OR = {
-									tag = IBR
-									tag = FSR
-									tag = FZL
-									tag = SPR
-									tag = SPA
-									tag = SPS
-								}
-							}
-						}
-						every_state = {
-							limit = {
-								is_owned_by = ROOT
-								is_spanish_state = yes
-							}
-							SPR = {
-								add_state_core = PREV
-								transfer_state = PREV
-							}
-						}
-						POR = {
-							country_event = {
-								id = iberiawars.36
-							}
-						}
-					}
-					every_country = {
-						limit = {
-							is_iberian_nation = yes
-							is_puppet = no
-							NOT = {
-								OR = {
-									has_cosmetic_tag = SPR_kingdom
-									has_cosmetic_tag = IBR_WARS
-									has_cosmetic_tag = SPR_military
-									has_cosmetic_tag = TBA_GNS_district
-									has_cosmetic_tag = CTL_GNS_district
-									has_cosmetic_tag = SPS_GNS_district
-									has_cosmetic_tag = RIF_postwar
-									has_cosmetic_tag = TRZ_iberian_war
-									has_cosmetic_tag = PPR_unified
-									has_cosmetic_tag = SPR_puppet
-								}
-							}
-						}
-						drop_cosmetic_tag = yes
-					}
+					log = "[GetDateText]: [Root.GetName]: IBERIAN WARS PEACE TRIGGERED"
 					set_global_flag = skip_default_capitulation
 					IBRWarsCheckPeace = yes
 				}
-				#Military Revolt wins in Iberia
-				else_if = {
+				else_if = {#Germany Conquered PPR
 					limit = {
-						FROM = {
-							tag = SPA
-						}
-						ROOT = {
-							tag = IBR
-						}
-					}
-					SPA = {
-						country_event = {
-							id = IBR.818
+						AND = {
+							OR = {
+								FROM = { tag = GER }
+								FROM = { is_in_faction_with = GER }
+							}
+							ROOT = { tag = PPR }
 						}
 					}
-					set_global_flag = skip_default_capitulation
+					log = "[GetDateText]: [Root.GetName]: Germany Conquered PPR"
+					PPR = {
+						every_enemy_country = { white_peace = PPR }
+						white_peace = GER
+					}
+					GER = { country_event = { id = iberiawarspeace.22 } }
 				}
-				#Iberia beat Military Revolt
 
 				#Finland or Onega beats a Russian country
 				else_if = {
@@ -10497,7 +11582,7 @@ on_actions = {
 					WSB_ONG_west_siberia_collapse = yes
 					set_global_flag = skip_default_capitulation
 				}
-				
+
 				#Finland
 				else_if = {
 					limit = {
@@ -10513,6 +11598,9 @@ on_actions = {
 						transfer_state = 1359
 						add_state_core = 1887
 						transfer_state = 1887
+					}
+					FIN = {
+						remove_ideas = FIN_An_Unsatisfactory_Answer
 					}
 					#SWE_insurrection_FinlandLoses = yes
 					set_global_flag = skip_default_capitulation
@@ -10546,6 +11634,9 @@ on_actions = {
 							add_core_of = WSR
 							remove_core_of = MPR
 						}
+					}
+					FIN = {
+						remove_ideas = FIN_An_Unsatisfactory_Answer
 					}
 					#SWE_insurrection_FinlandLoses = yes
 					set_global_flag = skip_default_capitulation
@@ -10832,7 +11923,7 @@ on_actions = {
 							# 	limit = {
 							# 		has_game_rule = {
 							# 			rule = BOL_STC_WAR_OUTCOME
-							# 			option =  BOL_STC_WAR_OUTCOME_STC
+							# 			option = BOL_STC_WAR_OUTCOME_STC
 							# 		}
 							# 	}
 							# 	remove_war_buff = yes
@@ -10885,12 +11976,10 @@ on_actions = {
 							}
 							econ_join_sphere_BRA = yes
 							BOL = {
-								set_variable = { SA_cold_war_map_x = 114 }
-								set_variable = { SA_cold_war_map_y = 168 }
-
 								set_variable = { TNO_SA_influence^global.UNALIGNED = 45 }
 								set_variable = { TNO_SA_influence^global.BRAZIL = 65 }
 								set_variable = { TNO_SA_influence^global.ARGENTINA = 0 }
+								SA_set_alignment = yes
 							}
 							if = {
 								limit = { BRA = { is_in_faction_with = USA } }
@@ -10917,7 +12006,7 @@ on_actions = {
 									country_leader = {
 										desc = "POLITICS_CAMACHO_PARADA"
 										ideology = paternalism_national_conservatism_subtype
-										traits = {  }
+										traits = { }
 										expire = "1999.1.1.1"
 										id = -1
 									}
@@ -10947,7 +12036,7 @@ on_actions = {
 							# 	limit = {
 							# 		has_game_rule = {
 							# 			rule = BOL_STC_WAR_OUTCOME
-							# 			option =  BOL_STC_WAR_OUTCOME_STC
+							# 			option = BOL_STC_WAR_OUTCOME_STC
 							# 		}
 							# 	}
 							# 	remove_war_buff = yes
@@ -10983,7 +12072,10 @@ on_actions = {
 					limit = {
 						has_global_flag = PAR_FULNA_victory
 						FROM = {
-							tag = BOL
+							OR = {
+								tag = BOL
+								tag = BRA
+							}
 						}
 						ROOT = {
 							tag = STC
@@ -10995,67 +12087,27 @@ on_actions = {
 						white_peace = ROOT
 					}
 
-					if = {
-						limit = {
-							STC = {
-								has_country_leader = {
-									character = STC_Hugo_Banzer
-									ruling_only = yes
-								}
-							}
+					BOL = {
+						annex_country = { target = STC }
+						annex_country = { target = PAC }
+
+						every_owned_state = {
+							#remove_core_of = STC
+							remove_core_of = PAC
 						}
-						STC = {
-							load_oob = STC_reinforcement
-							set_cosmetic_tag = STC_oriental_republic
-							set_variable = { SA_cold_war_map_x = 132 }
-							set_variable = { SA_cold_war_map_y = 186 }
-							retire_character = STC_Hugo_Banzer
-							promote_character = {
-								character = STC_Carmelo_Ortiz_Taborga
-								ideology = paternalism_right_wing_populism_subtype
-							}
-							set_politics = {
-								ruling_party = paternalism
-							}
-							add_ideas = {
-								STC_oriental_racist_party
-								STC_pozo_cano_ghost
-							}
-							add_popularity = {
-								ideology = paternalism
-								popularity = 0.25
-							}
-							econ_join_sphere_ARG = yes
+						set_temp_variable = { gdp_growth_temp = 2 }
+						econ_gdp_growth_change = yes
+						swap_ideas = {
+							remove_idea = BOL_patchwork_country
+							add_idea = BOL_A_New_Bolivian_Nationalism_STC
 						}
 					}
-					else = {
-						BOL = {
-							annex_country = { target = STC }
-							annex_country = { target = PAC }
-							
-							every_owned_state = {
-								remove_core_of = STC
-								remove_core_of = PAC
-							}
-							set_temp_variable = { gdp_growth_temp = 2 }
-							econ_gdp_growth_change = yes
-						# if = {
-						# 	limit = {
-						# 		has_game_rule = {
-						# 			rule = BOL_STC_WAR_OUTCOME
-						# 			option =  BOL_STC_WAR_OUTCOME_BOL
-						# 		}
-						# 	}
-						# 	remove_war_buff = yes
-						# }
-						}
-	
-						every_country = {
-							limit = { is_ai = no }
-							news_event = {
-								id = LATAM_news.178
-								days = 1
-							}
+
+					every_country = {
+						limit = { is_ai = no }
+						news_event = {
+							id = LATAM_news.178
+							days = 1
 						}
 					}
 
@@ -11114,7 +12166,7 @@ on_actions = {
 									}
 								}
 							}
-							
+
 							TNO_PPI_DOM_victory_balaguer = yes
 						}
 						else_if = { # Ramfis Wins
@@ -11134,12 +12186,20 @@ on_actions = {
 								FROM = { original_tag = DOM }
 							}
 							TNO_PPI_DOM_victory_trujillo = yes
+							ELS = {
+								add_ideas = ELS_Westward_Wind
+								remove_ideas = ELS_House_Divided
+							}
 						}
 						else_if = { # Legion Wins -> Ceasefire
 							limit = {
 								FROM = { original_tag = CAL }
 							}
 							TNO_PPI_DOM_ceasefire = yes
+							ELS = {
+								add_ideas = ELS_Westward_Wind
+								remove_ideas = ELS_House_Divided
+							}
 						}
 					}
 					set_global_flag = skip_default_capitulation
@@ -11220,15 +12280,19 @@ on_actions = {
 							clr_global_flag = TNO_HIS_HAI_uprising_ongoing
 						}
 					}
-					if = { # Trujillo Wins
+					if = { # Trujillo/DR Wins
 						limit = {
 							FROM = { original_tag = DOM }
 							ROOT = { original_tag = HAI }
 							NOT = { has_global_flag = HIS_trujillo_blitz_OFN_intevention }
 						}
-						
+
 						TNO_HIS_blitz_clear_proxy = yes
-						TNO_HIS_blitz_victory_trujillo = yes
+						if = {
+							limit = { DOM = { has_government = fascism } }
+							TNO_HIS_blitz_victory_trujillo = yes
+						}
+						else = { HAI = { country_event = { id = HIS_HAI.27 } } }
 						if = {
 							limit = { HAI = { has_country_flag = HCW_awaiting_victory_HAI } }
 							HAI = { clr_country_flag = HCW_awaiting_victory_HAI } # cleaning up the flag
@@ -11244,7 +12308,7 @@ on_actions = {
 							ROOT = { original_tag = HAI }
 							has_global_flag = HIS_trujillo_blitz_OFN_intevention
 						}
-						
+
 						TNO_HIS_blitz_clear_proxy = yes
 						TNO_HIS_blitz_ceasefire_trujillo = yes
 						if = {
@@ -11309,7 +12373,7 @@ on_actions = {
 					}
 					set_global_flag = SATW_Argentina_Victory
 					TNO_SATW_end_war = yes
-					
+
 					set_global_flag = skip_default_capitulation
 				}
 
@@ -11340,7 +12404,7 @@ on_actions = {
 			}
 			else = {
 				log = "war_goes_on"
-				
+
 				if = { #####Indonesia shit may redo later
 					limit = {
 						OR = {
@@ -12157,7 +13221,7 @@ on_actions = {
 						}
 					}
 				}
-				
+
 				#Western Insurrection
 				else_if = { #China-aligned warlord falls
 					limit = {
@@ -12256,10 +13320,12 @@ on_actions = {
 						load_oob = "NCC_GAW"
 						econ_join_sphere_JAP = yes
 					}
-					every_other_country = {
-						limit = { is_in_faction_with = YUN }
-						NCC = { set_embargo_PREV = yes }
-						NCC = { PREV = { set_embargo_PREV = yes } }
+					
+					NCC = {
+						every_country = {
+							limit = { is_in_faction_with = YUN }
+							set_embargo_PREV_mutual = yes
+						}
 					}
 
 					YUN = {
@@ -12354,40 +13420,7 @@ on_actions = {
 						YUN = {
 							delete_unit = {}
 							YUN_NPA_fails_effects = yes
-							set_party_name = {
-								ideology = despotism
-								name = YUN_despotism_XRA_party
-								long_name = YUN_despotism_XRA_party_long
-							}
-							YUN_zhou_longxiang = {
-								add_country_leader_role = {
-									country_leader = {
-										desc = "POLITICS_ZHOU_LONGXIANG_DESC"
-										ideology = despotism_interim_government_subtype
-										traits = {  }
-										expire = "1999.1.1.1"
-										id = -1
-									}
-									promote_leader = yes
-								}
-							}
-							set_politics = {
-								ruling_party = despotism
-								last_election = "1933.3.5"
-								election_frequency = 48
-								elections_allowed = no
-							}
-							set_popularities = {
-								progressivism = 0
-								liberalism = 0
-								despotism = 54
-								conservatism = 4
-								paternalism = 38
-								fascism = 0
-								national_socialism = 0
-								ultranationalism = 4
-							}
-							set_cosmetic_tag = YUN_southwest_united_reconstruction
+							YUN_southwest_reconstruction_effects = yes
 							if = {
 								limit = { has_global_flag = WI_NPA_takes_Sichuan }
 								country_event = { id = yun_zhengtong.15 days = 3 }
@@ -12581,7 +13614,7 @@ on_actions = {
 					clr_global_flag = YUN_WI_thx_paradox
 					set_global_flag = skip_default_capitulation
 				}
-				
+
 				else_if = {
 					limit = {
 						has_global_flag = anti_heydrich_pact_formed
@@ -12616,10 +13649,10 @@ on_actions = {
 					set_global_flag = skip_default_capitulation
 				}
 
-				## Bolivia-Santa Cruz (FULNA Victory) ##
+				## Bolivia-Santa Cruz (FULNA Victory) ## - why do we have 2 of these? going to use this as a failsafe
 				else_if = { # Santa Cruz victory
 					limit = {
-						has_global_flag = PAR_FULNA_victory
+						NOT = { has_global_flag = PAR_FULNA_victory }
 						FROM = {
 							OR = {
 								tag = STC
@@ -12636,126 +13669,16 @@ on_actions = {
 						white_peace = ROOT
 					}
 
-					if = {
-						limit = {
-							STC = { has_country_flag = STC_banzer }
-						}
-						STC = {
-							STC_Hugo_Banzer = { set_nationality = BOL }
-							# if = {
-							# 	limit = {
-							# 		has_game_rule = {
-							# 			rule = BOL_STC_WAR_OUTCOME
-							# 			option =  BOL_STC_WAR_OUTCOME_STC
-							# 		}
-							# 	}
-							# 	remove_war_buff = yes
-							# }
-						}
-						BOL = {
-							annex_country = { target = STC }
-							remove_from_array = { global.TNO_SA_cold_war_nations = STC }
-							set_cosmetic_tag = STC_banzer_peace
-
-							remove_ideas = {
-								BOL_patchwork_country
-								BOL_century_of_humiliation
-								BOL_boiling_point
-							}
-
-							retire_character = BOL_Armando_Alba_Zambrana
-							promote_character = STC_Hugo_Banzer
-							set_politics = { ruling_party = despotism }
-							set_popularities = {
-								despotism = 44
-								paternalism = 36
-								liberalism = 20
-							}
-
-							set_party_name = {
-								ideology = despotism
-								name = BOL_despotism_party_banzer
-								long_name = BOL_despotism_party_banzer_long
-							}
-							set_party_name = {
-								ideology = paternalism
-								name = BOL_paternalism_party_banzer
-								long_name = BOL_paternalism_party_banzer_long
-							}
-							set_party_name = {
-								ideology = liberalism
-								name = BOL_liberalism_party_banzer
-								long_name = BOL_liberalism_party_banzer_long
-							}
-						}
+					STC = {
+						transfer_state = 487
+						transfer_state = 542
+						transfer_state = 1677
 					}
-					else = {
-						every_country = {
-							limit = { is_ai = no }
-							news_event = {
-								id = LATAM_news.179
-								days = 1
-							}
-						}
-						STC = {
-							retire_character = STC_Carmelo_Ortiz_Taborga
-							STC_Jose_Luis_Camacho_Parada = {
-								add_country_leader_role = {
-									country_leader = {
-										desc = "POLITICS_CAMACHO_PARADA"
-										ideology = paternalism_national_conservatism_subtype
-										traits = {  }
-										expire = "1999.1.1.1"
-										id = -1
-									}
-									promote_leader = yes
-								}
-							}
-							transfer_state = 487
-							transfer_state = 1677
-							add_state_core = 487
-							add_state_core = 1677
-							add_popularity = {
-								ideology = paternalism
-								popularity = 0.15
-							}
-							every_owned_state = {
-								remove_core_of = BOL
-								remove_core_of = PAR
-							}
-							diplomatic_relation = {
-								country = PAC
-								relation = military_access
-								active = no
-							}
-							# if = {
-							# 	limit = {
-							# 		has_game_rule = {
-							# 			rule = BOL_STC_WAR_OUTCOME
-							# 			option =  BOL_STC_WAR_OUTCOME_STC
-							# 		}
-							# 	}
-							# 	remove_war_buff = yes
-							# }
-						}
-						PAC = {
-							diplomatic_relation = {
-								country = STC
-								relation = military_access
-								active = no
-							}
-							country_event = {
-								id = PAR_bolivia.4
-								days = 3
-							}
-						}
-					}
-
 					set_global_flag = skip_default_capitulation
 				}
 				else_if = { # Bolivia victory
 					limit = {
-						has_global_flag = PAR_FULNA_victory
+						NOT = { has_global_flag = PAR_FULNA_victory }
 						FROM = {
 							tag = BOL
 						}
@@ -12773,18 +13696,22 @@ on_actions = {
 						annex_country = { target = STC }
 						remove_from_array = { global.TNO_SA_cold_war_nations = STC }
 						annex_country = { target = PAC }
-						
+
 						every_owned_state = {
-							remove_core_of = STC
+							#remove_core_of = STC
 							remove_core_of = PAC
 						}
 						set_temp_variable = { gdp_growth_temp = 2 }
 						econ_gdp_growth_change = yes
+						swap_ideas = {
+							remove_idea = BOL_patchwork_country
+							add_idea = BOL_A_New_Bolivian_Nationalism_Chaco
+						}
 						# if = {
 						# 	limit = {
 						# 		has_game_rule = {
 						# 			rule = BOL_STC_WAR_OUTCOME
-						# 			option =  BOL_STC_WAR_OUTCOME_BOL
+						# 			option = BOL_STC_WAR_OUTCOME_BOL
 						# 		}
 						# 	}
 						# 	remove_war_buff = yes
@@ -12792,7 +13719,10 @@ on_actions = {
 					}
 
 					every_country = {
-						limit = { is_ai = no }
+						limit = {
+							is_ai = no
+							HasAmericasInterest = yes
+						}
 						news_event = {
 							id = LATAM_news.178
 							days = 1
@@ -12891,6 +13821,25 @@ on_actions = {
 	on_declare_war = {
 		effect = {
 			log="[GetDateText]: [Root.GetName] declared war on [From.GetName]"
+		}
+	}
+
+	on_annex = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						tag = ONG
+					}
+				}
+				FIN = {
+					remove_ideas = {
+						FIN_Supporting_Onega_1
+						FIN_Supporting_Onega_2
+						FIN_Supporting_Onega_3
+					}
+				}
+			}
 		}
 	}
 }
