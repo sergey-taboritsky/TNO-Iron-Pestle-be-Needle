@@ -1,0 +1,34 @@
+﻿l_simp_chinese:
+## Countries ##
+ GTL: "哥伦打洛米纳哈萨自治邦"
+ GTL_DEF: "哥伦打洛米纳哈萨自治邦"
+ GTL_ADJ: "哥伦打洛"
+ BON: "博讷王国"
+ BON_DEF: "博讷王国"
+ BON_ADJ: "博讷"
+ LUW: "卢雾王国"
+ LUW_DEF: "卢雾王国"
+ LUW_ADJ: "卢雾"
+ TIM: "蒂汶岛联合管制区"
+ TIM_DEF: "同盟国联合蒂汶岛管制区"
+ TIM_ADJ: "蒂汶"
+ BTO: "布通王国"
+ BTO_DEF: "布通王国"
+ BTO_ADJ: "布通"
+ ACH: "亚齐苏丹国"
+ ACH_DEF: "亚齐苏丹国"
+ ACH_ADJ: "亚齐"
+ MLK: "安汶地方管制政府"
+ MLK_DEF: ""
+ MLK_ADJ: ""
+## States and VPs ##
+## Cosmetic Tags ##
+## Characters ##
+## Parties ##
+## Ideas ##
+## Dynamic Modifiers ##
+## National Focus ##
+## Events ##
+## Decisions ##
+## GUI ##
+## Flags ##
