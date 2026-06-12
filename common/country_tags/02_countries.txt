@@ -1,0 +1,10 @@
+# /// IPN submod /// #
+PKM = "countries/Asia.txt"						# Communist Malaya
+MCN = "countries/Asia.txt"						# Malaysian Chinese
+GTL = "countries/Asia.txt"						# Gorontalo
+BON = "countries/Asia.txt"						# Bone
+LUW = "countries/Asia.txt"						# Luwu
+TIM = "countries/Asia.txt"						# Timor
+BTO = "countries/Asia.txt"						# Buton
+ACH = "countries/Asia.txt"						# Aceh
+MLK = "countries/Asia.txt"						# Maluku

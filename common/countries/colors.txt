@@ -2245,12 +2245,40 @@ CME = {
 	color_ui = rgb { 0 0 0 }
 }
 PKM = {
-	color = rgb { 190 28 46 }
-	color_ui = rgb { 190 28 46 }
+    color = rgb { 190 28 46 }
+    color_ui = rgb { 190 28 46 }
 }
 MCN = {
-	color = rgb { 190 28 46 }
-	color_ui = rgb { 190 28 46 }
+    color = rgb { 190 28 46 }
+    color_ui = rgb { 190 28 46 }
+}
+TIM = {
+    color = rgb { 102 75 46 }
+    color_ui = rgb { 102 75 46 }
+}
+MLK = {
+    color = rgb { 75 190 20 }
+    color_ui = rgb { 75 190 20 }
+}
+GTL = {
+    color = rgb { 24 95 201 }
+    color_ui = rgb { 24 95 201 }
+}
+BON = {
+    color = rgb { 218 165 32 }
+    color_ui = rgb { 240 200 60 }
+}
+LUW = {
+    color = rgb { 232 222 202 }
+    color_ui = rgb { 252 245 232 }
+}
+BTO = {
+    color = rgb { 30 80 150 }
+    color_ui = rgb { 60 130 200 }
+}
+ACH = {
+    color = rgb { 175 22 22 }
+    color_ui = rgb { 215 55 55 }
 }
 ZZZ = {
 	color = rgb { 0 0 0 }

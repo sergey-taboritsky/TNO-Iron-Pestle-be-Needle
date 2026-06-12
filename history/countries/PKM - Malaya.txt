@@ -1,9 +1,6 @@
 capital = 2525
 
 # Vacant
-recruit_character = MLY_Generic_Vacant
-fill_empty_minister_nochecks = yes # Please remove if you're adding ministers.
-
 set_country_flag = tno_playable_country
 set_variable = {
 	PKM_gensec_portrait_frame_var = 1

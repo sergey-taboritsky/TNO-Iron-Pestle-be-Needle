@@ -166,18 +166,8 @@ set_technology = {
 }
 
 add_ideas = {
-	#Cabinet
-	MLY_Yeung_Kwo_hog
-	MLY_Ahmad_Boestamam_eco
-	MLY_Li_An_tung_for
-	MLY_Lee_Meng_sec
-	MLY_Rashid_Maidin_army_chief
 
 	#Country
-	MLY_Dismal_Infrastructure
-	MLY_The_UMAJF
-	MLY_driven_to_the_countryside
-	MLY_operation_nassau
 
 	#Political
 	tno_political_parties_one_party_state

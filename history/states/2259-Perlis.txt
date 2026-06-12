@@ -10,7 +10,7 @@ state = {
 		add_core_of = PKM
 		add_core_of = THA
 		buildings = {
-			infrastructure = 4
+			infrastructure = 2
 		}
 		set_state_flag = GDP_regions_thai_malaya
 	}
@@ -20,6 +20,6 @@ state = {
 	}
 	manpower = 102726
 	buildings_max_level_factor = 1.000
-	state_category = pastoral
+	state_category = wasteland
 	local_supplies = 0.000
 }
