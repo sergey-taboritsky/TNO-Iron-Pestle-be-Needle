@@ -1235,10 +1235,12 @@ defined_text = {
 		trigger = { check_variable = { china_alignment_leader = NPA } }
 		localization_key = china_faction_aligment_name_npa
 	}
+	# === CPC MOD START ===
 	text = {
-		trigger = { check_variable = { china_alignment_leader = SIK } }
-		localization_key = china_faction_alignment_name_sinkiang
+		trigger = { check_variable = { china_alignment_leader = CPC } }
+		localization_key = china_faction_alignment_name_communist
 	}
+	# === CPC MOD END ===
 	text = {
 		localization_key = china_faction_alignment_name_default
 	}
@@ -1398,10 +1400,12 @@ defined_text = {
 		trigger = { check_variable = { china_alignment_leader = CHN } }
 		localization_key = "GFX_china_independent_CHN"
 	}
+	# === CPC MOD START ===
 	text = {
-		trigger = { check_variable = { china_alignment_leader = SIK } }
-		localization_key = "GFX_china_sinkiang"
+		trigger = { check_variable = { china_alignment_leader = CPC } }
+		localization_key = "GFX_china_communist"
 	}
+	# === CPC MOD END ===
 	# Independent Alignment
 	text = {
 		localization_key = "GFX_china_independent"
@@ -1418,10 +1422,12 @@ defined_text = {
 		trigger = { check_variable = { china_alignment_leader = event_target:system } }
 		localization_key = china_faction_tenets_title_independent
 	}
+	# === CPC MOD START ===
 	text = {
-		trigger = { check_variable = { china_alignment_leader = SIK } }
-		localization_key = china_faction_tenets_title_sinkiang
+		trigger = { check_variable = { china_alignment_leader = CPC } }
+		localization_key = china_faction_tenets_title_communist
 	}
+	# === CPC MOD END ===
 	text = {
 		localization_key = china_faction_tenets_title_default
 	}
@@ -1465,10 +1471,12 @@ defined_text = {
 		trigger = { check_variable = { china_alignment_leader = RGC } }
 		localization_key = china_faction_tenets_geacps_desc
 	}
+	# === CPC MOD START ===
 	text = {
-		trigger = { check_variable = { china_alignment_leader = SIK } }
-		localization_key = china_faction_tenets_sinkiang_desc
+		trigger = { check_variable = { china_alignment_leader = CPC } }
+		localization_key = china_faction_tenets_communist_desc
 	}
+	# === CPC MOD END ===
 	text = {
 		localization_key = china_faction_tenets_independent_desc
 	}

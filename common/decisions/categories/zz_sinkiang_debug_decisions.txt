@@ -1,0 +1,4 @@
+sinkiang_debug_category = {
+	icon = GFX_china_sinkiang
+	priority = 10000
+}

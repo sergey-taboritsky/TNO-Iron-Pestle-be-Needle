@@ -4231,10 +4231,6 @@ china_set_character_alignment_unaligned = {
 	clear_variable = china_alignment
 }
 
-china_set_character_alignment_sinkiang = {
-	event_target:system = { china_alignment_sinkiang = { set_variable = { PREV.PREV.china_alignment = THIS } } }
-}
-
 CHN_build_faction_alignment_array = {
 	add_to_array = { PREV.china_alignment_leaders = THIS }
 	set_temp_variable = { aligned_@THIS = 1 }
@@ -4313,10 +4309,12 @@ CHN_calculate_china_alignment_gui_effect = {
 		}
 	}
 
-		if = {
-		limit = { country_exists = SIK } #Sinkiang (Xinjiang) - led by Sikang
-		SIK = { CHN_build_faction_alignment_array = yes }
+		# === CPC MOD START ===
+	if = {
+		limit = { country_exists = CPC } #Sinkiang (Xinjiang) - led by Sikang
+		CPC = { CHN_build_faction_alignment_array = yes }
 	}
+		# === CPC MOD END ===
 
 ### Build non-aligned tag array ###
 	for_each_scope_loop = {
@@ -4656,4 +4654,15 @@ china_create_marine_template = {
 			}
 		}
 	}
+}
+
+
+# ============ CPC MOD (added, standalone effect) ============
+CPC_set_leader_effect = {
+	#Anguojun/Fengtian
+	custom_effect_tooltip = CPC_set_leader_tt
+	save_global_event_target_as = CPC_leader
+}
+china_set_character_alignment_communist = {
+	event_target:system = { china_alignment_communist = { set_variable = { PREV.PREV.china_alignment = THIS } } }
 }

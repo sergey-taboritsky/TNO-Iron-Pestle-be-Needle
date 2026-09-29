@@ -1,6 +1,6 @@
 spriteTypes = {
 	spriteType = {
-		name = "GFX_china_sinkiang"
-		texturefile = "gfx/interface/gui/china/china_sinkiang.png"
+		name = "GFX_china_communist"
+		texturefile = "gfx/interface/gui/china/china_communist.png"
 	}
 }
