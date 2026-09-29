@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_china_sinkiang"
+		texturefile = "gfx/interface/gui/china/china_sinkiang.png"
+	}
+}

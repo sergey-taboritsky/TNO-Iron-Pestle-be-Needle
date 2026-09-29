@@ -1,0 +1,1801 @@
+##############
+### States ###
+##############
+
+defined_text = {
+	name = ChinaGetStateProvinceFullTitle
+	text = {
+		localization_key = "[THIS.ChinaGetStateProvinceTitle] [THIS.ChinaGetStateRegionType]"
+	}
+}
+
+defined_text = {
+	name = ChinaGetStateProvinceTitle
+	text = {
+		trigger = { has_variable = chinese_province_state }
+		localization_key = "chinese_province_state_[?chinese_province_state.GetID]"
+	}
+	text = {
+		localization_key = "BUG - STATE TARGETED IS NOT PART OF CHINA"
+	}
+}
+
+defined_text = {
+	name = ChinaGetStateRegionType
+	text = {
+		trigger = {
+			has_dynamic_modifier = {
+				modifier = CHN_autonomous_region_modifier
+				scope = THIS
+			}
+		}
+		localization_key = CHN_state_is_autonomous_region
+	}
+	text = {
+		localization_key = CHN_state_is_province
+	}
+}
+
+##############
+### Events ###
+##############
+
+defined_text = {
+	name = GFX_news_event_SHD_fall_event_picture
+	text = {
+		trigger = { SHD = { SHD_is_led_by_tianran = yes } }
+		localization_key = GFX_news_event_SHD_fall_tianran
+	}
+	text = {
+		trigger = { SHD = { SHD_is_led_by_zongchang = yes } }
+		localization_key = GFX_news_event_SHD_fall_zongchang
+	}
+	text = {
+		trigger = { SHD = { SHD_is_led_by_yingguang = yes } }
+		localization_key = GFX_news_event_SHD_jinan
+	}
+}
+
+###################
+### Annexations ###
+###################
+
+defined_text = {
+	name = china_annexation_release_event_option
+	text = {
+		trigger = {
+			event_target:china_release_target = { tag = CHI }
+			has_government = syndicalist
+		}
+		localization_key = release_china_csp
+	}
+	text = {
+		trigger = {
+			event_target:china_release_target = { tag = CHI }
+		}
+		localization_key = release_china_lkmt
+	}
+	text = {
+		trigger = {
+			event_target:china_release_target = { tag = FNG }
+		}
+		localization_key = release_china_rngroc
+	}
+	text = {
+		trigger = {
+			event_target:china_release_target = { tag = LEP }
+		}
+		localization_key = release_china_lep
+	}
+	text = {
+		trigger = {
+			event_target:china_release_target = { tag = QIE }
+			original_tag = RUS
+			OR = {
+				is_monarchy = yes
+				has_country_leader = { character = RUS_pyotr_wrangel }
+			}
+		}
+		localization_key = release_china_qing_empire
+	}
+	text = {
+		trigger = {
+			event_target:china_release_target = { tag = QIE }
+		}
+		localization_key = release_china_zhili
+	}
+	text = {
+		trigger = {
+			event_target:china_release_target = { tag = GXC }
+			has_authoritarian_government = yes
+		}
+		localization_key = release_china_rkmt
+	}
+	text = {
+		localization_key = release_china_federalist
+	}
+}
+
+defined_text = {
+	name = china_annexation_release_event_option_take_coast
+	text = {
+		trigger = {
+			FNG_JAP_hostile = yes
+			event_target:china_release_target = { tag = FNG }
+		}
+		localization_key = release_china_take_coastline_rngroc
+	}
+	text = {
+		localization_key = release_china_take_coastline_fengtian
+	}
+}
+
+##################
+### League War ###
+##################
+
+defined_text = {
+	name = GetLeagueWarMorale
+	text = {
+		trigger = {
+			check_variable = { china_league_war_morale > 90 }
+		}
+		localization_key = GetLeagueWarMorale90
+	}
+	text = {
+		trigger = {
+			check_variable = { china_league_war_morale > 80 }
+		}
+		localization_key = GetLeagueWarMorale80
+	}
+	text = {
+		trigger = {
+			check_variable = { china_league_war_morale > 70 }
+		}
+		localization_key = GetLeagueWarMorale70
+	}
+	text = {
+		trigger = {
+			check_variable = { china_league_war_morale > 60 }
+		}
+		localization_key = GetLeagueWarMorale60
+	}
+	text = {
+		trigger = {
+			check_variable = { china_league_war_morale > 50 }
+		}
+		localization_key = GetLeagueWarMorale50
+	}
+	text = {
+		trigger = {
+			check_variable = { china_league_war_morale > 40 }
+		}
+		localization_key = GetLeagueWarMorale40
+	}
+	text = {
+		trigger = {
+			check_variable = { china_league_war_morale > 30 }
+		}
+		localization_key = GetLeagueWarMorale30
+	}
+	text = {
+		trigger = {
+			check_variable = { china_league_war_morale > 20 }
+		}
+		localization_key = GetLeagueWarMorale20
+	}
+	text = {
+		trigger = {
+			check_variable = { china_league_war_morale > 10 }
+		}
+		localization_key = GetLeagueWarMorale10
+	}
+	text = {
+		localization_key = GetLeagueWarMorale0
+	}
+}
+
+defined_text = {
+	name = GetLeagueWarMoraleSHD
+	text = {
+		trigger = { SHD = { has_idea = league_collapse_SHD } }
+		localization_key = china_morale_shd
+	}
+	text = {
+		localization_key = china_morale_ded
+	}
+}
+defined_text = {
+	name = GetLeagueWarMoraleANQ
+	text = {
+		trigger = { ANQ = { has_idea = league_collapse_ANQ } }
+		localization_key = china_morale_anq
+	}
+	text = {
+		localization_key = china_morale_ded
+	}
+}
+defined_text = {
+	name = GetLeagueWarMoraleLEP
+	text = {
+		trigger = { LEP = { has_idea = league_collapse_LEP } }
+		localization_key = china_morale_lep
+	}
+	text = {
+		localization_key = china_morale_ded
+	}
+}
+defined_text = {
+	name = GetLeagueWarMoraleCHI
+	text = {
+		trigger = { CHI = { has_idea = league_collapse_CHI } }
+		localization_key = china_morale_chi
+	}
+	text = {
+		localization_key = china_morale_ded
+	}
+}
+
+###################
+### Governments ###
+###################
+
+defined_text = {
+	name = china_declare_government_text
+	text = {
+		trigger = { original_tag = SHX }
+		localization_key = china_declare_government_SHX
+	}
+	text = {
+		trigger = {
+			original_tag = SHD
+			has_government = national_populist
+		}
+		localization_key = china_declare_government_SHD_national_populist
+	}
+	text = {
+		trigger = {
+			original_tag = SHD
+			has_government = authoritarian_democrat
+			china_is_aligned_with_manchu = yes
+		}
+		localization_key = china_declare_government_SHD_manchu_restoration
+	}
+	text = {
+		localization_key = china_declare_government_other
+	}
+}
+
+defined_text = {
+	name = china_declare_government_text_desc
+	text = {
+		trigger = { original_tag = SHX }
+		localization_key = china_declare_government_SHX_desc
+	}
+	text = {
+		trigger = {
+			original_tag = SHD
+			has_government = national_populist
+		}
+		localization_key = china_declare_government_SHD_national_populist_desc
+	}
+	text = {
+		trigger = {
+			original_tag = SHD
+			has_government = authoritarian_democrat
+			china_is_aligned_with_manchu = yes
+		}
+		localization_key = china_declare_government_SHD_manchu_restoration_desc
+	}
+	text = {
+		localization_key = china_declare_government_other_desc
+	}
+}
+
+##########################
+### Central Plains War ###
+##########################
+
+defined_text = {
+	name = china_subject_challenge_overlord_decision_desc_loc
+	text = {
+		trigger = {
+			overlord = { china_is_aligned_with_left_kmt = yes }
+			china_is_aligned_with_kmt = yes
+			china_alignment_chinese_southern_republican = no
+		}
+		localization_key = china_break_free_desc_lkmt
+	}
+	text = {
+		trigger = {
+			overlord = { china_is_aligned_with_right_kmt = yes }
+			china_is_aligned_with_kmt = yes
+			china_alignment_chinese_southern_republican = no
+		}
+		localization_key = china_break_free_desc_rkmt
+	}
+	text = {
+		trigger = {
+			overlord = { china_is_aligned_with_federalists = yes }
+			china_is_aligned_with_federalists = yes
+		}
+		localization_key = china_break_free_desc_fed
+	}
+	text = {
+		trigger = {
+			overlord = { china_is_aligned_with_zhili = yes }
+			china_is_aligned_with_zhili = yes
+		}
+		localization_key = china_break_free_desc_zhili
+	}
+	text = {
+		trigger = {
+			overlord = { china_is_aligned_with_fengtian = yes }
+			china_is_aligned_with_fengtian = yes
+		}
+		localization_key = china_break_free_desc_fengtian
+	}
+	text = {
+		trigger = { overlord = { china_is_aligned_with_manchu = yes } }
+		localization_key = china_break_free_desc_manchu
+	}
+	text = {
+		localization_key = china_break_free_desc_fallback
+	}
+}
+
+defined_text = {
+	name = china_integration_refusal_chance_tooltip
+	text = {
+		trigger = {
+			FROM = {
+				set_temp_variable = {
+					refusal_weight = {
+						value = mtth:china_integration_refusal_chance
+						divide = { #total weight
+							value = mtth:china_integration_refusal_chance
+							add = mtth:china_integration_acceptance_chance
+						}
+					}
+				}
+				check_variable = { refusal_weight > 0 }
+			}
+		}
+		localization_key = china_integration_refusal_chance_tooltip
+	}
+}
+
+defined_text = {
+	name = china_central_plains_war_title
+	text = {
+		trigger = { china_is_aligned_with_federalists = yes }
+		localization_key = china_central_plains_war_title_federalist
+	}
+	text = {
+		trigger = { china_is_aligned_with_left_kmt = yes }
+		localization_key = china_central_plains_war_title_lkmt
+	}
+	text = {
+		trigger = { china_is_aligned_with_right_kmt = yes }
+		localization_key = china_central_plains_war_title_rkmt
+	}
+	text = {
+		trigger = { china_is_aligned_with_zhili = yes }
+		localization_key = china_central_plains_war_title_zhili
+	}
+	text = {
+		trigger = { china_is_aligned_with_manchu = yes }
+		localization_key = china_central_plains_war_title_manchu
+	}
+	text = {
+		trigger = { china_is_aligned_with_fengtian = yes }
+		localization_key = china_central_plains_war_title_fengtian
+	}
+	text = {
+		localization_key = china_central_plains_war_title_generic
+	}
+}
+
+defined_text = {
+	name = china_central_plains_war_desc
+	text = {
+		trigger = { china_is_aligned_with_federalists = yes }
+		localization_key = china_central_plains_war_desc_federalist
+	}
+	text = {
+		trigger = { china_is_aligned_with_left_kmt = yes }
+		localization_key = china_central_plains_war_desc_lkmt
+	}
+	text = {
+		trigger = { china_is_aligned_with_right_kmt = yes }
+		localization_key = china_central_plains_war_desc_rkmt
+	}
+	text = {
+		trigger = { china_is_aligned_with_zhili = yes }
+		localization_key = china_central_plains_war_desc_zhili
+	}
+	text = {
+		trigger = { china_is_aligned_with_manchu = yes }
+		localization_key = china_central_plains_war_desc_manchu
+	}
+	text = {
+		trigger = { china_is_aligned_with_fengtian = yes }
+		localization_key = china_central_plains_war_desc_fengtian
+	}
+	text = {
+		localization_key = china_central_plains_war_desc_generic
+	}
+}
+
+defined_text = {
+	name = china_central_plains_war_option
+	text = {
+		trigger = { tag = FROM }
+		localization_key = china_central_plains_war_option_government_warlord
+	}
+	text = {
+		trigger = { is_subject_of = FROM }
+		localization_key = china_central_plains_war_option_puppet
+	}
+	text = {
+		trigger = { is_in_faction_with = FROM }
+		localization_key = china_central_plains_war_option_ally_generic
+	}
+	text = {
+		trigger = { has_country_flag = china_revolted_against_@FROM }
+		localization_key = china_central_plains_war_option_revolting_warlord
+	}
+	text = {
+		trigger = { original_tag = JAP }
+		localization_key = china_central_plains_war_option_japan
+	}
+	text = {
+		trigger = {
+			at_war_with_or_justifying_wargoal_against_FROM = yes
+			china_is_potential_government = yes
+		}
+		localization_key = china_central_plains_war_option_enemy_government
+	}
+	text = {
+		trigger = {
+			at_war_with_or_justifying_wargoal_against_FROM = yes
+			is_chinese_tag = yes
+		}
+		localization_key = china_central_plains_war_option_enemy_warlord
+	}
+	text = {
+		trigger = { at_war_with_or_justifying_wargoal_against_FROM = yes }
+		localization_key = china_central_plains_war_option_enemy_generic
+	}
+	text = {
+		trigger = { china_is_potential_government = yes }
+		localization_key = china_central_plains_war_option_neutral_government
+	}
+	text = {
+		trigger = { is_chinese_tag = yes }
+		localization_key = china_central_plains_war_option_neutral_warlord
+	}
+	text = {
+		localization_key = china_central_plains_war_option_neutral
+	}
+}
+
+####################
+### United Front ###
+####################
+
+defined_text = {
+	name = china_united_front_desc
+	text = {
+		trigger = { tag = CUF }
+		localization_key = china_united_front_desc_front_leader
+	}
+	text = {
+		trigger = { CUF = { at_war_with_or_justifying_wargoal_against_ROOT = yes } }
+		localization_key = china_united_front_desc_enemy
+	}
+	text = {
+		trigger = { is_in_faction_with = CUF }
+		localization_key = china_united_front_desc_front_member
+	}
+	text = {
+		trigger = { is_chinese_tag = yes }
+		localization_key = china_united_front_desc_possible_front_member
+	}
+	text = {
+		localization_key = china_united_front_desc_neutral
+	}
+}
+
+defined_text = {
+	name = china_united_front_option
+	text = {
+		trigger = { tag = CUF }
+		localization_key = china_united_front_option_front_leader
+	}
+	text = {
+		trigger = { CUF = { at_war_with_or_justifying_wargoal_against_ROOT = yes } }
+		localization_key = china_united_front_option_enemy
+	}
+	text = {
+		trigger = { is_in_faction_with = CUF }
+		localization_key = china_united_front_option_front_member
+	}
+	text = {
+		trigger = { is_chinese_tag = yes }
+		localization_key = china_united_front_option_possible_front_member
+	}
+	text = {
+		localization_key = china_united_front_option_neutral
+	}
+}
+
+defined_text = {
+	name = china_enters_great_seas_war_desc
+	text = {
+		trigger = { tag = CUF }
+		localization_key = china_enters_great_seas_war_desc_front_leader
+	}
+	text = {
+		trigger = { CUF = { at_war_with_or_justifying_wargoal_against_ROOT = yes } }
+		localization_key = china_enters_great_seas_war_desc_enemy
+	}
+	text = {
+		trigger = { is_in_faction_with = CUF }
+		localization_key = china_enters_great_seas_war_desc_front_member
+	}
+	text = {
+		trigger = { is_chinese_tag = yes }
+		localization_key = china_enters_great_seas_war_desc_possible_front_member
+	}
+	text = {
+		localization_key = china_enters_great_seas_war_desc_neutral
+	}
+}
+
+##################################
+### Dealing with the Outskirts ###
+##################################
+
+defined_text = {
+	name = china_offers_available_paragraph
+	text = {
+		trigger = {
+			NOT = { has_event_target = refused_autonomy }
+			has_event_target = can_give_away_lands
+			NOT = { has_event_target = refused_lands }
+		}
+		localization_key = china_offers_available_paragraph_autonomy_lands
+	}
+	text = {
+		trigger = {
+			NOT = { has_event_target = refused_autonomy }
+			has_event_target = refused_lands
+		}
+		localization_key = china_offers_available_paragraph_autonomy_refused_lands
+	}
+	text = {
+		trigger = {
+			NOT = { has_event_target = refused_autonomy }
+			has_event_target = can_give_away_lands
+		}
+		localization_key = china_offers_available_paragraph_autonomy
+	}
+	text = {
+		trigger = {
+			has_event_target = can_give_away_lands
+			NOT = { has_event_target = refused_lands }
+		}
+		localization_key = china_offers_available_paragraph_lands
+	}
+}
+
+defined_text = {
+	name = china_seek_protection_paragraph
+	text = {
+		trigger = {
+			china_russia_can_protect_country = yes
+			china_india_can_protect_country = yes
+		}
+		localization_key = "[china_seek_protection_paragraph_russia_india]"
+	}
+	text = {
+		trigger = {
+			NOT = { has_event_target = refused_russia }
+			china_russia_can_protect_country = yes
+		}
+		localization_key = "[china_seek_protection_paragraph_russia]"
+	}
+	text = {
+		trigger = {
+			NOT = { has_event_target = refused_india }
+			china_india_can_protect_country = yes
+		}
+		localization_key = "[china_seek_protection_paragraph_india]"
+	}
+}
+
+defined_text = {
+	name = china_seek_protection_paragraph_russia_india
+	text = {
+		trigger = {
+			has_event_target = refused_russia
+			has_event_target = refused_india
+		}
+		localization_key = china_seek_protection_paragraph_refused_both
+	}
+	text = {
+		trigger = {
+			has_event_target = refused_russia
+			has_socialist_government = no
+			event_target:india = { has_socialist_government = yes }
+		}
+		localization_key = china_seek_protection_paragraph_refused_russia_socialist_india
+	}
+	text = {
+		trigger = {
+			has_event_target = refused_russia
+		}
+		localization_key = china_seek_protection_paragraph_refused_russia_default_india
+	}
+	text = {
+		trigger = {
+			has_event_target = refused_india
+			has_socialist_government = no
+			event_target:russia = { has_socialist_government = yes }
+		}
+		localization_key = china_seek_protection_paragraph_refused_india_socialist_russia
+	}
+	text = {
+		trigger = {
+			has_event_target = refused_india
+		}
+		localization_key = china_seek_protection_paragraph_refused_india_default_russia
+	}
+	text = {
+		trigger = {
+			has_socialist_government = no
+			event_target:russia = { has_socialist_government = yes }
+			event_target:india = { has_socialist_government = yes }
+		}
+		localization_key = china_seek_protection_paragraph_socialist_russia_socialist_india
+	}
+	text = {
+		trigger = {
+			has_socialist_government = no
+			event_target:russia = { has_socialist_government = no }
+			event_target:india = { has_socialist_government = yes }
+		}
+		localization_key = china_seek_protection_paragraph_default_russia_socialist_india
+	}
+	text = {
+		trigger = {
+			has_socialist_government = no
+			event_target:russia = { has_socialist_government = yes }
+			event_target:india = { has_socialist_government = no }
+		}
+		localization_key = china_seek_protection_paragraph_socialist_russia_default_india
+	}
+	text = {
+		localization_key = china_seek_protection_paragraph_default_both
+	}
+}
+
+defined_text = {
+	name = china_seek_protection_paragraph_russia
+	text = {
+		trigger = {
+			has_socialist_government = no
+			event_target:russia = { has_socialist_government = yes }
+		}
+		localization_key = china_seek_protection_paragraph_russia_socialist
+	}
+	text = {
+		localization_key = china_seek_protection_paragraph_russia_default
+	}
+}
+
+defined_text = {
+	name = china_seek_protection_paragraph_india
+	text = {
+		trigger = {
+			has_socialist_government = no
+			event_target:india = { has_socialist_government = yes }
+		}
+		localization_key = china_seek_protection_paragraph_india_socialist
+	}
+	text = {
+		localization_key = china_seek_protection_paragraph_india_default
+	}
+}
+
+###############################
+### National Reconstruction ###
+###############################
+
+defined_text = {
+	name = KMT_nationalise_nanjing_electrical_works_desc_scripted_loc
+	text = {
+		trigger = { china_is_aligned_with_right_kmt = yes }
+		localization_key = KMT_nationalise_nanjing_electrical_works_rkmt_desc_key
+	}
+	text = {
+		trigger = { china_is_aligned_with_left_kmt = yes }
+		localization_key = KMT_nationalise_nanjing_electrical_works_lkmt_desc_key
+	}
+}
+
+defined_text = {
+	name = KMT_renovate_shanghai_arsenal_desc_scripted_loc
+	text = {
+		trigger = { china_is_aligned_with_right_kmt = yes }
+		localization_key = KMT_renovate_shanghai_arsenal_rkmt_desc_key
+	}
+	text = {
+		trigger = { china_is_aligned_with_left_kmt = yes }
+		localization_key = KMT_renovate_shanghai_arsenal_lkmt_desc_key
+	}
+}
+
+defined_text = {
+	name = KMT_create_nez_in_shanghai_desc_scripted_loc
+	text = {
+		trigger = { china_is_aligned_with_right_kmt = yes }
+		localization_key = KMT_create_nez_in_shanghai_rkmt_desc_key
+	}
+	text = {
+		trigger = { china_is_aligned_with_left_kmt = yes }
+		localization_key = KMT_create_nez_in_shanghai_lkmt_desc_key
+	}
+}
+
+defined_text = {
+	name = KMT_nationalise_german_mines_zibo_desc_scripted_loc
+	text = {
+		trigger = { china_is_aligned_with_right_kmt = yes }
+		localization_key = KMT_nationalise_german_mines_zibo_rkmt_desc_key
+	}
+	text = {
+		trigger = { china_is_aligned_with_left_kmt = yes }
+		localization_key = KMT_nationalise_german_mines_zibo_lkmt_desc_key
+	}
+}
+
+defined_text = {
+	name = KMT_establish_the_yongli_chemical_plant_scripted_loc
+	text = {
+		trigger = { china_is_aligned_with_right_kmt = yes }
+		localization_key = KMT_establish_the_yongli_chemical_plant_rkmt_desc_key
+	}
+	text = {
+		trigger = { china_is_aligned_with_left_kmt = yes }
+		localization_key = KMT_establish_the_yongli_chemical_plant_lkmt_desc_key
+	}
+}
+
+defined_text = {
+	name = KMT_xiangtan_steel_work_scripted_loc
+	text = {
+		trigger = { china_is_aligned_with_right_kmt = yes }
+		localization_key = KMT_xiangtan_steel_work_rkmt_desc_key
+	}
+	text = {
+		trigger = { china_is_aligned_with_left_kmt = yes }
+		localization_key = KMT_xiangtan_steel_work_lkmt_desc_key
+	}
+}
+
+###########################
+### Arsenal Integration ###
+###########################
+
+defined_text = {
+	name = CHN_integrate_major_arsenal_scripted_loc
+	text = {
+		trigger = { FROM = { state = 716 } } #Liaoning
+		localization_key = CHN_integrate_major_arsenal_shenyang_key
+	}
+	text = {
+		trigger = { FROM = { state = 1072 } } #West Shanxi
+		localization_key = CHN_integrate_major_arsenal_taiyuan_key
+	}
+	text = {
+		trigger = { FROM = { state = 1059 } } #Kaifeng
+		localization_key = CHN_integrate_major_arsenal_gongxian_key
+	}
+	text = {
+		trigger = { FROM = { state = 1048 } } #Wuhan
+		localization_key = CHN_integrate_major_arsenal_hanyang_key
+	}
+	text = {
+		trigger = { FROM = { state = 592 } } #Canton
+		localization_key = CHN_integrate_major_arsenal_guangdong_key
+	}
+	text = {
+		trigger = { FROM = { state = 613 } } #Nanjing
+		localization_key = CHN_integrate_major_arsenal_jinling_key
+	}
+	text = {
+		trigger = { FROM = { state = 743 } } #Shanghai
+		localization_key = CHN_integrate_major_arsenal_shanghai_key
+	}
+	text = {
+		localization_key = CHN_integrate_major_arsenal_fallback_key
+	}
+}
+
+defined_text = {
+	name = CHN_integrate_major_arsenal_desc_scripted_loc
+	text = {
+		trigger = { FROM = { state = 716 } } #Liaoning
+		localization_key = CHN_integrate_major_arsenal_shenyang_desc_key
+	}
+	text = {
+		trigger = { FROM = { state = 1072 } } #East Shanxi
+		localization_key = CHN_integrate_major_arsenal_taiyuan_desc_key
+	}
+	text = {
+		trigger = { FROM = { state = 1059 } } #Kaifeng
+		localization_key = CHN_integrate_major_arsenal_gongxian_desc_key
+	}
+	text = {
+		trigger = { FROM = { state = 1048 } } #Wuhan
+		localization_key = CHN_integrate_major_arsenal_hanyang_desc_key
+	}
+	text = {
+		trigger = { FROM = { state = 592 } } #Canton
+		localization_key = CHN_integrate_major_arsenal_guangdong_desc_key
+	}
+	text = {
+		trigger = { FROM = { state = 613 } } #Nanjing
+		localization_key = CHN_integrate_major_arsenal_jinling_desc_key
+	}
+	text = {
+		trigger = { FROM = { state = 743 } } #Shanghai
+		localization_key = CHN_integrate_major_arsenal_shanghai_desc_key
+	}
+	text = {
+		localization_key = CHN_integrate_major_arsenal_fallback_desc_key
+	}
+}
+
+defined_text = {
+	name = CHN_integrate_minor_small_arms_arsenal_scripted_loc
+	text = {
+		trigger = { FROM = { state = 597 } } #Jinan
+		localization_key = CHN_integrate_minor_small_arms_arsenal_jinan_key
+	}
+	text = {
+		trigger = { FROM = { state = 605 } } #Chengdu
+		localization_key = CHN_integrate_minor_small_arms_arsenal_chengdu_key
+	}
+	text = {
+		trigger = { FROM = { state = 1051 } } #Guiyang
+		localization_key = CHN_integrate_minor_small_arms_arsenal_guizhou_key
+	}
+	text = {
+		trigger = { FROM = { state = 594 } } #Nanning
+		localization_key = CHN_integrate_minor_small_arms_arsenal_guangxi_key
+	}
+	text = {
+		localization_key = CHN_integrate_minor_small_arms_arsenal_fallback_key
+	}
+}
+
+defined_text = {
+	name = CHN_integrate_minor_small_arms_arsenal_desc_scripted_loc
+	text = {
+		trigger = { FROM = { state = 597 } } #Jinan
+		localization_key = CHN_integrate_minor_small_arms_arsenal_jinan_desc_key
+	}
+	text = {
+		trigger = { FROM = { state = 605 } } #Chengdu
+		localization_key = CHN_integrate_minor_small_arms_arsenal_chengdu_desc_key
+	}
+	text = {
+		trigger = { FROM = { state = 1051 } } #Guiyang
+		localization_key = CHN_integrate_minor_small_arms_arsenal_guizhou_desc_key
+	}
+	text = {
+		trigger = { FROM = { state = 594 } } #Nanning
+		localization_key = CHN_integrate_minor_small_arms_arsenal_guangxi_desc_key
+	}
+	text = {
+		localization_key = CHN_integrate_minor_small_arms_arsenal_fallback_desc_key
+	}
+}
+
+defined_text = {
+	name = CHN_integrate_minor_support_equipment_arsenal_scripted_loc
+	text = {
+		trigger = { FROM = { state = 325 } } #kunming
+		localization_key = CHN_integrate_minor_light_arms_arsenal_kunming_key
+	}
+	text = {
+		trigger = { FROM = { state = 602 } } #zhuzhou
+		localization_key = CHN_integrate_minor_light_arms_arsenal_zhuzhou_key
+	}
+	text = {
+		trigger = { FROM = { state = 617 } } #Dihua
+		localization_key = CHN_integrate_minor_light_arms_arsenal_dihua_key
+	}
+	text = {
+		localization_key = CHN_integrate_minor_light_arms_arsenal_fallback_key
+	}
+}
+
+defined_text = {
+	name = CHN_integrate_minor_support_equipment_arsenal_desc_scripted_loc
+	text = {
+		trigger = { FROM = { state = 325 } } #kunming
+		localization_key = CHN_integrate_minor_light_arms_arsenal_kunming_desc_key
+	}
+	text = {
+		trigger = { FROM = { state = 602 } } #zhuzhou
+		localization_key = CHN_integrate_minor_light_arms_arsenal_zhuzhou_desc_key
+	}
+	text = {
+		trigger = { FROM = { state = 617 } } #Dihua
+		localization_key = CHN_integrate_minor_light_arms_arsenal_dihua_desc_key
+	}
+	text = {
+		localization_key = CHN_integrate_minor_light_arms_arsenal_fallback_desc_key
+	}
+}
+
+defined_text = {
+	name = CHN_integrate_minor_artillery_arsenal_scripted_loc
+	text = {
+		trigger = { FROM = { state = 283 } } #lanzhou
+		localization_key = CHN_integrate_minor_artillery_arsenal_lanzhou_key
+	}
+	text = {
+		localization_key = CHN_integrate_minor_artillery_arsenal_fallback_key
+	}
+}
+
+defined_text = {
+	name = CHN_integrate_minor_artillery_arsenal_desc_scripted_loc
+	text = {
+		trigger = { FROM = { state = 283 } } #lanzhou
+		localization_key = CHN_integrate_minor_artillery_arsenal_lanzhou_desc_key
+	}
+	text = {
+		localization_key = CHN_integrate_minor_artillery_arsenal_fallback_desc_key
+	}
+}
+
+defined_text = {
+	name = CHN_integrate_major_dockyard_scripted_loc
+	text = {
+		trigger = { FROM = { state = 716 } } #Yingkou
+		localization_key = CHN_integrate_major_dockyard_yingkou_key
+	}
+	text = {
+		trigger = { FROM = { state = 743 } } #jiangnan
+		localization_key = CHN_integrate_major_dockyard_jiangnan_key
+	}
+	text = {
+		trigger = { FROM = { state = 747 } } #Fuzhou
+		localization_key = CHN_integrate_major_dockyard_mawei_key
+	}
+	text = {
+		trigger = { FROM = { state = 592 } } #Canton
+		localization_key = CHN_integrate_major_dockyard_whampoa_key
+	}
+	text = {
+		trigger = { FROM = { state = 609 } } #Tianjin
+		localization_key = CHN_integrate_major_dockyard_dagu_key
+	}
+	text = {
+		localization_key = CHN_integrate_major_dockyard_fallback_key
+	}
+}
+
+defined_text = {
+	name = CHN_integrate_major_dockyard_desc_scripted_loc
+	text = {
+		trigger = { FROM = { state = 716 } } #Yingkou
+		localization_key = CHN_integrate_major_dockyard_yingkou_desc_key
+	}
+	text = {
+		trigger = { FROM = { state = 743 } } #jiangnan
+		localization_key = CHN_integrate_major_dockyard_jiangnan_desc_key
+	}
+	text = {
+		trigger = { FROM = { state = 747 } } #Fuzhou
+		localization_key = CHN_integrate_major_dockyard_mawei_desc_key
+	}
+	text = {
+		trigger = { FROM = { state = 592 } } #Canton
+		localization_key = CHN_integrate_major_dockyard_whampoa_desc_key
+	}
+	text = {
+		trigger = { FROM = { state = 609 } } #Tianjin
+		localization_key = CHN_integrate_major_dockyard_dagu_desc_key
+	}
+	text = {
+		localization_key = CHN_integrate_major_dockyard_fallback_desc_key
+	}
+}
+
+###########################
+### National Liberation ###
+###########################
+
+defined_text = {
+	name = CHN_conquer_beijing_fallback_decision_scripted_loc
+	text = {
+		trigger = { ROOT = { china_is_aligned_with_kmt = yes } }
+		localization_key = KMT_conquer_beijing_fallback_decision_key
+	}
+	text = {
+		localization_key = CHN_conquer_beijing_fallback_decision_key
+	}
+}
+
+defined_text = {
+	name = CHN_conquer_beijing_fallback_decision_desc_scripted_loc
+	text = {
+		trigger = { ROOT = { china_is_aligned_with_kmt = yes } }
+		localization_key = KMT_conquer_beijing_fallback_decision_desc_key
+	}
+	text = {
+		localization_key = CHN_conquer_beijing_fallback_decision_desc_key
+	}
+}
+
+defined_text = {
+	name = CHN_satellite_generic_challenge_overlord_decision_desc_scripted_loc
+	text = {
+		trigger = { var:overlord = { china_alignment_northern_zhili = yes } }
+		localization_key = CHN_satellite_generic_challenge_overlord_decision_desc_zhili
+	}
+	text = {
+		trigger = { var:overlord = { china_alignment_southern_zhili = yes } }
+		localization_key = CHN_satellite_generic_challenge_overlord_decision_desc_zhili
+	}
+	text = {
+		trigger = { var:overlord = { china_alignment_manchu_qing = yes } }
+		localization_key = CHN_satellite_generic_challenge_overlord_decision_desc_manchu
+	}
+	text = {
+		trigger = { var:overlord = { china_alignment_fengtian = yes } }
+		localization_key = CHN_satellite_generic_challenge_overlord_decision_desc_fengtian
+	}
+	text = {
+		trigger = { var:overlord = { china_alignment_federalists = yes } }
+		localization_key = CHN_satellite_generic_challenge_overlord_decision_desc_federalists
+	}
+	text = {
+		trigger = { var:overlord = { china_alignment_chinese_southern_republican = yes } }
+		localization_key = CHN_satellite_generic_challenge_overlord_decision_desc_chinese_republican
+	}
+	text = {
+		localization_key = CHN_satellite_generic_challenge_overlord_decision_desc_fallback
+	}
+}
+
+defined_text = {
+	name = CHN_GetRevoltTargetIdeaNameFake
+	text = {
+		trigger = {
+			var:former_overlord = {
+				original_tag = QIE
+				china_is_aligned_with_manchu = yes
+			}
+		}
+		localization_key = QIE_manchu_revolt_against_bonus_idea
+	}
+	text = {
+		trigger = { var:former_overlord = { original_tag = QIE } }
+		localization_key = QIE_zhili_revolt_against_bonus_idea
+	}
+	text = {
+		localization_key = "[?former_overlord.GetTag]_revolt_against_bonus_idea"
+	}
+}
+
+defined_text = {
+	name = CHN_GetRevoltTargetIdeaName
+	text = {
+		trigger = {
+			var:global.CHN_revolt_target = {
+				original_tag = QIE
+				china_is_aligned_with_manchu = yes
+			}
+		}
+		localization_key = QIE_manchu_revolt_against_bonus_idea
+	}
+	text = {
+		trigger = { var:global.CHN_revolt_target = { original_tag = QIE } }
+		localization_key = QIE_zhili_revolt_against_bonus_idea
+	}
+	text = {
+		localization_key = "[?global.CHN_revolt_target.GetTag]_revolt_against_bonus_idea"
+	}
+}
+defined_text = {
+	name = CHN_GetRevoltTargetIdeaDesc
+	text = {
+		trigger = {
+			var:global.CHN_revolt_target = {
+				original_tag = QIE
+				china_is_aligned_with_manchu = yes
+			}
+		}
+		localization_key = QIE_manchu_revolt_against_bonus_idea_desc
+	}
+	text = {
+		trigger = { var:global.CHN_revolt_target = { original_tag = QIE } }
+		localization_key = QIE_zhili_revolt_against_bonus_idea_desc
+	}
+	text = {
+		localization_key = "[?global.CHN_revolt_target.GetTag]_revolt_against_bonus_idea_desc"
+	}
+}
+
+defined_text = {
+	name = CHN_expand_autonomous_region_scripted_loc
+	text = {
+		trigger = {
+			FROM = {
+				OR = {
+					region = 152 #Outer Mongolia
+					region = 222 #Inner Mongolia
+					state = 610 #Rehe
+					state = 715 #Liaobei
+					state = 996 #Barga
+				}
+			}
+		}
+		localization_key = CHN_expand_mongolian_autonomous_region_scripted_loc_key
+	}
+	text = {
+		trigger = {
+			FROM = {
+				is_xinjiang = yes
+			}
+		}
+		localization_key = CHN_expand_xinjiang_autonomous_region_scripted_loc_key
+	}
+	text = {
+		trigger = {
+			FROM = {
+				OR = {
+					is_tibet = yes
+					state = 601 #Xikang
+					state = 604 #Babao
+					state = 1045 #Xining
+				}
+			}
+		}
+		localization_key = CHN_expand_tibetan_autonomous_region_scripted_loc_key
+	}
+}
+
+defined_text = {
+	name = CHN_expand_autonomous_region_desc_scripted_loc
+	text = {
+		trigger = {
+			FROM = {
+				OR = {
+					region = 152 #Outer Mongolia
+					region = 222 #Inner Mongolia
+					state = 610 #Rehe
+					state = 715 #Liaobei
+					state = 996 #Barga
+				}
+			}
+		}
+		localization_key = CHN_expand_mongolian_autonomous_region_desc_scripted_loc_key
+	}
+	text = {
+		trigger = {
+			FROM = {
+				is_xinjiang = yes
+			}
+		}
+		localization_key = CHN_expand_xinjiang_autonomous_region_desc_scripted_loc_key
+	}
+	text = {
+		trigger = {
+			FROM = {
+				OR = {
+					is_tibet = yes
+					state = 601 #Xikang
+					state = 604 #Babao
+					state = 1045 #Xining
+				}
+			}
+		}
+		localization_key = CHN_expand_tibetan_autonomous_region_desc_scripted_loc_key
+	}
+}
+
+### Alignment Scripted GUI ###
+defined_text = {
+	name = ChinaGetAlignmentButtonTooltip
+	text = {
+		trigger = { has_global_flag = china_united }
+		localization_key = china_alignment_gui_button_tooltip_disabled
+	}
+	text = {
+		localization_key = china_alignment_gui_button_tooltip_enabled
+	}
+}
+
+defined_text = {
+	name = ChinaGetAlignmentTitleName
+	text = {
+		trigger = { check_variable = { china_alignment_leader = event_target:system } }
+		localization_key = china_faction_alignment_name_independent
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = NPA } }
+		localization_key = china_faction_aligment_name_npa
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = SIK } }
+		localization_key = china_faction_alignment_name_sinkiang
+	}
+	text = {
+		localization_key = china_faction_alignment_name_default
+	}
+}
+
+defined_text = {
+	name = ChinaGetAlignmentDesc
+	text = {
+		trigger = { check_variable = { china_alignment_leader = event_target:system } }
+		localization_key = china_no_faction_desc
+	}
+	text = {
+		localization_key = china_faction_alignment_desc
+	}
+}
+
+defined_text = {
+	name = ChinaGetMemberAlignment
+	text = {
+		trigger = { china_is_unaligned = yes }
+		localization_key = china_alignment_no_alignment
+	}
+	text = {
+		localization_key = china_alignment_faction_alignment
+	}
+}
+defined_text = {
+	name = ChinaGetMemberAlignmentCompatibilityStatus
+	#ROOT is the current tag accessing the GUI
+	#THIS is the current tag shown in the list of tags
+	text = {
+		trigger = { tag = ROOT }
+		localization_key = loc_empty
+	}
+	text = {
+		trigger = {
+			china_is_unaligned = yes
+		}
+		localization_key = china_alignment_non_aligned_alignment
+	}
+	text = {
+		trigger = {
+			ROOT = { china_compatible_alignment_to_PREV = yes }
+		}
+		localization_key = china_alignment_compatible_alignment
+	}
+	text = {
+		localization_key = china_alignment_incompatible_alignment
+	}
+}
+
+defined_text = {
+	name = ChinaGetAlignmentTenetsImage
+	# Current Rightful CHN Alignment
+	text = {
+		trigger = {
+			check_variable = { china_alignment_leader = NZH }
+			check_variable = { china_alignment_leader = CHN }
+		}
+		localization_key = "GFX_china_northern_zhili_CHN"
+	}
+	text = {
+		trigger = {
+			check_variable = { china_alignment_leader = SZH }
+			check_variable = { china_alignment_leader = CHN }
+		}
+		localization_key = "GFX_china_southern_zhili_CHN"
+	}
+	text = {
+		trigger = {
+			check_variable = { china_alignment_leader = MCU }
+			check_variable = { china_alignment_leader = CHN }
+		}
+		localization_key = "GFX_china_manchu_qing_CHN"
+	}
+	text = {
+		trigger = {
+			check_variable = { china_alignment_leader = AGJ }
+			check_variable = { china_alignment_leader = CHN }
+		}
+		localization_key = "GFX_china_anguojun_CHN"
+	}
+	text = {
+		trigger = {
+			check_variable = { china_alignment_leader = UPC }
+			check_variable = { china_alignment_leader = CHN }
+		}
+		localization_key = "GFX_china_federalists_CHN"
+	}
+	text = {
+		trigger = {
+			check_variable = { china_alignment_leader = LKT }
+			check_variable = { china_alignment_leader = CHN }
+		}
+		localization_key = "GFX_china_left_kuomintang_CHN"
+	}
+	text = {
+		trigger = {
+			check_variable = { china_alignment_leader = RKT }
+			check_variable = { china_alignment_leader = CHN }
+		}
+		localization_key = "GFX_china_right_kuomintang_CHN"
+	}
+	text = {
+		trigger = {
+			check_variable = { china_alignment_leader = NPA }
+			check_variable = { china_alignment_leader = CHN }
+		}
+		localization_key = "GFX_china_national_protection_alliance_CHN"
+	}
+	text = {
+		trigger = {
+			check_variable = { china_alignment_leader = RGC }
+			check_variable = { china_alignment_leader = CHN }
+		}
+		localization_key = "GFX_china_geacps_CHN"
+	}
+	# Non-CHN Alignment
+	text = {
+		trigger = { check_variable = { china_alignment_leader = NZH } }
+		localization_key = "GFX_china_northern_zhili"
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = SZH } }
+		localization_key = "GFX_china_southern_zhili"
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = MCU } }
+		localization_key = "GFX_china_manchu_qing"
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = AGJ } }
+		localization_key = "GFX_china_anguojun"
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = UPC } }
+		localization_key = "GFX_china_federalists"
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = LKT } }
+		localization_key = "GFX_china_left_kuomintang"
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = RKT } }
+		localization_key = "GFX_china_right_kuomintang"
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = NPA } }
+		localization_key = "GFX_china_national_protection_alliance"
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = RGC } }
+		localization_key = "GFX_china_geacps"
+	}
+	# CHN Independent Alignment
+	text = {
+		trigger = { check_variable = { china_alignment_leader = CHN } }
+		localization_key = "GFX_china_independent_CHN"
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = SIK } }
+		localization_key = "GFX_china_sinkiang"
+	}
+	# Independent Alignment
+	text = {
+		localization_key = "GFX_china_independent"
+	}
+}
+
+defined_text = {
+	name = ChinaGetAlignmentTenetsTitle
+	text = {
+		trigger = { check_variable = { china_alignment_leader = NPA } }
+		localization_key = china_faction_tenets_title_npa
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = event_target:system } }
+		localization_key = china_faction_tenets_title_independent
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = SIK } }
+		localization_key = china_faction_tenets_title_sinkiang
+	}
+	text = {
+		localization_key = china_faction_tenets_title_default
+	}
+}
+
+defined_text = {
+	name = ChinaGetAlignmentTenetsDesc
+	text = {
+		trigger = { check_variable = { china_alignment_leader = NZH } }
+		localization_key = china_faction_tenets_northern_zhili_desc
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = SZH } }
+		localization_key = china_faction_tenets_southern_zhili_desc
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = MCU } }
+		localization_key = china_faction_tenets_manchu_qing_desc
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = AGJ } }
+		localization_key = china_faction_tenets_fengtian_desc
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = UPC } }
+		localization_key = china_faction_tenets_federalists_desc
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = LKT } }
+		localization_key = china_faction_tenets_left_kuomintang_desc
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = RKT } }
+		localization_key = china_faction_tenets_right_kuomintang_desc
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = NPA } }
+		localization_key = china_faction_tenets_national_protection_alliance_desc
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = RGC } }
+		localization_key = china_faction_tenets_geacps_desc
+	}
+	text = {
+		trigger = { check_variable = { china_alignment_leader = SIK } }
+		localization_key = china_faction_tenets_sinkiang_desc
+	}
+	text = {
+		localization_key = china_faction_tenets_independent_desc
+	}
+}
+
+###########################
+###   South China War   ###
+###########################
+
+defined_text = {
+	name = CHN_south_china_war_get_GXC_alignment
+	text = {
+		trigger = { GXC = { ROOT = { china_same_alignment_as_PREV = yes } } }
+		localization_key = CHN_south_china_war_get_GXC_alignment_compatible_key
+	}
+	text = {
+		trigger = { GXC = { ROOT = { NOT = { china_same_alignment_as_PREV = yes } } } }
+		localization_key = CHN_south_china_war_get_GXC_alignment_incompatible_key
+	}
+}
+
+defined_text = {
+	name = CHN_south_china_war_get_HNN_alignment
+	text = {
+		trigger = { HNN = { ROOT = { china_same_alignment_as_PREV = yes } } }
+		localization_key = CHN_south_china_war_get_HNN_alignment_compatible_key
+	}
+	text = {
+		trigger = { HNN = { ROOT = { NOT = { china_same_alignment_as_PREV = yes } } } }
+		localization_key = CHN_south_china_war_get_HNN_alignment_incompatible_key
+	}
+}
+
+defined_text = {
+	name = CHN_south_china_war_get_YUN_alignment
+	text = {
+		trigger = { YUN = { ROOT = { china_same_alignment_as_PREV = yes } } }
+		localization_key = CHN_south_china_war_get_YUN_alignment_compatible_key
+	}
+	text = {
+		trigger = { YUN = { ROOT = { NOT = { china_same_alignment_as_PREV = yes } } } }
+		localization_key = CHN_south_china_war_get_YUN_alignment_incompatible_key
+	}
+}
+
+##########################################
+###   Administering Frontier Events   ###
+#########################################
+
+defined_text = {
+	name = CHN_mongolia_get_unique_governor
+	text = {
+		trigger = { china_is_aligned_with_northern_zhili = yes }
+		localization_key = CHN_mongolia_get_unique_governor_northzhili
+	}
+	text = {
+		trigger = { china_is_aligned_with_southern_zhili = yes }
+		localization_key = CHN_mongolia_get_unique_governor_southzhili
+	}
+	text = {
+		trigger = { china_is_aligned_with_fengtian = yes }
+		localization_key = CHN_mongolia_get_unique_governor_fengtian
+	}
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = SHX_yan_xishan
+				ruling_only = yes
+			}
+		}
+		localization_key = CHN_mongolia_get_unique_governor_yan
+	}
+	text = {
+		trigger = {
+			has_country_leader = {
+				character = SHX_feng_yuxiang
+				ruling_only = yes
+			}
+		}
+		localization_key = CHN_mongolia_get_unique_governor_gmj
+	}
+	text = {
+		trigger = { tag = XSM }
+		localization_key = CHN_mongolia_get_unique_governor_xsm
+	}
+	text = {
+		trigger = {
+			china_is_aligned_with_right_kmt = yes
+			tag = GXC
+		}
+		localization_key = CHN_mongolia_get_unique_governor_rkmt
+	}
+	text = {
+		trigger = {
+			china_is_aligned_with_right_kmt = yes
+			tag = YUN
+		}
+		localization_key = CHN_mongolia_get_unique_governor_rkmt_yun
+	}
+	text = {
+		trigger = { china_is_aligned_with_manchu = yes }
+		localization_key = CHN_mongolia_get_unique_governor_manchu
+	}
+	text = {
+		localization_key = "Hand the post to Chen Lu, as was the interwar status quo."
+	}
+}
+
+defined_text = {
+	name = CHN_tibet_get_unique_governor
+	text = {
+		trigger = {
+			tag = SZC
+			has_character = SZC_liu_wenhui
+		}
+		localization_key = CHN_tibet_get_unique_governor_szc_liu
+	}
+	text = {
+		trigger = { china_is_aligned_with_right_kmt = yes }
+		localization_key = CHN_tibet_get_unique_governor_rkmt
+	}
+	text = {
+		trigger = { china_is_aligned_with_manchu = yes }
+		localization_key = CHN_tibet_get_unique_governor_manchu
+	}
+	text = {
+		localization_key = "Kong Qingzong and Wen Tsungyao have proven their capacity."
+	}
+}
+
+defined_text = {
+	name = CHN_xinjiang_get_unique_governor
+	text = {
+		trigger = { china_is_aligned_with_northern_zhili = yes }
+		localization_key = CHN_xinjiang_get_unique_governor_northzhili
+	}
+	text = {
+		trigger = { china_is_aligned_with_southern_zhili = yes }
+		localization_key = CHN_xinjiang_get_unique_governor_southzhili
+	}
+	text = {
+		trigger = { china_is_aligned_with_fengtian = yes }
+		localization_key = CHN_xinjiang_get_unique_governor_fengtian
+	}
+	text = {
+		trigger = {
+			tag = YUN
+			china_is_aligned_with_federalists = no
+			china_is_aligned_with_kmt = no
+		}
+		localization_key = CHN_xinjiang_get_unique_governor_yun
+	}
+	text = {
+		trigger = { tag = XSM }
+		localization_key = CHN_xinjiang_get_unique_governor_xsm
+	}
+	text = {
+		trigger = { china_is_aligned_with_right_kmt = yes }
+		localization_key = CHN_xinjiang_get_unique_governor_rkmt
+	}
+	text = {
+		trigger = { china_is_aligned_with_manchu = yes }
+		localization_key = CHN_xinjiang_get_unique_governor_manchu
+	}
+	text = {
+		localization_key = CHN_xinjiang_get_default_governor
+	}
+}
+
+defined_text = {
+	name = CHN_taiwan_get_unique_governor
+	text = {
+		trigger = { china_is_aligned_with_northern_zhili = yes }
+		localization_key = CHN_taiwan_get_unique_governor_northzhili
+	}
+	text = {
+		trigger = { china_is_aligned_with_southern_zhili = yes }
+		localization_key = CHN_taiwan_get_unique_governor_southzhili
+	}
+	text = {
+		trigger = { china_is_aligned_with_fengtian = yes }
+		localization_key = CHN_taiwan_get_unique_governor_fengtian
+	}
+	text = {
+		trigger = { china_is_aligned_with_right_kmt = yes }
+		localization_key = CHN_taiwan_get_unique_governor_rkmt
+	}
+	text = {
+		trigger = { china_is_aligned_with_left_kmt = yes }
+		localization_key = CHN_taiwan_get_unique_governor_lkmt
+	}
+	text = {
+		trigger = { china_is_aligned_with_manchu = yes }
+		localization_key = CHN_taiwan_get_unique_governor_manchu
+	}
+	text = {
+		localization_key = "Dispatch administrators from Fujian."
+	}
+}
+
+defined_text = {
+	name = CHN_foreignpolicy_event_300_desc
+	text = {
+		trigger = { has_country_leader = { character = SHX_yan_xishan } }
+		localization_key = CHN.foreignpolicy.300.d_yan
+	}
+	text = {
+		trigger = { has_country_leader = { character = SHX_feng_yuxiang } }
+		localization_key = CHN.foreignpolicy.300.d_gmj
+	}
+	text = {
+		trigger = { original_tag = XSM }
+		localization_key = CHN.foreignpolicy.300.d_xsm
+	}
+	text = {
+		trigger = { china_is_aligned_with_northern_zhili = yes }
+		localization_key = CHN.foreignpolicy.300.d_northzhili
+	}
+	text = {
+		trigger = { china_is_aligned_with_southern_zhili = yes }
+		localization_key = CHN.foreignpolicy.300.d_southzhili
+	}
+	text = {
+		trigger = { china_is_aligned_with_manchu = yes }
+		localization_key = CHN.foreignpolicy.300.d_manchu
+	}
+	text = {
+		trigger = { china_is_aligned_with_fengtian = yes }
+		localization_key = CHN.foreignpolicy.300.d_fengtian
+	}
+	text = {
+		trigger = { china_is_aligned_with_right_kmt = yes }
+		localization_key = CHN.foreignpolicy.300.d_rkmt
+	}
+	text = {
+		localization_key = CHN.foreignpolicy.300.d_generic
+	}
+}
+
+defined_text = {
+	name = CHN_foreignpolicy_event_301_desc
+	text = {
+		trigger = {
+			original_tag = SZC
+			has_character = SZC_liu_wenhui
+		}
+		localization_key = CHN.foreignpolicy.300.d_yan
+	}
+	text = {
+		trigger = { china_is_aligned_with_right_kmt = yes }
+		localization_key = CHN.foreignpolicy.301.d_rkmt
+	}
+	text = {
+		trigger = { china_is_aligned_with_manchu = yes }
+		localization_key = CHN.foreignpolicy.301.d_manchu
+	}
+	text = {
+		localization_key = CHN.foreignpolicy.301.d_generic
+	}
+}
+
+defined_text = {
+	name = CHN_foreignpolicy_event_302_desc
+	text = {
+		trigger = {
+			original_tag = YUN
+			china_is_aligned_with_federalists = no
+			china_is_aligned_with_kmt = no
+		}
+		localization_key = CHN.foreignpolicy.302.d_yun
+	}
+	text = {
+		trigger = { original_tag = XSM }
+		localization_key = CHN.foreignpolicy.302.d_xsm
+	}
+	text = {
+		trigger = { china_is_aligned_with_northern_zhili = yes }
+		localization_key = CHN.foreignpolicy.302.d_northzhili
+	}
+	text = {
+		trigger = { china_is_aligned_with_southern_zhili = yes }
+		localization_key = CHN.foreignpolicy.302.d_southzhili
+	}
+	text = {
+		trigger = { china_is_aligned_with_manchu = yes }
+		localization_key = CHN.foreignpolicy.302.d_manchu
+	}
+	text = {
+		trigger = { china_is_aligned_with_fengtian = yes }
+		localization_key = CHN.foreignpolicy.302.d_fengtian
+	}
+	text = {
+		trigger = { china_is_aligned_with_right_kmt = yes }
+		localization_key = CHN.foreignpolicy.302.d_rkmt
+	}
+	text = {
+		localization_key = CHN.foreignpolicy.302.d_generic
+	}
+}
+
+defined_text = {
+	name = CHN_foreignpolicy_event_303_desc
+	text = {
+		trigger = { china_is_aligned_with_northern_zhili = yes }
+		localization_key = CHN.foreignpolicy.303.d_northzhili
+	}
+	text = {
+		trigger = { china_is_aligned_with_southern_zhili = yes }
+		localization_key = CHN.foreignpolicy.303.d_southzhili
+	}
+	text = {
+		trigger = { china_is_aligned_with_manchu = yes }
+		localization_key = CHN.foreignpolicy.303.d_manchu
+	}
+	text = {
+		trigger = { china_is_aligned_with_fengtian = yes }
+		localization_key = CHN.foreignpolicy.303.d_fengtian
+	}
+	text = {
+		trigger = { china_is_aligned_with_right_kmt = yes }
+		localization_key = CHN.foreignpolicy.303.d_rkmt
+	}
+	text = {
+		trigger = { china_is_aligned_with_left_kmt = yes }
+		localization_key = CHN.foreignpolicy.303.d_lkmt
+	}
+	text = {
+		localization_key = CHN.foreignpolicy.303.d_generic
+	}
+}

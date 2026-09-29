@@ -1,0 +1,31 @@
+decision_categories = {
+	id = sinkiang_debug_category
+	icon = GFX_china_sinkiang
+	allowed_by_default = no
+}
+
+decisions = {
+	sinkiang_debug_set_sik_as_faction = {
+		icon = GFX_china_sinkiang
+		priority = 1
+		allowed = {
+			tag = SIK
+		}
+		visible = {
+			AND = {
+				is_debug = yes
+				tag = SIK
+			}
+		}
+		available = {
+			tag = SIK
+		}
+		days_re_enable = 1
+		complete_effect = {
+			log = "[GetLogRoot]: Debug - SIK set as Sinkiang (Xinjiang) faction"
+			china_alignment_sinkiang = yes
+			SIK = { china_set_character_alignment_sinkiang = yes }
+			CHN_china_GUI_daily_update = yes
+		}
+	}
+}
