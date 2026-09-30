@@ -351,6 +351,13 @@ set_potential_national_government = {
 			limit = { china_alignment_left_kuomintang = yes }
 			LKT_set_leader_effect = yes
 		}
+		# === CPC MOD START ===
+		else_if = {
+			limit = { china_alignment_communist = yes }
+			CPC_set_leader_effect = yes
+		}
+		# === CPC MOD END ===
+
 
 		if = {
 			limit = {
@@ -4311,7 +4318,7 @@ CHN_calculate_china_alignment_gui_effect = {
 
 		# === CPC MOD START ===
 	if = {
-		limit = { country_exists = CPC } #Sinkiang (Xinjiang) - led by Sikang
+		limit = { country_exists = CPC } #Communist (CPC) faction - led by Sikang (SIK), alias CPC -> global_event_target:CPC_leader
 		CPC = { CHN_build_faction_alignment_array = yes }
 	}
 		# === CPC MOD END ===
@@ -4664,5 +4671,5 @@ CPC_set_leader_effect = {
 	save_global_event_target_as = CPC_leader
 }
 china_set_character_alignment_communist = {
-	event_target:system = { china_alignment_communist = { set_variable = { PREV.PREV.china_alignment = THIS } } }
+	set_variable = { THIS.china_alignment = THIS }
 }

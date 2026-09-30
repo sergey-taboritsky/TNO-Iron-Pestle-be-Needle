@@ -1,4 +1,8 @@
-sinkiang_debug_category = {
-	icon = GFX_china_sinkiang
+cpc_debug_category = {
+	icon = GFX_china_communist
+	priority = 10000
+}
+cpc_northwest_plot_category = {
+	icon = GFX_china_communist
 	priority = 10000
 }

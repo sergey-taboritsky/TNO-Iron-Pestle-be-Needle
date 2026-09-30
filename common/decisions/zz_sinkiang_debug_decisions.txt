@@ -1,6 +1,6 @@
-sinkiang_debug_category = {
-	sinkiang_debug_set_sik_as_faction = {
-		icon = GFX_china_sinkiang
+cpc_debug_category = {
+	cpc_debug_set_sik_as_faction = {
+		icon = GFX_china_communist
 		priority = 1
 		allowed = {
 			tag = SIK
@@ -16,10 +16,271 @@ sinkiang_debug_category = {
 		}
 		days_re_enable = 1
 		complete_effect = {
-			log = "[GetLogRoot]: Debug - SIK set as Sinkiang (Xinjiang) faction"
+			log = "[GetLogRoot]: Debug - SIK set as Communist (CPC) faction"
+			SIK = { CPC_set_leader_effect = yes } #set SIK as global_event_target:CPC_leader -> alias CPC resolves to SIK
 			china_alignment_communist = yes
 			SIK = { china_set_character_alignment_communist = yes }
-			CHN_china_GUI_daily_update = yes
+			ROOT = {
+				CHN_calculate_china_alignment_gui_effect = yes
+				CHN_update_china_alignment_gui = yes
+			}
 		}
+	}
+}
+chinese_unification = {
+	china_declare_government = {
+		icon = generic_speech
+
+		allowed = {
+			NOT = {
+				original_tag = KUM #manually activated by KUM_set_as_chinese_tag
+				original_tag = QIE #Start as government
+				original_tag = FNG #Start as government
+				original_tag = CHI #Form government after League War
+			}
+		}
+
+		available = {
+			is_subject = no
+			has_civil_war = no
+			num_of_controlled_factories > 10
+			has_army_manpower = { size > 300000 }
+			CHN_no_aligned_unifier_exists_trigger = yes
+			OR = {
+				has_global_flag = CHN_south_china_war_started
+				CHN_south_china_war_over_trigger = yes
+				date > 1938.1.1
+			}
+			if = { #Restorationists need to own Beijing because that's where Puyi is
+				limit = {
+					china_alignment_manchu_qing = yes
+				}
+				608 = { is_owned_and_controlled_by = ROOT } #Beijing
+			}
+			else_if = { #Zhang Tianran can't form a government if he is Northern Zhili aligned, this tells the player how to flip Restorationist
+				limit = {
+					china_alignment_northern_zhili = yes
+					has_country_leader = { character = SHD_zhang_tianran }
+				}
+				OR = {
+					QIE = { is_monarchy = no }
+					NOT = { country_exists = QIE }
+				}
+				608 = { is_owned_and_controlled_by = ROOT } #Beijing, not actually needed to flip Restorationist but is there to not blindside the player with an additional requirement later
+			}
+			else_if = { #Southern China and Shanxi can't just make a government from nothing, they need a major city too
+				limit = {
+					OR = {
+						original_tag = GXC
+						original_tag = HNN
+						original_tag = SHX
+						original_tag = YUN
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							613 = { is_owned_and_controlled_by = ROOT } #Nanjing
+							592 = { is_owned_and_controlled_by = ROOT } #Canton
+							1048 = { is_owned_and_controlled_by = ROOT } #Wuhan
+						}
+						china_stronger_than_existing_governments = yes
+					}
+					608 = { is_owned_and_controlled_by = ROOT } #Beijing
+				}
+			}
+			# === CPC MOD START ===
+			else_if = {
+				limit = {
+					original_tag = SIK
+				}
+				OR = {
+					china_stronger_than_existing_governments = yes
+					608 = { is_owned_and_controlled_by = ROOT } #Beijing
+					has_country_flag = KRCPC_Urumqi_coup_success_flag
+				}
+			}
+			# === CPC MOD END ===
+			else = {
+				OR = {
+					608 = { is_owned_and_controlled_by = ROOT } #Beijing
+					china_stronger_than_existing_governments = yes
+				}
+			}
+		}
+
+		visible = {
+			china_is_potential_government = no
+			is_in_faction = no
+		}
+
+		cost = 75
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+				OR = {
+					AND = {
+						tag = ANQ
+						NOT = { has_game_rule = { rule = ANQ_forpol option = DEFAULT } }
+						NOT = { has_game_rule = { rule = ANQ_forpol option = ANQ_FORPOL_ANQ } }
+					}
+					AND = {
+						tag = GXC
+						NOT = { has_game_rule = { rule = GXC_forpol option = DEFAULT } }
+						NOT = { has_game_rule = { rule = GXC_forpol option = GXC_FORPOL_GXC } }
+					}
+					AND = {
+						tag = HNN
+						SZC = { china_is_aligned_with_federalists = yes }
+						has_game_rule = { rule = SZC_forpol option = SZC_FORPOL_EXILE_UPC }
+					}
+					AND = {
+						tag = LEP
+						NOT = { has_game_rule = { rule = LEP_forpol option = DEFAULT } }
+						NOT = { has_game_rule = { rule = LEP_forpol option = LEP_FORPOL_LEP } }
+					}
+					AND = {
+						tag = SHX
+						NOT = { has_game_rule = { rule = SHX_forpol option = DEFAULT } }
+						NOT = { has_game_rule = { rule = SHX_forpol option = SHX_FORPOL_SHX } }
+					}
+					AND = {
+						tag = SHD
+						NOT = { has_game_rule = { rule = SHD_forpol option = DEFAULT } }
+						NOT = { has_game_rule = { rule = SHD_forpol option = SHD_FORPOL_SHD } }
+					}
+					AND = {
+						tag = SZC
+						NOT = { has_game_rule = { rule = SZC_forpol option = DEFAULT } }
+						NOT = { has_game_rule = { rule = SZC_forpol option = SZC_FORPOL_SZC } }
+						NOT = { has_game_rule = { rule = SZC_forpol option = SZC_FORPOL_FORM_NPA } }
+					}
+				}
+			}
+			modifier = {
+				add = 100
+				owns_any_state_of = {
+					608 #Beijing
+					613 #Nanjing
+				}
+			}
+			modifier = {
+				add = 50
+				owns_any_state_of = {
+					592 #Guangzhou
+					1048 #Wuhan
+				}
+			}
+			modifier = {
+				add = 25
+				owns_any_state_of = {
+					650 #Chongqing
+					325 #Kunming
+				}
+			}
+			# === CPC MOD START ===
+			modifier = {
+				add = 1000
+				has_country_flag = KRCPC_Urumqi_coup_success_flag
+			}
+			# === CPC MOD END ===
+			modifier = {
+				factor = 20
+				NOT = {
+					any_of_scopes = {
+						array = global.china_tags_array
+						china_is_potential_government = yes
+						exists = yes
+					}
+				}
+			}
+		}
+
+		complete_effect = {
+			log = "[GetLogRoot]: Decision complete china_declare_government"
+			china_enable_alliances_decisions = yes #Fallback
+			set_potential_national_government = yes
+			china_enable_all_demand_submission_decisions = yes
+			if = {
+				limit = { NOT = { original_tag = SHX } } #has tag-side content
+				china_enable_alliances_decisions = yes
+			}
+
+			#Now for tag specific content
+			if = {
+				limit = {#unlock fed tree for xiong SZC
+					original_tag = SZC
+					has_country_leader = { character = SZC_xiong_kewu }
+				}
+				SZC_switch_to_federalist_tree = yes
+			}
+			else_if = {
+				limit = {
+					OR = {
+						original_tag = KUM
+						original_tag = SIK
+					}
+				}
+				# === CPC MOD START ===
+				if = {
+					limit = {
+						has_country_flag = KRCPC_Urumqi_coup_success_flag
+					}
+					set_political_power = 114514
+				}
+				# === CPC MOD END ===
+				activate_targeted_decision = { target = XSM decision = china_demand_submission }
+			}
+			else_if = {
+				limit = {
+					tag = GXC
+					#We check for satellite narratives later.
+					NOT = {
+						GXC_is_phase_4_trigger = yes
+						GXC_is_phase_5_trigger = yes
+					}
+				}
+				#These decisions help prevent lock-out in case you betray and kill your master and form a government of your own.
+				if = {
+					limit = {
+						has_country_flag = GXC_LKMT_satellite_narrative_flag
+					}
+					country_event = GXC.midgame.557 #An Unexpected Twist (GXC-LKMT Variant)
+				}
+				else_if = {
+					limit = {
+						has_country_flag = GXC_NPA_satellite_narrative_flag
+					}
+					country_event = GXC.lategame.911 #An Unexpected Twist (GXC-NPA Variant)
+				}
+			}
+			else_if = {
+				limit = {
+					tag = YUN
+					#We check for satellite narratives later.
+					NOT = {
+						YUN_is_phase_4_trigger = yes
+						YUN_is_phase_5_trigger = yes
+					}
+				}
+				#These decisions help prevent lock-out in case you betray and kill your master and form a government of your own.
+				if = {
+					limit = {
+						has_country_flag = YUN_KMT_satellite_narrative_flag
+					}
+					country_event = YUN.lategame.531 #An Unexpected Twist (YUN-KMT Variant)
+				}
+				else_if = {
+					limit = {
+						has_country_flag = YUN_UPC_satellite_narrative_flag
+					}
+					country_event = YUN.lategame.726 #An Unexpected Twist (YUN-UPC Variant)
+				}
+			}
+		}
+		fixed_random_seed = no
 	}
 }

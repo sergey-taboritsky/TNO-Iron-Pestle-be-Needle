@@ -1,5 +1,6 @@
 ﻿l_english:
 
- china_faction_alignment_name_sinkiang: "Xinjiang"
- china_faction_tenets_title_sinkiang: "Xinjiang Tenets"
- china_faction_tenets_sinkiang_desc: "Western bastion of the Iron Pestle - forging a new order from the frontier."
+ china_faction_alignment_name_communist: "Communist China"
+ china_faction_tenets_title_communist: "Tenets of the Communist Party"
+ china_faction_tenets_communist_desc: "The Chinese Communists, forged in the crucible of the northwest, now seek to carry their vision across the Middle Kingdom and beyond."
+ CPC_set_leader_tt: "The Communist Party of China."

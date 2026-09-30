@@ -31,6 +31,17 @@ defined_text = {
 		}
 		localization_key = CHN_state_is_autonomous_region
 	}
+	# === CPC MOD START ===
+	text = {
+		trigger = {
+			has_dynamic_modifier = {
+				modifier = KRCPC_autonomous_republic_modifier
+				scope = THIS
+			}
+		}
+		localization_key = KRCPC_state_is_autonomous_republic
+	}
+	# === CPC MOD END ===
 	text = {
 		localization_key = CHN_state_is_province
 	}
@@ -1403,7 +1414,7 @@ defined_text = {
 	# === CPC MOD START ===
 	text = {
 		trigger = { check_variable = { china_alignment_leader = CPC } }
-		localization_key = "GFX_china_communist"
+		localization_key = "GFX_focus_generic_soviet_politics"
 	}
 	# === CPC MOD END ===
 	# Independent Alignment
