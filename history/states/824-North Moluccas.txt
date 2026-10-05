@@ -3,7 +3,6 @@ state = { #Population + VPs Done
 	name = "STATE_824"
 	history = {
 		owner = INS
-		add_core_of = INS
 		buildings = {
 			infrastructure = 2
 			air_base = 1

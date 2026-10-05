@@ -9,7 +9,6 @@ state = {
 
 	history = {
 		owner = INS
-		add_core_of = INS
 		buildings = {
 			infrastructure = 4
 			synthetic_refinery = 1

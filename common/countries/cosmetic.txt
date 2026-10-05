@@ -2305,9 +2305,9 @@ MCW_Schorner = {
 }
 
 #### IPN ####
-GUX_liberated_government = {
-	color = rgb { 45 45 166 }
-	color_ui = rgb { 45 45 166 }
+IPN_SHO_init = {
+	color = rgb { 159 52 77 }
+	color_ui = rgb { 159 52 77 }
 }
 
 YUN_liberated_government = {

@@ -1,11 +1,11 @@
 ﻿l_simp_chinese:
 ## Countries ##
- GTL: "哥伦打洛米纳哈萨自治邦"
- GTL_DEF: "哥伦打洛米纳哈萨自治邦"
- GTL_ADJ: "哥伦打洛"
- BON: "博讷王国"
- BON_DEF: "博讷王国"
- BON_ADJ: "博讷"
+ IPN_SHO_init: "印度尼西亚民族共和国"
+ IPN_SHO_init_DEF: "印度尼西亚民族共和国"
+ IPN_SHO_init_ADJ: "印度尼西亚"
+ IPN_SNG_init: "昭南特别市"
+ IPN_SNG_init_DEF: "昭南特别市"
+ IPN_SNG_init_ADJ: "昭南"
  LUW: "卢雾王国"
  LUW_DEF: "卢雾王国"
  LUW_ADJ: "卢雾"

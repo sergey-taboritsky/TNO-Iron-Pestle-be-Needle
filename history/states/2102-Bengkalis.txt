@@ -7,7 +7,8 @@ state = {
 	}
 
 	history = {
-		owner = INS
+		owner = MLY
+		add_core_of = MLY
 		buildings = {
 			infrastructure = 3
 			synthetic_refinery = 1
@@ -22,7 +23,6 @@ state = {
 		victory_points = {
 			19289 1
 		}
-		add_core_of = INS
 		set_state_flag = GDP_category_rural
 		set_state_flag = GDP_regions_riau
 	}

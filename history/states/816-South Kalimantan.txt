@@ -14,7 +14,6 @@ state = {
 			7296 1
 		}
 		owner = INS
-		add_core_of = INS
 		buildings = {
 			infrastructure = 3
 			offices = 1

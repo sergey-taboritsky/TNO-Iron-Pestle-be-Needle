@@ -6,7 +6,6 @@ state = { #Population + VPs Done
 
 	history = {
 		owner = INS
-		add_core_of = INS
 		buildings = {
 			infrastructure = 1
 			air_base = 2

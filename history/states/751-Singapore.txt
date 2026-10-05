@@ -11,6 +11,7 @@ state = {
 
 	history = {
 		owner = SHO
+		add_core_of = SHO
 		victory_points = { 12299 30 }
 		buildings = {
 			infrastructure = 6
@@ -28,8 +29,6 @@ state = {
 				bunker = 5
 			}
 		}
-		add_core_of = SHO
-		add_core_of = MLY
 		set_state_flag = universal_renamings
 	}
 	buildings_max_level_factor = 1.000

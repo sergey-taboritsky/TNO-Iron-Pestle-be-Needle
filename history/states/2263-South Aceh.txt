@@ -6,8 +6,8 @@ state = {
 	}
 
 	history = {
-		owner = INS
-		add_core_of = INS
+		owner = MLY
+		add_core_of = MLY
 		set_state_flag = has_offshore_island
 		victory_points = {
 			19331 1

@@ -9,8 +9,8 @@ state = {
 		victory_points = {
 			15701 10
 		}
-		owner = INS
-		add_core_of = INS
+		owner = MLY
+		add_core_of = MLY
 		buildings = {
 			schools = 1
 			barracks = 1

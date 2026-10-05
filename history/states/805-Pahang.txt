@@ -12,8 +12,7 @@ state = {
 		victory_points = {
 			7399 1
 		}
-		owner = SHO
-		add_core_of = SHO
+		owner = MLY
 		add_core_of = MLY
 		set_state_flag = state_renamings
 	}
