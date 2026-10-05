@@ -2,6 +2,13 @@ on_actions = {
 	#STARTUP DEFINITIONS
 	on_startup = {
 		effect = {
+			MLY = {
+				set_cosmetic_tag = IPN_MLY_init
+				set_capital = {
+					state = 1764
+					remember_old_capital = no
+				}
+			}
 			SHO = {
 				set_cosmetic_tag = IPN_SHO_init
 
@@ -18,8 +25,23 @@ on_actions = {
 
 				initiate_display_vars = yes
 			}
-			SHO = {
-				add_ideas = TNOIPN_SHO_ninteenth_army_support
+			SRB = {
+				set_cosmetic_tag = IPN_SRB_init
+			}
+			MKS = {
+				set_cosmetic_tag = IPN_SRB_init
+			}
+			DMP = {
+				set_cosmetic_tag = IPN_SRB_init
+			}
+			DMS = {
+				set_cosmetic_tag = IPN_SRB_init
+			}
+			PMT = {
+				set_cosmetic_tag = IPN_SRB_init
+			}
+			SLS = {
+				set_cosmetic_tag = IPN_SRB_init
 			}
 			NRB = {
 				add_ideas = TNOIPN_SHO_defenses_emptied

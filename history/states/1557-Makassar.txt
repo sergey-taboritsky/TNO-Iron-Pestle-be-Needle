@@ -3,7 +3,8 @@ state = {
 	name = "STATE_1557"
 
 	history = {
-		owner = INS
+		owner = MKS
+		add_core_of = MKS
 		set_state_flag = has_offshore_island
 		victory_points = {
 			10263 20

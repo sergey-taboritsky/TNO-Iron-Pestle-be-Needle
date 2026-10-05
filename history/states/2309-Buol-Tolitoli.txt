@@ -3,7 +3,8 @@ state = {
 	name = "STATE_2309"
 
 	history = {
-		owner = INS
+		owner = PMT
+		add_core_of = PMT
 		set_state_flag = GDP_regions_sulawesi
 	}
 

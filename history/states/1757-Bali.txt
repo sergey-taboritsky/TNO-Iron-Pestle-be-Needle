@@ -3,7 +3,8 @@ state = {
 	name = "STATE_1757"
 
 	history = {
-		owner = INS
+		owner = DMP
+		add_core_of = DMP
 		add_extra_state_shared_building_slots = 1
 		buildings = {
 			infrastructure = 4

@@ -6,7 +6,8 @@ state = {
 		victory_points = {
 			10169 1
 		}
-		owner = INS
+		owner = PMT
+		add_core_of = PMT
 		buildings = {
 			infrastructure = 1
 		}
