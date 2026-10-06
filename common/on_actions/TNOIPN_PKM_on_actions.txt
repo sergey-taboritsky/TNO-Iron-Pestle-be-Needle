@@ -29,19 +29,19 @@ on_actions = {
 				set_cosmetic_tag = IPN_SRB_init
 			}
 			MKS = {
-				set_cosmetic_tag = IPN_SRB_init
+				set_cosmetic_tag = IPN_MKS_init
 			}
 			DMP = {
-				set_cosmetic_tag = IPN_SRB_init
+				set_cosmetic_tag = IPN_DMP_init
 			}
 			DMS = {
-				set_cosmetic_tag = IPN_SRB_init
+				set_cosmetic_tag = IPN_DMS_init
 			}
 			PMT = {
-				set_cosmetic_tag = IPN_SRB_init
+				set_cosmetic_tag = IPN_PMT_init
 			}
 			SLS = {
-				set_cosmetic_tag = IPN_SRB_init
+				set_cosmetic_tag = IPN_SLS_init
 			}
 			NRB = {
 				add_ideas = TNOIPN_SHO_defenses_emptied
