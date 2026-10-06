@@ -3,7 +3,8 @@ state = {
 	name = "STATE_667"
 
 	history = {
-		owner = INS
+		owner = BKB
+		add_core_of = BKB
 		add_extra_state_shared_building_slots = 1
 		buildings = {
 			infrastructure = 4

@@ -43,6 +43,21 @@ on_actions = {
 			SLS = {
 				set_cosmetic_tag = IPN_SLS_init
 			}
+			ABD = {
+				set_cosmetic_tag = IPN_ABD_init
+			}
+			NII = {
+				set_cosmetic_tag = IPN_NII_init
+			}
+			BKB = {
+				set_cosmetic_tag = IPN_BKB_init
+			}
+			JJK = {
+				set_cosmetic_tag = IPN_JJK_init
+			}
+			PAP = {
+				set_cosmetic_tag = IPN_PAP_init
+			}
 			NRB = {
 				add_ideas = TNOIPN_SHO_defenses_emptied
 			}

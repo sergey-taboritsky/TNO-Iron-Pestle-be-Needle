@@ -2,6 +2,8 @@ capital = 817 #Medan
 
 # Vacant
 recruit_character = DMS_Generic_Vacant
+recruit_character = DMS_Kartosuwiryo
+recruit_character = DMS_Amir_Fatah
 
 
 

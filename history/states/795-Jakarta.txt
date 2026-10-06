@@ -7,7 +7,8 @@ state = { #Population + VPs Done
 	}
 
 	history = {
-		owner = INS
+		owner = JJK
+		add_core_of = JJK
 		victory_points = { 7381 40 }
 		buildings = {
 			thermoelectric_plant = 1

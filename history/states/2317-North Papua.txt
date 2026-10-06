@@ -3,7 +3,8 @@ state = {
 	name = "STATE_2317"
 
 	history = {
-		owner = INS
+		owner = PAP
+		add_core_of = PAP
 		buildings = {
 			infrastructure = 2
 			12371 = {

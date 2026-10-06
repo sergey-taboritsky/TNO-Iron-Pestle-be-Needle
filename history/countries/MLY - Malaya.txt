@@ -1,4 +1,4 @@
-capital = 1451
+﻿capital = 1451
 
 # Vacant
 recruit_character = MLY_Generic_Vacant
@@ -21,6 +21,25 @@ recruit_character = MLY_Syed_Nasir_Ismail
 recruit_character = MLY_Rashid_Maidin
 recruit_character = MLY_Muhammed_Indera
 recruit_character = MLY_Tunku_Osman
+
+recruit_character = MLY_Yamin
+recruit_character = MLY_Agus_Salim
+recruit_character = MLY_Natsir
+recruit_character = MLY_Hamka
+recruit_character = MLY_Sjahrir
+recruit_character = MLY_Hatta
+recruit_character = MLY_Syafruddin_Prawiranegara
+recruit_character = MLY_Teuku_Muhammad_Hasan
+recruit_character = MLY_Daud_Beureueh
+recruit_character = MLY_Tan_Malaka
+recruit_character = MLY_Aidit
+recruit_character = MLY_Shamsiah_Fakeh
+recruit_character = MLY_Abdullah_CD
+recruit_character = MLY_Nasution
+recruit_character = MLY_Simatupang
+recruit_character = MLY_Achmad_Tahir
+recruit_character = MLY_Ibrahim_bin_Yaacob
+recruit_character = MLY_Mustapha_Hussain
 
 set_convoys = 25
 add_manpower = 100000
@@ -191,7 +210,6 @@ set_technology = {
 	military_construction_1 = 1
 }
 
-set_global_flag = MLY_WAR_HAPPENING
 set_variable = { MLY_check_already_happened = 0 }
 
 add_ideas = {
@@ -289,12 +307,6 @@ set_variable = { tno_conscription_effectiveness = 50 }
 set_variable = { tno_military_supervision_effectiveness = 50 }
 set_variable = { tno_training_effectiveness = 50 }
 set_variable = { tno_draft_exemptions_effectiveness = 50 }
-
-declare_war_on = {
-	target = SHO
-	type = civil_war
-}
-
 add_equipment_to_stockpile = {
 	type = infantry_equipment_2
 	amount = 1000

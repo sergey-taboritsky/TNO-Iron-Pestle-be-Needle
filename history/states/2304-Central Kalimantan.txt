@@ -6,7 +6,8 @@ state = {
 	}
 
 	history = {
-		owner = INS
+		owner = ABD
+		add_core_of = ABD
 		buildings = {
 			infrastructure = 1
 			10310 = {

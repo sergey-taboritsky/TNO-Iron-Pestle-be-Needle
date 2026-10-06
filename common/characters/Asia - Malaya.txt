@@ -1,20 +1,7 @@
-characters = {
+﻿characters = {
 	##############
 	### MALAYA ###
 	##############
-#Leaders
-	MCN_Chooi_Yew_Choi = {
-		name = MCN_Chooi_Yew_Choi
-		portraits = {
-			civilian = { large = "gfx/leaders/MLY/Portrait_MCN_Chooi_Yew_Choi.png" }
-		}
-		country_leader = {
-			desc = "POLITICS_CHOOI_YEW_CHOI_DESC"
-			ideology = progressivism_popular_front_subtype
-			expire = "1985.1.1"
-			id = -1
-		}
-	}
 	MLY_Chin_Peng = {
 		name = MLY_Chin_Peng
 		portraits = {
@@ -40,180 +27,65 @@ characters = {
 	MLY_Ahmad_Boestamam = {
 		name = MLY_Ahmad_Boestamam
 		portraits = {
-			civilian = {
-				large = "gfx/leaders/MLY/Portrait_MLY_Ahmad_Boestamam.png"
-				small = "GFX_idea_MLY_Ahmad_Boestamam"
-			}
+			civilian = { large = "gfx/leaders/MLY/Portrait_MLY_Ahmad_Boestamam.png" }
 		}
 		country_leader = {
 			#desc = "POLITICS_Ahmad_Boestamam_DESC"
-			ideology = socialist_social_democracy_subtype
-			expire = "1985.1.1"
-			id = -1
-		}
-		advisor = {
-			slot = economy_minister
-			idea_token = MLY_Ahmad_Boestamam_eco
-			allowed = { original_tag = MLY }
-			ledger = civilian
-			traits = {
-				economy_minister
-			}
-			cost = -1
-			can_be_fired = no
-			ai_will_do = { factor = 0 }
-		}
-	}
-	MLY_Tan_Khai_Hee = {
-		name = MLY_Tan_Khai_Hee
-		portraits = {
-			civilian = { large = "gfx/leaders/MLY/Portrait_MLY_Tan_Khai_Hee.png" }
-		}
-		country_leader = {
-			#desc = "POLITICS_THAN_KHAIHEE_DESC"
-			ideology = socialist_1_subtype
+			ideology = socialist_revolutionary_frontism_subtype
 			expire = "1985.1.1"
 			id = -1
 		}
 	}
-	MLY_Burnahuddin_Al_Helmy = {
-		name = MLY_Burnahuddin_Al_Helmy
+	MLY_Tun_Abdul_Razak = {
+		name = MLY_Tun_Abdul_Razak
 		portraits = {
-			civilian = { large = "gfx/leaders/SHO/Portrait_Shonan_Burhanuddin_al-Helmy.png" }
+			civilian = { large = "gfx/leaders/MLY/Portrait_MLY_Razak.png" }
 		}
 		country_leader = {
-			#desc = "POLITICS_DR_BUHANUDDIN_DESC"
-			ideology = socialist_2_subtype
-			expire = "1985.1.1"
-			id = -1
-		}
-	}
-	MLY_Ibrahim_bin_Yaacob = {
-		name = MLY_Ibrahim_bin_Yaacob
-		portraits = {
-			civilian = { large = "" }
-		}
-		country_leader = {
-			#desc = ""
+			#desc = "POLITICS_Tun_Abdul_Razak_DESC"
 			ideology = conservatism_paternalistic_conservatism_subtype
 			expire = "1985.1.1"
 			id = -1
 		}
 	}
-	MLY_Mustapha_Hussain = {
-		name = MLY_Mustapha_Hussain
+	MLY_Yeop_Mahidin = {
+		name = MLY_Yeop_Mahidin
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/Generics/leader_unknown.png"
+				large = "gfx/leaders/MLY/Portrait_MLY_Yeop_Mahidin.png"
 			}
 			army = {
-				large = "gfx/leaders/Generics/leader_unknown.png"
+				large = "gfx/leaders/MLY/Portrait_MLY_Yeop_Mahidin.png"
 			}
 		}
 		country_leader = {
-			#desc = ""
-			ideology = paternalism_social_nationalism_subtype
+			#desc = "POLITICS_Askar_Wataniah_DESC"
+			ideology = despotism_military_junta_subtype
 			expire = "1985.1.1"
 			id = -1
 		}
-	}
-	MLY_Ishak_Haji_Muhammad = {
-		name = MLY_Ishak_Haji_Muhammad
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/Generics/leader_unknown.png"
-			}
-			army = {
-				large = "gfx/leaders/Generics/leader_unknown.png"
-			}
+		field_marshal = {
+			traits = { politically_connected skilled_staffer }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+			legacy_id = 29981
 		}
 	}
-#Ministers
-	MLY_Yeung_Kwo = {
-		name = MLY_Yeung_Kwo
+	MLY_Tun_Hussein_Onn = {
+		name = MLY_Tun_Hussein_Onn
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/MLY/Portrait_MLY_Yeung_Kwo.png"
-				small = "GFX_idea_MLY_Yeung_Kwo"
+				large = "gfx/leaders/MLY/Portrait_MLY_Hussein_Onn.png"
 			}
 		}
 		country_leader = {
-			#desc = ""
-			ideology = communist_1_subtype
+			#desc = "POLITICS_Hussein_Onn_DESC"
+			ideology = paternalism_national_conservatism_subtype
 			expire = "1985.1.1"
 			id = -1
-		}
-		advisor = {
-			slot = head_of_government
-			idea_token = MLY_Yeung_Kwo_hog
-			allowed = { original_tag = MLY }
-			traits = {
-				head_of_government
-			}
-			ledger = civilian
-			cost = -1
-			can_be_fired = no
-			ai_will_do = { factor = 0 }
-		}
-	}
-	MLY_Chin_Tien = {
-		name = MLY_Chin_Tien
-		portraits = {
-			civilian = { large = "" }
-		}
-		advisor = {
-			slot = economy_minister
-			idea_token = MLY_Chin_Tien_eco
-			allowed = { original_tag = MLY }
-			traits = {
-				economy_minister
-			}
-			ledger = civilian
-			cost = -1
-			can_be_fired = no
-			ai_will_do = { factor = 0 }
-		}
-	}
-	MLY_Li_An_tung = {
-		name = MLY_Li_An_tung
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/MLY/Portrait_MLY_Li_An_Tung.png"
-				small = "GFX_idea_MLY_Li_An_Tung"
-			}
-		}
-		advisor = {
-			slot = foreign_minister
-			idea_token = MLY_Li_An_tung_for
-			allowed = { original_tag = MLY }
-			traits = {
-				foreign_minister
-			}
-			ledger = civilian
-			cost = -1
-			can_be_fired = no
-			ai_will_do = { factor = 0 }
-		}
-	}
-	MLY_Lee_Meng = {
-		name = MLY_Lee_Meng
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/MLY/Portrait_MLY_Lee_Meng.png"
-				small = "GFX_idea_MLY_Lee_Meng"
-			}
-		}
-		advisor = {
-			slot = security_minister
-			idea_token = MLY_Lee_Meng_sec
-			allowed = { original_tag = MLY }
-			traits = {
-				security_minister
-			}
-			ledger = civilian
-			cost = -1
-			can_be_fired = no
-			ai_will_do = { factor = 0 }
 		}
 	}
 	MLY_Rashid_Maidin = {
@@ -221,7 +93,6 @@ characters = {
 		portraits = {
 			army = {
 				large = "gfx/leaders/MLY/Portrait_MLY_Rashid_Maidin.png"
-				small = "GFX_idea_MLY_Rashid_Maidin"
 			}
 		}
 		corps_commander = {
@@ -231,20 +102,6 @@ characters = {
 			planning_skill = 2
 			logistics_skill = 2
 			legacy_id = 29982
-		}
-		advisor = {
-			slot = army_chief
-			idea_token = MLY_Rashid_Maidin_army_chief
-			allowed = { original_tag = MLY }
-			ledger = army
-			traits = {
-				army_chief
-				army_chief_old_guard
-				army_chief_drill_2
-			}
-			cost = -1
-			can_be_fired = no
-			ai_will_do = { factor = 0 }
 		}
 	}
 	MLY_Muhammed_Indera = {
@@ -290,6 +147,17 @@ characters = {
 			}
 		}
 	}
+	MLY_Ishak_Haji_Muhammad = {
+		name = MLY_Ishak_Haji_Muhammad
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/Generics/leader_unknown.png"
+			}
+			army = {
+				large = "gfx/leaders/Generics/leader_unknown.png"
+			}
+		}
+	}
 	MLY_Aziz_Ishak = {
 		name = MLY_Aziz_Ishak
 		portraits = {
@@ -324,6 +192,357 @@ characters = {
 		}
 	}
 
+
+	##############
+	### RSM (IPN) ###
+	##############
+	MLY_Yamin = {
+		name = MLY_Yamin
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Yamin_DESC
+			ideology = paternalism_social_nationalism_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+	}
+	MLY_Agus_Salim = {
+		name = MLY_Agus_Salim
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Agus_Salim_DESC
+			ideology = conservatism_islamic_conservatism_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+	}
+	MLY_Natsir = {
+		name = MLY_Natsir
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Natsir_DESC
+			ideology = conservatism_islamic_conservatism_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+	}
+	MLY_Hamka = {
+		name = MLY_Hamka
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Hamka_DESC
+			ideology = conservatism_islamic_conservatism_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+	}
+	MLY_Sjahrir = {
+		name = MLY_Sjahrir
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Sjahrir_DESC
+			ideology = socialist_social_democracy_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+	}
+	MLY_Hatta = {
+		name = MLY_Hatta
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Hatta_DESC
+			ideology = paternalism_paternalistic_developmentalism_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = economy_minister
+			idea_token = MLY_Hatta_eco
+			allowed = { original_tag = MLY }
+			traits = {
+				economy_minister
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	MLY_Syafruddin_Prawiranegara = {
+		name = MLY_Syafruddin_Prawiranegara
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Syafruddin_Prawiranegara_DESC
+			ideology = paternalism_paternalistic_developmentalism_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = economy_minister
+			idea_token = MLY_Syafruddin_Prawiranegara_eco
+			allowed = { original_tag = MLY }
+			traits = {
+				economy_minister
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	MLY_Teuku_Muhammad_Hasan = {
+		name = MLY_Teuku_Muhammad_Hasan
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Teuku_Muhammad_Hasan_DESC
+			ideology = conservatism_islamic_conservatism_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+	}
+	MLY_Daud_Beureueh = {
+		name = MLY_Daud_Beureueh
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Daud_Beureueh_DESC
+			ideology = despotism_theocracy_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+	}
+	MLY_Tan_Malaka = {
+		name = MLY_Tan_Malaka
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Tan_Malaka_DESC
+			ideology = communist_national_communism_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+	}
+	MLY_Aidit = {
+		name = MLY_Aidit
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Aidit_DESC
+			ideology = communist_mao_zedong_thought_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+	}
+	MLY_Shamsiah_Fakeh = {
+		name = MLY_Shamsiah_Fakeh
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Shamsiah_Fakeh_DESC
+			ideology = communist_national_communism_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+	}
+	MLY_Abdullah_CD = {
+		name = MLY_Abdullah_CD
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+			army = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Abdullah_CD_DESC
+			ideology = communist_national_communism_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = 30003
+		}
+	}
+	MLY_Nasution = {
+		name = MLY_Nasution
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+			army = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Nasution_DESC
+			ideology = despotism_military_junta_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+		field_marshal = {
+			traits = { politically_connected skilled_staffer }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = 30001
+		}
+	}
+	MLY_Simatupang = {
+		name = MLY_Simatupang
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+			army = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Simatupang_DESC
+			ideology = socialist_social_democracy_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+		field_marshal = {
+			traits = { skilled_staffer }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = 30002
+		}
+	}
+	MLY_Achmad_Tahir = {
+		name = MLY_Achmad_Tahir
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+			army = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Achmad_Tahir_DESC
+			ideology = despotism_military_junta_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+			legacy_id = 30004
+		}
+	}
+	MLY_Ibrahim_bin_Yaacob = {
+		name = MLY_Ibrahim_bin_Yaacob
+		portraits = {
+			civilian = { large = "" }
+		}
+		country_leader = {
+			#desc = ""
+			ideology = conservatism_paternalistic_conservatism_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	MLY_Mustapha_Hussain = {
+		name = MLY_Mustapha_Hussain
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+			army = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			#desc = ""
+			ideology = paternalism_social_nationalism_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	MLY_Rashid_Maidin = {
+		name = MLY_Rashid_Maidin
+		portraits = {
+			army = {
+				large = "gfx/leaders/MLY/Portrait_MLY_Rashid_Maidin.png"
+				small = "GFX_idea_MLY_Rashid_Maidin"
+			}
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = 29982
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = MLY_Rashid_Maidin_army_chief
+			allowed = { original_tag = MLY }
+			ledger = army
+			traits = {
+				army_chief
+				army_chief_old_guard
+				army_chief_drill_2
+			}
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+
+	##############
+	### DMS (IPN) ###
+	##############
+	DMS_Kartosuwiryo = {
+		name = DMS_Kartosuwiryo
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = DMS_Kartosuwiryo_DESC
+			ideology = despotism_theocracy_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+	}
+	DMS_Amir_Fatah = {
+		name = DMS_Amir_Fatah
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+			army = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = DMS_Amir_Fatah_DESC
+			ideology = despotism_theocracy_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+		corps_commander = {
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = 30006
+		}
+	}
 	##############
 	### SHONAN ###
 	##############
@@ -365,11 +584,11 @@ characters = {
 			id = -1
 		}
 	}
-	SHO_Takeo_Kurosawa = {
-		name = SHO_Takeo_Kurosawa
+	SHO_Kurosawa_Takeo = {
+		name = SHO_Kurosawa_Takeo
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/SHO/Portrait_Shonan_Takeo_Kurosawa.png"
+				large = "gfx/leaders/SHO/Portrait_Shonan_Kurosawa_Takeo.png"
 			}
 		}
 		country_leader = {

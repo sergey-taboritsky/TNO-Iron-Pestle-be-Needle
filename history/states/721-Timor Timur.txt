@@ -6,7 +6,8 @@ state = { #Population + VPs Done
 	state_category = pastoral
 
 	history = {
-		owner = INS
+		owner = BKB
+		add_core_of = BKB
 		buildings = {
 			infrastructure = 3
 			radar_station = 2

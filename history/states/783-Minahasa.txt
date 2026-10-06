@@ -7,7 +7,8 @@ state = {
 	}
 
 	history = {
-		owner = INS
+		owner = PMT
+		add_core_of = PMT
 		set_state_flag = has_offshore_island
 		buildings = {
 			10153 = {

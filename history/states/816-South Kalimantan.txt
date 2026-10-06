@@ -13,7 +13,8 @@ state = {
 		victory_points = {
 			7296 1
 		}
-		owner = INS
+		owner = ABD
+		add_core_of = ABD
 		buildings = {
 			infrastructure = 3
 			offices = 1

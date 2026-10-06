@@ -3,7 +3,8 @@ state = {
 	name = "STATE_2316"
 
 	history = {
-		owner = INS
+		owner = PAP
+		add_core_of = PAP
 		set_state_flag = has_offshore_island
 		buildings = {
 			infrastructure = 1

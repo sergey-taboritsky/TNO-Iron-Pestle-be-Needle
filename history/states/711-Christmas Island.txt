@@ -5,7 +5,8 @@ state = { #Population + VPs Done
 	state_category = tiny_island
 
 	history = {
-		owner = INS
+		owner = AST
+		add_core_of = AST
 		buildings = {
 			infrastructure = 1
 			air_base = 2
