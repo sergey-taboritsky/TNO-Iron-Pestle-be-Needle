@@ -773,6 +773,33 @@
 		}
 	}
 
+	##############
+	### SHO (IPN) ###
+	##############
+	SHO_Lim_Tianbao = {
+		name = SHO_Lim_Tianbao
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = SHO_Lim_Tianbao_DESC
+			ideology = paternalism_national_conservatism_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+	}
+	SHO_Tan_Yeok_Seong = {
+		name = SHO_Tan_Yeok_Seong
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = SHO_Tan_Yeok_Seong_DESC
+			ideology = paternalism_paternalistic_developmentalism_subtype
+			expire = "1999.1.1"
+			id = -1
+		}
+	}
 	#############
 	### JOHOR ###
 	#############

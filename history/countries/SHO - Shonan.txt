@@ -1,7 +1,11 @@
-capital = 751
+﻿capital = 751
 
 # Vacant
 recruit_character = SHO_Generic_Vacant
+
+# IPN: 昭南华人傀儡政权
+recruit_character = SHO_Lim_Tianbao
+recruit_character = SHO_Tan_Yeok_Seong
 add_manpower = 100000
 
 #GDP Regional distribution
