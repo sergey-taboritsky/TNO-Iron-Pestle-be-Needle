@@ -1,4 +1,4 @@
-capital = 817 #Medan
+capital = 1757
 
 # Vacant
 recruit_character = DMP_Generic_Vacant

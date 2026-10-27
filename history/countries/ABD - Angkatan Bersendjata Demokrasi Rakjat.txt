@@ -1,4 +1,4 @@
-capital = 817 #Medan
+capital = 334
 
 # Vacant
 recruit_character = ABD_Generic_Vacant

@@ -61,27 +61,6 @@ on_actions = {
 			NRB = {
 				add_ideas = TNOIPN_SHO_defenses_emptied
 			}
-			set_variable = {
-				global.TNOIPN_MLY_north_borneo_revolt_power_japan_var = 43
-			}
-			set_variable = {
-				global.TNOIPN_MLY_north_borneo_revolt_power_resistance_var = 57
-			}
-			set_variable = {
-				global.TNOIPN_MLY_north_borneo_revolt_power_communist_var = 24
-			}
-			set_variable = {
-				global.TNOIPN_MLY_north_borneo_revolt_power_nationalist_var = 76
-			}
-			set_variable = {
-				global.TNOIPN_MLY_north_borneo_revolt_BRP_left_var = 35
-			}
-			set_variable = {
-				global.TNOIPN_MLY_north_borneo_revolt_BRP_independent_var = 48
-			}
-			set_variable = {
-				global.TNOIPN_MLY_north_borneo_revolt_BRP_indonesia_var = 17
-			}
 		}
 	}
 }

@@ -1,5 +1,8 @@
 ﻿l_simp_chinese:
 ## Countries ##
+ DMS: "西爪哇伊斯兰国"
+ DMS_DEF: "西爪哇伊斯兰国"
+ DMS_ADJ: "西爪哇"
 ## States and VPs ##
 ## Cosmetic Tags ##
 ## Characters ##
@@ -8,8 +11,6 @@
  DMS_Amir_Fatah: "阿米尔·法塔赫"
  DMS_Amir_Fatah_DESC: "达鲁伊斯兰西爪哇战地司令，反 RSM 圣战前线指挥官。\n\n法塔赫是西爪哇人，早年加入卡尔托苏维约的达鲁伊斯兰组织，长期活跃于爪哇乡间的清真寺网络与地方武装之间。\n\n在 OTL 达鲁伊斯兰叛乱期间，他以野外战术与对爪哇中部地形的熟稔运用，成为 DI 在西爪哇最重要的战地指挥者之一。\n\n在架空线中，阿米尔·法塔赫是 DMS 的野战指挥官，代表该国的武力支柱：他既服从伊玛目的宗教权威，又以军事现实修正极端教法。在 DMS 与 RSM（印度尼西亚民族共和国）的长期对峙中，他负责西线战场的消耗与游击，是压在其世俗对手心头的一柄利刃。"
 ## Parties ##
- DMS_ADJ: "西爪哇"
- DMS_DEF: "西爪哇伊斯兰国"
  DMS_despotism_party: "西爪哇伊斯兰国 - 达鲁伊斯兰正统派"
  DMS_despotism_party_long: "西爪哇伊斯兰国 - 达鲁伊斯兰正统派（Aliran Utama Darul Islam）"
 ## Ideas ##

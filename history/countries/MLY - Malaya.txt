@@ -1,4 +1,4 @@
-﻿capital = 1451
+﻿capital = 1764
 
 # Vacant
 recruit_character = MLY_Generic_Vacant

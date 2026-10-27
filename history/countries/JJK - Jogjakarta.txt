@@ -1,4 +1,4 @@
-capital = 817 #Medan
+capital = 795
 
 # Vacant
 recruit_character = JJK_Generic_Vacant

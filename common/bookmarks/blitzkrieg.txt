@@ -1,4 +1,4 @@
-bookmarks = {
+﻿bookmarks = {
 
 	###################################################################
 	##### DON'T DELETE THIS, ALSO EDIT IN the_gathering_storm.txt #####
@@ -10,7 +10,7 @@ bookmarks = {
 		desc = "THENEWORDER_DESC"
 		date = 1962.1.1.1
 		picture = "GFX_select_date_1939"
-		default_country = "PKM"
+		default_country = "MLY"
 		default = yes
 
 		effect = {
@@ -137,19 +137,9 @@ bookmarks = {
 		"ZZZ" = { history = "" }
 		"ZZZ" = { history = "" }
 
-		"PKM" = {
-			history = "PKM_THENEWORDER_DESC"
-			ideology = communist
-			ideas = {
-				TNOIPN_PKM_united_front_policy
-				TNOIPN_PKM_manpower_running_dry
-				TNOIPN_PKM_detachment_military
-			}
-			focuses = {
-				MLY_start_break_out
-				MLY_guerilla_ipoh_conference
-				MLY_guerilla_times_up
-			}
+		"MLY" = {
+			history = "MLY_THENEWORDER_DESC"
+			ideology = communism
 		}
 
 		"TUR" = {

@@ -1,4 +1,4 @@
-capital = 817 #Medan
+capital = 2306
 
 # Vacant
 recruit_character = NII_Generic_Vacant

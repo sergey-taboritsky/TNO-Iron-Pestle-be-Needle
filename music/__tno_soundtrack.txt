@@ -692,7 +692,7 @@ music = {
 music = {
 	song = "TNO_TRM"
 	chance = {
-		modifier = { factor = 1 original_tag = PKM }
+		modifier = { factor = 1 original_tag = MLY }
 	}
 }
 ##Thank to TNO:TRM,No TRM, NO IPN
