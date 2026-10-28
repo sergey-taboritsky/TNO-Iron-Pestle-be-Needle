@@ -73,14 +73,32 @@ set_politics = {
 	elections_allowed = no
 }
 
+# 槽位键名：socialist / communist 为形容词形，其余为名词形；编号槽位写法见 TNO 本体
+# TNO_peace_on_actions.txt（despotism_1 = 40 直接写在 set_popularities 内）
+# 团结党横跨四个意识形态系、七个槽位，合计 49 —— 差一点过半，呼应 1955 年那九票
+# 党名由 <TAG>_<ideology>_party 本地化键提供，引擎自动读取
 set_popularities = {
-	paternalism = 40   # 国民印尼团 / 米南加保文官集团
-	despotism = 24     # 苏门答腊民族军队（巴塔克军官团）
-	conservatism = 15  # 马斯友美 / 半岛马来保守派
-	socialism = 9      # 印尼社会主义党
-	progressivism = 6
-	liberalism = 3
-	communist = 3      # 地下，无合法代表
+	# 执政党 · 家长制四翼
+	paternalism = 7      # 印尼团结党 - 国民印尼团（GONI 元老派，亚明本人的班底）
+	paternalism_1 = 7    # 印尼团结党 - 半岛印尼人运动（KMM 激进系，雅各布）
+	paternalism_2 = 9    # 印尼团结党 - 合作社运动（哈达技术官僚派，掌账本）
+	# 行政班与军队
+	despotism = 8        # 印尼团结党 - 十州行政班（米南加保文官军政派，握行政机关与警察）
+	despotism_1 = 8      # 印尼国民军 - 巴塔克军官团（武吉巴里桑，守住这两块土地）
+	despotism_2 = 4      # 印尼国民军 - 西利旺吉流亡者（要拿这个国家换回爪哇）
+	despotism_3 = 7      # 印尼团结党 - 青年义勇军（萨利赫，复员军人与街头。本体 paternalism 无 _3 槽，故挂 despotism_3）
+	# 保守派
+	conservatism = 15    # 马斯友美党（伊斯兰现代派，最大反对党）
+	conservatism_1 = 6   # 印尼团结党 - 新山麻坡集团（半岛马来宫廷系，翁·惹化 1.19 病逝）
+	conservatism_2 = 5   # 印尼团结党 - 塔比亚传道会（Thawalib 系统的宗教学校网）
+	# 印尼社会党两翼
+	socialist = 10       # 印尼社会党 - 农工代表大会（沙里尔系）
+	progressivism = 6    # 印尼社会党 - 议会进步党团
+	# 无武装的少数
+	liberalism = 5       # 华人公会（不得持枪，只有钱；1955 年那十七票出自这里）
+	# 地下（无合法代表）
+	communist = 2        # 印度尼西亚共产党（艾地、拉希德·迈丁半岛局）
+	communist_1 = 1      # 中国共产党 - 南洋临时委员会（陈平、杨果的华人线）
 }
 
 set_technology = {

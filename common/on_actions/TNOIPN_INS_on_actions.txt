@@ -2,6 +2,7 @@ on_actions = {
 	#STARTUP DEFINITIONS
 	on_startup = {
 		effect = {
+			# 政党名一律走本地化键 MLY_<ideology>_party，引擎自动读取
 			MLY = {
 				set_cosmetic_tag = IPN_MLY_init
 				set_capital = {
