@@ -1,0 +1,38 @@
+ideas = {
+	country = {
+		# 米南加保文官集团与半岛马来贵族之间的建国契约
+		TNOIPN_MLY_minangkabau_malay_compact = {
+			modifier = {
+				political_power_factor = 0.10
+				army_org_factor = 0.05
+			}
+		}
+
+		# 半岛华人：被压制的税基，也是这个国家随时可能被点燃的地方
+		TNOIPN_MLY_the_chinese_question = {
+			modifier = {
+				political_power_factor = -0.05
+				recruitable_population_factor = -0.10
+				army_core_defence_factor = 0.05
+			}
+		}
+
+		# 巴塔克人握着枪：苏门答腊唯一的职业军官团
+		TNOIPN_MLY_batak_officer_corps = {
+			modifier = {
+				army_core_attack_factor = 0.05
+				command_power_gain_mult = 0.10
+				army_org_factor = -0.05
+			}
+		}
+
+		# 残缺的群岛：国家的一半在别人手里
+		TNOIPN_MLY_severed_archipelago = {
+			modifier = {
+				political_power_factor = -0.05
+				research_speed_factor = -0.05
+				army_morale_factor = 0.05
+			}
+		}
+	}
+}

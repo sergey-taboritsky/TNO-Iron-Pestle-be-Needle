@@ -2,6 +2,9 @@ capital = 334
 
 # Vacant
 recruit_character = ABD_Generic_Vacant
+recruit_character = ABD_Baba_Masao
+recruit_character = ABD_Kamada_Michiaki # IPN: 南婆罗洲海军军政长官（第 22 特别根据地队）
+recruit_character = ABD_Sultan_Hamid_II # IPN: 坤甸苏丹，合作政权元首 # IPN: 北婆罗洲陆军军政长官
 
 
 set_stability = 0.7

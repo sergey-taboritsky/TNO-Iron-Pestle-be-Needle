@@ -1,5 +1,5 @@
 division_template = {
-	name = "Wataniah"
+	name = "Divisi Siliwangi"
 	regiments = {
 		elite_infantry = { x = 0 y = 0 }
 		elite_infantry = { x = 0 y = 1 }
@@ -14,7 +14,7 @@ division_template = {
 	}
 }
 division_template = {
-	name = "MPAJA Independent Regiment"
+	name = "Brigade Bukit Barisan"
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
@@ -28,7 +28,7 @@ division_template = {
 	}
 }
 division_template = {
-	name = "MPAJA Elite Regiment"
+	name = "Divisi Pengawal Republik"
 	regiments = {
 		elite_infantry = { x = 0 y = 0 }
 		elite_infantry = { x = 0 y = 1 }
@@ -45,65 +45,65 @@ division_template = {
 
 units = {
 	division = {
-		name = "Askar Wataniah"
+		name = "Divisi Siliwangi"
 		location = 7342
-		division_template = "Wataniah"
+		division_template = "Divisi Siliwangi"
 		start_equipment_factor = 1.0
 		start_experience_factor = 0.7
 	}
 	division = {
-		name = "1st MPAJA Independent Regiment"
+		name = "Brigade Bukit Barisan I"
 		location = 4310
-		division_template = "MPAJA Independent Regiment"
+		division_template = "Brigade Bukit Barisan"
 		start_equipment_factor = 1.0
 		start_experience_factor = 0.4
 	}
 	division = {
-		name = "2nd MPAJA Independent Regiment"
+		name = "Brigade Bukit Barisan II"
 		location = 4310
-		division_template = "MPAJA Independent Regiment"
+		division_template = "Brigade Bukit Barisan"
 		start_equipment_factor = 1.0
 		start_experience_factor = 0.4
 	}
 	division = {
-		name = "3rd MPAJA Independent Regiment"
+		name = "Brigade Bukit Barisan III"
 		location = 14703
-		division_template = "MPAJA Independent Regiment"
+		division_template = "Brigade Bukit Barisan"
 		start_equipment_factor = 1.0
 		start_experience_factor = 0.4
 	}
 	division = {
-		name = "4th MPAJA Independent Regiment"
+		name = "Brigade Melayu I"
 		location = 14701
-		division_template = "MPAJA Independent Regiment"
+		division_template = "Brigade Bukit Barisan"
 		start_equipment_factor = 1.0
 		start_experience_factor = 0.4
 	}
 	division = {
-		name = "5th MPAJA Independent Regiment"
+		name = "Brigade Melayu II"
 		location = 14701
-		division_template = "MPAJA Independent Regiment"
+		division_template = "Brigade Bukit Barisan"
 		start_equipment_factor = 1.0
 		start_experience_factor = 0.4
 	}
 	division = {
-		name = "6th MPAJA Independent Regiment"
+		name = "Korps Selat"
 		location = 14701
-		division_template = "MPAJA Independent Regiment"
+		division_template = "Brigade Bukit Barisan"
 		start_equipment_factor = 1.0
 		start_experience_factor = 0.4
 	}
 	division = {
-		name = "7th MPAJA Independent Regiment"
+		name = "Barisan Aceh"
 		location = 14701
-		division_template = "MPAJA Independent Regiment"
+		division_template = "Brigade Bukit Barisan"
 		start_equipment_factor = 1.0
 		start_experience_factor = 0.4
 	}
 	division = {
-		name = "1st Elite Regiment"
+		name = "Divisi Pengawal Republik"
 		location = 7342
-		division_template = "MPAJA Elite Regiment"
+		division_template = "Divisi Pengawal Republik"
 		start_equipment_factor = 1.0
 		start_experience_factor = 0.7
 	}

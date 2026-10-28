@@ -2,6 +2,7 @@ capital = 795
 
 # Vacant
 recruit_character = JJK_Generic_Vacant
+recruit_character = JJK_Maeda_Tadashi # IPN: 贾加鲁塔民政长官 / 努山塔拉邦联秘书长
 
 
 set_stability = 0.7

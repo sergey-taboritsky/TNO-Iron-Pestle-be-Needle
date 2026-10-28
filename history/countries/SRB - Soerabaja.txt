@@ -2,6 +2,9 @@ capital = 1756
 
 # Vacant
 recruit_character = SRB_Generic_Vacant
+recruit_character = SRB_Woerjaningrat
+recruit_character = SRB_Susanto_Tirtoprodjo
+recruit_character = SRB_Iskaq_Tjokrohadisurjo
 
 set_stability = 0.7
 

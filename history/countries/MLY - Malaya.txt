@@ -5,41 +5,49 @@ recruit_character = MLY_Generic_Vacant
 fill_empty_minister_nochecks = yes # Please remove if you're adding ministers.
 
 
-# Leaders
-recruit_character = MLY_Chin_Peng
-recruit_character = MLY_Ahmad_Boestamam
-recruit_character = MLY_Tun_Abdul_Razak
-recruit_character = MLY_Yeop_Mahidin
-recruit_character = MLY_Tun_Hussein_Onn
-recruit_character = MLY_Ibrahim_Ismail
-recruit_character = MLY_Ishak_Haji_Muhammad
-recruit_character = MLY_Aziz_Ishak
-recruit_character = MLY_Tun_Dr_Ismail
-recruit_character = MLY_Syed_Nasir_Ismail
+# IPN: 陈平（MLY_Chin_Peng）不在开局名单内——他是半岛华人地下共运的领袖，只在叛乱中登场。
 
-# Generals
-recruit_character = MLY_Rashid_Maidin
-recruit_character = MLY_Muhammed_Indera
-recruit_character = MLY_Tunku_Osman
-
+# Leaders  — 苏门答腊（米南加保）集团
 recruit_character = MLY_Yamin
-recruit_character = MLY_Agus_Salim
+recruit_character = MLY_Chaerul_Saleh
+recruit_character = MLY_Hatta
+recruit_character = MLY_Syafruddin_Prawiranegara
 recruit_character = MLY_Natsir
 recruit_character = MLY_Hamka
 recruit_character = MLY_Sjahrir
-recruit_character = MLY_Hatta
-recruit_character = MLY_Syafruddin_Prawiranegara
 recruit_character = MLY_Teuku_Muhammad_Hasan
 recruit_character = MLY_Daud_Beureueh
-recruit_character = MLY_Tan_Malaka
-recruit_character = MLY_Aidit
-recruit_character = MLY_Shamsiah_Fakeh
-recruit_character = MLY_Abdullah_CD
+
+# Leaders  — 半岛马来集团
+recruit_character = MLY_Dato_Onn_Jaafar
+recruit_character = MLY_Ibrahim_bin_Yaacob
+recruit_character = MLY_Mustapha_Hussain
+recruit_character = MLY_Tun_Abdul_Razak
+recruit_character = MLY_Tun_Hussein_Onn
+recruit_character = MLY_Tun_Dr_Ismail
+recruit_character = MLY_Syed_Nasir_Ismail
+recruit_character = MLY_Ibrahim_Ismail
+recruit_character = MLY_Ishak_Haji_Muhammad
+recruit_character = MLY_Aziz_Ishak
+recruit_character = MLY_Yeop_Mahidin
+
+# Generals — 巴塔克军官团与海峡系
 recruit_character = MLY_Nasution
 recruit_character = MLY_Simatupang
 recruit_character = MLY_Achmad_Tahir
-recruit_character = MLY_Ibrahim_bin_Yaacob
-recruit_character = MLY_Mustapha_Hussain
+recruit_character = MLY_Tunku_Osman
+recruit_character = MLY_Umar_Wirahadikusumah
+recruit_character = MLY_Gatot_Subroto
+
+# IPN: 宗教翼 / 氏族 / 军政派 / 警察 / 华人商会
+recruit_character = MLY_Sulaiman_ar_Rasuli
+recruit_character = MLY_Sirajuddin_Abbas
+recruit_character = MLY_Rahmah_El_Yunusiyah
+recruit_character = MLY_Adnan_Kapau_Gani
+recruit_character = MLY_Awaluddin_Djamin
+recruit_character = MLY_Tan_Siew_Sin
+
+# IPN: 以下三人属地下武装，开局不招募（陈平、杨果 / 艾地、拉希德·迈丁）
 
 set_convoys = 25
 add_manpower = 100000
@@ -49,30 +57,30 @@ set_stability = 0.6
 set_war_support = 0.6
 
 oob = "MLY_1962"
-set_grand_doctrine = unconventional_warfare
-set_sub_doctrine = light_infantry_primacy
+set_grand_doctrine = defensive_warfare
+set_sub_doctrine = regular_infantry_primacy
 set_sub_doctrine = towed_artillery_firepower
 set_sub_doctrine = armored_car_support
-set_sub_doctrine = guerrilla_operational_doctrine
+set_sub_doctrine = coin_operational_doctrine
 add_mastery = {
 	amount = 300
 }
 
-set_cosmetic_tag = MLY_UMAJF
-
 set_politics = {
-	ruling_party = communist
-	last_election = "1960.11.11"
+	ruling_party = paternalism
+	last_election = "1955.9.29" # 1955 年后选举被无限期冻结
 	election_frequency = 36
 	elections_allowed = no
 }
 
 set_popularities = {
-	communist = 40
-	socialist = 11
-	progressivism = 10
-	conservatism = 14
-	despotism = 25
+	paternalism = 40   # 国民印尼团 / 米南加保文官集团
+	despotism = 24     # 苏门答腊民族军队（巴塔克军官团）
+	conservatism = 15  # 马斯友美 / 半岛马来保守派
+	socialism = 9      # 印尼社会主义党
+	progressivism = 6
+	liberalism = 3
+	communist = 3      # 地下，无合法代表
 }
 
 set_technology = {
@@ -210,23 +218,21 @@ set_technology = {
 	military_construction_1 = 1
 }
 
-set_variable = { MLY_check_already_happened = 0 }
-
 add_ideas = {
 	#Country
-	MLY_Dismal_Infrastructure
-	MLY_The_UMAJF
-	MLY_driven_to_the_countryside
-	MLY_operation_nassau
+	TNOIPN_MLY_minangkabau_malay_compact
+	TNOIPN_MLY_the_chinese_question
+	TNOIPN_MLY_batak_officer_corps
+	TNOIPN_MLY_severed_archipelago
 
 	#Political
-	tno_political_parties_one_party_state
-	tno_religious_rights_state_atheism
-	tno_trade_unions_all_allowed
-	tno_immigration_open_immigration
-	tno_slavery_penal_labor
+	tno_political_parties_multiparty_system
+	tno_religious_rights_secularism
+	tno_trade_unions_state_controlled
+	tno_immigration_quota_immigration
+	tno_slavery_outlawed
 	tno_public_meetings_regulated
-	tno_press_rights_state_press_only
+	tno_press_rights_censored_press
 	tno_vote_franchise_no_voting
 
 	##MILITARY LAWS###
@@ -241,35 +247,35 @@ add_ideas = {
 	tno_penal_system_harsh_penal_code
 	tno_gender_rights_women_in_the_workplace
 	tno_security_maintenance_of_order
-	tno_regulations_token_regulations
+	tno_regulations_moderate_regulations
 
 	##ECONOMIC LAWS##
-	tno_trade_laws_closed_economy
-	tno_income_taxation_high_income_weighted
+	tno_trade_laws_export_focus
+	tno_income_taxation_low_income_weighted
 	tno_minimum_wage_low_minimum_wage
-	tno_max_workhours_12_hour_work_day
+	tno_max_workhours_unlimited_work_day
 	tno_pensions_low_pensions
 	tno_unemployment_no_subsidies
 
 	##MISC LAWS##
-	tno_refugees_open
+	tno_refugees_skilled
 	tno_women_combat_roles
-	tno_racial_integration_integrated_military
+	tno_racial_integration_none
 	tno_safety_minimal_regulations
 	tno_pollution_no_controls
-	tno_lgbt_rights_lgbt_allowed
-	tno_minorities_equal_rights
+	tno_lgbt_rights_lgbt_outlawed
+	tno_minorities_segregation
 	tno_child_labor_illegal
 
 	##SOCIETAL DEVELOPMENT##
-	tno_army_professionalism_cronyism
+	tno_army_professionalism_political_interference
 	tno_industrial_expertise_nascent
 	tno_industrial_equipment_power_tools
 	tno_agriculture_basic_mechanized
 	tno_healthcare_rudimentary
 	tno_research_facilities_basic
-	tno_academic_base_basic_literacy
-	tno_admin_efficiency_deficient_administrative_systems
+	tno_academic_base_secondary_schooling
+	tno_admin_efficiency_functional_administrative_systems
 }
 
 set_research_slots = 2
@@ -310,41 +316,41 @@ set_variable = { tno_draft_exemptions_effectiveness = 50 }
 add_equipment_to_stockpile = {
 	type = infantry_equipment_2
 	amount = 1000
-	producer = IND
+	producer = JAP
 }
 
 add_equipment_to_stockpile = {
 	type = infantry_equipment_2
 	amount = 1250
-	producer = USA
+	producer = JAP
 }
 
 add_equipment_to_stockpile = {
 	type = anti_tank_equipment_1
 	amount = 200
-	producer = IND
+	producer = JAP
 }
 
 add_equipment_to_stockpile = {
 	type = anti_tank_equipment_1
 	amount = 200
-	producer = USA
+	producer = JAP
 }
 
 add_equipment_to_stockpile = {
 	type = motorized_equipment_2
 	amount = 40
-	producer = USA
+	producer = JAP
 }
 
 add_equipment_to_stockpile = {
 	type = support_equipment_1
 	amount = 80
-	producer = USA
+	producer = JAP
 }
 
 add_equipment_to_stockpile = {
 	type = artillery_equipment_3
 	amount = 70
-	producer = USA
+	producer = JAP
 }

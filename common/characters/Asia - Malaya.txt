@@ -2,6 +2,7 @@
 	##############
 	### MALAYA ###
 	##############
+	# IPN: 半岛华人地下共运领袖。开局不属于政府，仅由叛乱/事件招募。
 	MLY_Chin_Peng = {
 		name = MLY_Chin_Peng
 		portraits = {
@@ -18,21 +19,9 @@
 			legacy_id = 29980
 		}
 		country_leader = {
-			desc = "POLITICS_CHIN_PENG_DESC"
+			desc = MLY_Chin_Peng_DESC
 			ideology = communist_mao_zedong_thought_subtype
 			expire = "1989.1.1.1"
-			id = -1
-		}
-	}
-	MLY_Ahmad_Boestamam = {
-		name = MLY_Ahmad_Boestamam
-		portraits = {
-			civilian = { large = "gfx/leaders/MLY/Portrait_MLY_Ahmad_Boestamam.png" }
-		}
-		country_leader = {
-			#desc = "POLITICS_Ahmad_Boestamam_DESC"
-			ideology = socialist_revolutionary_frontism_subtype
-			expire = "1985.1.1"
 			id = -1
 		}
 	}
@@ -86,38 +75,6 @@
 			ideology = paternalism_national_conservatism_subtype
 			expire = "1985.1.1"
 			id = -1
-		}
-	}
-	MLY_Rashid_Maidin = {
-		name = MLY_Rashid_Maidin
-		portraits = {
-			army = {
-				large = "gfx/leaders/MLY/Portrait_MLY_Rashid_Maidin.png"
-			}
-		}
-		corps_commander = {
-			skill = 3
-			attack_skill = 3
-			defense_skill = 3
-			planning_skill = 2
-			logistics_skill = 2
-			legacy_id = 29982
-		}
-	}
-	MLY_Muhammed_Indera = {
-		name = MLY_Muhammed_Indera
-		portraits = {
-			army = {
-				large = "gfx/leaders/Generics/leader_unknown.png"
-			}
-		}
-		corps_commander = {
-			skill = 2
-			attack_skill = 2
-			defense_skill = 3
-			planning_skill = 2
-			logistics_skill = 1
-			legacy_id = 29983
 		}
 	}
 	MLY_Tunku_Osman = {
@@ -208,15 +165,18 @@
 			id = -1
 		}
 	}
-	MLY_Agus_Salim = {
-		name = MLY_Agus_Salim
+	######################
+	### RSM - Angkatan '45 (IPN) ###
+	######################
+	MLY_Chaerul_Saleh = {
+		name = MLY_Chaerul_Saleh
 		portraits = {
 			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
 		}
 		country_leader = {
-			desc = MLY_Agus_Salim_DESC
-			ideology = conservatism_islamic_conservatism_subtype
-			expire = "1999.1.1"
+			desc = MLY_Chaerul_Saleh_DESC
+			ideology = paternalism_paternalistic_developmentalism_subtype
+			expire = "1967.2.8"
 			id = -1
 		}
 	}
@@ -333,57 +293,6 @@
 		portraits = {
 			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
 		}
-		country_leader = {
-			desc = MLY_Tan_Malaka_DESC
-			ideology = communist_national_communism_subtype
-			expire = "1999.1.1"
-			id = -1
-		}
-	}
-	MLY_Aidit = {
-		name = MLY_Aidit
-		portraits = {
-			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
-		}
-		country_leader = {
-			desc = MLY_Aidit_DESC
-			ideology = communist_mao_zedong_thought_subtype
-			expire = "1999.1.1"
-			id = -1
-		}
-	}
-	MLY_Shamsiah_Fakeh = {
-		name = MLY_Shamsiah_Fakeh
-		portraits = {
-			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
-		}
-		country_leader = {
-			desc = MLY_Shamsiah_Fakeh_DESC
-			ideology = communist_national_communism_subtype
-			expire = "1999.1.1"
-			id = -1
-		}
-	}
-	MLY_Abdullah_CD = {
-		name = MLY_Abdullah_CD
-		portraits = {
-			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
-			army = { large = "gfx/leaders/Generics/leader_unknown.png" }
-		}
-		country_leader = {
-			desc = MLY_Abdullah_CD_DESC
-			ideology = communist_national_communism_subtype
-			expire = "1999.1.1"
-			id = -1
-		}
-		corps_commander = {
-			skill = 3
-			attack_skill = 3
-			defense_skill = 3
-			planning_skill = 2
-			logistics_skill = 2
-			legacy_id = 30003
-		}
 	}
 	MLY_Nasution = {
 		name = MLY_Nasution
@@ -473,37 +382,6 @@
 			ideology = paternalism_social_nationalism_subtype
 			expire = "1985.1.1"
 			id = -1
-		}
-	}
-	MLY_Rashid_Maidin = {
-		name = MLY_Rashid_Maidin
-		portraits = {
-			army = {
-				large = "gfx/leaders/MLY/Portrait_MLY_Rashid_Maidin.png"
-				small = "GFX_idea_MLY_Rashid_Maidin"
-			}
-		}
-		corps_commander = {
-			skill = 3
-			attack_skill = 3
-			defense_skill = 3
-			planning_skill = 2
-			logistics_skill = 2
-			legacy_id = 29982
-		}
-		advisor = {
-			slot = army_chief
-			idea_token = MLY_Rashid_Maidin_army_chief
-			allowed = { original_tag = MLY }
-			ledger = army
-			traits = {
-				army_chief
-				army_chief_old_guard
-				army_chief_drill_2
-			}
-			cost = -1
-			can_be_fired = no
-			ai_will_do = { factor = 0 }
 		}
 	}
 
@@ -610,15 +488,16 @@
 			id = -1
 		}
 	}
-	SHO_Dato_Onn_Jaafar = {
-		name = SHO_Dato_Onn_Jaafar
+	# IPN: 柔佛的马来贵族政治头面人物。开局在世，1962.1 病逝。
+	MLY_Dato_Onn_Jaafar = {
+		name = MLY_Dato_Onn_Jaafar
 		portraits = {
 			civilian = { large = "gfx/leaders/SHO/Portrait_Shonan_Onn_Jaafar.png" }
 		}
 		country_leader = {
-			#desc = "POLITICS_Onn_Jaafar_DESC"
+			desc = MLY_Dato_Onn_Jaafar_DESC
 			ideology = conservatism_paternalistic_conservatism_subtype
-			expire = "1985.1.1"
+			expire = "1962.1.19"
 			id = -1
 		}
 	}
@@ -815,6 +694,339 @@
 			#desc = "POLITICS_ISMAIL_BIN_IBRAHIM_DESC"
 			ideology = despotism_military_junta_subtype
 			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	######################
+	### RSM - Siliwangi (IPN) ###
+	######################
+	MLY_Umar_Wirahadikusumah = {
+		name = MLY_Umar_Wirahadikusumah
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+			army = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		corps_commander = {
+			traits = { politically_connected skilled_staffer }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = 30010
+		}
+	}
+	MLY_Gatot_Subroto = {
+		name = MLY_Gatot_Subroto
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+			army = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		field_marshal = {
+			traits = { politically_connected skilled_staffer }
+			skill = 5
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = 30011
+		}
+	}
+	##############
+	### SRB (IPN) ###
+	##############
+	SRB_Woerjaningrat = {
+		name = SRB_Woerjaningrat
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = SRB_Woerjaningrat_DESC
+			ideology = conservatism_paternalistic_conservatism_subtype
+			expire = "1965.1.1"
+			id = -1
+		}
+	}
+	SRB_Susanto_Tirtoprodjo = {
+		name = SRB_Susanto_Tirtoprodjo
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = SRB_Susanto_Tirtoprodjo_DESC
+			ideology = paternalism_national_conservatism_subtype
+			expire = "1969.11.16"
+			id = -1
+		}
+	}
+	SRB_Iskaq_Tjokrohadisurjo = {
+		name = SRB_Iskaq_Tjokrohadisurjo
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = SRB_Iskaq_Tjokrohadisurjo_DESC
+			ideology = paternalism_social_nationalism_subtype
+			expire = "1984.9.11"
+			id = -1
+		}
+	}
+
+
+	######################################################
+	### IPN: 两个红色政党 — 华人共运（马共） ###
+	######################################################
+	# IPN: 马共政治局委员、陈平的副手与代理书记。槟城人。开局不在政府内，仅由叛乱/事件招募。
+	MLY_Yeung_Kwok = {
+		name = MLY_Yeung_Kwok
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+			army = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		corps_commander = {
+			traits = { politically_connected skilled_staffer }
+			skill = 4
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 3
+			legacy_id = 30020
+		}
+		country_leader = {
+			desc = MLY_Yeung_Kwok_DESC
+			ideology = communist_mao_zedong_thought_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	######################################################
+	### IPN: 两个红色政党 — 马来/印尼共运（PKI） ###
+	######################################################
+	# IPN: 印度尼西亚共产党（PKI）在共和国境内的负责人。勿里洞（672，共和国境内）人，日占期爪哇独立养正塾出身。开局不在政府内。
+	MLY_Aidit = {
+		name = MLY_Aidit
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Aidit_DESC
+			ideology = communist_national_communism_subtype
+			expire = "1985.1.1"
+			id = -1
+		}
+	}
+	# IPN: 印尼共半岛局书记。原马共首位马来人党员、第十支队（全马来人）指挥官，1950 年代转投印尼共。霹雳务边人。开局不在政府内。
+	MLY_Rashid_Maidin = {
+		name = MLY_Rashid_Maidin
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+			army = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		corps_commander = {
+			traits = { politically_connected skilled_staffer }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 4
+			legacy_id = 30021
+		}
+		country_leader = {
+			desc = MLY_Rashid_Maidin_DESC
+			ideology = communist_national_communism_subtype
+			expire = "2006.9.1"
+			id = -1
+		}
+	}
+	##########################
+	### IPN: 宗教与氏族 ###
+	##########################
+	# IPN: PERTI 创始人、Kaum Tuo；1947.1.17-1958 中苏门答腊伊斯兰法庭首长。1962 年 91 岁，随时可能去世。
+	MLY_Sulaiman_ar_Rasuli = {
+		name = MLY_Sulaiman_ar_Rasuli
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Sulaiman_ar_Rasuli_DESC
+			ideology = conservatism_islamic_conservatism_subtype
+			expire = "1970.8.1"
+			id = -1
+		}
+	}
+	# IPN: 女子伊斯兰学校 Diniyah Putri 创办人；1955 年首批当选协商会议的女性之一（马斯友美党，即反对派）。
+	MLY_Rahmah_El_Yunusiyah = {
+		name = MLY_Rahmah_El_Yunusiyah
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Rahmah_El_Yunusiyah_DESC
+			ideology = conservatism_islamic_conservatism_subtype
+			expire = "1969.2.26"
+			id = -1
+		}
+	}
+	##########################
+	### IPN: 军政派 / 警察 / 华人商会 ###
+	##########################
+	# IPN: 米南加保医生、首任南苏门答腊州长；1943.9-1944.10 因拒绝与日本合作被捕。兼总统主治医师。
+	MLY_Adnan_Kapau_Gani = {
+		name = MLY_Adnan_Kapau_Gani
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Adnan_Kapau_Gani_DESC
+			ideology = paternalism_paternalistic_developmentalism_subtype
+			expire = "1968.12.23"
+			id = -1
+		}
+	}
+	# IPN: 巴东出生的米南加保警官，国家警察首脑，国安会成员。
+	MLY_Awaluddin_Djamin = {
+		name = MLY_Awaluddin_Djamin
+		portraits = {
+			army = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		corps_commander = {
+			traits = { politically_connected skilled_staffer }
+			skill = 3
+			attack_skill = 1
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 3
+			legacy_id = 30022
+		}
+	}
+	# IPN: 马六甲峇峇，华人商会领袖（不会说华语）。十七张选票的国王制造者之一。
+	MLY_Tan_Siew_Sin = {
+		name = MLY_Tan_Siew_Sin
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Tan_Siew_Sin_DESC
+			ideology = conservatism_paternalistic_conservatism_subtype
+			expire = "1988.3.17"
+			id = -1
+		}
+	}
+	##########################
+	### IPN: 日本方 — 陆军（昭南联络官） ###
+	##########################
+	# IPN: F 机关创始人。1942 年联络亚齐 PUSA、马来苏丹与 KMM，并在西苏门答腊追出苏加诺的藏身处。驻昭南。
+	SHO_Fujiwara_Iwaichi = {
+		name = SHO_Fujiwara_Iwaichi
+		portraits = {
+			army = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		field_marshal = {
+			traits = { politically_connected skilled_staffer }
+			skill = 5
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 4
+			legacy_id = 30023
+		}
+	}
+	##########################
+	### IPN: 日本方 — 陆军（北婆罗洲军政长官） ###
+	##########################
+	# IPN: 第 37 军司令。南加里曼丹陆军军政长官，司令部在班贾尔马辛（816）。1943 年曾任苏门答腊第 4 师团长。
+	ABD_Baba_Masao = {
+		name = ABD_Baba_Masao
+		portraits = {
+			army = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		field_marshal = {
+			traits = { politically_connected skilled_staffer }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = 30024
+		}
+		country_leader = {
+			desc = ABD_Baba_Masao_DESC
+			ideology = despotism_military_junta_subtype
+			expire = "1975.1.1"
+			id = -1
+		}
+	}
+	##########################
+	### IPN: 日本方 — 海军（贾加鲁塔民政长官 / 邦联秘书长） ###
+	##########################
+	# IPN: 印尼独立养正塾出资人（艾地、维卡纳出自此）；1945 年独立宣言在其寓所起草。
+	JJK_Maeda_Tadashi = {
+		name = JJK_Maeda_Tadashi
+		portraits = {
+			army = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = JJK_Maeda_Tadashi_DESC
+			ideology = despotism_colonial_government_subtype
+			expire = "1977.12.13"
+			id = -1
+		}
+	}
+
+	#############################
+	### IPN: 南婆罗洲 — 日本海军军政 ###
+	#############################
+	# IPN: 第 22 特别根据地队司令官、荷属婆罗洲海军军政长官。1944.8.23 起驻巴厘巴板，管辖沿海与石油带；坤甸事件的责任人。OTL 1947.10.18 在坤甸被荷兰军事法庭绞死——本世界线没有这个法庭。
+	ABD_Kamada_Michiaki = {
+		name = ABD_Kamada_Michiaki
+		portraits = {
+			army = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		field_marshal = {
+			traits = { politically_connected skilled_staffer }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 4
+			legacy_id = 30030
+		}
+		country_leader = {
+			desc = ABD_Kamada_Michiaki_DESC
+			ideology = despotism_military_junta_subtype
+			expire = "1975.1.1"
+			id = -1
+		}
+	}
+	#############################
+	### IPN: 南婆罗洲 — 合作政权（坤甸苏丹） ###
+	#############################
+	# IPN: 坤甸苏丹哈米德二世。1944 年日本海军处死了他的父亲与二十八名男性亲属，他是全家唯一幸存的男丁，因为当时被关在爪哇。
+	ABD_Sultan_Hamid_II = {
+		name = ABD_Sultan_Hamid_II
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = ABD_Sultan_Hamid_II_DESC
+			ideology = conservatism_paternalistic_conservatism_subtype
+			expire = "1978.3.30"
+			id = -1
+		}
+	}
+	#############################
+	### IPN: 宗教 — PERTI 党主席 ###
+	#############################
+	# IPN: PERTI 主席（1936 年起），Kaum Tuo 的实际政治操盘者。1955 年当选议员。阿尔-拉苏利年事已高，党与议会都是他在跑。
+	MLY_Sirajuddin_Abbas = {
+		name = MLY_Sirajuddin_Abbas
+		portraits = {
+			civilian = { large = "gfx/leaders/Generics/leader_unknown.png" }
+		}
+		country_leader = {
+			desc = MLY_Sirajuddin_Abbas_DESC
+			ideology = conservatism_islamic_conservatism_subtype
+			expire = "1980.1.1"
 			id = -1
 		}
 	}
