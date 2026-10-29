@@ -46,6 +46,13 @@ recruit_character = MLY_Rahmah_El_Yunusiyah
 recruit_character = MLY_Adnan_Kapau_Gani
 recruit_character = MLY_Awaluddin_Djamin
 recruit_character = MLY_Tan_Siew_Sin
+# IPN: 极端派系领袖（公开活动，需招募；共运四人仍是地下不招募）
+recruit_character = MLY_Sukarni
+recruit_character = MLY_Sutomo
+recruit_character = MLY_Jaafar_Albar
+recruit_character = MLY_Senu_Abdul_Rahman
+recruit_character = MLY_Sukarjo_Wiryopranoto
+recruit_character = MLY_RP_Soeroso
 
 # IPN: 以下三人属地下武装，开局不招募（陈平、杨果 / 艾地、拉希德·迈丁）
 
@@ -80,13 +87,13 @@ set_politics = {
 set_popularities = {
 	# 执政党 · 家长制四翼
 	paternalism = 7      # 印尼团结党 - 国民印尼团（GONI 元老派，亚明本人的班底）
-	paternalism_1 = 7    # 印尼团结党 - 半岛印尼人运动（KMM 激进系，雅各布）
+	paternalism_1 = 5    # 印尼团结党 - 半岛印尼人运动（KMM 激进系，雅各布）
 	paternalism_2 = 9    # 印尼团结党 - 合作社运动（哈达技术官僚派，掌账本）
 	# 行政班与军队
 	despotism = 8        # 印尼团结党 - 十州行政班（米南加保文官军政派，握行政机关与警察）
 	despotism_1 = 8      # 印尼国民军 - 巴塔克军官团（武吉巴里桑，守住这两块土地）
-	despotism_2 = 4      # 印尼国民军 - 西利旺吉流亡者（要拿这个国家换回爪哇）
-	despotism_3 = 7      # 印尼团结党 - 青年义勇军（萨利赫，复员军人与街头。本体 paternalism 无 _3 槽，故挂 despotism_3）
+	despotism_2 = 3      # 印尼国民军 - 西利旺吉流亡者（要拿这个国家换回爪哇）
+	despotism_3 = 5      # 印尼团结党 - 青年义勇军（萨利赫，复员军人与街头。本体 paternalism 无 _3 槽，故挂 despotism_3）
 	# 保守派
 	conservatism = 15    # 马斯友美党（伊斯兰现代派，最大反对党）
 	conservatism_1 = 6   # 印尼团结党 - 新山麻坡集团（半岛马来宫廷系，翁·惹化 1.19 病逝）
@@ -97,8 +104,17 @@ set_popularities = {
 	# 无武装的少数
 	liberalism = 5       # 华人公会（不得持枪，只有钱；1955 年那十七票出自这里）
 	# 地下（无合法代表）
-	communist = 2        # 印度尼西亚共产党（艾地、拉希德·迈丁半岛局）
-	communist_1 = 1      # 中国共产党 - 南洋临时委员会（陈平、杨果的华人线）
+	communist = 1.5      # 印尼共产党 - 中央（艾地）
+	communist_1 = 1      # 印尼共产党 - 半岛局（拉希德·迈丁，马来线）
+	communist_2 = 0.5    # 中国共产党 - 南洋临时委员会（陈平、杨果，华人线）
+	# 开局即存在的极端派系（真人挂帅，从现有阵营分裂而出）
+	# 引擎规则：编号意识形态组 paternalism_1 的 type 名为 paternalism_1_subtype，
+	# 角色 ideology 只认 type；挂裸组名（paternalism_1）的角色不渲染。主槽政党可挂任意该系 flavor subtype。
+	fascism = 2          # 穆尔巴党（苏卡尼、苏托莫：革命民族主义，陈马六甲精神遗产+爪哇流亡者）
+	ultranationalism_1 = 2 # 马来人民党 PRM（阿尔巴、塞努：KMM 复活，从执政党半岛翼出走）
+	fascism_1 = 0.5      # 大印度尼西亚党·爪哇新闻社（苏卡尔佐：亲日合作派）
+	fascism_2 = 0.5      # 大印度尼西亚党·职团联盟（苏奥罗佐：Parindra 末代元老）
+	# fascism / fascism_1 / fascism_2 之外的法西斯系槽位与 ultranationalism 主槽留空作翻转落点
 }
 
 set_technology = {
