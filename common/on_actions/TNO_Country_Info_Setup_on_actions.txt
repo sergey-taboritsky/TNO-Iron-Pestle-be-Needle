@@ -120,6 +120,57 @@ on_actions = {
 				}
 				else_if = {
 					limit = {
+						original_tag = MLY
+					}
+					add_to_array = { CountryInfo_array_main = 101 }
+					add_to_array = { CountryInfo_array_main = 1 }
+					add_to_array = { CountryInfo_array_main = 2 }
+					add_to_array = { CountryInfo_array_main = 3 }
+					add_to_array = { CountryInfo_array_main = 4 }
+					add_to_array = { CountryInfo_array_main = 5 }
+					
+					add_to_array = { CountryInfo_folder_country_101 = 1 }
+					add_to_array = { CountryInfo_folder_country_101 = 2 }
+					add_to_array = { CountryInfo_folder_country_101 = 3 }
+					add_to_array = { CountryInfo_folder_country_101 = 4 }
+					add_to_array = { CountryInfo_folder_country_101 = 5 }
+					
+					add_to_array = { CountryInfo_array_main = 102 }
+					add_to_array = { CountryInfo_array_main = 6 }
+					add_to_array = { CountryInfo_array_main = 7 }
+					add_to_array = { CountryInfo_array_main = 8 }
+					add_to_array = { CountryInfo_array_main = 9 }
+					
+					add_to_array = { CountryInfo_folder_country_102 = 6 }
+					add_to_array = { CountryInfo_folder_country_102 = 7 }
+					add_to_array = { CountryInfo_folder_country_102 = 8 }
+					add_to_array = { CountryInfo_folder_country_102 = 9 }
+
+					add_to_array = { CountryInfo_array_main = 103 }
+					add_to_array = { CountryInfo_array_main = 10 }
+					add_to_array = { CountryInfo_array_main = 11 }
+					add_to_array = { CountryInfo_array_main = 12 }
+					add_to_array = { CountryInfo_array_main = 13 }
+					
+					add_to_array = { CountryInfo_folder_country_103 = 10 }
+					add_to_array = { CountryInfo_folder_country_103 = 11 }
+					add_to_array = { CountryInfo_folder_country_103 = 12 }
+					add_to_array = { CountryInfo_folder_country_103 = 13 }
+
+					add_to_array = { CountryInfo_array_main = 104 }
+					add_to_array = { CountryInfo_array_main = 14 }
+					add_to_array = { CountryInfo_array_main = 15 }
+					add_to_array = { CountryInfo_array_main = 16 }
+					add_to_array = { CountryInfo_array_main = 17 }
+					
+					add_to_array = { CountryInfo_folder_country_104 = 14 }
+					add_to_array = { CountryInfo_folder_country_104 = 15 }
+					add_to_array = { CountryInfo_folder_country_104 = 16 }
+					add_to_array = { CountryInfo_folder_country_104 = 17 }
+					set_country_flag = CountryInfo_HasCustomCloseButton
+				}
+				else_if = {
+					limit = {
 						original_tag = ITA
 					}
 					

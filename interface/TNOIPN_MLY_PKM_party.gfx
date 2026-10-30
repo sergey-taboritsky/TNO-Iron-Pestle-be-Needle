@@ -7,7 +7,7 @@ spriteTypes = {
 #MLY revolution
 	spriteType = {
 		name = "GFX_TNO_OpeningScreen_Poster_PKM"
-		texturefile = "gfx/GFX_TNO_OpeningScreen_Poster_PKM.dds"
+		texturefile = "gfx/GFX_TNO_OpeningScreen_Poster_PKM.png"
 	}
 	spriteType = {
 		name = "GFX_PKM_texticon"

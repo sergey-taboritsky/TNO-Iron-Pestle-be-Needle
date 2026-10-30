@@ -4,6 +4,7 @@
 recruit_character = MLY_Generic_Vacant
 fill_empty_minister_nochecks = yes # Please remove if you're adding ministers.
 
+set_country_flag = TNO_has_content
 
 # IPN: 陈平（MLY_Chin_Peng）不在开局名单内——他是半岛华人地下共运的领袖，只在叛乱中登场。
 
