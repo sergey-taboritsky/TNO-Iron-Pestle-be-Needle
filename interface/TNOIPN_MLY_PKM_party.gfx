@@ -6,8 +6,8 @@ spriteTypes = {
 	}
 #MLY revolution
 	spriteType = {
-		name = "GFX_TNO_OpeningScreen_Poster_PKM"
-		texturefile = "gfx/GFX_TNO_OpeningScreen_Poster_PKM.png"
+		name = "GFX_TNO_OpeningScreen_Poster_MLY"
+		texturefile = "gfx/GFX_TNO_OpeningScreen_Poster_MLY.png"
 	}
 	spriteType = {
 		name = "GFX_PKM_texticon"
