@@ -1,4 +1,5 @@
 capital = 795
+set_cosmetic_tag = IPN_JJK_init
 
 # Vacant
 recruit_character = JJK_Generic_Vacant

@@ -1,4 +1,5 @@
 capital = 1557
+set_cosmetic_tag = IPN_MKS_init
 
 # Vacant
 recruit_character = MKS_Generic_Vacant

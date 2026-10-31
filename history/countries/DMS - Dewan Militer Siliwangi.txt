@@ -1,4 +1,5 @@
 capital = 799
+set_cosmetic_tag = IPN_DMS_init
 
 # Vacant
 recruit_character = DMS_Generic_Vacant

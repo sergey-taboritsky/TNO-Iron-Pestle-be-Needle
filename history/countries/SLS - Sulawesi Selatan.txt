@@ -1,4 +1,5 @@
 capital = 822
+set_cosmetic_tag = IPN_SLS_init
 
 # Vacant
 recruit_character = SLS_Generic_Vacant

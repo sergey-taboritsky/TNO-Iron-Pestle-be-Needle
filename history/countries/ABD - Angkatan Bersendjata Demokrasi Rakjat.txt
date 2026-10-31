@@ -1,4 +1,5 @@
 capital = 334
+set_cosmetic_tag = IPN_ABD_init
 
 # Vacant
 recruit_character = ABD_Generic_Vacant

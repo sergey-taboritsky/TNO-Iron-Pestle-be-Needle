@@ -1,4 +1,5 @@
 capital = 668
+set_cosmetic_tag = IPN_PAP_init
 
 # Vacant
 recruit_character = PAP_Generic_Vacant

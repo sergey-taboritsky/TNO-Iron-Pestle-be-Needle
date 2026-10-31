@@ -1,4 +1,5 @@
 capital = 1757
+set_cosmetic_tag = IPN_DMP_init
 
 # Vacant
 recruit_character = DMP_Generic_Vacant

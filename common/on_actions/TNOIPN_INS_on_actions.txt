@@ -1,18 +1,15 @@
-on_actions = {
+﻿on_actions = {
 	#STARTUP DEFINITIONS
 	on_startup = {
 		effect = {
-			# 政党名一律走本地化键 MLY_<ideology>_party，引擎自动读取
+			# 国家的 cosmetic tag 已在各自 history/countries 文件内设置（1962.1.1 开局即生效）
 			MLY = {
-				set_cosmetic_tag = IPN_MLY_init
 				set_capital = {
 					state = 1764
 					remember_old_capital = no
 				}
 			}
 			SHO = {
-				set_cosmetic_tag = IPN_SHO_init
-
 				set_variable = { GDP = 0.426 } #in billions
 				set_variable = { GDP_growth = 0.9 }
 				set_variable = { income_tax_rate = 0.125 }
@@ -25,39 +22,6 @@ on_actions = {
 				set_variable = { misc_costs = 0.0 }
 
 				initiate_display_vars = yes
-			}
-			SRB = {
-				set_cosmetic_tag = IPN_SRB_init
-			}
-			MKS = {
-				set_cosmetic_tag = IPN_MKS_init
-			}
-			DMP = {
-				set_cosmetic_tag = IPN_DMP_init
-			}
-			DMS = {
-				set_cosmetic_tag = IPN_DMS_init
-			}
-			PMT = {
-				set_cosmetic_tag = IPN_PMT_init
-			}
-			SLS = {
-				set_cosmetic_tag = IPN_SLS_init
-			}
-			ABD = {
-				set_cosmetic_tag = IPN_ABD_init
-			}
-			NII = {
-				set_cosmetic_tag = IPN_NII_init
-			}
-			BKB = {
-				set_cosmetic_tag = IPN_BKB_init
-			}
-			JJK = {
-				set_cosmetic_tag = IPN_JJK_init
-			}
-			PAP = {
-				set_cosmetic_tag = IPN_PAP_init
 			}
 			NRB = {
 				add_ideas = TNOIPN_SHO_defenses_emptied

@@ -1,4 +1,5 @@
 capital = 2314
+set_cosmetic_tag = IPN_BKB_init
 
 # Vacant
 recruit_character = BKB_Generic_Vacant

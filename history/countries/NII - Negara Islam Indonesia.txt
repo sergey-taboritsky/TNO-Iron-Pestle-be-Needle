@@ -1,4 +1,5 @@
 capital = 2306
+set_cosmetic_tag = IPN_NII_init
 
 # Vacant
 recruit_character = NII_Generic_Vacant

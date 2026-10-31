@@ -1,4 +1,5 @@
 capital = 1756
+set_cosmetic_tag = IPN_SRB_init
 
 # Vacant
 recruit_character = SRB_Generic_Vacant

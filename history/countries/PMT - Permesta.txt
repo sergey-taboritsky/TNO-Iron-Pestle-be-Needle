@@ -1,4 +1,5 @@
 capital = 823
+set_cosmetic_tag = IPN_PMT_init
 
 # Vacant
 recruit_character = PMT_Generic_Vacant
