@@ -1,0 +1,162 @@
+add_namespace = IPN_YEM_event
+add_namespace = IPN_YEM_news
+
+country_event = {
+	id = IPN_YEM_event.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_YEM_event.1" }
+	title = IPN_YEM_event.1.t
+	desc = IPN_YEM_event.1.desc
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_YEM_event.1.a
+		every_country = {
+			limit = { is_ai = no HasMiddleEastInterest = yes }
+			news_event = { id = IPN_YEM_news.1 }
+		}
+		country_event = {
+			id = IPN_YEM_event.2
+			days = 150
+		}
+	}
+}
+country_event = {
+	id = IPN_YEM_event.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_YEM_event.2" }
+	title = IPN_YEM_event.2.t
+	desc = IPN_YEM_event.2.desc
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_YEM_event.2.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = YEM_PATH option = YEM_1963_PATH_REFORMIST }
+			}
+		}
+		every_country = {
+			limit = { is_ai = no HasMiddleEastInterest = yes }
+			news_event = { id = IPN_YEM_news.2 }
+		}
+		set_politics = {
+			ruling_party = paternalism
+			elections_allowed = no
+		}
+		promote_character = YEM_Hussein_al_Wazir
+		country_event = {
+			id = IPN_YEM_event.3
+			days = 1150
+		}
+	}
+	option = {
+		name = IPN_YEM_event.2.b
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = YEM_PATH option = YEM_1963_PATH_CONSERVATIVE }
+			}
+		}
+		every_country = {
+			limit = { is_ai = no HasMiddleEastInterest = yes }
+			news_event = { id = IPN_YEM_news.3 }
+		}
+		set_politics = {
+			ruling_party = conservatism
+			elections_allowed = no
+		}
+		country_event = {
+			id = IPN_YEM_event.4
+			days = 1150
+		}
+	}
+}
+country_event = {
+	id = IPN_YEM_event.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_YEM_event.3" }
+	title = IPN_YEM_event.3.t
+	desc = IPN_YEM_event.3.desc
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_YEM_event.3.a
+		set_politics = {
+			ruling_party = despotism
+			elections_allowed = no
+		}
+		promote_character = YEM_Abdullah_al_Wazir
+	}
+	option = {
+		name = IPN_YEM_event.3.b
+		set_politics = {
+			ruling_party = paternalism
+			elections_allowed = no
+		}
+		promote_character = YEM_Ibrahim_al_Wazir
+	}
+}
+country_event = {
+	id = IPN_YEM_event.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_YEM_event.4" }
+	title = IPN_YEM_event.4.t
+	desc = IPN_YEM_event.4.desc
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_YEM_event.4.a
+		set_politics = {
+			ruling_party = liberal_conservatism
+			elections_allowed = yes
+		}
+	}
+	option = {
+		name = IPN_YEM_event.4.b
+		set_politics = {
+			ruling_party = paternalism
+			elections_allowed = no
+		}
+		promote_character = YEM_Ibrahim_al_Wazir
+	}
+}
+
+news_event = {
+	id = IPN_YEM_news.1
+	title = IPN_YEM_news.1.t
+	desc = IPN_YEM_news.1.desc
+	picture = GFX_news_event_SYR_Impeachment_Begin
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_YEM_news.1" }
+	is_triggered_only = yes
+	option = { name = IPN_YEM_news.1.a }
+}
+news_event = {
+	id = IPN_YEM_news.2
+	title = IPN_YEM_news.2.t
+	desc = IPN_YEM_news.2.desc
+	picture = GFX_news_event_SYR_Impeachment_Begin
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_YEM_news.2" }
+	is_triggered_only = yes
+	option = { name = IPN_YEM_news.2.a }
+}
+news_event = {
+	id = IPN_YEM_news.3
+	title = IPN_YEM_news.3.t
+	desc = IPN_YEM_news.3.desc
+	picture = GFX_news_event_SYR_Impeachment_Begin
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_YEM_news.3" }
+	is_triggered_only = yes
+	option = { name = IPN_YEM_news.3.a }
+}

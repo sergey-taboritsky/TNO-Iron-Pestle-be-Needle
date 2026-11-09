@@ -1,0 +1,76 @@
+guiTypes = {
+	containerWindowType = {
+        name = "TNOIPN_SYR_parliament_gui_container"
+        position = { x = 0 y = 0 }
+		size = { width = 400 height = 540 }
+
+		containerWindowType = {
+			name = "TNOIPN_SYR_parliament_semicircle_main_container"
+			position = { x = -5 y = 50 }
+			size = { width = 507 height = 325 }
+
+			containerWindowType = {
+				name = "TNOIPN_SYR_parliament_main_entry"
+				position = { x = 205 y = 170 }
+
+				iconType = {
+					name = "TNOIPN_SYR_parliament_main_icon"
+					spriteType = "GFX_parliament_SYR_coat_of_arms"
+					position = { x = 0 y = 0 }
+					pdx_tooltip = "TNOIPN_SYR_parliament_main_icon_tt"
+					pdx_tooltip_delayed = "TNOIPN_SYR_parliament_desc"
+				}
+			}
+
+			gridboxtype = {
+				name = "TNOIPN_SYR_parliament_semicircle_main_grid"
+				position = { x = 5 y = -5 }
+				size = { width = 100%% height = 100%% }
+				slotsize = { width = 100%% height = 0 }
+				max_slots_horizontal = 1
+				add_horizontal = no
+			}
+		}
+
+		gridboxtype = {
+			name = "TNOIPN_SYR_parliament_member_grid"
+			position = { x = -150 y = 345 }
+			size = { width = 100%% height = 100%% }
+			slotsize = { width = 280 height = 18 }
+			max_slots_vertical = 25
+			add_horizontal = no
+		}
+	}
+
+
+	containerWindowType = {
+        name = "TNOIPN_SYR_parliament_semicircle_main_entry"
+        position = { x = 65 y = 50 }
+		scale = 0.75
+		iconType = {
+			name = "TNOIPN_SYR_parliament_semicircle_main_icon"
+			spriteType = "GFX_parliament_party_icon"
+			position = { x = 0 y = 0 }
+			pdx_tooltip = "TNOIPN_SYR_parliament_semicircle_main_entry_tt"
+			pdx_tooltip_delayed = "TNOIPN_SYR_parliament_party_description"
+		}
+    }
+
+	containerWindowType = {
+        name = "TNOIPN_SYR_parliament_member_entry"
+        position = { x = 40 y = 0 }
+		size = { width = 500 height = 100 }
+
+		instantTextboxType = {
+			name = "TNOIPN_SYR_parliament_member_text"
+			position = { x = 0 y = 0 }
+			font = "hoi_16mbs"
+			maxWidth = 500
+			maxHeight = 16
+			format = left
+			text = "TNOIPN_SYR_parliament_member_text"
+			pdx_tooltip = "TNOIPN_SYR_parliament_member_text"
+			pdx_tooltip_delayed = "TNOIPN_SYR_parliament_party_description"
+		}
+    }
+}

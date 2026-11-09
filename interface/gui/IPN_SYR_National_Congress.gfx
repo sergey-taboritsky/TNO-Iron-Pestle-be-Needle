@@ -1,0 +1,19 @@
+SpriteTypes = {
+	spriteType = {
+		name = "GFX_parliament_party_icon"
+		texturefile = "gfx/interface/gui/parliament_SYR_parties.png"
+		noOfFrames = 11
+	}
+	spriteType = {
+		name = "GFX_parliament_empty_button"
+		texturefile = "gfx/interface/gui/parliament_empty_button.png"
+	}
+	spriteType = {
+		name = "GFX_parliament_SYR_coat_of_arms"
+		texturefile = "gfx/interface/ideas/SYR_coat_of_arms.png"
+	}
+	spriteType = {
+		name = "GFX_decision_category_SYR_National_Congress"
+		texturefile = "gfx/interface/ideas/SYR_coat_of_arms.png"
+	}
+}

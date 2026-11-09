@@ -1,0 +1,586 @@
+add_namespace = IPN_SYR_event
+add_namespace = IPN_SYR_news
+
+country_event = {
+	id = IPN_SYR_event.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_SYR_event.1"}
+	title = IPN_SYR_event.1.t
+	desc = IPN_SYR_event.1.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_SYR_event.1.a
+		every_country = {
+			limit = { is_ai = no HasMiddleEastInterest = yes }
+			news_event = {
+				id = IPN_SYR_news.1
+			}
+		}
+		country_event = {
+			id = IPN_SYR_event.2
+			days = 120
+		}
+		TUR = {
+			country_event = { id = IPN_fopo_event.1 }
+		}
+		ITA = {
+			country_event = { id = IPN_fopo_event.2 }
+		}
+    }
+}
+country_event = {
+	id = IPN_SYR_event.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_SYR_event.2"}
+	title = IPN_SYR_event.2.t
+	desc = IPN_SYR_event.2.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { #TUR win
+		name = IPN_SYR_event.2.a
+		trigger = {
+			OR = {
+				AND = {
+					check_variable = {
+						var = global.TNOIPN_Syrian_Impeachment_chance_var
+						value = 0
+						compare = less_than_or_equals
+					}
+					NOT = { has_game_rule = { rule = SYR_POLITICS_REVOLUTION option = SYR_KIKHYA_IMPEACHMENT_SUCCESS } }
+				}
+				has_game_rule = { rule = SYR_POLITICS_REVOLUTION option = SYR_KIKHYA_IMPEACHMENT_FAIL }
+			}
+		}
+		country_event = {
+			id = IPN_SYR_event.3
+		}
+    }
+	option = { #ITA win
+		name = IPN_SYR_event.2.b
+		trigger = {
+			OR = {
+				AND = {
+					check_variable = {
+						var = global.TNOIPN_Syrian_Impeachment_chance_var
+						value = 0
+						compare = greater_than
+					}
+					NOT = { has_game_rule = { rule = SYR_POLITICS_REVOLUTION option = SYR_KIKHYA_IMPEACHMENT_FAIL } }
+				}
+				has_game_rule = { rule = SYR_POLITICS_REVOLUTION option = SYR_KIKHYA_IMPEACHMENT_SUCCESS }
+			}
+		}
+		country_event = {
+			id = IPN_SYR_event.4
+		}
+    }
+}
+country_event = {
+	id = IPN_SYR_event.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_SYR_event.3"}
+	title = IPN_SYR_event.3.t
+	desc = IPN_SYR_event.3.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_SYR_event.3.a
+		every_country = {
+			limit = { is_ai = no HasMiddleEastInterest = yes }
+			news_event = {
+				id = IPN_SYR_news.2
+			}
+		}
+		country_event = {
+			id = IPN_SYR_event.5
+			days = 330
+		}
+    }
+}
+country_event = {
+	id = IPN_SYR_event.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_SYR_event.4"}
+	title = IPN_SYR_event.4.t
+	desc = IPN_SYR_event.4.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_SYR_event.4.a
+		set_politics = {
+			ruling_party = paternalism
+			elections_allowed = yes
+		}
+		econ_leave_sphere = yes
+		every_country = {
+			limit = { is_ai = no HasMiddleEastInterest = yes }
+			news_event = {
+				id = IPN_SYR_news.3
+			}
+		}
+		country_event = {
+			id = IPN_SYR_event.7
+			days = 840
+		}
+    }
+}
+country_event = {
+	id = IPN_SYR_event.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_SYR_event.5"}
+	title = IPN_SYR_event.5.t
+	desc = IPN_SYR_event.5.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_SYR_event.5.a
+		every_country = {
+			limit = { is_ai = no HasMiddleEastInterest = yes }
+			news_event = {
+				id = IPN_SYR_news.4
+			}
+		}
+		set_politics = {
+			ruling_party = liberal_conservatism
+			elections_allowed = yes
+		}
+		promote_character = SYR_Maarouf_al_Dawalibi
+		set_country_flag = IPN_SYR_64_dawalibi_flag
+		country_event = {
+			id = IPN_SYR_event.6
+			days = 1460
+		}
+    }
+	option = {
+		name = IPN_SYR_event.5.b
+		every_country = {
+			limit = { is_ai = no HasMiddleEastInterest = yes }
+			news_event = {
+				id = IPN_SYR_news.5
+			}
+		}
+		set_politics = {
+			ruling_party = conservatism
+			elections_allowed = yes
+		}
+		promote_character = SYR_Lutfi_al_Haffar
+		set_country_flag = IPN_SYR_64_haffar_flag
+		country_event = {
+			id = IPN_SYR_event.6
+			days = 1460
+		}
+    }
+}
+country_event = {
+	id = IPN_SYR_event.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_SYR_event.6"}
+	title = IPN_SYR_event.6.t
+	desc = IPN_SYR_event.6.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_SYR_event.6.a
+		trigger = {
+			has_country_flag = IPN_SYR_64_dawalibi_flag
+		}
+		every_country = {
+			limit = { is_ai = no HasMiddleEastInterest = yes }
+			news_event = {
+				id = IPN_SYR_news.6
+			}
+		}
+		set_politics = {
+			ruling_party = liberal_conservatism
+			elections_allowed = yes
+		}
+		promote_character = SYR_Maarouf_al_Dawalibi
+		set_country_flag = IPN_SYR_68_dawalibi_flag
+    }
+	option = {
+		name = IPN_SYR_event.6.b
+		trigger = {
+			has_country_flag = IPN_SYR_64_dawalibi_flag
+		}
+		every_country = {
+			limit = { is_ai = no HasMiddleEastInterest = yes }
+			news_event = {
+				id = IPN_SYR_news.7
+			}
+		}
+		set_politics = {
+			ruling_party = conservatism
+			elections_allowed = yes
+		}
+		promote_character = SYR_Munir_al_Ajlani
+		set_country_flag = IPN_SYR_68_ajlani_flag
+    }
+	option = {
+		name = IPN_SYR_event.6.c
+		trigger = {
+			has_country_flag = IPN_SYR_64_haffar_flag
+		}
+		every_country = {
+			limit = { is_ai = no HasMiddleEastInterest = yes }
+			news_event = {
+				id = IPN_SYR_news.8
+			}
+		}
+		set_politics = {
+			ruling_party = liberal_conservatism
+			elections_allowed = yes
+		}
+		promote_character = SYR_Abd_al_Rahman_al_Kayyali
+		set_country_flag = IPN_SYR_68_kayyali_flag
+    }
+	option = {
+		name = IPN_SYR_event.6.e
+		trigger = {
+			has_country_flag = IPN_SYR_64_haffar_flag
+		}
+		every_country = {
+			limit = { is_ai = no HasMiddleEastInterest = yes }
+			news_event = {
+				id = IPN_SYR_news.9
+			}
+		}
+		set_politics = {
+			ruling_party = conservatism
+			elections_allowed = yes
+		}
+		promote_character = SYR_Sabri_al_Asali
+		set_country_flag = IPN_SYR_68_asali_flag
+    }
+}
+country_event = {
+	id = IPN_SYR_event.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_SYR_event.7"}
+	title = IPN_SYR_event.7.t
+	desc = IPN_SYR_event.7.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_SYR_event.7.a
+		ITA = {
+			country_event = {
+				id = IPN_SYR_event.8
+			}
+		}
+    }
+}
+country_event = {
+	id = IPN_SYR_event.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_SYR_event.8"}
+	title = IPN_SYR_event.8.t
+	desc = IPN_SYR_event.8.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_SYR_event.8.a
+		ai_chance = {
+			factor = 0
+		}
+		add_political_power = -50
+		set_temp_variable = { temp_econ_spending_amount = 0.75 }
+		econ_spend_money_once_effect_raw_money = yes
+		SYR = {
+			country_event = {
+				id = IPN_SYR_event.9
+			}
+		}
+    }
+	option = {
+		name = IPN_SYR_event.8.b
+		add_political_power = -15
+		SYR = {
+			country_event = {
+				id = IPN_SYR_event.10
+			}
+		}
+    }
+}
+country_event = {
+	id = IPN_SYR_event.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_SYR_event.9"}
+	title = IPN_SYR_event.9.t
+	desc = IPN_SYR_event.9.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_SYR_event.9.a
+		set_politics = {
+			ruling_party = despotism
+			elections_allowed = no
+		}
+		set_party_name = {
+			ideology = despotism
+			name = IPN_SYR_despotism_1_party
+			long_name = IPN_SYR_despotism_1_party_long
+		}
+		set_party_name = {
+			ideology = despotism_1
+			name = IPN_SYR_despotism_party
+			long_name = IPN_SYR_despotism_party_long
+		}
+		promote_character = SYR_Mustafa_al_Sibai
+		econ_join_sphere_ITA = yes
+		set_country_flag = IPN_SYR_Muslim_Brotherhood_inpower_flag
+		every_country = {
+			limit = { is_ai = no HasMiddleEastInterest = yes }
+			news_event = {
+				id = IPN_SYR_news.10
+			}
+		}
+    }
+}
+country_event = {
+	id = IPN_SYR_event.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_SYR_event.10"}
+	title = IPN_SYR_event.10.t
+	desc = IPN_SYR_event.10.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_SYR_event.10.a
+		set_politics = {
+			ruling_party = despotism
+			elections_allowed = no
+		}
+		promote_character = SYR_Abdul_al_Nahrawi
+		econ_join_sphere_TUR = yes
+		country_event = { id = IPN_SYR_event.11 days = 60 }
+		every_country = {
+			limit = { is_ai = no HasMiddleEastInterest = yes }
+			news_event = {
+				id = IPN_SYR_news.11
+			}
+		}
+    }
+}
+country_event = {
+	id = IPN_SYR_event.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_SYR_event.11"}
+	title = IPN_SYR_event.11.t
+	desc = IPN_SYR_event.11.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_SYR_event.11.a
+		every_country = {
+			limit = { is_ai = no HasMiddleEastInterest = yes }
+			news_event = {
+				id = IPN_SYR_news.12
+			}
+		}
+		set_politics = {
+			ruling_party = liberal_conservatism
+			elections_allowed = yes
+		}
+		promote_character = SYR_Rashad_Barmada
+    }
+	option = {
+		name = IPN_SYR_event.8.b
+		every_country = {
+			limit = { is_ai = no HasMiddleEastInterest = yes }
+			news_event = {
+				id = IPN_SYR_news.13
+			}
+		}
+		set_politics = {
+			ruling_party = paternalism
+			elections_allowed = no
+		}
+		set_party_name = {
+			ideology = paternalism
+			name = IPN_SYR_Executive_Committee_party
+			long_name = IPN_SYR_Executive_Committee_party_long
+		}
+		promote_character = SYR_Mamoun_al_Kuzbari
+    }
+}
+
+news_event = {
+	id = IPN_SYR_news.1
+	title = IPN_SYR_news.1.t
+	desc = IPN_SYR_news.1.desc
+	picture = GFX_news_event_SYR_Impeachment_Begin
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_SYR_news.1" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_SYR_news.1.a
+	}
+}
+news_event = {
+	id = IPN_SYR_news.2
+	title = IPN_SYR_news.2.t
+	desc = IPN_SYR_news.2.desc
+	picture = GFX_news_event_SYR_Kikhya
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_SYR_news.2" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_SYR_news.2.a
+	}
+}
+news_event = {
+	id = IPN_SYR_news.3
+	title = IPN_SYR_news.3.t
+	desc = IPN_SYR_news.3.desc
+	picture = GFX_news_event_SYR_Hazm
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_SYR_news.3" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_SYR_news.3.a
+	}
+}
+news_event = {
+	id = IPN_SYR_news.4
+	title = IPN_SYR_news.4.t
+	desc = IPN_SYR_news.4.desc
+	picture = GFX_news_event_SYR_Hazm
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_SYR_news.4" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_SYR_news.4.a
+	}
+}
+news_event = {
+	id = IPN_SYR_news.5
+	title = IPN_SYR_news.5.t
+	desc = IPN_SYR_news.5.desc
+	picture = GFX_news_event_SYR_Hazm
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_SYR_news.5" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_SYR_news.5.a
+	}
+}
+news_event = {
+	id = IPN_SYR_news.6
+	title = IPN_SYR_news.6.t
+	desc = IPN_SYR_news.6.desc
+	picture = GFX_news_event_SYR_Hazm
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_SYR_news.6" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_SYR_news.6.a
+	}
+}
+news_event = {
+	id = IPN_SYR_news.7
+	title = IPN_SYR_news.7.t
+	desc = IPN_SYR_news.7.desc
+	picture = GFX_news_event_SYR_Hazm
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_SYR_news.7" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_SYR_news.7.a
+	}
+}
+news_event = {
+	id = IPN_SYR_news.8
+	title = IPN_SYR_news.8.t
+	desc = IPN_SYR_news.8.desc
+	picture = GFX_news_event_SYR_Hazm
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_SYR_news.8" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_SYR_news.8.a
+	}
+}
+news_event = {
+	id = IPN_SYR_news.9
+	title = IPN_SYR_news.9.t
+	desc = IPN_SYR_news.9.desc
+	picture = GFX_news_event_SYR_Hazm
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_SYR_news.9" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_SYR_news.9.a
+	}
+}
+news_event = {
+	id = IPN_SYR_news.10
+	title = IPN_SYR_news.10.t
+	desc = IPN_SYR_news.10.desc
+	picture = GFX_news_event_SYR_Hazm
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_SYR_news.10" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_SYR_news.10.a
+	}
+}
+news_event = {
+	id = IPN_SYR_news.11
+	title = IPN_SYR_news.11.t
+	desc = IPN_SYR_news.11.desc
+	picture = GFX_news_event_SYR_Hazm
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_SYR_news.11" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_SYR_news.11.a
+	}
+}
+news_event = {
+	id = IPN_SYR_news.12
+	title = IPN_SYR_news.12.t
+	desc = IPN_SYR_news.12.desc
+	picture = GFX_news_event_SYR_Hazm
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_SYR_news.12" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_SYR_news.12.a
+	}
+}

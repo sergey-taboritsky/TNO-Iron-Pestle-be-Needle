@@ -1,0 +1,309 @@
+characters = {
+	# ===== TNO 原版非 RPS 角色（供 SDF/SDS/AYA/AZA 标签，DSR 保留以免丢失定义） =====
+	SDF_Ibrahim_Abboud = {
+		name = SDF_Ibrahim_Abboud
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SDF/Portrait_Sudan_Defense_Force_Ibrahim_Abboud.png"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_IBRAHIM_ABBOUD_DESC"
+			expire = "1983.4.24"
+			ideology = despotism_military_junta_subtype
+			traits = {
+
+			}
+			id = -1
+		}
+		advisor = {
+			slot = security_minister
+			idea_token = RPS_Ibrahim_Abboud_sec
+			allowed = { original_tag = RPS }
+			traits = {
+				security_minister
+				sec_steadfast_defender
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	SDS_Gaafar_Nimeiry = {
+		name = SDS_Gaafar_Nimeiry
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SDS/Portrait_State_of_Sudan_Gaafar_Nimeiry.png"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_GAAFAR_NIMEIRY_DESC"
+			expire = "1983.4.24"
+			ideology = socialist_left_wing_nationalism_subtype
+			traits = {
+
+			}
+			id = -1
+		}
+	}
+	AYA_Aggrey_Jaden = {
+		name = AYA_Aggrey_Jaden
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/AYA/Portrait_Anyanya_Aggrey_Jaden.png"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_AGGREY_JADEN_DESC"
+			expire = "1983.4.24"
+			ideology = despotism_civilian_dictatorship_subtype
+			traits = {
+
+			}
+			id = -1
+		}
+	}
+	AZA_Joseph_Oduho = {
+		name = AZA_Joseph_Oduho
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/AZA/Portrait_Azania_Joseph_Oduho.png"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_JOSEPH_ODUHO_DESC"
+			expire = "1983.4.24"
+			ideology = paternalism_social_nationalism_subtype
+			traits = {
+
+			}
+			id = -1
+		}
+	}
+
+	# ===== DSR 苏丹重置：RPS 角色（阿兹哈里仅在此定义一次，覆盖 TNO 原版） =====
+	# 埃及委任总督（非政党） / Governor-General of the Sudan Dominion
+	RPS_Mohamed_Naguib = {
+		name = RPS_Mohamed_Naguib
+		portraits = {
+			civilian = { large = "gfx/leaders/RPS/Portrait_RPS_Mohamed_Naguib.png" }
+			military = { large = "gfx/leaders/RPS/Portrait_RPS_Mohamed_Naguib.png" }
+		}
+		country_leader = {
+			desc = RPS_Mohamed_Naguib_DESC
+			expire = "2018.01.01"
+			ideology = liberalism_social_liberalism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 民族统一党 NUP（亲埃统一派，执政）
+	RPS_Ismail_al_Azhari = {
+		name = RPS_Ismail_al_Azhari
+		portraits = {
+			civilian = { large = "gfx/leaders/RPS/Portrait_RPS_Ismail_al_Azhari.png" }
+		}
+		country_leader = {
+			desc = RPS_Ismail_al_Azhari_DESC
+			expire = "2018.01.01"
+			ideology = liberalism_social_liberalism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 哈特米亚教团（亲埃宗教支柱）
+	RPS_Ali_al_Mirghani = {
+		name = RPS_Ali_al_Mirghani
+		portraits = {
+			civilian = { large = "gfx/leaders/RPS/Portrait_RPS_Ali_al_Mirghani.png" }
+		}
+		country_leader = {
+			desc = RPS_Ali_al_Mirghani_DESC
+			expire = "2018.01.01"
+			ideology = conservatism_islamic_conservatism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 安萨尔 / 乌玛（反埃独立，1959死）
+	RPS_Abd_al_Rahman_al_Mahdi = {
+		name = RPS_Abd_al_Rahman_al_Mahdi
+		portraits = {
+			civilian = { large = "gfx/leaders/RPS/Portrait_RPS_Abd_al_Rahman_al_Mahdi.png" }
+		}
+		country_leader = {
+			desc = RPS_Abd_al_Rahman_al_Mahdi_DESC
+			expire = "2018.01.01"
+			ideology = conservatism_populist_conservatism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 乌玛党（政治领袖）— 反对派，归属议会/民间，不入阁
+	RPS_Muhammad_Ahmad_Mahjub = {
+		name = RPS_Muhammad_Ahmad_Mahjub
+		portraits = {
+			civilian = { large = "gfx/leaders/RPS/Portrait_RPS_Muhammad_Ahmad_Mahjub.png" }
+		}
+		country_leader = {
+			desc = RPS_Muhammad_Ahmad_Mahjub_DESC
+			expire = "2018.01.01"
+			ideology = conservatism_populist_conservatism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 乌玛党（军政元老）— 反对派，归属议会/民间，不入阁
+	RPS_Abd_Allah_Khalil = {
+		name = RPS_Abd_Allah_Khalil
+		portraits = {
+			civilian = { large = "gfx/leaders/RPS/Portrait_RPS_Abd_Allah_Khalil.png" }
+		}
+		country_leader = {
+			desc = RPS_Abd_Allah_Khalil_DESC
+			expire = "2018.01.01"
+			ideology = conservatism_populist_conservatism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 民族统一党 NUP / 议会议长（自治领二把手，入阁）
+	RPS_Ibrahim_Ahmad = {
+		name = RPS_Ibrahim_Ahmad
+		portraits = {
+			civilian = { large = "gfx/leaders/RPS/Portrait_RPS_Ibrahim_Ahmad.png" }
+		}
+		country_leader = {
+			desc = RPS_Ibrahim_Ahmad_DESC
+			expire = "2018.01.01"
+			ideology = liberalism_social_liberalism_subtype
+			traits = { }
+			id = -1
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = RPS_Ibrahim_Ahmad_hog
+			allowed = { original_tag = RPS }
+			traits = {
+				head_of_government
+				hog_spiritual_leader
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	# 苏丹共产党 SCP（左翼反吞并）
+	RPS_Abdel_Khaliq_Mahjub = {
+		name = RPS_Abdel_Khaliq_Mahjub
+		portraits = {
+			civilian = { large = "gfx/leaders/RPS/Portrait_RPS_Abdel_Khaliq_Mahjub.png" }
+		}
+		country_leader = {
+			desc = RPS_Abdel_Khaliq_Mahjub_DESC
+			expire = "2018.01.01"
+			ideology = communist_marxism_leninism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 宪政兄弟会（伊斯兰现代主义 / 君主制下君主立宪自由派）
+	RPS_Mahmoud_Mohammed_Taha = {
+		name = RPS_Mahmoud_Mohammed_Taha
+		portraits = {
+			civilian = { large = "gfx/leaders/RPS/Portrait_RPS_Mahmoud_Mohammed_Taha.png" }
+		}
+		country_leader = {
+			desc = RPS_Mahmoud_Mohammed_Taha_DESC
+			expire = "2018.01.01"
+			ideology = liberal_conservatism_islamic_modernism_subtype
+			traits = { }
+			id = -1
+		}
+		advisor = {
+			slot = economy_minister
+			idea_token = RPS_Mahmoud_Mohammed_Taha_eco
+			allowed = { original_tag = RPS }
+			traits = {
+				economy_minister
+				eco_reformer
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	# 纳赛尔主义青年军官（潜伏的革命种子）
+	RPS_Jaafar_Nimeiry = {
+		name = RPS_Jaafar_Nimeiry
+		portraits = {
+			civilian = { large = "gfx/leaders/RPS/Portrait_RPS_Jaafar_Nimeiry.png" }
+			military = { large = "gfx/leaders/RPS/Portrait_RPS_Jaafar_Nimeiry.png" }
+		}
+		country_leader = {
+			desc = RPS_Jaafar_Nimeiry_DESC
+			expire = "2018.01.01"
+			ideology = socialist_left_wing_nationalism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 安萨尔（年轻精神领袖）
+	RPS_Sadiq_al_Mahdi = {
+		name = RPS_Sadiq_al_Mahdi
+		portraits = {
+			civilian = { large = "gfx/leaders/RPS/Portrait_RPS_Sadiq_al_Mahdi.png" }
+		}
+		country_leader = {
+			desc = RPS_Sadiq_al_Mahdi_DESC
+			expire = "2018.01.01"
+			ideology = conservatism_islamic_conservatism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 南方代表（自由党，亲联邦/亲埃）
+	RPS_Benjamin_Lwoki = {
+		name = RPS_Benjamin_Lwoki
+		portraits = {
+			civilian = { large = "gfx/leaders/RPS/Portrait_RPS_Benjamin_Lwoki.png" }
+		}
+		country_leader = {
+			desc = RPS_Benjamin_Lwoki_DESC
+			expire = "2018.01.01"
+			ideology = progressivism_reformist_socialism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 人民民主党 PDP（亲埃·苏丹优先，NUP裂出）
+	RPS_Mirghani_Hamza = {
+		name = RPS_Mirghani_Hamza
+		portraits = {
+			civilian = { large = "gfx/leaders/RPS/Portrait_RPS_Mirghani_Hamza.png" }
+		}
+		country_leader = {
+			desc = RPS_Mirghani_Hamza_DESC
+			expire = "2018.01.01"
+			ideology = progressivism_popular_front_subtype
+			traits = { }
+			id = -1
+		}
+		advisor = {
+			slot = foreign_minister
+			idea_token = RPS_Mirghani_Hamza_for
+			allowed = { original_tag = RPS }
+			traits = {
+				foreign_minister
+				for_iron_fisted_brute
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+}

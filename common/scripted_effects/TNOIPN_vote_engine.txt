@@ -1,0 +1,829 @@
+# TNOIPN Vote Engine — 通用法案表决系统 (DSR Syria)
+# 设计：每个法案 = 一份 setup 效果，填入每党立场分(TNOIPN_vs_<key>)与纪律(TNOIPN_vd_<key>)，
+# 设 TNOIPN_vote_threshold，再调用 TNOIPN_tally_vote。引擎按 立场分x纪律 计算每党赞成/反对，
+# 与门槛比较。计票逻辑只写一次，所有法案复用。
+
+### 全局修正变量默认值（在 on_startup 与测试事件里调用）###
+TNOIPN_vote_engine_init = {
+	set_variable = { var = TNOIPN_italian_influence value = 0 }
+	set_variable = { var = TNOIPN_populist_anger value = 0 }
+	set_variable = { var = TNOIPN_president_grip value = 0 }
+	set_variable = { var = TNOIPN_SPP_landowner_faction value = 0 }
+	set_variable = { var = TNOIPN_SPP_disaffected value = 0 }
+	set_variable = { var = TNOIPN_SNP_broke_with_president value = 0 }
+	set_variable = { var = TNOIPN_nonpartisan_lean value = 50 }
+}
+
+### 共享计票引擎 ###
+TNOIPN_tally_vote = {
+	set_variable = { var = TNOIPN_vote_total_yes value = 0 }
+	set_variable = { var = TNOIPN_vote_total_no value = 0 }
+	# --- SLCP (seat var = SLCP) ---
+	set_variable = { var = TNOIPN_v_ratio value = 50 }
+	if = {
+		limit = { check_variable = { TNOIPN_vs_SLCP >= 60 } }
+		set_variable = { var = TNOIPN_v_ratio value = 100 }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vs_SLCP >= 30 } }
+			set_variable = { var = TNOIPN_v_ratio value = 80 }
+		}
+		else = {
+			if = {
+				limit = { check_variable = { TNOIPN_vs_SLCP >= 10 } }
+				set_variable = { var = TNOIPN_v_ratio value = 65 }
+			}
+			else = {
+				if = {
+					limit = { check_variable = { TNOIPN_vs_SLCP > -10 } }
+					set_variable = { var = TNOIPN_v_ratio value = 50 }
+				}
+				else = {
+					if = {
+						limit = { check_variable = { TNOIPN_vs_SLCP > -30 } }
+						set_variable = { var = TNOIPN_v_ratio value = 35 }
+					}
+					else = {
+						if = {
+							limit = { check_variable = { TNOIPN_vs_SLCP > -60 } }
+							set_variable = { var = TNOIPN_v_ratio value = 20 }
+						}
+						else = {
+							set_variable = { var = TNOIPN_v_ratio value = 0 }
+						}
+					}
+				}
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { TNOIPN_vd_SLCP < 40 } }
+		set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+		subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+		divide_variable = { var = TNOIPN_v_tmp value = 2 }
+		set_variable = { var = TNOIPN_v_ratio value = 50 }
+		add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vd_SLCP < 70 } }
+			set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+			subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+			multiply_variable = { var = TNOIPN_v_tmp value = 4 }
+			divide_variable = { var = TNOIPN_v_tmp value = 5 }
+			set_variable = { var = TNOIPN_v_ratio value = 50 }
+			add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+		}
+	}
+	set_variable = { var = TNOIPN_v_yes value = SLCP }
+	multiply_variable = { var = TNOIPN_v_yes value = TNOIPN_v_ratio }
+	divide_variable = { var = TNOIPN_v_yes value = 100 }
+	set_variable = { var = TNOIPN_v_no value = SLCP }
+	subtract_from_variable = { var = TNOIPN_v_no value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_yes_SLCP value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_no_SLCP value = TNOIPN_v_no }
+	add_to_variable = { var = TNOIPN_vote_total_yes value = TNOIPN_v_yes }
+	add_to_variable = { var = TNOIPN_vote_total_no value = TNOIPN_v_no }
+	# --- HBAI (seat var = HBAI) ---
+	set_variable = { var = TNOIPN_v_ratio value = 50 }
+	if = {
+		limit = { check_variable = { TNOIPN_vs_HBAI >= 60 } }
+		set_variable = { var = TNOIPN_v_ratio value = 100 }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vs_HBAI >= 30 } }
+			set_variable = { var = TNOIPN_v_ratio value = 80 }
+		}
+		else = {
+			if = {
+				limit = { check_variable = { TNOIPN_vs_HBAI >= 10 } }
+				set_variable = { var = TNOIPN_v_ratio value = 65 }
+			}
+			else = {
+				if = {
+					limit = { check_variable = { TNOIPN_vs_HBAI > -10 } }
+					set_variable = { var = TNOIPN_v_ratio value = 50 }
+				}
+				else = {
+					if = {
+						limit = { check_variable = { TNOIPN_vs_HBAI > -30 } }
+						set_variable = { var = TNOIPN_v_ratio value = 35 }
+					}
+					else = {
+						if = {
+							limit = { check_variable = { TNOIPN_vs_HBAI > -60 } }
+							set_variable = { var = TNOIPN_v_ratio value = 20 }
+						}
+						else = {
+							set_variable = { var = TNOIPN_v_ratio value = 0 }
+						}
+					}
+				}
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { TNOIPN_vd_HBAI < 40 } }
+		set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+		subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+		divide_variable = { var = TNOIPN_v_tmp value = 2 }
+		set_variable = { var = TNOIPN_v_ratio value = 50 }
+		add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vd_HBAI < 70 } }
+			set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+			subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+			multiply_variable = { var = TNOIPN_v_tmp value = 4 }
+			divide_variable = { var = TNOIPN_v_tmp value = 5 }
+			set_variable = { var = TNOIPN_v_ratio value = 50 }
+			add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+		}
+	}
+	set_variable = { var = TNOIPN_v_yes value = HBAI }
+	multiply_variable = { var = TNOIPN_v_yes value = TNOIPN_v_ratio }
+	divide_variable = { var = TNOIPN_v_yes value = 100 }
+	set_variable = { var = TNOIPN_v_no value = HBAI }
+	subtract_from_variable = { var = TNOIPN_v_no value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_yes_HBAI value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_no_HBAI value = TNOIPN_v_no }
+	add_to_variable = { var = TNOIPN_vote_total_yes value = TNOIPN_v_yes }
+	add_to_variable = { var = TNOIPN_vote_total_no value = TNOIPN_v_no }
+	# --- SCP (seat var = SCP) ---
+	set_variable = { var = TNOIPN_v_ratio value = 50 }
+	if = {
+		limit = { check_variable = { TNOIPN_vs_SCP >= 60 } }
+		set_variable = { var = TNOIPN_v_ratio value = 100 }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vs_SCP >= 30 } }
+			set_variable = { var = TNOIPN_v_ratio value = 80 }
+		}
+		else = {
+			if = {
+				limit = { check_variable = { TNOIPN_vs_SCP >= 10 } }
+				set_variable = { var = TNOIPN_v_ratio value = 65 }
+			}
+			else = {
+				if = {
+					limit = { check_variable = { TNOIPN_vs_SCP > -10 } }
+					set_variable = { var = TNOIPN_v_ratio value = 50 }
+				}
+				else = {
+					if = {
+						limit = { check_variable = { TNOIPN_vs_SCP > -30 } }
+						set_variable = { var = TNOIPN_v_ratio value = 35 }
+					}
+					else = {
+						if = {
+							limit = { check_variable = { TNOIPN_vs_SCP > -60 } }
+							set_variable = { var = TNOIPN_v_ratio value = 20 }
+						}
+						else = {
+							set_variable = { var = TNOIPN_v_ratio value = 0 }
+						}
+					}
+				}
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { TNOIPN_vd_SCP < 40 } }
+		set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+		subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+		divide_variable = { var = TNOIPN_v_tmp value = 2 }
+		set_variable = { var = TNOIPN_v_ratio value = 50 }
+		add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vd_SCP < 70 } }
+			set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+			subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+			multiply_variable = { var = TNOIPN_v_tmp value = 4 }
+			divide_variable = { var = TNOIPN_v_tmp value = 5 }
+			set_variable = { var = TNOIPN_v_ratio value = 50 }
+			add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+		}
+	}
+	set_variable = { var = TNOIPN_v_yes value = SCP }
+	multiply_variable = { var = TNOIPN_v_yes value = TNOIPN_v_ratio }
+	divide_variable = { var = TNOIPN_v_yes value = 100 }
+	set_variable = { var = TNOIPN_v_no value = SCP }
+	subtract_from_variable = { var = TNOIPN_v_no value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_yes_SCP value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_no_SCP value = TNOIPN_v_no }
+	add_to_variable = { var = TNOIPN_vote_total_yes value = TNOIPN_v_yes }
+	add_to_variable = { var = TNOIPN_vote_total_no value = TNOIPN_v_no }
+	# --- AUP (seat var = AUP) ---
+	set_variable = { var = TNOIPN_v_ratio value = 50 }
+	if = {
+		limit = { check_variable = { TNOIPN_vs_AUP >= 60 } }
+		set_variable = { var = TNOIPN_v_ratio value = 100 }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vs_AUP >= 30 } }
+			set_variable = { var = TNOIPN_v_ratio value = 80 }
+		}
+		else = {
+			if = {
+				limit = { check_variable = { TNOIPN_vs_AUP >= 10 } }
+				set_variable = { var = TNOIPN_v_ratio value = 65 }
+			}
+			else = {
+				if = {
+					limit = { check_variable = { TNOIPN_vs_AUP > -10 } }
+					set_variable = { var = TNOIPN_v_ratio value = 50 }
+				}
+				else = {
+					if = {
+						limit = { check_variable = { TNOIPN_vs_AUP > -30 } }
+						set_variable = { var = TNOIPN_v_ratio value = 35 }
+					}
+					else = {
+						if = {
+							limit = { check_variable = { TNOIPN_vs_AUP > -60 } }
+							set_variable = { var = TNOIPN_v_ratio value = 20 }
+						}
+						else = {
+							set_variable = { var = TNOIPN_v_ratio value = 0 }
+						}
+					}
+				}
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { TNOIPN_vd_AUP < 40 } }
+		set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+		subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+		divide_variable = { var = TNOIPN_v_tmp value = 2 }
+		set_variable = { var = TNOIPN_v_ratio value = 50 }
+		add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vd_AUP < 70 } }
+			set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+			subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+			multiply_variable = { var = TNOIPN_v_tmp value = 4 }
+			divide_variable = { var = TNOIPN_v_tmp value = 5 }
+			set_variable = { var = TNOIPN_v_ratio value = 50 }
+			add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+		}
+	}
+	set_variable = { var = TNOIPN_v_yes value = AUP }
+	multiply_variable = { var = TNOIPN_v_yes value = TNOIPN_v_ratio }
+	divide_variable = { var = TNOIPN_v_yes value = 100 }
+	set_variable = { var = TNOIPN_v_no value = AUP }
+	subtract_from_variable = { var = TNOIPN_v_no value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_yes_AUP value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_no_AUP value = TNOIPN_v_no }
+	add_to_variable = { var = TNOIPN_vote_total_yes value = TNOIPN_v_yes }
+	add_to_variable = { var = TNOIPN_vote_total_no value = TNOIPN_v_no }
+	# --- SPP (seat var = SPP) ---
+	set_variable = { var = TNOIPN_v_ratio value = 50 }
+	if = {
+		limit = { check_variable = { TNOIPN_vs_SPP >= 60 } }
+		set_variable = { var = TNOIPN_v_ratio value = 100 }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vs_SPP >= 30 } }
+			set_variable = { var = TNOIPN_v_ratio value = 80 }
+		}
+		else = {
+			if = {
+				limit = { check_variable = { TNOIPN_vs_SPP >= 10 } }
+				set_variable = { var = TNOIPN_v_ratio value = 65 }
+			}
+			else = {
+				if = {
+					limit = { check_variable = { TNOIPN_vs_SPP > -10 } }
+					set_variable = { var = TNOIPN_v_ratio value = 50 }
+				}
+				else = {
+					if = {
+						limit = { check_variable = { TNOIPN_vs_SPP > -30 } }
+						set_variable = { var = TNOIPN_v_ratio value = 35 }
+					}
+					else = {
+						if = {
+							limit = { check_variable = { TNOIPN_vs_SPP > -60 } }
+							set_variable = { var = TNOIPN_v_ratio value = 20 }
+						}
+						else = {
+							set_variable = { var = TNOIPN_v_ratio value = 0 }
+						}
+					}
+				}
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { TNOIPN_vd_SPP < 40 } }
+		set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+		subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+		divide_variable = { var = TNOIPN_v_tmp value = 2 }
+		set_variable = { var = TNOIPN_v_ratio value = 50 }
+		add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vd_SPP < 70 } }
+			set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+			subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+			multiply_variable = { var = TNOIPN_v_tmp value = 4 }
+			divide_variable = { var = TNOIPN_v_tmp value = 5 }
+			set_variable = { var = TNOIPN_v_ratio value = 50 }
+			add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+		}
+	}
+	set_variable = { var = TNOIPN_v_yes value = SPP }
+	multiply_variable = { var = TNOIPN_v_yes value = TNOIPN_v_ratio }
+	divide_variable = { var = TNOIPN_v_yes value = 100 }
+	set_variable = { var = TNOIPN_v_no value = SPP }
+	subtract_from_variable = { var = TNOIPN_v_no value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_yes_SPP value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_no_SPP value = TNOIPN_v_no }
+	add_to_variable = { var = TNOIPN_vote_total_yes value = TNOIPN_v_yes }
+	add_to_variable = { var = TNOIPN_vote_total_no value = TNOIPN_v_no }
+	# --- SNP (seat var = SNP) ---
+	set_variable = { var = TNOIPN_v_ratio value = 50 }
+	if = {
+		limit = { check_variable = { TNOIPN_vs_SNP >= 60 } }
+		set_variable = { var = TNOIPN_v_ratio value = 100 }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vs_SNP >= 30 } }
+			set_variable = { var = TNOIPN_v_ratio value = 80 }
+		}
+		else = {
+			if = {
+				limit = { check_variable = { TNOIPN_vs_SNP >= 10 } }
+				set_variable = { var = TNOIPN_v_ratio value = 65 }
+			}
+			else = {
+				if = {
+					limit = { check_variable = { TNOIPN_vs_SNP > -10 } }
+					set_variable = { var = TNOIPN_v_ratio value = 50 }
+				}
+				else = {
+					if = {
+						limit = { check_variable = { TNOIPN_vs_SNP > -30 } }
+						set_variable = { var = TNOIPN_v_ratio value = 35 }
+					}
+					else = {
+						if = {
+							limit = { check_variable = { TNOIPN_vs_SNP > -60 } }
+							set_variable = { var = TNOIPN_v_ratio value = 20 }
+						}
+						else = {
+							set_variable = { var = TNOIPN_v_ratio value = 0 }
+						}
+					}
+				}
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { TNOIPN_vd_SNP < 40 } }
+		set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+		subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+		divide_variable = { var = TNOIPN_v_tmp value = 2 }
+		set_variable = { var = TNOIPN_v_ratio value = 50 }
+		add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vd_SNP < 70 } }
+			set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+			subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+			multiply_variable = { var = TNOIPN_v_tmp value = 4 }
+			divide_variable = { var = TNOIPN_v_tmp value = 5 }
+			set_variable = { var = TNOIPN_v_ratio value = 50 }
+			add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+		}
+	}
+	set_variable = { var = TNOIPN_v_yes value = SNP }
+	multiply_variable = { var = TNOIPN_v_yes value = TNOIPN_v_ratio }
+	divide_variable = { var = TNOIPN_v_yes value = 100 }
+	set_variable = { var = TNOIPN_v_no value = SNP }
+	subtract_from_variable = { var = TNOIPN_v_no value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_yes_SNP value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_no_SNP value = TNOIPN_v_no }
+	add_to_variable = { var = TNOIPN_vote_total_yes value = TNOIPN_v_yes }
+	add_to_variable = { var = TNOIPN_vote_total_no value = TNOIPN_v_no }
+	# --- SSNP (seat var = SSNP) ---
+	set_variable = { var = TNOIPN_v_ratio value = 50 }
+	if = {
+		limit = { check_variable = { TNOIPN_vs_SSNP >= 60 } }
+		set_variable = { var = TNOIPN_v_ratio value = 100 }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vs_SSNP >= 30 } }
+			set_variable = { var = TNOIPN_v_ratio value = 80 }
+		}
+		else = {
+			if = {
+				limit = { check_variable = { TNOIPN_vs_SSNP >= 10 } }
+				set_variable = { var = TNOIPN_v_ratio value = 65 }
+			}
+			else = {
+				if = {
+					limit = { check_variable = { TNOIPN_vs_SSNP > -10 } }
+					set_variable = { var = TNOIPN_v_ratio value = 50 }
+				}
+				else = {
+					if = {
+						limit = { check_variable = { TNOIPN_vs_SSNP > -30 } }
+						set_variable = { var = TNOIPN_v_ratio value = 35 }
+					}
+					else = {
+						if = {
+							limit = { check_variable = { TNOIPN_vs_SSNP > -60 } }
+							set_variable = { var = TNOIPN_v_ratio value = 20 }
+						}
+						else = {
+							set_variable = { var = TNOIPN_v_ratio value = 0 }
+						}
+					}
+				}
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { TNOIPN_vd_SSNP < 40 } }
+		set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+		subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+		divide_variable = { var = TNOIPN_v_tmp value = 2 }
+		set_variable = { var = TNOIPN_v_ratio value = 50 }
+		add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vd_SSNP < 70 } }
+			set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+			subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+			multiply_variable = { var = TNOIPN_v_tmp value = 4 }
+			divide_variable = { var = TNOIPN_v_tmp value = 5 }
+			set_variable = { var = TNOIPN_v_ratio value = 50 }
+			add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+		}
+	}
+	set_variable = { var = TNOIPN_v_yes value = SSNP }
+	multiply_variable = { var = TNOIPN_v_yes value = TNOIPN_v_ratio }
+	divide_variable = { var = TNOIPN_v_yes value = 100 }
+	set_variable = { var = TNOIPN_v_no value = SSNP }
+	subtract_from_variable = { var = TNOIPN_v_no value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_yes_SSNP value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_no_SSNP value = TNOIPN_v_no }
+	add_to_variable = { var = TNOIPN_vote_total_yes value = TNOIPN_v_yes }
+	add_to_variable = { var = TNOIPN_vote_total_no value = TNOIPN_v_no }
+	# --- MBS (seat var = MBS) ---
+	set_variable = { var = TNOIPN_v_ratio value = 50 }
+	if = {
+		limit = { check_variable = { TNOIPN_vs_MBS >= 60 } }
+		set_variable = { var = TNOIPN_v_ratio value = 100 }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vs_MBS >= 30 } }
+			set_variable = { var = TNOIPN_v_ratio value = 80 }
+		}
+		else = {
+			if = {
+				limit = { check_variable = { TNOIPN_vs_MBS >= 10 } }
+				set_variable = { var = TNOIPN_v_ratio value = 65 }
+			}
+			else = {
+				if = {
+					limit = { check_variable = { TNOIPN_vs_MBS > -10 } }
+					set_variable = { var = TNOIPN_v_ratio value = 50 }
+				}
+				else = {
+					if = {
+						limit = { check_variable = { TNOIPN_vs_MBS > -30 } }
+						set_variable = { var = TNOIPN_v_ratio value = 35 }
+					}
+					else = {
+						if = {
+							limit = { check_variable = { TNOIPN_vs_MBS > -60 } }
+							set_variable = { var = TNOIPN_v_ratio value = 20 }
+						}
+						else = {
+							set_variable = { var = TNOIPN_v_ratio value = 0 }
+						}
+					}
+				}
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { TNOIPN_vd_MBS < 40 } }
+		set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+		subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+		divide_variable = { var = TNOIPN_v_tmp value = 2 }
+		set_variable = { var = TNOIPN_v_ratio value = 50 }
+		add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vd_MBS < 70 } }
+			set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+			subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+			multiply_variable = { var = TNOIPN_v_tmp value = 4 }
+			divide_variable = { var = TNOIPN_v_tmp value = 5 }
+			set_variable = { var = TNOIPN_v_ratio value = 50 }
+			add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+		}
+	}
+	set_variable = { var = TNOIPN_v_yes value = MBS }
+	multiply_variable = { var = TNOIPN_v_yes value = TNOIPN_v_ratio }
+	divide_variable = { var = TNOIPN_v_yes value = 100 }
+	set_variable = { var = TNOIPN_v_no value = MBS }
+	subtract_from_variable = { var = TNOIPN_v_no value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_yes_MBS value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_no_MBS value = TNOIPN_v_no }
+	add_to_variable = { var = TNOIPN_vote_total_yes value = TNOIPN_v_yes }
+	add_to_variable = { var = TNOIPN_vote_total_no value = TNOIPN_v_no }
+	# --- SYRNonPartisan (seat var = SYRNonPartisan) ---
+	set_variable = { var = TNOIPN_v_ratio value = 50 }
+	if = {
+		limit = { check_variable = { TNOIPN_vs_SYRNonPartisan >= 60 } }
+		set_variable = { var = TNOIPN_v_ratio value = 100 }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vs_SYRNonPartisan >= 30 } }
+			set_variable = { var = TNOIPN_v_ratio value = 80 }
+		}
+		else = {
+			if = {
+				limit = { check_variable = { TNOIPN_vs_SYRNonPartisan >= 10 } }
+				set_variable = { var = TNOIPN_v_ratio value = 65 }
+			}
+			else = {
+				if = {
+					limit = { check_variable = { TNOIPN_vs_SYRNonPartisan > -10 } }
+					set_variable = { var = TNOIPN_v_ratio value = 50 }
+				}
+				else = {
+					if = {
+						limit = { check_variable = { TNOIPN_vs_SYRNonPartisan > -30 } }
+						set_variable = { var = TNOIPN_v_ratio value = 35 }
+					}
+					else = {
+						if = {
+							limit = { check_variable = { TNOIPN_vs_SYRNonPartisan > -60 } }
+							set_variable = { var = TNOIPN_v_ratio value = 20 }
+						}
+						else = {
+							set_variable = { var = TNOIPN_v_ratio value = 0 }
+						}
+					}
+				}
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { TNOIPN_vd_SYRNonPartisan < 40 } }
+		set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+		subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+		divide_variable = { var = TNOIPN_v_tmp value = 2 }
+		set_variable = { var = TNOIPN_v_ratio value = 50 }
+		add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vd_SYRNonPartisan < 70 } }
+			set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+			subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+			multiply_variable = { var = TNOIPN_v_tmp value = 4 }
+			divide_variable = { var = TNOIPN_v_tmp value = 5 }
+			set_variable = { var = TNOIPN_v_ratio value = 50 }
+			add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+		}
+	}
+	set_variable = { var = TNOIPN_v_yes value = SYRNonPartisan }
+	multiply_variable = { var = TNOIPN_v_yes value = TNOIPN_v_ratio }
+	divide_variable = { var = TNOIPN_v_yes value = 100 }
+	set_variable = { var = TNOIPN_v_no value = SYRNonPartisan }
+	subtract_from_variable = { var = TNOIPN_v_no value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_yes_SYRNonPartisan value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_no_SYRNonPartisan value = TNOIPN_v_no }
+	add_to_variable = { var = TNOIPN_vote_total_yes value = TNOIPN_v_yes }
+	add_to_variable = { var = TNOIPN_vote_total_no value = TNOIPN_v_no }
+	# --- SYRVacant (seat var = SYRVacant) ---
+	set_variable = { var = TNOIPN_v_ratio value = 50 }
+	if = {
+		limit = { check_variable = { TNOIPN_vs_SYRVacant >= 60 } }
+		set_variable = { var = TNOIPN_v_ratio value = 100 }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vs_SYRVacant >= 30 } }
+			set_variable = { var = TNOIPN_v_ratio value = 80 }
+		}
+		else = {
+			if = {
+				limit = { check_variable = { TNOIPN_vs_SYRVacant >= 10 } }
+				set_variable = { var = TNOIPN_v_ratio value = 65 }
+			}
+			else = {
+				if = {
+					limit = { check_variable = { TNOIPN_vs_SYRVacant > -10 } }
+					set_variable = { var = TNOIPN_v_ratio value = 50 }
+				}
+				else = {
+					if = {
+						limit = { check_variable = { TNOIPN_vs_SYRVacant > -30 } }
+						set_variable = { var = TNOIPN_v_ratio value = 35 }
+					}
+					else = {
+						if = {
+							limit = { check_variable = { TNOIPN_vs_SYRVacant > -60 } }
+							set_variable = { var = TNOIPN_v_ratio value = 20 }
+						}
+						else = {
+							set_variable = { var = TNOIPN_v_ratio value = 0 }
+						}
+					}
+				}
+			}
+		}
+	}
+	if = {
+		limit = { check_variable = { TNOIPN_vd_SYRVacant < 40 } }
+		set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+		subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+		divide_variable = { var = TNOIPN_v_tmp value = 2 }
+		set_variable = { var = TNOIPN_v_ratio value = 50 }
+		add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+	}
+	else = {
+		if = {
+			limit = { check_variable = { TNOIPN_vd_SYRVacant < 70 } }
+			set_variable = { var = TNOIPN_v_tmp value = TNOIPN_v_ratio }
+			subtract_from_variable = { var = TNOIPN_v_tmp value = 50 }
+			multiply_variable = { var = TNOIPN_v_tmp value = 4 }
+			divide_variable = { var = TNOIPN_v_tmp value = 5 }
+			set_variable = { var = TNOIPN_v_ratio value = 50 }
+			add_to_variable = { var = TNOIPN_v_ratio value = TNOIPN_v_tmp }
+		}
+	}
+	set_variable = { var = TNOIPN_v_yes value = SYRVacant }
+	multiply_variable = { var = TNOIPN_v_yes value = TNOIPN_v_ratio }
+	divide_variable = { var = TNOIPN_v_yes value = 100 }
+	set_variable = { var = TNOIPN_v_no value = SYRVacant }
+	subtract_from_variable = { var = TNOIPN_v_no value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_yes_SYRVacant value = TNOIPN_v_yes }
+	set_variable = { var = TNOIPN_vote_no_SYRVacant value = TNOIPN_v_no }
+	add_to_variable = { var = TNOIPN_vote_total_yes value = TNOIPN_v_yes }
+	add_to_variable = { var = TNOIPN_vote_total_no value = TNOIPN_v_no }
+	if = {
+		limit = { check_variable = { TNOIPN_vote_total_yes >= TNOIPN_vote_threshold } }
+		set_variable = { var = TNOIPN_vote_passed value = 1 }
+	}
+	else = {
+		set_variable = { var = TNOIPN_vote_passed value = 0 }
+	}
+}
+
+### 范例 A：预算案（政府议程，普通多数 71）###
+TNOIPN_bill_budget_setup = {
+	set_variable = { var = TNOIPN_vs_SLCP value = 0 }
+	set_variable = { var = TNOIPN_vs_HBAI value = 0 }
+	set_variable = { var = TNOIPN_vs_SCP value = -40 }
+	set_variable = { var = TNOIPN_vs_AUP value = -10 }
+	set_variable = { var = TNOIPN_vs_SPP value = 10 }
+	set_variable = { var = TNOIPN_vs_SNP value = 30 }
+	set_variable = { var = TNOIPN_vs_SSNP value = 0 }
+	set_variable = { var = TNOIPN_vs_MBS value = 0 }
+	set_variable = { var = TNOIPN_vs_SYRNonPartisan value = 0 }
+	set_variable = { var = TNOIPN_vs_SYRVacant value = 0 }
+	set_variable = { var = TNOIPN_vd_SPP value = 80 }
+	set_variable = { var = TNOIPN_vd_SNP value = 75 }
+	set_variable = { var = TNOIPN_vd_SCP value = 60 }
+	set_variable = { var = TNOIPN_vd_AUP value = 55 }
+	set_variable = { var = TNOIPN_vd_SSNP value = 55 }
+	set_variable = { var = TNOIPN_vd_SLCP value = 50 }
+	set_variable = { var = TNOIPN_vd_HBAI value = 50 }
+	set_variable = { var = TNOIPN_vd_MBS value = 50 }
+	set_variable = { var = TNOIPN_vd_SYRNonPartisan value = 30 }
+	set_variable = { var = TNOIPN_vd_SYRVacant value = 0 }
+	if = {
+		limit = { has_country_flag = TNOIPN_SYR_SPP_allied }
+		add_to_variable = { var = TNOIPN_vs_SPP value = 15 }
+	}
+	if = {
+		limit = { has_country_flag = TNOIPN_SYR_SNP_allied }
+		add_to_variable = { var = TNOIPN_vs_SNP value = 15 }
+	}
+	if = {
+		limit = { has_country_flag = TNOIPN_SYR_SCP_allied }
+		add_to_variable = { var = TNOIPN_vs_SCP value = 15 }
+	}
+	if = {
+		limit = { has_country_flag = TNOIPN_SYR_AUP_allied }
+		add_to_variable = { var = TNOIPN_vs_AUP value = 15 }
+	}
+	if = {
+		limit = { has_country_flag = TNOIPN_SYR_SSNP_allied }
+		add_to_variable = { var = TNOIPN_vs_SSNP value = 15 }
+	}
+	if = {
+		limit = { has_country_flag = TNOIPN_SYR_SPP_opposed }
+		add_to_variable = { var = TNOIPN_vs_SPP value = -15 }
+	}
+	if = {
+		limit = { has_country_flag = TNOIPN_SYR_SNP_opposed }
+		add_to_variable = { var = TNOIPN_vs_SNP value = -15 }
+	}
+	if = {
+		limit = { has_country_flag = TNOIPN_SYR_SCP_opposed }
+		add_to_variable = { var = TNOIPN_vs_SCP value = -15 }
+	}
+	if = {
+		limit = { has_country_flag = TNOIPN_SYR_AUP_opposed }
+		add_to_variable = { var = TNOIPN_vs_AUP value = -15 }
+	}
+	if = {
+		limit = { has_country_flag = TNOIPN_SYR_SSNP_opposed }
+		add_to_variable = { var = TNOIPN_vs_SSNP value = -15 }
+	}
+	if = {
+		limit = { check_variable = { TNOIPN_italian_influence > 0 } }
+		add_to_variable = { var = TNOIPN_vs_SNP value = -10 }
+	}
+	set_variable = { var = TNOIPN_vote_threshold value = 71 }
+	TNOIPN_tally_vote = yes
+	if = {
+		limit = { check_variable = { TNOIPN_vote_passed > 0 } }
+		set_variable = { var = TNOIPN_vote_result value = 1 }
+	}
+	else = {
+		set_variable = { var = TNOIPN_vote_result value = 0 }
+	}
+}
+
+### 范例 B：总统弹劾案（反对派法案，超多数 94）###
+TNOIPN_bill_impeachment_setup = {
+	set_variable = { var = TNOIPN_vs_SLCP value = 80 }
+	set_variable = { var = TNOIPN_vs_HBAI value = 60 }
+	set_variable = { var = TNOIPN_vs_SCP value = 70 }
+	set_variable = { var = TNOIPN_vs_AUP value = 50 }
+	set_variable = { var = TNOIPN_vs_SSNP value = 55 }
+	set_variable = { var = TNOIPN_vs_MBS value = 40 }
+	set_variable = { var = TNOIPN_vs_SYRNonPartisan value = 20 }
+	set_variable = { var = TNOIPN_vs_SPP value = 0 }
+	set_variable = { var = TNOIPN_vs_SNP value = 0 }
+	set_variable = { var = TNOIPN_vs_SYRVacant value = 0 }
+	add_to_variable = { var = TNOIPN_vs_SPP value = TNOIPN_SPP_disaffected }
+	if = {
+		limit = { check_variable = { TNOIPN_SNP_broke_with_president > 0 } }
+		add_to_variable = { var = TNOIPN_vs_SNP value = 60 }
+	}
+	else = {
+		add_to_variable = { var = TNOIPN_vs_SNP value = -40 }
+	}
+	if = {
+		limit = { check_variable = { TNOIPN_president_grip > 0 } }
+		set_variable = { var = TNOIPN_v_grip_tmp value = TNOIPN_president_grip }
+		divide_variable = { var = TNOIPN_v_grip_tmp value = 2 }
+		subtract_from_variable = { var = TNOIPN_vs_SPP value = TNOIPN_v_grip_tmp }
+		subtract_from_variable = { var = TNOIPN_vs_SNP value = TNOIPN_v_grip_tmp }
+		subtract_from_variable = { var = TNOIPN_vs_SSNP value = TNOIPN_v_grip_tmp }
+		subtract_from_variable = { var = TNOIPN_vs_SCP value = TNOIPN_v_grip_tmp }
+		subtract_from_variable = { var = TNOIPN_vs_AUP value = TNOIPN_v_grip_tmp }
+		subtract_from_variable = { var = TNOIPN_vs_SLCP value = TNOIPN_v_grip_tmp }
+		subtract_from_variable = { var = TNOIPN_vs_HBAI value = TNOIPN_v_grip_tmp }
+		subtract_from_variable = { var = TNOIPN_vs_MBS value = TNOIPN_v_grip_tmp }
+	}
+	set_variable = { var = TNOIPN_vd_SPP value = 80 }
+	set_variable = { var = TNOIPN_vd_SNP value = 80 }
+	set_variable = { var = TNOIPN_vd_SCP value = 85 }
+	set_variable = { var = TNOIPN_vd_AUP value = 85 }
+	set_variable = { var = TNOIPN_vd_SSNP value = 85 }
+	set_variable = { var = TNOIPN_vd_SLCP value = 85 }
+	set_variable = { var = TNOIPN_vd_HBAI value = 85 }
+	set_variable = { var = TNOIPN_vd_MBS value = 85 }
+	set_variable = { var = TNOIPN_vd_SYRNonPartisan value = 30 }
+	set_variable = { var = TNOIPN_vd_SYRVacant value = 0 }
+	set_variable = { var = TNOIPN_vote_threshold value = 94 }
+	TNOIPN_tally_vote = yes
+	if = {
+		limit = { check_variable = { TNOIPN_vote_passed > 0 } }
+		set_variable = { var = TNOIPN_vote_result value = 1 }
+	}
+	else = {
+		set_variable = { var = TNOIPN_vote_result value = 0 }
+	}
+}

@@ -1,0 +1,12 @@
+SYR_National_Congress_decision_category = {
+	#icon = GFX_decision_category_SYR_National_Congress
+	allowed = {
+		original_tag = SYR
+	}
+	visible = {
+		always = yes
+	}
+	visible_when_empty = yes
+	scripted_gui = TNOIPN_SYR_parliament_gui
+	priority = 100
+}

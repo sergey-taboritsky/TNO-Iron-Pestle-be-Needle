@@ -1,0 +1,20 @@
+# Global Conflicts
+GC_EgyptCW
+GC_SyriaImpeachment
+GC_SyriaRevolution
+GC_SyriaCW
+GC_YemenCoup
+
+# Ideas
+IPN_SYR_twenty_independent_years
+IPN_SYR_entrenched_democratic_republic
+IPN_SYR_aleppo_ascendant
+IPN_SYR_peoples_muttering
+
+# Misc Laws
+IPN_SYR_Current_Constitution
+IPN_SYR_Election_Law
+IPN_SYR_Oil_Pipeline_Law
+IPN_SYR_Turkey_Trade_Law
+IPN_SYR_Land_Reform_Aborted
+IPN_SYR_French_Treaty

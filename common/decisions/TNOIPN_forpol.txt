@@ -1,0 +1,346 @@
+ITA_BoP_category = {
+	#ITA_Syria_Impeachment_display = {
+	#	priority = 15000
+	#	visible = { TNOIPN_fopo_syrian_impeachment_selected = yes }
+	#	available = { hidden_trigger = { always = no } }
+	#}
+	ITA_subsidize_national_party_radicals = {
+		allowed = { original_tag = ITA }
+		icon = GFX_decision_generic_riot_apc
+
+		visible = {
+			TNOIPN_fopo_syrian_impeachment_selected = yes
+		}
+
+		days_remove = 14
+		days_re_enable = 14
+
+		custom_cost_trigger = {
+			set_temp_variable = { t_cp_check = 5 }
+			set_temp_variable = { t_pp_check = 15 }
+			check_variable = { var = command_power value = t_cp_check compare = greater_than_or_equals }
+			check_variable = { var = political_power value = t_pp_check compare = greater_than_or_equals }
+		}
+		custom_cost_text = decision_cost_cp_pp_dynamic
+
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ITA_subsidize_national_party_radicals"
+			hidden_effect = {
+				add_command_power = -5
+				add_political_power = -15
+			}
+			set_temp_variable = { temp_econ_spending_amount = 0.35 }
+			econ_spend_money_once_effect_raw_money = yes
+			add_to_variable = { global.TNOIPN_Syrian_Impeachment_chance_var = 1 }
+		}
+	}
+
+	ITA_donation_to_damascus_oligarch = {
+		allowed = { original_tag = ITA }
+		icon = GFX_decision_generic_document_burn
+
+		visible = {
+			TNOIPN_fopo_syrian_impeachment_selected = yes
+		}
+
+		days_remove = 14
+		days_re_enable = 7
+
+		cost = 10
+
+		ai_will_do = {
+			base = 150
+		}
+
+		modifier = {
+			misc_costs_modifier = 0.1
+			civilian_expenditures_factor = 0.02
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ITA_donation_to_damascus_oligarch"
+			add_to_variable = { global.TNOIPN_Syrian_Impeachment_chance_var = 1.5 }
+		}
+	}
+	ITA_broadcast_propaganda_to_aleppo = {
+		allowed = { original_tag = ITA }
+		icon = GFX_decision_generic_riot_apc
+
+		visible = {
+			TNOIPN_fopo_syrian_impeachment_selected = yes
+		}
+
+		days_remove = 14
+		days_re_enable = 14
+
+		custom_cost_trigger = {
+			set_temp_variable = { t_pp_check = 15 }
+			check_variable = { var = political_power value = t_pp_check compare = greater_than_or_equals }
+		}
+		custom_cost_text = decision_cost_cp_pp_dynamic
+
+		ai_will_do = {
+			base = 150
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ITA_broadcast_propaganda_to_aleppo"
+			hidden_effect = {
+				add_political_power = -15
+			}
+			add_to_variable = { global.TNOIPN_Syrian_Impeachment_chance_var = 1 }
+		}
+	}
+	ITA_arm_damascus_self_defense_groups = {
+		allowed = { original_tag = ITA }
+		icon = GFX_decision_generic_document_burn
+
+		visible = {
+			TNOIPN_fopo_syrian_impeachment_selected = yes
+		}
+
+		days_remove = 14
+		days_re_enable = 7
+
+		custom_cost_trigger = {
+			set_temp_variable = { t_cp_check = 8 }
+			set_temp_variable = { t_pp_check = 12 }
+			check_variable = { var = command_power value = t_cp_check compare = greater_than_or_equals }
+			check_variable = { var = political_power value = t_pp_check compare = greater_than_or_equals }
+		}
+		custom_cost_text = decision_cost_cp_pp_dynamic
+
+		ai_will_do = {
+			base = 200
+		}
+
+		modifier = {
+			misc_costs_modifier = 0.1
+			civilian_expenditures_factor = 0.02
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ITA_arm_damascus_self_defense_groups"
+			hidden_effect = {
+				add_command_power = -8
+				add_political_power = -12
+			}
+			set_temp_variable = { temp_econ_spending_amount = 0.25 }
+			econ_spend_money_once_effect_raw_money = yes
+			add_to_variable = { global.TNOIPN_Syrian_Impeachment_chance_var = 2 }
+		}
+	}
+	ITA_pressure_kikhya_diplomatically = {
+		allowed = { original_tag = ITA }
+		icon = GFX_decision_generic_riot_apc
+
+		visible = {
+			TNOIPN_fopo_syrian_impeachment_selected = yes
+		}
+
+		days_remove = 14
+		days_re_enable = 14
+
+		custom_cost_trigger = {
+			set_temp_variable = { t_pp_check = 15 }
+			check_variable = { var = political_power value = t_pp_check compare = greater_than_or_equals }
+		}
+		custom_cost_text = decision_cost_cp_pp_dynamic
+
+		ai_will_do = {
+			base = 150
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision ITA_pressure_kikhya_diplomatically"
+			hidden_effect = {
+				add_political_power = -15
+			}
+			add_to_variable = { global.TNOIPN_Syrian_Impeachment_chance_var = 1.5 }
+		}
+	}
+}
+TUR_BoP_category = {
+	#ITA_Syria_Impeachment_display = {
+	#	priority = 15000
+	#	visible = { TNOIPN_fopo_syrian_impeachment_selected = yes }
+	#	available = { hidden_trigger = { always = no } }
+	#}
+	TUR_leverage_economic_influence = {
+		allowed = { original_tag = TUR }
+		icon = GFX_decision_generic_riot_apc
+
+		visible = {
+			TNOIPN_fopo_syrian_impeachment_selected = yes
+		}
+
+		days_remove = 14
+		days_re_enable = 14
+
+		custom_cost_trigger = {
+			set_temp_variable = { t_pp_check = 20 }
+			check_variable = { var = political_power value = t_pp_check compare = greater_than_or_equals }
+		}
+		custom_cost_text = decision_cost_cp_pp_dynamic
+
+
+		ai_will_do = {
+			base = 200
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TUR_leverage_economic_influence"
+			hidden_effect = {
+				add_political_power = -20
+			}
+			set_temp_variable = { temp_econ_spending_amount = 0.10 }
+			econ_spend_money_once_effect_raw_money = yes
+			add_to_variable = { global.TNOIPN_Syrian_Impeachment_chance_var = -1 }
+		}
+	}
+
+	TUR_increase_border_patrol = {
+		allowed = { original_tag = TUR }
+		icon = GFX_decision_generic_document_burn
+
+		visible = {
+			TNOIPN_fopo_syrian_impeachment_selected = yes
+		}
+
+		days_remove = 14
+		days_re_enable = 7
+
+		custom_cost_trigger = {
+			set_temp_variable = { t_cp_check = 10 }
+			set_temp_variable = { t_pp_check = 5 }
+			check_variable = { var = command_power value = t_cp_check compare = greater_than_or_equals }
+			check_variable = { var = political_power value = t_pp_check compare = greater_than_or_equals }
+		}
+		custom_cost_text = decision_cost_cp_pp_dynamic
+
+		ai_will_do = {
+			base = 150
+		}
+
+		modifier = {
+			misc_costs_modifier = 0.1
+			civilian_expenditures_factor = 0.02
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TUR_increase_border_patrol"
+			hidden_effect = {
+				add_command_power = -10
+				add_political_power = -5
+			}
+			add_to_variable = { global.TNOIPN_Syrian_Impeachment_chance_var = -2 }
+		}
+	}
+	TUR_fund_peoples_party_machine = {
+		allowed = { original_tag = TUR }
+		icon = GFX_decision_generic_document_burn
+
+		visible = {
+			TNOIPN_fopo_syrian_impeachment_selected = yes
+		}
+
+		days_remove = 14
+		days_re_enable = 7
+
+		custom_cost_trigger = {
+			set_temp_variable = { t_pp_check = 12 }
+			check_variable = { var = political_power value = t_pp_check compare = greater_than_or_equals }
+		}
+		custom_cost_text = decision_cost_cp_pp_dynamic
+
+		ai_will_do = {
+			base = 150
+		}
+
+		modifier = {
+			misc_costs_modifier = 0.1
+			civilian_expenditures_factor = 0.02
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TUR_fund_peoples_party_machine"
+			hidden_effect = {
+				add_political_power = -12
+			}
+			set_temp_variable = { temp_econ_spending_amount = 0.20 }
+			econ_spend_money_once_effect_raw_money = yes
+			add_to_variable = { global.TNOIPN_Syrian_Impeachment_chance_var = -1.5 }
+		}
+	}
+	TUR_fortify_aleppo_railways = {
+		allowed = { original_tag = TUR }
+		icon = GFX_decision_generic_riot_apc
+
+		visible = {
+			TNOIPN_fopo_syrian_impeachment_selected = yes
+		}
+
+		days_remove = 14
+		days_re_enable = 14
+
+		custom_cost_trigger = {
+			set_temp_variable = { t_cp_check = 8 }
+			check_variable = { var = command_power value = t_cp_check compare = greater_than_or_equals }
+		}
+		custom_cost_text = decision_cost_cp_pp_dynamic
+
+		ai_will_do = {
+			base = 150
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TUR_fortify_aleppo_railways"
+			hidden_effect = {
+				add_command_power = -8
+			}
+			add_to_variable = { global.TNOIPN_Syrian_Impeachment_chance_var = -1 }
+		}
+	}
+	TUR_run_intelligence_against_italy = {
+		allowed = { original_tag = TUR }
+		icon = GFX_decision_generic_document_burn
+
+		visible = {
+			TNOIPN_fopo_syrian_impeachment_selected = yes
+		}
+
+		days_remove = 14
+		days_re_enable = 7
+
+		custom_cost_trigger = {
+			set_temp_variable = { t_cp_check = 8 }
+			set_temp_variable = { t_pp_check = 8 }
+			check_variable = { var = command_power value = t_cp_check compare = greater_than_or_equals }
+			check_variable = { var = political_power value = t_pp_check compare = greater_than_or_equals }
+		}
+		custom_cost_text = decision_cost_cp_pp_dynamic
+
+		ai_will_do = {
+			base = 200
+		}
+
+		modifier = {
+			misc_costs_modifier = 0.1
+			civilian_expenditures_factor = 0.02
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision TUR_run_intelligence_against_italy"
+			hidden_effect = {
+				add_command_power = -8
+				add_political_power = -8
+			}
+			add_to_variable = { global.TNOIPN_Syrian_Impeachment_chance_var = -2 }
+		}
+	}
+}

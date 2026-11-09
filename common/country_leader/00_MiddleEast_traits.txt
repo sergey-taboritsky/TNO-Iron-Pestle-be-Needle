@@ -1,0 +1,50 @@
+leader_traits = {
+	#格罗提渥
+	fight_till_the_end = { #至死不渝
+		random = no
+		surrender_limit = 0.15
+		army_core_attack_factor = 0.05
+		army_core_defence_factor = 0.05
+		
+		ai_will_do = { factor = 1 }
+	}
+
+	revolutionary_general = { #革命将军
+		random = no
+		war_support_factor = 0.05
+		army_attack_factor = 0.1
+
+		ai_will_do = { factor = 1 }
+	}
+	#乌布利希
+	reality_idealistic = { #现实的理想主义者
+		random = no
+		political_power_factor = 0.1
+		stability_factor = 0.1
+		consumer_goods_use_modifier = 0.05
+
+		ai_will_do = { factor = 1 }
+	}
+	
+	#迈因霍夫
+	nightmare_of_evil = { #邪恶所惧
+		random = no
+		political_power_factor = 0.2
+		drift_defence_factor = 0.1
+		stability_factor = -0.15
+
+		ai_will_do = { factor = 1 }
+	}
+	RAF_grand_generallissmo = { #带元帅
+		random = no
+		army_attack_factor = 0.05
+		army_defence_factor = 0.05
+
+		ai_will_do = { factor = 1 }
+	}
+	#72345
+	balkan_genius = {
+		random = no
+		ai_will_do = { factor = 1 }
+	}
+}

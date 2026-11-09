@@ -1,0 +1,10 @@
+TNOIPN_fopo_syrian_impeachment_selected = {
+	OR = {
+		check_variable = { selected_conflict_id = token:GC_SyriaImpeachment }
+		AND = {
+			is_in_array = { TNO_active_conflicts = token:GC_SyriaImpeachment }
+			is_ai = yes
+		}
+	}
+	TNO_BoP_Viewing_GlobalConflicts = yes
+}

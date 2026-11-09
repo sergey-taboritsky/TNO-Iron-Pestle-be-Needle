@@ -1,0 +1,505 @@
+characters = {
+	# PP
+	SYR_Rushdi_al_Kikhya = {
+		name = SYR_Rushdi_al_Kikhya
+		portraits = {
+			civilian = { large = "gfx/leaders/SYR/Portrait_SYR_Rushdi_al_Kikhya.png" }
+		}
+		country_leader = {
+			desc = SYR_Rushdi_al_Kikhya_DESC
+			expire = "2018.01.01"
+			ideology = liberal_conservatism_centrist_progressivism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# PP
+	SYR_Maarouf_al_Dawalibi = {
+		name = SYR_Maarouf_al_Dawalibi
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Maarouf_al_Dawalibi.png" }
+		}
+		country_leader = {
+			desc = SYR_Maarouf_al_Dawalibi_DESC
+			expire = "2018.01.01"
+			ideology = liberal_conservatism_market_liberalism_subtype
+			traits = { }
+			id = -1
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = SYR_Maarouf_al_Dawalibi_hog
+			allowed = { original_tag = SYR }
+			traits = {
+				head_of_government
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	# PP
+	SYR_Abd_al_Rahman_al_Kayyali = {
+		name = SYR_Abd_al_Rahman_al_Kayyali
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Abd_al_Rahman_al_Kayyali.png" }
+		}
+		country_leader = {
+			desc = SYR_Abd_al_Rahman_al_Kayyali_DESC
+			expire = "2018.01.01"
+			ideology = liberal_conservatism_market_liberalism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# PP
+	SYR_Rashad_Barmada = {
+		name = SYR_Rashad_Barmada
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Rashad_Barmada.png" }
+		}
+		country_leader = {
+			desc = SYR_Rashad_Barmada_DESC
+			expire = "2018.01.01"
+			ideology = liberal_conservatism_moderate_technocracy_subtype
+			traits = { }
+			id = -1
+		}
+		advisor = {
+			slot = foreign_minister
+			idea_token = SYR_Rashad_Barmada_for
+			allowed = { original_tag = SYR }
+			traits = {
+				foreign_minister
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	# NP
+	SYR_Lutfi_al_Haffar = {
+		name = SYR_Lutfi_al_Haffar
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Lutfi_al_Haffar.png" }
+		}
+		country_leader = {
+			desc = SYR_Lutfi_al_Haffar_DESC
+			expire = "2018.01.01"
+			ideology = conservatism_free_market_conservatism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# NP
+	SYR_Khalid_al_Hazm = {
+		name = SYR_Khalid_al_Hazm
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Khalid_al_Hazm.png" }
+		}
+		country_leader = {
+			desc = SYR_Khalid_al_Hazm_DESC
+			expire = "2018.01.01"
+			ideology = paternalism_oligarchy_subtype
+			traits = { }
+			id = -1
+		}
+		advisor = {
+			slot = economy_minister
+			idea_token = SYR_Khalid_al_Hazm_eco
+			allowed = { original_tag = SYR }
+			traits = {
+				economy_minister
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	# NP
+	SYR_Munir_al_Ajlani = {
+		name = SYR_Munir_al_Ajlani
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Munir_al_Ajlani.png" }
+		}
+		country_leader = {
+			desc = SYR_Munir_al_Ajlani_DESC
+			expire = "2018.01.01"
+			ideology = conservatism_populist_conservatism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# NP
+	SYR_Sabri_al_Asali = {
+		name = SYR_Sabri_al_Asali
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Sabri_al_Asali.png" }
+		}
+		country_leader = {
+			desc = SYR_Sabri_al_Asali_DESC
+			expire = "2018.01.01"
+			ideology = conservatism_1_subtype #progressive_conservatism
+			traits = { }
+			id = -1
+		}
+	}
+	# SA
+	SYR_Abdul_al_Nahrawi = {
+		name = SYR_Abdul_al_Nahrawi
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Abdul_al_Nahrawi.png" }
+		}
+		country_leader = {
+			desc = SYR_Abdul_al_Nahrawi_DESC
+			expire = "2018.01.01"
+			ideology = despotism_military_junta_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# MB
+	SYR_Mustafa_al_Sibai = {
+		name = SYR_Mustafa_al_Sibai
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Mustafa_al_Sibai.png" }
+		}
+		country_leader = {
+			desc = SYR_Mustafa_al_Sibai_DESC
+			expire = "2018.01.01"
+			ideology = despotism_1_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# MB
+	SYR_Issam_al_Atassi = {
+		name = SYR_Issam_al_Atassi
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Issam_al_Atassi.png" }
+		}
+		country_leader = {
+			desc = SYR_Issam_al_Atassi_DESC
+			expire = "2018.01.01"
+			ideology = despotism_islamic_nationalism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# AC
+	SYR_Mamoun_al_Kuzbari = {
+		name = SYR_Mamoun_al_Kuzbari
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Mamoun_al_Kuzbari.png" }
+		}
+		country_leader = {
+			desc = SYR_Mamoun_al_Kuzbari_DESC
+			expire = "2018.01.01"
+			ideology = paternalism_anocracy_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# Baath
+	SYR_Zaki_al_Arsuki = {
+		name = SYR_Zaki_al_Arsuki
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Zaki_al_Arsuki.png" }
+		}
+		country_leader = {
+			desc = SYR_Zaki_al_Arsuki_DESC
+			expire = "2018.01.01"
+			ideology = socialist_baathism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# Baath
+	SYR_Wahib_al_Ghanim = {
+		name = SYR_Wahib_al_Ghanim
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Wahib_al_Ghanim.png" }
+		}
+		country_leader = {
+			desc = SYR_Wahib_al_Ghanim_DESC
+			expire = "2018.01.01"
+			ideology = socialist_baathism_subtype
+			traits = { }
+			id = -1
+		}
+		country_leader = {
+			desc = SYR_Wahib_al_Ghanim_DESC
+			expire = "2018.01.01"
+			ideology = socialist_1_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# Baath
+	SYR_Akram_al_Hawrani = {
+		name = SYR_Akram_al_Hawrani
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Akram_al_Hawrani.png" }
+		}
+		country_leader = {
+			desc = SYR_Akram_al_Hawrani_DESC
+			expire = "2018.01.01"
+			ideology = progressivism_popular_front_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# Baath
+	SYR_Munif_al_Razzaz = {
+		name = SYR_Munif_al_Razzaz
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Munif_al_Razzaz.png" }
+		}
+		country_leader = {
+			desc = SYR_Munif_al_Razzaz_DESC
+			expire = "2018.01.01"
+			ideology = socialist_baathism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# Baath
+	SYR_Michel_Aflaq = {
+		name = SYR_Michel_Aflaq
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Michel_Aflaq.png" }
+		}
+		country_leader = {
+			desc = SYR_Michel_Aflaq_DESC
+			expire = "2018.01.01"
+			ideology = socialist_baathism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# Baath
+	SYR_Yusuf_al_Zuayyin = {
+		name = SYR_Yusuf_al_Zuayyin
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Yusuf_al_Zuayyin.png" }
+		}
+		country_leader = {
+			desc = SYR_Yusuf_al_Zuayyin_DESC
+			expire = "2018.01.01"
+			ideology = socialist_baathism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# Baath
+	SYR_Ibrahim_Makhous = {
+		name = SYR_Ibrahim_Makhous
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Ibrahim_Makhous.png" }
+		}
+		country_leader = {
+			desc = SYR_Ibrahim_Makhous_DESC
+			expire = "2018.01.01"
+			ideology = socialist_baathism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# Baath
+	SYR_Shibli_al_Aysami = {
+		name = SYR_Shibli_al_Aysami
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Shibli_al_Aysami.png" }
+		}
+		country_leader = {
+			desc = SYR_Shibli_al_Aysami_DESC
+			expire = "2018.01.01"
+			ideology = socialist_baathism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# Baath
+	SYR_Amin_al_Hafiz = {
+		name = SYR_Amin_al_Hafiz
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Amin_al_Hafiz.png" }
+		}
+		country_leader = {
+			desc = SYR_Amin_al_Hafiz_DESC
+			expire = "2018.01.01"
+			ideology = socialist_baathism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# Baath
+	SYR_Nureddin_al_Atassi = {
+		name = SYR_Nureddin_al_Atassi
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Nureddin_al_Atassi.png" }
+		}
+		country_leader = {
+			desc = SYR_Nureddin_al_Atassi_DESC
+			expire = "2018.01.01"
+			ideology = socialist_baathism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# Baath
+	SYR_Salah_Jadid = {
+		name = SYR_Salah_Jadid
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Salah_Jadid.png" }
+		}
+		country_leader = {
+			desc = SYR_Salah_Jadid_DESC
+			expire = "2018.01.01"
+			ideology = socialist_baathism_subtype
+			traits = { }
+			id = -1
+		}
+		country_leader = {
+			desc = SYR_Salah_Jadid_DESC
+			expire = "2018.01.01"
+			ideology = socialist_2_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# SSF
+	SYR_Riad_al_Turk = {
+		name = SYR_Riad_al_Turk
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Riad_al_Turk.png" }
+		}
+		country_leader = {
+			desc = SYR_Riad_al_Turk_DESC
+			expire = "2018.01.01"
+			ideology = communist_subtype
+			traits = { }
+			id = -1
+		}
+		country_leader = {
+			desc = SYR_Riad_al_Turk_DESC
+			expire = "2018.01.01"
+			ideology = socialist_revolutionary_frontism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# MRC
+	SYR_Ziad_al_Hariri = {
+		name = SYR_Ziad_al_Hariri
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Ziad_al_Hariri.png" }
+		}
+		country_leader = {
+			desc = SYR_Ziad_al_Hariri_DESC
+			expire = "2018.01.01"
+			ideology = paternalism_social_nationalism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# GD
+	SYR_Faydi_al_Atassi = {
+		name = SYR_Faydi_al_Atassi
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Faydi_al_Atassi.png" }
+		}
+		country_leader = {
+			desc = SYR_Faydi_al_Atassi_DESC
+			expire = "2018.01.01"
+			ideology = liberal_conservatism_big_tent_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# SCP
+	SYR_Faisal_al_Asali = {
+		name = SYR_Faisal_al_Asali
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Faisal_al_Asali.png" }
+		}
+		country_leader = {
+			desc = SYR_Faisal_al_Asali_DESC
+			expire = "2018.01.01"
+			ideology = progressivism_reformist_socialism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# SSNP
+	SYR_Asad_al_Hakim = {
+		name = SYR_Asad_al_Hakim
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_SYR_Asad_al_Hakim.png" }
+		}
+		country_leader = {
+			desc = SYR_Asad_al_Hakim_DESC
+			expire = "2018.01.01"
+			ideology = paternalism_1_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# LNA
+	SYR_Abd_al_Razzaq_al_Dandachi = {
+		name = SYR_Abd_al_Razzaq_al_Dandachi
+		portraits = {
+			civilian = { large = "gfx/leaders/SYR/Portrait_SYR_Abd_al_Razzaq_al_Dandachi.png" }
+		}
+		country_leader = {
+			desc = SYR_Abd_al_Razzaq_al_Dandachi_DESC
+			expire = "2018.01.01"
+			ideology = liberalism_national_liberal_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# PP
+	SYR_Nazim_al_Qudsi = {
+		name = SYR_Nazim_al_Qudsi
+		portraits = {
+			civilian = { large = "gfx/leaders/SYR/Portrait_SYR_Nazim_al_Qudsi.png" }
+		}
+		country_leader = {
+			desc = SYR_Nazim_al_Qudsi_DESC
+			expire = "2018.01.01"
+			ideology = liberal_conservatism_centrist_progressivism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 安全(情报)部长 - 纳赛尔派情报头子
+	SYR_Abd_al_Hamid_al_Sarraj = {
+		name = SYR_Abd_al_Hamid_al_Sarraj
+		portraits = {
+			civilian = { large = "gfx/leaders/SYR/Portrait_SYR_Abd_al_Hamid_al_Sarraj.png" }
+		}
+		country_leader = {
+			desc = SYR_Abd_al_Hamid_al_Sarraj_DESC
+			expire = "2018.01.01"
+			ideology = socialist_1_subtype
+			traits = { }
+			id = -1
+		}
+		advisor = {
+			slot = security_minister
+			idea_token = SYR_Abd_al_Hamid_al_Sarraj_sec
+			allowed = { original_tag = SYR }
+			traits = {
+				security_minister
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+}

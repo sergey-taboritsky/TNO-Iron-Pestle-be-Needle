@@ -1,0 +1,106 @@
+on_actions = {
+	#EVENTS
+	on_startup = {
+		effect = {
+			EGY = {
+				set_party_name = { ideology = communist name = IPN_EGY_communist_party long_name = IPN_EGY_communist_party_long }
+				set_party_name = { ideology = socialist name = IPN_EGY_socialist_party long_name = IPN_EGY_socialist_party_long }
+				set_party_name = { ideology = socialist_1 name = IPN_EGY_socialist_1_party long_name = IPN_EGY_socialist_1_party_long }
+				set_party_name = { ideology = progressivism name = IPN_EGY_progressivism_party long_name = IPN_EGY_progressivism_party_long }
+				set_party_name = { ideology = liberalism name = IPN_EGY_liberalism_party long_name = IPN_EGY_liberalism_party_long }
+				set_party_name = { ideology = liberalism_1 name = IPN_EGY_liberalism_1_party long_name = IPN_EGY_liberalism_1_party_long }
+				set_party_name = { ideology = liberal_conservatism name = IPN_EGY_liberal_conservatism_party long_name = IPN_EGY_liberal_conservatism_party_long }
+				set_party_name = { ideology = conservatism name = IPN_EGY_conservatism_party long_name = IPN_EGY_conservatism_party_long }
+				set_party_name = { ideology = conservatism_1 name = IPN_EGY_conservatism_1_party long_name = IPN_EGY_conservatism_1_party_long }
+				set_party_name = { ideology = paternalism name = IPN_EGY_paternalism_party long_name = IPN_EGY_paternalism_party_long }
+				set_party_name = { ideology = despotism name = IPN_EGY_despotism_party long_name = IPN_EGY_despotism_party_long }
+				set_party_name = { ideology = despotism_1 name = IPN_EGY_despotism_1_party long_name = IPN_EGY_despotism_1_party_long }
+				set_party_name = { ideology = despotism_2 name = IPN_EGY_despotism_2_party long_name = IPN_EGY_despotism_2_party_long }
+				set_party_name = { ideology = ultranationalism name = IPN_EGY_ultranationalism_party long_name = IPN_EGY_ultranationalism_party_long }
+				set_party_name = { ideology = ultranationalism_1 name = IPN_EGY_ultranationalism_1_party long_name = IPN_EGY_ultranationalism_1_party_long }
+				set_party_name = { ideology = fascism name = IPN_EGY_fascism_party long_name = IPN_EGY_fascism_party_long }
+				set_party_name = { ideology = national_socialism name = IPN_EGY_national_socialism_party long_name = IPN_EGY_national_socialism_party_long }
+			}
+			SYR = {
+				annex_country = { target = SNS }
+				country_event = { id = IPN_SYR_event.1 days = 420 }
+				set_cosmetic_tag = IPN_SYR_init
+				add_ideas = {
+					TRI_Member_Client
+					IPN_SYR_twenty_independent_years
+					IPN_SYR_democratic_republic_entrenched
+					IPN_SYR_aleppo_ascendant
+					IPN_SYR_peoples_muttering
+				}
+				econ_join_sphere_TUR = yes
+				set_party_name = { ideology = communist name = IPN_SYR_communist_party long_name = IPN_SYR_communist_party_long }
+				set_party_name = { ideology = socialist name = IPN_SYR_socialist_party long_name = IPN_SYR_socialist_party_long }
+				set_party_name = { ideology = socialist_1 name = IPN_SYR_socialist_1_party long_name = IPN_SYR_socialist_1_party_long }
+				set_party_name = { ideology = socialist_2 name = IPN_SYR_socialist_2_party long_name = IPN_SYR_socialist_2_party_long }
+				set_party_name = { ideology = progressivism name = IPN_SYR_progressivism_party long_name = IPN_SYR_progressivism_party_long }
+				set_party_name = { ideology = liberalism name = IPN_SYR_liberalism_party long_name = IPN_SYR_liberalism_party_long }
+				set_party_name = { ideology = liberal_conservatism name = IPN_SYR_liberal_conservatism_party long_name = IPN_SYR_liberal_conservatism_party_long }
+				set_party_name = { ideology = conservatism name = IPN_SYR_conservatism_party long_name = IPN_SYR_conservatism_party_long }
+				set_party_name = { ideology = conservatism_1 name = IPN_SYR_conservatism_1_party long_name = IPN_SYR_conservatism_1_party_long }
+				set_party_name = { ideology = paternalism name = IPN_SYR_paternalism_party long_name = IPN_SYR_paternalism_party_long }
+				set_party_name = { ideology = paternalism_1 name = IPN_SYR_paternalism_1_party long_name = IPN_SYR_paternalism_1_party_long }
+				set_party_name = { ideology = despotism name = IPN_SYR_despotism_party long_name = IPN_SYR_despotism_party_long }
+				set_party_name = { ideology = despotism_1 name = IPN_SYR_despotism_1_party long_name = IPN_SYR_despotism_1_party_long }
+				set_party_name = { ideology = ultranationalism name = IPN_SYR_ultranationalism_party long_name = IPN_SYR_ultranationalism_party_long }
+				set_party_name = { ideology = fascism name = IPN_SYR_fascism_party long_name = IPN_SYR_fascism_party_long }
+				set_party_name = { ideology = national_socialism name = IPN_SYR_national_socialism_party long_name = IPN_SYR_national_socialism_party_long }
+			}
+			YEM = {
+				set_cosmetic_tag = IPN_YEM_init
+				country_event = { id = IPN_YEM_event.1 days = 270 }
+				set_party_name = { ideology = communist name = IPN_YEM_communist_party long_name = IPN_YEM_communist_party_long }
+				set_party_name = { ideology = socialist name = IPN_YEM_socialist_party long_name = IPN_YEM_socialist_party_long }
+				set_party_name = { ideology = socialist_1 name = IPN_YEM_socialist_1_party long_name = IPN_YEM_socialist_1_party_long }
+				set_party_name = { ideology = progressivism name = IPN_YEM_progressivism_party long_name = IPN_YEM_progressivism_party_long }
+				set_party_name = { ideology = liberalism name = IPN_YEM_liberalism_party long_name = IPN_YEM_liberalism_party_long }
+				set_party_name = { ideology = liberal_conservatism name = IPN_YEM_liberal_conservatism_party long_name = IPN_YEM_liberal_conservatism_party_long }
+				set_party_name = { ideology = conservatism name = IPN_YEM_conservatism_party long_name = IPN_YEM_conservatism_party_long }
+				set_party_name = { ideology = paternalism name = IPN_YEM_paternalism_party long_name = IPN_YEM_paternalism_party_long }
+				set_party_name = { ideology = paternalism_1 name = IPN_YEM_paternalism_1_party long_name = IPN_YEM_paternalism_1_party_long }
+				set_party_name = { ideology = despotism name = IPN_YEM_despotism_party long_name = IPN_YEM_despotism_party_long }
+				set_party_name = { ideology = despotism_1 name = IPN_YEM_despotism_1_party long_name = IPN_YEM_despotism_1_party_long }
+				set_party_name = { ideology = ultranationalism name = IPN_YEM_ultranationalism_party long_name = IPN_YEM_ultranationalism_party_long }
+				set_party_name = { ideology = fascism name = IPN_YEM_fascism_party long_name = IPN_YEM_fascism_party_long }
+				set_party_name = { ideology = national_socialism name = IPN_YEM_national_socialism_party long_name = IPN_YEM_national_socialism_party_long }
+			}
+			RPS = {
+				set_cosmetic_tag = IPN_RPS_init
+				add_ideas = {
+					RPS_governor_general_naguib
+					TRI_Member_Client
+					RPS_mirghani_and_mahdi
+					RPS_nile_valley_unity
+					RPS_agrarian_economy
+					RPS_gezira_cotton
+					RPS_neglect_south
+				}
+				# RPS party names (override TNO defaults) — Ba'ath moved out of ultranationalism into socialist_2
+				set_party_name = { ideology = communist name = IPN_RPS_communist_party long_name = IPN_RPS_communist_party_long }
+				set_party_name = { ideology = communist_1 name = IPN_RPS_communist_1_party long_name = IPN_RPS_communist_1_party_long }
+				set_party_name = { ideology = socialist name = IPN_RPS_socialist_party long_name = IPN_RPS_socialist_party_long }
+				set_party_name = { ideology = socialist_1 name = IPN_RPS_socialist_1_party long_name = IPN_RPS_socialist_1_party_long }
+				set_party_name = { ideology = socialist_2 name = IPN_RPS_socialist_2_party long_name = IPN_RPS_socialist_2_party_long }
+				set_party_name = { ideology = progressivism name = IPN_RPS_progressivism_party long_name = IPN_RPS_progressivism_party_long }
+				set_party_name = { ideology = liberalism name = IPN_RPS_liberalism_party long_name = IPN_RPS_liberalism_party_long }
+				set_party_name = { ideology = liberal_conservatism name = IPN_RPS_liberal_conservatism_party long_name = IPN_RPS_liberal_conservatism_party_long }
+				set_party_name = { ideology = conservatism name = IPN_RPS_conservatism_party long_name = IPN_RPS_conservatism_party_long }
+				set_party_name = { ideology = conservatism_1 name = IPN_RPS_conservatism_1_party long_name = IPN_RPS_conservatism_1_party_long }
+				set_party_name = { ideology = paternalism name = IPN_RPS_paternalism_party long_name = IPN_RPS_paternalism_party_long }
+				set_party_name = { ideology = paternalism_1 name = IPN_RPS_paternalism_1_party long_name = IPN_RPS_paternalism_1_party_long }
+				set_party_name = { ideology = despotism name = IPN_RPS_despotism_party long_name = IPN_RPS_despotism_party_long }
+				set_party_name = { ideology = despotism_1 name = IPN_RPS_despotism_1_party long_name = IPN_RPS_despotism_1_party_long }
+			}
+			ITA = {
+				add_to_faction = SYR
+			}
+			TUR = {
+				give_guarantee = SYR
+			}
+		}
+	}
+}

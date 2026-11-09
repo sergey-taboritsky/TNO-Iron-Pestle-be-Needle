@@ -1,0 +1,15 @@
+on_actions = {
+	# TNOIPN Syria parliament GUI: safe (re)initialization on game start.
+	# History already calls TNOIPN_parliament_gui_initial once; here every
+	# array is cleared first so a second init cannot duplicate entries.
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = { original_tag = SYR }
+				TNOIPN_clear_parliament_gui_arrays = yes
+				TNOIPN_parliament_gui_initial = yes
+				TNOIPN_vote_engine_init = yes
+			}
+		}
+	}
+}

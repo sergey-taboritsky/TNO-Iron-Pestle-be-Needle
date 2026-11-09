@@ -1,0 +1,27 @@
+﻿l_simp_chinese:
+### Game Rules ###
+ EGY_PATH: "£GFX_TNO_game_rule_flag_EGY   埃及 - 1963年议会选举"
+ RULE_OPTION_EGY_1963_ELECTIONS_PATH_RANDOM: "随机"
+ RULE_OPTION_EGY_1963_ELECTIONS_PATH_RANDOM_DESC: "尽管经历了君臣冲突与政府倒台，本届埃及议会仍基本平稳地履行其职责直到1963年议会解散为止。随后，新一届议会选举将决定埃及的下届首相——也会决定埃及乃至更广阔世界的未来。"
+ RULE_OPTION_EGY_1963_ELECTIONS_PATH_SAREGEDDIN: "福阿德·希拉吉丁"
+ RULE_OPTION_EGY_1963_ELECTIONS_PATH_SAREGEDDIN_DESC: "由于联合自由党深陷派系斗争和领导层失能，华夫脱党成功在纳哈斯被迫辞职之后的十余年后首次夺回首相宝座。希拉吉丁将带领数代思想迥异、行事风格相去甚远的华夫脱党人组建新的§B伊斯兰现代主义§!政府，希望他们与法鲁克国王的关系不会过于糟糕。"
+ RULE_OPTION_EGY_1963_ELECTIONS_PATH_OSMAN: "奥斯曼·艾哈迈德·奥斯曼"
+ RULE_OPTION_EGY_1963_ELECTIONS_PATH_OSMAN_DESC: "联合自由党团结在亲宫廷的富商与技术官僚奥斯曼·艾哈迈德·奥斯曼周边，成功击败华夫脱党，保住其十余年的政治霸权。本届政府将在§i自由法团主义§!指导下带领埃及走向未来。"
+ RULE_OPTION_EGY_1963_ELECTIONS_PATH_RAZIQ: "阿里·阿卜杜勒·拉齐克"
+ RULE_OPTION_EGY_1963_ELECTIONS_PATH_RAZIQ_DESC: "在党内自由主义元老和学者们的鼎力支持下，伊斯兰学者阿里·阿卜杜勒·拉齐克成功夺取联合自由党的领导权，并击败华夫脱党赢得议会选举和首相席位。新的埃及政府将会是§i自由市场保守主义§!的坚定信徒。"
+
+ SYR_POLITICS_REVOLUTION: "£GFX_TNO_game_rule_flag_SYR   叙利亚 - 基赫亚弹劾案"
+ RULE_OPTION_SYR_KIKHYA_IMPEACHMENT_RANDOM: "随机"
+ RULE_OPTION_SYR_KIKHYA_IMPEACHMENT_RANDOM_DESC: "由于欧陆经济剧烈波动，叙镑在1963年飞速贬值，叙利亚经济哀鸿遍野——这也导致反对派势头骤然膨胀，以至于尝试以渎职等罪名弹劾现任总统鲁什迪·基赫亚，从而动摇土耳其共和国在叙利亚十余年的经营。"
+ RULE_OPTION_SYR_KIKHYA_IMPEACHMENT_FAIL: "£TNO_game_rule_flag_TUR  弹劾失败 - 共和国稳固"
+ RULE_OPTION_SYR_KIKHYA_IMPEACHMENT_FAIL_DESC: "尽管民族党激进派与其背后的意大利人来势汹汹，但土耳其共和国仍帮助人民党政府站稳了脚跟，挫败了激进分子的弹劾阴谋。叙利亚第三共和国随后继续平稳航行。"
+ RULE_OPTION_SYR_KIKHYA_IMPEACHMENT_SUCCESS: "£TNO_game_rule_flag_ITA  弹劾成功"
+ RULE_OPTION_SYR_KIKHYA_IMPEACHMENT_SUCCESS_DESC: "在时局推动、意大利从旁推波助澜之下，叙利亚民族党在哈利德·哈兹姆带领下成功发起弹劾，人民党下台。新上任的总统哈兹姆将遵从其身后常年被压制的大马士革精英，以§L寡头制§!统治叙利亚。"
+
+ YEM_PATH: "£GFX_TNO_game_rule_flag_YEM   也门 - 政府重组"
+ RULE_OPTION_YEM_1963_PATH_RANDOM: "随机"
+ RULE_OPTION_YEM_1963_PATH_RANDOM_DESC: "在1962年9月的未遂政变后，也门遭到极大冲击，宪政实验走到了真正的十字路口。也门宪政联盟的左右两翼各抒己见，极端保守派认定是宪政改革导致了军事政变，要求全面恢复绝对君主制；而激进改革派则认为是改革过于缓慢且并未落到实处，要求进一步向其放权。正逢沙米首相及其政府引咎辞职，下一届政府将会决定也门宪政实验的命运。"
+ RULE_OPTION_YEM_1963_PATH_CONSERVATIVE: "保守派"
+ RULE_OPTION_YEM_1963_PATH_CONSERVATIVE_DESC: "瓦齐尔家族内部长期负责地方事务与安全的侯赛因·瓦齐尔被任命为首相，其§L无支配体制§!政府将推动权力重新集中到瓦齐尔家族周边，并最终致力于在实际上废除宪政实验。"
+ RULE_OPTION_YEM_1963_PATH_REFORMIST: "改革派"
+ RULE_OPTION_YEM_1963_PATH_REFORMIST_DESC: "著名的《宪政宣言》签署人之一，进步派学者穆罕默德·祖拜里被任命为首相，其§i寡头保守主义§!政策将会致力于宪政制度的真正普及，以及也门进一步的现代化转型。"

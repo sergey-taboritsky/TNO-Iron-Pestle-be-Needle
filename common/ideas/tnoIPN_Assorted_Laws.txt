@@ -1,0 +1,23 @@
+ideas = {
+	#################################################
+	#                  Dummy Ideas                  #
+	#################################################
+
+	#|=====[ SYRIA ]=====|#
+	hidden_ideas = {
+		# Global Generic Assorted Laws
+		IPN_SYR_Current_Constitution = {}
+		IPN_SYR_Election_Law = {}
+		IPN_SYR_Oil_Pipeline_Law = {}
+		IPN_SYR_Turkey_Trade_Law = {}
+		IPN_SYR_Land_Reform_Aborted = {}
+		IPN_SYR_French_Treaty = {}
+	}
+
+	#|=====[ EGYPT ]=====|#
+	hidden_ideas = {}
+
+	#|=====[ YEMEN ]=====|#
+	hidden_ideas = {
+	}
+}

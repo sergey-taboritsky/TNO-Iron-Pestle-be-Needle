@@ -1,0 +1,41 @@
+scripted_gui = {
+	TNOIPN_SYR_parliament_gui = {
+		context_type = decision_category
+		window_name = "TNOIPN_SYR_parliament_gui_container"
+
+		dynamic_lists = {
+			parliament_main_grid = {
+				array = TNOIPN_parliament_main_array
+				index = TNOIPN_parliament_main_index
+				change_scope = no
+				entry_container = TNOIPN_SYR_parliament_main_entry
+			}
+			TNOIPN_SYR_parliament_semicircle_main_grid = {
+				array = TNOIPN_parliament_main_array
+				index = TNOIPN_parliament_main_index
+				change_scope = no
+				entry_container = TNOIPN_SYR_parliament_semicircle_main_entry
+			}
+			TNOIPN_SYR_parliament_member_grid = {
+				array = TNOIPN_parliament_member_array
+				index = TNOIPN_parliament_member_index
+				change_scope = no
+				entry_container = TNOIPN_SYR_parliament_member_entry
+			}
+		}
+
+		properties = {
+			TNOIPN_SYR_parliament_main_icon = {
+				frame = v
+			}
+		TNOIPN_SYR_parliament_semicircle_main_icon = {
+			frame = v
+			x = TNOIPN_parliament_x_array^TNOIPN_parliament_main_index
+			y = TNOIPN_parliament_y_array^TNOIPN_parliament_main_index
+		}
+			TNOIPN_SYR_parliament_member_icon = {
+				frame = v
+			}
+		}
+	}
+}

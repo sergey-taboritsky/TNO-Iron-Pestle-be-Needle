@@ -1,0 +1,88 @@
+### 法案表决 — 仿法国议会机制（修正版 v4）
+### 架构：事件选项 activate_mission 开启本决议（任务）的倒计时（days_mission_timeout）；
+### 倒计时结束（timeout_effect）调用通用计票引擎 TNOIPN_tally_vote 比较门槛、写回结果并弹结果事件。
+###
+### 关键：mission 必须放在「默认决议分类」（定义在文件根，不包进带 scripted_gui 的
+### SYR_National_Congress_decision_category）。带 scripted_gui 的分类会无视 visible/available
+### 门控、强制激活里面的任务 —— 这正是一开始「开局就处于激活状态」的根因。
+### 法国 mod（3365515312）的议会任务也全在其默认分类，scripted_gui 分类只承载议会可视化。
+###
+### available/visible 均门控于议程旗标 → 仅在事件 activate_mission 后才可见/可激活，绝不开局显示。
+### 动态数字通过 custom_effect_tooltip 可靠显示（desc 内也尝试 [Root.x]）。
+
+### 预算案（政府议程，普通多数 71）###
+TNOIPN_budget_bill = {
+	title = TNOIPN_budget_bill
+	desc = TNOIPN_budget_bill_desc
+	allowed = {
+		original_tag = SYR
+	}
+	visible = {
+		has_country_flag = TNOIPN_budget_agenda
+	}
+	available = {
+		has_country_flag = TNOIPN_budget_agenda
+	}
+	cancel_if_not_visible = yes
+	effect = {
+		custom_effect_tooltip = TNOIPN_budget_bill_tt
+	}
+	days_mission_timeout = 21
+	timeout_effect = {
+		# 不调 init：保留由事件设置的情景变量（grip 等）
+		TNOIPN_bill_budget_setup = yes
+		custom_effect_tooltip = TNOIPN_budget_bill_tt
+		if = {
+			limit = { check_variable = { TNOIPN_vote_passed > 0 } }
+			hidden_effect = {
+				add_political_power = 25
+				add_stability = 0.02
+			}
+		}
+		else = {
+			hidden_effect = {
+				add_stability = -0.01
+			}
+		}
+		remove_country_flag = { flag = TNOIPN_budget_agenda }
+		country_event = { id = TNOIPN_vote_test.2 days = 1 }
+	}
+}
+
+### 总统弹劾案（反对派法案，超多数 94）###
+TNOIPN_impeachment_bill = {
+	title = TNOIPN_impeachment_bill
+	desc = TNOIPN_impeachment_bill_desc
+	allowed = {
+		original_tag = SYR
+	}
+	visible = {
+		has_country_flag = TNOIPN_impeachment_agenda
+	}
+	available = {
+		has_country_flag = TNOIPN_impeachment_agenda
+	}
+	cancel_if_not_visible = yes
+	effect = {
+		custom_effect_tooltip = TNOIPN_impeachment_bill_tt
+	}
+	days_mission_timeout = 21
+	timeout_effect = {
+		TNOIPN_bill_impeachment_setup = yes
+		custom_effect_tooltip = TNOIPN_impeachment_bill_tt
+		if = {
+			limit = { check_variable = { TNOIPN_vote_passed > 0 } }
+			hidden_effect = {
+				set_country_flag = { flag = TNOIPN_president_impeached }
+				add_stability = -0.05
+			}
+		}
+		else = {
+			hidden_effect = {
+				add_stability = 0.02
+			}
+		}
+		remove_country_flag = { flag = TNOIPN_impeachment_agenda }
+		country_event = { id = TNOIPN_vote_test.2 days = 1 }
+	}
+}

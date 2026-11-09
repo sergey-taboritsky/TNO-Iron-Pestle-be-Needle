@@ -1,0 +1,41 @@
+ideas = {
+	country = {
+		RPS_governor_general_naguib = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RPS_governor_general_naguib" }
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			picture = RPS_governor_general_naguib
+
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.05
+				liberalism_drift = 0.01
+			}
+		}
+		# === 以下为「只有名字、无效果无介绍」的占位精神，供后续填入 modifier/desc ===
+		RPS_mirghani_and_mahdi = {
+			allowed = { always = no }
+			removal_cost = -1
+		}
+		RPS_nile_valley_unity = {
+			allowed = { always = no }
+			removal_cost = -1
+		}
+		RPS_agrarian_economy = {
+			allowed = { always = no }
+			removal_cost = -1
+		}
+		RPS_gezira_cotton = {
+			allowed = { always = no }
+			removal_cost = -1
+		}
+		RPS_neglect_south = {
+			allowed = { always = no }
+			removal_cost = -1
+		}
+	}
+}

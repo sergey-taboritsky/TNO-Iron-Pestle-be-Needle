@@ -1,0 +1,59 @@
+add_namespace = TNOIPN_vote_test
+
+country_event = {
+	id = TNOIPN_vote_test.1
+	title = TNOIPN_vote_test.1.t
+	desc = TNOIPN_vote_test.1.desc
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = no
+
+	option = {
+		name = TNOIPN_vote_test.1.a
+		trigger = { NOT = { has_country_flag = TNOIPN_budget_agenda } }
+		TNOIPN_vote_engine_init = yes
+		set_country_flag = { flag = TNOIPN_budget_agenda }
+		TNOIPN_bill_budget_setup = yes
+		activate_mission = TNOIPN_budget_bill
+	}
+	option = {
+		name = TNOIPN_vote_test.1.b
+		trigger = { NOT = { has_country_flag = TNOIPN_impeachment_agenda } }
+		TNOIPN_vote_engine_init = yes
+		set_variable = { var = TNOIPN_president_grip value = 80 }
+		set_variable = { var = TNOIPN_SPP_disaffected value = 0 }
+		set_variable = { var = TNOIPN_SNP_broke_with_president value = 0 }
+		set_country_flag = { flag = TNOIPN_impeachment_agenda }
+		TNOIPN_bill_impeachment_setup = yes
+		activate_mission = TNOIPN_impeachment_bill
+	}
+	option = {
+		name = TNOIPN_vote_test.1.c
+		trigger = { NOT = { has_country_flag = TNOIPN_impeachment_agenda } }
+		TNOIPN_vote_engine_init = yes
+		set_variable = { var = TNOIPN_president_grip value = 20 }
+		set_variable = { var = TNOIPN_SPP_disaffected value = 60 }
+		set_variable = { var = TNOIPN_SNP_broke_with_president value = 1 }
+		set_country_flag = { flag = TNOIPN_impeachment_agenda }
+		TNOIPN_bill_impeachment_setup = yes
+		activate_mission = TNOIPN_impeachment_bill
+	}
+	option = {
+		name = TNOIPN_vote_test.1.d
+		remove_country_flag = { flag = TNOIPN_budget_agenda }
+		remove_country_flag = { flag = TNOIPN_impeachment_agenda }
+		TNOIPN_vote_engine_init = yes
+	}
+}
+
+country_event = {
+	id = TNOIPN_vote_test.2
+	title = TNOIPN_vote_test.2.t
+	desc = TNOIPN_vote_test.2.desc
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = TNOIPN_vote_test.2.b
+	}
+}

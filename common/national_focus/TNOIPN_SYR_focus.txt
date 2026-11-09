@@ -1,0 +1,28 @@
+focus_tree = {
+	id = TNOIPN_SYR_init_focus_tree
+	country = {
+		factor = 0
+		modifier = {
+			add = 100
+			tag = SYR
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 1000 y = 1250 }
+
+#######################
+###  Domestic Tree  ###
+#######################
+
+	focus = {
+		id = TNOIPN_SYR_reaffirm_
+		icon = GFX_goal_QIE_rat
+		cost = 8
+
+		x = 12
+		y = 0
+
+		completion_reward = {
+		}
+	}
+}

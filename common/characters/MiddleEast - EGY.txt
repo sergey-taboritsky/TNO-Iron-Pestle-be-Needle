@@ -1,0 +1,245 @@
+characters = {
+	# ULP - Saadist
+	EGY_Ibrahim_Abd_al_Hadi = {
+		name = EGY_Ibrahim_Abd_al_Hadi
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_EGY_Ibrahim_Abd_al_Hadi.png" }
+		}
+		country_leader = {
+			desc = EGY_Ibrahim_Abd_al_Hadi_DESC
+			expire = "2018.01.01"
+			ideology = paternalism_anocracy_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	EGY_Nureddin_Tarraf = {
+		name = EGY_Nureddin_Tarraf
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_EGY_Nureddin_Tarraf.png" }
+		}
+		country_leader = {
+			desc = EGY_Nureddin_Tarraf_DESC
+			expire = "2018.01.01"
+			ideology = conservatism_liberal_corporatism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	#ULP - CoList
+	EGY_Ali_Abd_al_Raziq = {
+		name = EGY_Ali_Abd_al_Raziq
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_EGY_Ali_Abd_al_Raziq.png" }
+		}
+		country_leader = {
+			desc = EGY_Ali_Abd_al_Raziq_DESC
+			expire = "2018.01.01"
+			ideology = conservatism_free_market_conservatism_subtype
+			traits = { }
+			id = -1
+		}
+		advisor = {
+			slot = head_of_government
+			idea_token = EGY_Ali_Abd_al_Raziq_hog
+			allowed = { original_tag = EGY }
+			traits = {
+				head_of_government
+				hog_intelligentsia
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	#ULP - Technocrat
+	EGY_Osman_Ahmed_Osman = {
+		name = EGY_Osman_Ahmed_Osman
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_EGY_Osman_Ahmed_Osman.png" }
+		}
+		country_leader = {
+			desc = EGY_Osman_Ahmed_Osman_DESC
+			expire = "2018.01.01"
+			ideology = conservatism_liberal_corporatism_subtype
+			traits = { }
+			id = -1
+		}
+		advisor = {
+			slot = economy_minister
+			idea_token = EGY_Osman_Ahmed_Osman_eco
+			allowed = { original_tag = EGY }
+			traits = {
+				economy_minister
+				eco_construction_magnate
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	#Wafd - Old
+	EGY_Fuad_Saregeddin = {
+		name = EGY_Fuad_Saregeddin
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_EGY_Fuad_Saregeddin.png" }
+		}
+		country_leader = {
+			desc = EGY_Fuad_Saregeddin_DESC
+			expire = "2018.01.01"
+			ideology = liberal_conservatism_islamic_modernism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	#Wafd - New
+	EGY_Rifaat_Mahgoub = {
+		name = EGY_Rifaat_Mahgoub
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_EGY_Rifaat_Mahgoub.png" }
+		}
+		country_leader = {
+			desc = EGY_Rifaat_Mahgoub_DESC
+			expire = "2018.01.01"
+			ideology = liberalism_liberal_technocracy_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	EGY_Ahmad_Abu_Fattah = {
+		name = EGY_Ahmad_Abu_Fattah
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_EGY_Ahmad_Abu_Fattah.png" }
+		}
+		country_leader = {
+			desc = EGY_Ahmad_Abu_Fattah_DESC
+			expire = "2018.01.01"
+			ideology = liberalism_social_liberalism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	#Royalty
+	EGY_Farouk = {
+		name = EGY_Farouk
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_EGY_Farouk.png" }
+		}
+		country_leader = {
+			desc = EGY_Farouk_DESC
+			expire = "2018.01.01"
+			ideology = despotism_absolute_monarchy_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	EGY_Muhammad_Abd_al_Moneim = {
+		name = EGY_Muhammad_Abd_al_Moneim
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_EGY_Muhammad_Abd_al_Moneim.png" }
+		}
+		country_leader = {
+			desc = EGY_Muhammad_Abd_al_Moneim_DESC
+			expire = "2018.01.01"
+			ideology = despotism_interim_government_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	EGY_Fuad_II = {
+		name = EGY_Fuad_II
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_EGY_Fuad_II.png" }
+		}
+		country_leader = {
+			desc = EGY_Fuad_II_DESC
+			expire = "2018.01.01"
+			ideology = despotism_absolute_monarchy_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	#Special
+	EGY_Ahmad_Hussein = {
+		name = EGY_Ahmad_Hussein
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_EGY_Ahmad_Hussein.png" }
+		}
+		country_leader = {
+			desc = EGY_Ahmad_Hussein_DESC
+			expire = "2018.01.01"
+			ideology = fascism_fascist_populism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	EGY_Abd_al_Hakim_Amer = {
+		name = EGY_Abd_al_Hakim_Amer
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_EGY_Abd_al_Hakim_Amer.png" }
+		}
+		country_leader = {
+			desc = EGY_Abd_al_Hakim_Amer_DESC
+			expire = "2018.01.01"
+			ideology = despotism_military_junta_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	#ULP - Liberal Scholar / Foreign Minister
+	EGY_Taha_Hussein = {
+		name = EGY_Taha_Hussein
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_EGY_Taha_Hussein.png" }
+		}
+		country_leader = {
+			desc = EGY_Taha_Hussein_DESC
+			expire = "2018.01.01"
+			ideology = conservatism_free_market_conservatism_subtype
+			traits = { }
+			id = -1
+		}
+		advisor = {
+			slot = foreign_minister
+			idea_token = EGY_Taha_Hussein_for
+			allowed = { original_tag = EGY }
+			traits = {
+				foreign_minister
+				for_seasoned_ambassador
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+	#Security Minister - Royal Army General
+	EGY_Muhammad_Haidar = {
+		name = EGY_Muhammad_Haidar
+		portraits = {
+			civilian = { large = "gfx/leaders/EGY/Portrait_EGY_Muhammad_Haidar.png" }
+		}
+		country_leader = {
+			desc = EGY_Muhammad_Haidar_DESC
+			expire = "2018.01.01"
+			ideology = despotism_military_junta_subtype
+			traits = { }
+			id = -1
+		}
+		advisor = {
+			slot = security_minister
+			idea_token = EGY_Muhammad_Haidar_sec
+			allowed = { original_tag = EGY }
+			traits = {
+				security_minister
+				sec_retired_general
+			}
+			ledger = civilian
+			cost = -1
+			can_be_fired = no
+			ai_will_do = { factor = 0 }
+		}
+	}
+}

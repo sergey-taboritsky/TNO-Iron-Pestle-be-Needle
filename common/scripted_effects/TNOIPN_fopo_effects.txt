@@ -1,0 +1,9 @@
+# Add/remove Syrian Election
+TNOIPN_fopo_add_Syrian_Impeachment_tab = {
+	set_temp_variable = { conflict_id = token:GC_SyriaImpeachment }
+	TNO_add_fopo_conflict_tab = yes
+}
+TNO_fopo_remove_Syrian_Impeachment_tab = {
+	set_temp_variable = { conflict_id = token:GC_SyriaImpeachment }
+	TNO_remove_fopo_conflict_tab = yes
+}

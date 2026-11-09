@@ -1,0 +1,5 @@
+# IPN Egypt reset — 同名覆盖原版 TNO 埃及事件链，彻底屏蔽。
+# 所有埃及剧情现仅由本模组 events/IPN_Egypt.txt (namespace = IPN_EGY_event / IPN_EGY_news) 驱动。
+# 原版 EGY.1/2/3/4/11 及石油危机(EGY.3 / oil_crisis)机制全部停用。
+# 保留命名空间声明，使其它文件对 EGY.* 的引用静默失效而非报错。
+add_namespace = egy

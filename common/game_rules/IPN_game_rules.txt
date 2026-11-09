@@ -1,0 +1,81 @@
+
+# Egypt ######
+
+EGY_PATH = {
+	name = EGY_PATH
+	group = "RULE_GROUP_TNO_RULES_NORTHERN_AFRICA"
+	option = {
+		name = DEFAULT
+		text = "RULE_OPTION_EGY_1963_ELECTIONS_PATH_RANDOM"
+		desc = "RULE_OPTION_EGY_1963_ELECTIONS_PATH_RANDOM_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = EGY_1963_ELECTIONS_PATH_SAREGEDDIN
+		text = "RULE_OPTION_EGY_1963_ELECTIONS_PATH_SAREGEDDIN"
+		desc = "RULE_OPTION_EGY_1963_ELECTIONS_PATH_SAREGEDDIN_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = EGY_1963_ELECTIONS_PATH_OSMAN
+		text = "RULE_OPTION_EGY_1963_ELECTIONS_PATH_OSMAN"
+		desc = "RULE_OPTION_EGY_1963_ELECTIONS_PATH_OSMAN_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = EGY_1963_ELECTIONS_PATH_RAZIQ
+		text = "RULE_OPTION_EGY_1963_ELECTIONS_PATH_RAZIQ"
+		desc = "RULE_OPTION_EGY_1963_ELECTIONS_PATH_RAZIQ_DESC"
+		allow_achievements = yes
+	}
+}
+
+#Syria ######
+
+SYR_POLITICS_REVOLUTION = {
+	name = SYR_POLITICS_REVOLUTION
+	group = "RULE_GROUP_TNO_RULES_ASIA_THE_LEVANT"
+	option = {
+		name = DEFAULT
+		text = "RULE_OPTION_SYR_KIKHYA_IMPEACHMENT_RANDOM"
+		desc = "RULE_OPTION_SYR_KIKHYA_IMPEACHMENT_RANDOM_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SYR_KIKHYA_IMPEACHMENT_FAIL
+		text = "RULE_OPTION_SYR_KIKHYA_IMPEACHMENT_FAIL"
+		desc = "RULE_OPTION_SYR_KIKHYA_IMPEACHMENT_FAIL_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SYR_KIKHYA_IMPEACHMENT_SUCCESS
+		text = "RULE_OPTION_SYR_KIKHYA_IMPEACHMENT_SUCCESS"
+		desc = "RULE_OPTION_SYR_KIKHYA_IMPEACHMENT_SUCCESS_DESC"
+		allow_achievements = yes
+	}
+}
+
+# Yemen
+
+YEM_PATH = {
+	name = YEM_PATH
+	group = "RULE_GROUP_TNO_RULES_ASIA_ARABIA"
+	option = {
+		name = DEFAULT
+		text = "RULE_OPTION_YEM_1963_PATH_RANDOM"
+		desc = "RULE_OPTION_YEM_1963_PATH_RANDOM_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = YEM_1963_PATH_CONSERVATIVE
+		text = "RULE_OPTION_YEM_1963_PATH_CONSERVATIVE"
+		desc = "RULE_OPTION_YEM_1963_PATH_CONSERVATIVE_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = YEM_1963_PATH_REFORMIST
+		text = "RULE_OPTION_YEM_1963_PATH_REFORMIST"
+		desc = "RULE_OPTION_YEM_1963_PATH_REFORMIST_DESC"
+		allow_achievements = yes
+	}
+}

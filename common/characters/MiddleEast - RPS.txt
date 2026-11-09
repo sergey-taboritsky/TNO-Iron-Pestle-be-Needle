@@ -1,0 +1,4 @@
+# DSR 苏丹角色已统一并入 common/characters/Triumvirate - Sudan.txt（覆盖 TNO 同名文件，避免 RPS_Ismail_al_Azhari 等 ID 重复定义）。
+# 本文件留空，不再定义任何角色。
+characters = {
+}

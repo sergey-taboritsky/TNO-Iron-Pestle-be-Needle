@@ -30,4 +30,30 @@ spriteTypes = {
         name = "GFX_idea_TNOIPN_XIN_legacy_of_42_revolution"
 		texturefile = "gfx/interface/ideas/national_spirits/TNOIPN_XIN_legacy_of_42_revolution.dds"
     }
+
+	### ===== 合并自 DSR（中东民族精神图标） =====
+	spriteType = {
+		name = "GFX_idea_IPN_SYR_twenty_independent_years"
+		texturefile = "gfx/interface/ideas/IPN_SYR_twenty_independent_years.png"
+	}
+	spriteType = {
+		name = "GFX_idea_IPN_SYR_democratic_republic_entrenched"
+		texturefile = "gfx/interface/ideas/IPN_SYR_democratic_republic_entrenched.png"
+	}
+	spriteType = {
+		name = "GFX_idea_IPN_SYR_democratic_republic_shaky"
+		texturefile = "gfx/interface/ideas/IPN_SYR_democratic_republic_shaky.png"
+	}
+	spriteType = {
+		name = "GFX_idea_IPN_SYR_democratic_republic_revolting"
+		texturefile = "gfx/interface/ideas/IPN_SYR_democratic_republic_revolting.png"
+	}
+	spriteType = {
+		name = "GFX_idea_IPN_SYR_aleppo_ascendant"
+		texturefile = "gfx/interface/ideas/IPN_SYR_aleppo_ascendant.png"
+	}
+	spriteType = {
+		name = "GFX_idea_IPN_SYR_peoples_muttering"
+		texturefile = "gfx/interface/ideas/IPN_SYR_peoples_muttering.png"
+	}
 }

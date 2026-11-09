@@ -1,0 +1,552 @@
+add_namespace = IPN_EGY_event
+add_namespace = IPN_EGY_news
+
+country_event = {
+	id = IPN_EGY_event.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_EGY_event.1"}
+	title = IPN_EGY_event.1.t
+	desc = IPN_EGY_event.1.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_EGY_event.1.a
+		every_country = {
+			limit = { is_ai = no HasAfricaInterest = yes }
+			news_event = {
+				id = IPN_EGY_news.1
+			}
+		}
+		set_politics = {
+			ruling_party = conservatism
+		}
+		promote_character = EGY_Nureddin_Tarraf
+		country_event = { id = IPN_EGY_event.2 days = 240 }
+    }
+}
+country_event = {
+	id = IPN_EGY_event.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_EGY_event.2"}
+	title = IPN_EGY_event.2.t
+	desc = IPN_EGY_event.2.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_EGY_event.2.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = EGY_PATH option = EGY_1963_ELECTIONS_PATH_OSMAN }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = EGY_PATH option = EGY_1963_ELECTIONS_PATH_RAZIQ }
+			}
+		}
+		every_country = {
+			limit = { is_ai = no HasAfricaInterest = yes }
+			news_event = {
+				id = IPN_EGY_news.2
+			}
+		}
+		set_politics = {
+			ruling_party = liberal_conservatism
+		}
+		country_event = { id = IPN_EGY_event.3 days = 750 }
+    }
+	option = {
+		name = IPN_EGY_event.2.b
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = EGY_PATH option = EGY_1963_ELECTIONS_PATH_SAREGEDDIN }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = EGY_PATH option = EGY_1963_ELECTIONS_PATH_RAZIQ }
+			}
+		}
+		every_country = {
+			limit = { is_ai = no HasAfricaInterest = yes }
+			news_event = {
+				id = IPN_EGY_news.3
+			}
+		}
+		promote_character = EGY_Osman_Ahmed_Osman
+		country_event = { id = IPN_EGY_event.4 days = 750 }
+    }
+	option = {
+		name = IPN_EGY_event.2.c
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = EGY_PATH option = EGY_1963_ELECTIONS_PATH_SAREGEDDIN }
+			}
+			modifier = {
+				factor = 0
+				has_game_rule = { rule = EGY_PATH option = EGY_1963_ELECTIONS_PATH_OSMAN }
+			}
+		}
+		every_country = {
+			limit = { is_ai = no HasAfricaInterest = yes }
+			news_event = {
+				id = IPN_EGY_news.4
+			}
+		}
+		promote_character = EGY_Ali_Abd_al_Raziq
+		set_party_name = {
+			ideology = conservatism
+			name = IPN_EGY_conservatism_1_party
+			long_name = IPN_EGY_conservatism_1_party_long
+		}
+		set_party_name = {
+			ideology = conservatism_1
+			name = IPN_EGY_conservatism_party
+			long_name = IPN_EGY_conservatism_party_long
+		}
+		country_event = { id = IPN_EGY_event.4 days = 750 }
+    }
+}
+country_event = {
+	id = IPN_EGY_event.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_EGY_event.3"}
+	title = IPN_EGY_event.3.t
+	desc = IPN_EGY_event.3.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_EGY_event.3.a
+		every_country = {
+			limit = { is_ai = no HasAfricaInterest = yes }
+			news_event = {
+				id = IPN_EGY_news.5
+			}
+		}
+		set_politics = {
+			ruling_party = despotism
+		}
+		promote_character = EGY_Muhammad_Abd_al_Moneim
+		country_event = { id = IPN_EGY_event.5 days = 1500 }
+    }
+	option = {
+		name = IPN_EGY_event.3.b
+		every_country = {
+			limit = { is_ai = no HasAfricaInterest = yes }
+			news_event = {
+				id = IPN_EGY_news.6
+			}
+		}
+		set_country_flag = IPN_EGY_saregeddin_success_flag
+		set_country_leader_ideology = liberal_conservatism_oligarchic_liberalism_subtype
+		country_event = { id = IPN_EGY_event.5 days = 1500 }
+    }
+}
+country_event = {
+	id = IPN_EGY_event.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_EGY_event.4"}
+	title = IPN_EGY_event.4.t
+	desc = IPN_EGY_event.4.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_EGY_event.4.a
+		every_country = {
+			limit = { is_ai = no HasAfricaInterest = yes }
+			news_event = {
+				id = IPN_EGY_news.7
+			}
+		}
+		set_politics = {
+			ruling_party = paternalism
+		}
+		add_country_leader_role = {
+			character = EGY_Osman_Ahmed_Osman
+			promote_leader = yes
+			country_leader = {
+				#desc = "POLITICS_Tun_Abdul_Razak_DESC"
+				ideology = paternalism_paternalistic_developmentalism_subtype
+				expire = "2018.1.1"
+				id = -1
+			}
+		}
+		country_event = { id = IPN_EGY_event.5 days = 1500 }
+    }
+}
+country_event = {
+	id = IPN_EGY_event.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_EGY_event.5"}
+	title = IPN_EGY_event.5.t
+	desc = IPN_EGY_event.5.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_EGY_event.5.a
+		every_country = {
+			limit = { is_ai = no HasAfricaInterest = yes }
+			news_event = {
+				id = IPN_EGY_news.8
+			}
+		}
+		set_politics = {
+			ruling_party = despotism
+		}
+		promote_character = EGY_Fuad_II
+		country_event = { id = IPN_EGY_event.6 days = 90 }
+    }
+}
+country_event = {
+	id = IPN_EGY_event.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_EGY_event.6"}
+	title = IPN_EGY_event.6.t
+	desc = IPN_EGY_event.6.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_EGY_event.6.a
+		trigger = {
+			has_country_flag = IPN_EGY_saregeddin_success_flag
+		}
+		every_country = {
+			limit = { is_ai = no HasAfricaInterest = yes }
+			news_event = {
+				id = IPN_EGY_news.9
+			}
+		}
+		set_politics = {
+			ruling_party = liberalism
+			elections_allowed = yes
+		}
+		promote_character = EGY_Rifaat_Mahgoub
+		country_event = { id = IPN_EGY_event.7 days = 60 }
+    }
+	option = {
+		name = IPN_EGY_event.6.b
+		trigger = {
+			NOT = { has_country_flag = IPN_EGY_saregeddin_success_flag }
+		}
+		every_country = {
+			limit = { is_ai = no HasAfricaInterest = yes }
+			news_event = {
+				id = IPN_EGY_news.10
+			}
+		}
+		set_politics = {
+			ruling_party = liberalism
+			elections_allowed = yes
+		}
+		promote_character = EGY_Ahmad_Abu_Fattah
+		country_event = { id = IPN_EGY_event.7 days = 60 }
+    }
+}
+country_event = {
+	id = IPN_EGY_event.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_EGY_event.7"}
+	title = IPN_EGY_event.7.t
+	desc = IPN_EGY_event.7.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_EGY_event.7.a
+		every_country = {
+			limit = { is_ai = no HasAfricaInterest = yes }
+			news_event = {
+				id = IPN_EGY_news.11
+			}
+		}
+		ITA = { country_event = { id = IPN_EGY_event.8 } }
+    }
+}
+country_event = {
+	id = IPN_EGY_event.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_EGY_event.8"}
+	title = IPN_EGY_event.8.t
+	desc = IPN_EGY_event.8.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_EGY_event.8.a
+		country_event = { id = IPN_EGY_event.9 }
+    }
+}
+country_event = {
+	id = IPN_EGY_event.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_EGY_event.9"}
+	title = IPN_EGY_event.9.t
+	desc = IPN_EGY_event.9.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_EGY_event.9.a
+		IME = { country_event = { id = IPN_EGY_event.10 } }
+    }
+}
+country_event = {
+	id = IPN_EGY_event.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_EGY_event.10"}
+	title = IPN_EGY_event.10.t
+	desc = IPN_EGY_event.10.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_EGY_event.10.a
+		ITA = {
+			remove_from_faction = IME
+			remove_puppet = IME
+		}
+		IME = {
+			declare_war_on = EGY
+		}
+		EGY = { country_event = { id = IPN_EGY_event.11 } }
+    }
+}
+country_event = {
+	id = IPN_EGY_event.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_EGY_event.11"}
+	title = IPN_EGY_event.11.t
+	desc = IPN_EGY_event.11.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_EGY_event.11.a
+		country_event = { id = IPN_EGY_event.12 days = 15 }
+		every_country = {
+			limit = { is_ai = no HasAfricaInterest = yes }
+			news_event = {
+				id = IPN_EGY_news.12
+			}
+		}
+    }
+}
+country_event = {
+	id = IPN_EGY_event.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event IPN_EGY_event.12"}
+	title = IPN_EGY_event.12.t
+	desc = IPN_EGY_event.12.desc	
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = IPN_EGY_event.12.a
+		every_country = {
+			limit = { is_ai = no HasAfricaInterest = yes }
+			news_event = {
+				id = IPN_EGY_news.13
+			}
+		}
+    }
+}
+
+news_event = {
+	id = IPN_EGY_news.1
+	title = IPN_EGY_news.1.t
+	desc = IPN_EGY_news.1.desc
+	picture = GFX_news_event_EGY_Nureddintaraf
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_EGY_news.1" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_EGY_news.1.a
+	}
+}
+news_event = {
+	id = IPN_EGY_news.2
+	title = IPN_EGY_news.2.t
+	desc = IPN_EGY_news.2.desc
+	picture = GFX_news_event_EGY_Fuadsaregeddin
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_EGY_news.2" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_EGY_news.2.a
+	}
+}
+news_event = {
+	id = IPN_EGY_news.3
+	title = IPN_EGY_news.3.t
+	desc = IPN_EGY_news.3.desc
+	picture = GFX_news_event_EGY_Osmanahmadosman
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_EGY_news.3" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_EGY_news.3.a
+	}
+}
+news_event = {
+	id = IPN_EGY_news.4
+	title = IPN_EGY_news.4.t
+	desc = IPN_EGY_news.4.desc
+	picture = GFX_news_event_EGY_Aliabdalraziq
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_EGY_news.4" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_EGY_news.4.a
+	}
+}
+news_event = {
+	id = IPN_EGY_news.5
+	title = IPN_EGY_news.5.t
+	desc = IPN_EGY_news.5.desc
+	picture = GFX_news_event_EGY_Aliabdalraziq
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_EGY_news.5" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_EGY_news.5.a
+	}
+}
+news_event = {
+	id = IPN_EGY_news.6
+	title = IPN_EGY_news.6.t
+	desc = IPN_EGY_news.6.desc
+	picture = GFX_news_event_EGY_Aliabdalraziq
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_EGY_news.6" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_EGY_news.6.a
+	}
+}
+news_event = {
+	id = IPN_EGY_news.7
+	title = IPN_EGY_news.7.t
+	desc = IPN_EGY_news.7.desc
+	picture = GFX_news_event_EGY_Aliabdalraziq
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_EGY_news.7" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_EGY_news.7.a
+	}
+}
+news_event = {
+	id = IPN_EGY_news.8
+	title = IPN_EGY_news.8.t
+	desc = IPN_EGY_news.8.desc
+	picture = GFX_news_event_EGY_Aliabdalraziq
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_EGY_news.8" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_EGY_news.8.a
+	}
+}
+news_event = {
+	id = IPN_EGY_news.9
+	title = IPN_EGY_news.9.t
+	desc = IPN_EGY_news.9.desc
+	picture = GFX_news_event_EGY_Aliabdalraziq
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_EGY_news.9" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_EGY_news.9.a
+	}
+}
+news_event = {
+	id = IPN_EGY_news.10
+	title = IPN_EGY_news.10.t
+	desc = IPN_EGY_news.10.desc
+	picture = GFX_news_event_EGY_Aliabdalraziq
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_EGY_news.10" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_EGY_news.10.a
+	}
+}
+news_event = {
+	id = IPN_EGY_news.11
+	title = IPN_EGY_news.11.t
+	desc = IPN_EGY_news.11.desc
+	picture = GFX_news_event_EGY_Aliabdalraziq
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_EGY_news.11" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_EGY_news.11.a
+	}
+}
+news_event = {
+	id = IPN_EGY_news.12
+	title = IPN_EGY_news.12.t
+	desc = IPN_EGY_news.12.desc
+	picture = GFX_news_event_EGY_Aliabdalraziq
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_EGY_news.12" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_EGY_news.12.a
+	}
+}
+news_event = {
+	id = IPN_EGY_news.13
+	title = IPN_EGY_news.13.t
+	desc = IPN_EGY_news.13.desc
+	picture = GFX_news_event_EGY_Aliabdalraziq
+
+	immediate = { log = "[GetDateText]: [Root.GetName]: event IPN_EGY_news.13" }
+
+	is_triggered_only = yes
+
+	option = {
+		name = IPN_EGY_news.13.a
+		if = {
+			limit = {
+				is_ai = no
+			}
+			set_temp_variable = { TNO_temp_super_event = token:SE_OIL_CRISIS }
+			TNO_fire_super_event = yes
+		}
+	}
+}

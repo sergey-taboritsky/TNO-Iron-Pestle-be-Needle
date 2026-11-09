@@ -1,6 +1,7 @@
 version="0.01"
 tags={
 	"Alternative History"
+	"Events"
 }
 dependencies={
 	"The New Order: Last Days of Europe"

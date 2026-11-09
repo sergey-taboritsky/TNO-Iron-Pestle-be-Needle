@@ -1,0 +1,156 @@
+characters = {
+	# Kingdom
+	YEM_Ahmad_Muhammad_Shami = {
+		name = YEM_Ahmad_Muhammad_Shami
+		portraits = {
+			civilian = { large = "gfx/leaders/YEM/Portrait_YEM_Ahmad_Muhammad_Shami.png" }
+		}
+		country_leader = {
+			desc = YEM_Ahmad_Muhammad_Shami_DESC
+			expire = "2018.01.01"
+			ideology = paternalism_national_conservatism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 瓦齐尔亲族集团
+	YEM_Hussein_al_Wazir = {
+		name = YEM_Hussein_al_Wazir
+		portraits = {
+			civilian = { large = "gfx/leaders/YEM/Portrait_YEM_Hussein_al_Wazir.png" }
+		}
+		country_leader = {
+			desc = YEM_Hussein_al_Wazir_DESC
+			expire = "2018.01.01"
+			ideology = paternalism_oligarchy_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 宣言派
+	YEM_Muhammad_al_Zubayri = {
+		name = YEM_Muhammad_al_Zubayri
+		portraits = {
+			civilian = { large = "gfx/leaders/YEM/Portrait_YEM_Muhammad_al_Zubayri.png" }
+		}
+		country_leader = {
+			desc = YEM_Muhammad_al_Zubayri_DESC
+			expire = "2018.01.01"
+			ideology = conservatism_oligarchic_conservatism_subtype
+			traits = { }
+			id = -1
+		}
+		country_leader = {
+			desc = YEM_Muhammad_al_Zubayri_DESC
+			expire = "2018.01.01"
+			ideology = liberal_conservatism_oligarchic_liberalism_subtype
+			traits = { }
+			id = -1
+		}
+		country_leader = {
+			desc = YEM_Muhammad_al_Zubayri_DESC
+			expire = "2018.01.01"
+			ideology = liberalism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 人民联盟
+	YEM_Abdullah_al_Wazir = {
+		name = YEM_Abdullah_al_Wazir
+		portraits = {
+			civilian = { large = "gfx/leaders/YEM/Portrait_YEM_Abdullah_al_Wazir.png" }
+		}
+		country_leader = {
+			desc = YEM_Abdullah_al_Wazir_DESC
+			expire = "2018.01.01"
+			ideology = despotism_royal_dictatorship_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 元老集团
+	YEM_Ibrahim_al_Wazir = {
+		name = YEM_Ibrahim_al_Wazir
+		portraits = {
+			civilian = { large = "gfx/leaders/YEM/Portrait_YEM_Ibrahim_al_Wazir.png" }
+		}
+		country_leader = {
+			desc = YEM_Ibrahim_al_Wazir_DESC
+			expire = "2018.01.01"
+			ideology = paternalism_oligarchy_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 正统王国
+	YEM_Muhammad_al_Badr = {
+		name = YEM_Muhammad_al_Badr
+		portraits = {
+			civilian = { large = "gfx/leaders/YEM/Portrait_YEM_Muhammad_al_Badr.png" }
+		}
+		country_leader = {
+			desc = YEM_Muhammad_al_Badr_DESC
+			expire = "2018.01.01"
+			ideology = despotism_absolute_monarchy_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 革命指挥部
+	YEM_Hasan_al_Amiri = {
+		name = YEM_Hasan_al_Amiri
+		portraits = {
+			civilian = { large = "gfx/leaders/YEM/Portrait_YEM_Hasan_al_Amiri.png" }
+		}
+		country_leader = {
+			desc = YEM_Hasan_al_Amiri_DESC
+			expire = "2018.01.01"
+			ideology = socialist_revolutionary_frontism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 革命委员会
+	YEM_Abd_al_Latif_al_Daylami = {
+		name = YEM_Abd_al_Latif_al_Daylami
+		portraits = {
+			civilian = { large = "gfx/leaders/YEM/Portrait_YEM_Abd_al_Latif_al_Daylami.png" }
+		}
+		country_leader = {
+			desc = YEM_Abd_al_Latif_al_Daylami_DESC
+			expire = "2018.01.01"
+			ideology = socialist_left_wing_nationalism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 革命委员会
+	YEM_Muhsin_al_Ayni = {
+		name = YEM_Muhsin_al_Ayni
+		portraits = {
+			civilian = { large = "gfx/leaders/YEM/Portrait_YEM_Muhsin_al_Ayni.png" }
+		}
+		country_leader = {
+			desc = YEM_Muhsin_al_Ayni_DESC
+			expire = "2018.01.01"
+			ideology = paternalism_social_nationalism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+	# 民主改革联盟
+	YEM_Abd_al_Ilah_al_Ilyani = {
+		name = YEM_Abd_al_Ilah_al_Ilyani
+		portraits = {
+			civilian = { large = "gfx/leaders/YEM/Portrait_YEM_Abd_al_Ilah_al_Ilyani.png" }
+		}
+		country_leader = {
+			desc = YEM_Abd_al_Ilah_al_Ilyani_DESC
+			expire = "2018.01.01"
+			ideology = liberal_conservatism_islamic_modernism_subtype
+			traits = { }
+			id = -1
+		}
+	}
+}

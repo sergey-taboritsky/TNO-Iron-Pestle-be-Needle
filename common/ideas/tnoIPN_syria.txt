@@ -1,0 +1,80 @@
+ideas = {
+	country = {
+		IPN_SYR_twenty_independent_years = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea IPN_SYR_twenty_independent_years" }
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = IPN_SYR_twenty_independent_years
+
+			modifier = {
+				political_power_gain = 0.2
+				party_popularity_stability_factor = 0.15
+				improve_relations_maintain_cost_factor = -0.10
+				admin_efficiency_monthly_rate = 0.02
+				immigration_policy_monthly_rate = 0.03
+			}
+		}
+		IPN_SYR_democratic_republic_entrenched = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea IPN_SYR_democratic_republic_entrenched" }
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			#picture = EGY_farouks_hedonism
+
+			modifier = {
+				drift_defence_factor = -0.10
+				taxable_population_factor = 0.10
+				personnel_cost_factor_modifier = 0.08
+				admin_program_cost_factor = -0.05
+				vote_franchise_policy_monthly_rate = 0.05
+				public_meetings_policy_monthly_rate = 0.02
+			}
+		}
+		IPN_SYR_aleppo_ascendant = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea IPN_SYR_aleppo_ascendant" }
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			#picture = EGY_the_muslim_brotherhood
+
+			modifier = {
+				stability_factor = -0.15
+				civilian_expenditures_factor = -0.15
+				production_units_to_GDP_ratio_modifier = -0.1
+			}
+		}
+		IPN_SYR_peoples_muttering = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea IPN_SYR_peoples_muttering" }
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+
+			#picture = EGY_the_muslim_brotherhood
+
+			modifier = {
+				army_org_factor = -0.20
+				army_morale_factor = -0.20
+				drift_defence_factor = -0.15
+				political_parties_policy_monthly_rate = -0.05
+				trade_unions_policy_monthly_rate = -0.05
+				religious_rights_policy_monthly_rate = -0.03
+			}
+		}
+	}
+}
